@@ -1,0 +1,1065 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771728886.117482",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771728886.117482",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_security_rbac_masking_row_access",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.1450653983353151,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Okay, I have a study plan and curated resources for you. Here's the plan:\n\n# Snowflake Security Study Plan for AI/ML Interview Prep (Beginner, 1 Day)\n\n## Goal\n\nPrepare for an enterprise AI/ML interview by explaining Snowflake security features (RBAC, Masking, Row Access Policies) and PII protection strategies.\n\n## Study Plan\n\n**Day 1: Intensive Focus on Snowflake Security**\n\nThis plan focuses on core Snowflake security concepts relevant to enterprise AI/ML and PII protection.\n\n### Modules\n\n*   **Module 1: Introduction to Snowflake Security & PII Context (60 minutes)**\n    *   Understand why security is critical in enterprise AI/ML, the concept of PII, and Snowflake's role in data protection. Briefly touch upon compliance regulations (e.g., GDPR, CCPA) and Snowflake's security-first approach to AI/ML workloads.\n    *   Resources:\n        *   [Securing Snowflake PII: Best Practices For Data Protection](https://protecto.ai/blog/securing-snowflake-pii-best-practices-for-data-protection/)\n        *   [How to Use AI & ML in Snowflake: Security, Apps & Automation](https://www.keboola.com/blog/ai-ml-snowflake-security-apps-automation)\n\n*   **Module 2: Role-Based Access Control (RBAC) in Snowflake (120 minutes)**\n    *   Dive into Snowflake's foundational security mechanism: RBAC. Learn about users, roles, privileges, and how they interact. Understand the importance of a well-designed role hierarchy for managing access to sensitive data, especially PII.\n    *   Resources:\n        *   [Role-based Access Control (RBAC) with Snowflake Database Roles](https://medium.com/@maja.ferle/role-based-access-control-rbac-with-snowflake-database-roles-3081e79391b7)\n        *   [Snowflake Role-Based Access Control | The Slalom Blog](https://medium.com/slalom-build/snowflake-role-based-access-control-the-slalom-blog-26154625b6a7)\n        *   [What Is Role-Based Access Control (RBAC)? - Snowflake](https://www.snowflake.com/guides/what-is-role-based-access-control)\n\n*   **Module 3: Dynamic Data Masking Policies (120 minutes)**\n    *   Understand how masking policies provide column-level security by obfuscating sensitive data (PII) at query time without altering the underlying data. Learn about conditional masking based on user roles and its role in balancing data accessibility with security.\n    *   Resources:\n        *   [Masking Policies in Snowflake: Ensuring Data Security and Compliance](https://medium.com/@saurabh.s.agarwal/masking-policies-in-snowflake-ensuring-data-security-and-compliance-f8231268393e)\n        *   [Snowflake Masking Policies Demystified - InterWorks](https://interworks.com/blog/2023/11/21/snowflake-snowflake-masking-policies-demystified/)\n        *   [Understanding Dynamic Data Masking | Snowflake Documentation](https://docs.snowflake.com/en/user-guide/data-masking-overview)\n\n*   **Module 4: Row Access Policies (120 minutes)**\n    *   Explore how row access policies enable row-level security, restricting which rows a user can view based on specific conditions or their role. Understand their application in protecting PII by filtering data based on user attributes or responsibilities.\n    *   Resources:\n        *   [Understanding row access policies - Snowflake Documentation](https://docs.snowflake.com/en/user-guide/row-access-policies)\n        *   [Snowflake Row Access Policy - Medium](https://medium.com/@sanketprabhu/snowflake-row-access-policy-7a877526707a)\n        *   [Row-Level Security using Row Access Policies in Snowflake - ThinkETL](https://www.thinketl.com/row-level-security-using-row-access-policies-in-snowflake/)\n\n*   **Module 5: Protecting PII while Enabling Analytics (120 minutes)**\n    *   Synthesize knowledge from previous modules to explain how RBAC, masking policies, and row access policies work together to protect PII in Snowflake. Discuss strategies like anonymization, pseudonymization, and data minimization to balance security with the need for analytics. Prepare to articulate how these features support compliance and enable secure AI/ML workloads.\n    *   Resources:\n        *   [How Do You Secure PII Data in Snowflake? - phData](https://phdata.com/blog/how-to-secure-pii-data-in-snowflake/)\n        *   [Snowflake Analytics Data Protection - DSPM Guides](https://www.cyera.io/dspm-guides/snowflake-analytics-data-protection)\n        *   [PII Leakage Prevention in Snowflake: How to Protect Sensitive Data with Dynamic Masking](https://www.immuta.com/blog/pii-leakage-prevention-in-snowflake/)\n\n*   **Module 6: Quick Review and Interview Practice (60 minutes)**\n    *   Consolidate learning by reviewing key definitions, use cases, and interconnections between the security features. Practice explaining concepts clearly and concisely, focusing on how they address PII protection in an enterprise AI/ML context. Review common interview questions related to Snowflake security.\n    *   Resources:\n        *   [Top 35+ Snowflake Interview Questions and Answers for 2026 - igmGuru](https://www.igmguru.com/snowflake/snowflake-interview-questions/)\n        *   [Top Snowflake Interview Questions and Answers (2025) - InterviewBit](https://www.interviewbit.com/snowflake-interview-questions/)\n\n## Additional Curated Resources\n\nI'm still processing the curated resources. I will add them here when they are ready.\n\n***\n\nGood luck with your interview preparation! Remember to focus on understanding the core concepts and how they relate to real-world scenarios. You've got this!\n",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-843dfd42-712b-4f2e-b298-4c99f8cc77a8",
+                          "args": {
+                            "request": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-843dfd42-712b-4f2e-b298-4c99f8cc77a8",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"topic\": \"Snowflake Security for Enterprise AI/ML Interview\",\n  \"level\": \"beginner\",\n  \"timeBudget\": \"1 day\",\n  \"goal\": \"Prepare for an enterprise AI/ML interview by explaining Snowflake security features (RBAC, Masking, Row Access Policies) and PII protection strategies.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"description\": \"Intensive 1-day study focusing on core Snowflake security concepts relevant to enterprise AI/ML and PII protection.\",\n      \"modules\": [\n        {\n          \"name\": \"Module 1: Introduction to Snowflake Security & PII Context\",\n          \"description\": \"Understand why security is critical in enterprise AI/ML, the concept of PII, and Snowflake's role in data protection. Briefly touch upon compliance regulations (e.g., GDPR, CCPA) and Snowflake's security-first approach to AI/ML workloads.\",\n          \"durationMinutes\": 60,\n          \"resources\": [\n            {\n              \"name\": \"Securing Snowflake PII: Best Practices For Data Protection\",\n              \"url\": \"https://protecto.ai/blog/securing-snowflake-pii-best-practices-for-data-protection/\"\n            },\n            {\n              \"name\": \"How to Use AI & ML in Snowflake: Security, Apps & Automation\",\n              \"url\": \"https://www.keboola.com/blog/ai-ml-snowflake-security-apps-automation\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 2: Role-Based Access Control (RBAC) in Snowflake\",\n          \"description\": \"Dive into Snowflake's foundational security mechanism: RBAC. Learn about users, roles, privileges, and how they interact. Understand the importance of a well-designed role hierarchy for managing access to sensitive data, especially PII.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Role-based Access Control (RBAC) with Snowflake Database Roles\",\n              \"url\": \"https://medium.com/@maja.ferle/role-based-access-control-rbac-with-snowflake-database-roles-3081e79391b7\"\n            },\n            {\n              \"name\": \"Snowflake Role-Based Access Control | The Slalom Blog\",\n              \"url\": \"https://medium.com/slalom-build/snowflake-role-based-access-control-the-slalom-blog-26154625b6a7\"\n            },\n            {\n              \"name\": \"What Is Role-Based Access Control (RBAC)? - Snowflake\",\n              \"url\": \"https://www.snowflake.com/guides/what-is-role-based-access-control\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 3: Dynamic Data Masking Policies\",\n          \"description\": \"Understand how masking policies provide column-level security by obfuscating sensitive data (PII) at query time without altering the underlying data. Learn about conditional masking based on user roles and its role in balancing data accessibility with security.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Masking Policies in Snowflake: Ensuring Data Security and Compliance\",\n              \"url\": \"https://medium.com/@saurabh.s.agarwal/masking-policies-in-snowflake-ensuring-data-security-and-compliance-f8231268393e\"\n            },\n            {\n              \"name\": \"Snowflake Masking Policies Demystified - InterWorks\",\n              \"url\": \"https://interworks.com/blog/2023/11/21/snowflake-masking-policies-demystified/\"\n            },\n            {\n              \"name\": \"Understanding Dynamic Data Masking | Snowflake Documentation\",\n              \"url\": \"https://docs.snowflake.com/en/user-guide/data-masking-overview\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 4: Row Access Policies\",\n          \"description\": \"Explore how row access policies enable row-level security, restricting which rows a user can view based on specific conditions or their role. Understand their application in protecting PII by filtering data based on user attributes or responsibilities.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Understanding row access policies - Snowflake Documentation\",\n              \"url\": \"https://docs.snowflake.com/en/user-guide/row-access-policies\"\n            },\n            {\n              \"name\": \"Snowflake Row Access Policy - Medium\",\n              \"url\": \"https://medium.com/@sanketprabhu/snowflake-row-access-policy-7a877526707a\"\n            },\n            {\n              \"name\": \"Row-Level Security using Row Access Policies in Snowflake - ThinkETL\",\n              \"url\": \"https://www.thinketl.com/row-level-security-using-row-access-policies-in-snowflake/\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 5: Protecting PII while Enabling Analytics\",\n          \"description\": \"Synthesize knowledge from previous modules to explain how RBAC, masking policies, and row access policies work together to protect PII in Snowflake. Discuss strategies like anonymization, pseudonymization, and data minimization to balance security with the need for analytics. Prepare to articulate how these features support compliance and enable secure AI/ML workloads.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"How Do You Secure PII Data in Snowflake? - phData\",\n              \"url\": \"https://phdata.com/blog/how-to-secure-pii-data-in-snowflake/\"\n            },\n            {\n              \"name\": \"Snowflake Analytics Data Protection - DSPM Guides\",\n              \"url\": \"https://www.cyera.io/dspm-guides/snowflake-analytics-data-protection\"\n            },\n            {\n              \"name\": \"PII Leakage Prevention in Snowflake: How to Protect Sensitive Data with Dynamic Masking\",\n              \"url\": \"https://www.immuta.com/blog/pii-leakage-prevention-in-snowflake/\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 6: Quick Review and Interview Practice\",\n          \"description\": \"Consolidate learning by reviewing key definitions, use cases, and interconnections between the security features. Practice explaining concepts clearly and concisely, focusing on how they address PII protection in an enterprise AI/ML context. Review common interview questions related to Snowflake security.\",\n          \"durationMinutes\": 60,\n          \"resources\": [\n            {\n              \"name\": \"Top 35+ Snowflake Interview Questions and Answers for 2026 - igmGuru\",\n              \"url\": \"https://www.igmguru.com/snowflake/snowflake-interview-questions/\"\n            },\n            {\n              \"name\": \"Top Snowflake Interview Questions and Answers (2025) - InterviewBit\",\n              \"url\": \"https://www.interviewbit.com/snowflake-interview-questions/\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-fb8b24cf-8a72-4372-b38e-d9179481e804",
+                          "args": {
+                            "request": "Snowflake Security, RBAC, masking policies, row access policies, PII protection, data anonymization, data pseudonymization, data minimization, enterprise AI/ML, compliance regulations, GDPR, CCPA. Preferences: clear explanations, real-world examples, and up-to-date information."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-fb8b24cf-8a72-4372-b38e-d9179481e804",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771728719.742023,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a helpful study orchestrator agent. Your only job is to create high-quality, personalized study + resource plans.\nYour only job is to give the study plan to the user. Other that do not answer to any other user query which are not related to study plan.\nWhen a user gives you:\n- Topic\n- Level(beginner/intermediate/advanced)\n- Time budget (e.g. 1 day, 2 days, 1 week)\n- Goal(e.g. prepare for job interview, build a project, etc.)\n\nYou must follow this process(strict order):\n1. When user provides topic + level + time budget + goal:\n   → Immediately call tool planner_tool with the **exact full user message** as input\n   → Do NOT change/summarize the query\n   → Wait for complete JSON response\n\n2. After receiving plan:\n   → Extract subtopics\n   → (When Resource Curator exists): call tool curator_tool with subtopics + preferences\n   → Wait for complete JSON response\n\n3. Final step:\n   → Combine plan + resources into clean Markdown\n   → Use headings, bullets, tables where helpful\n   → End with 2-3 encouraging sentences\n\n\nRules:\n- NEVER try to create a study plan yourself — always delegate via tool\n- If input is missing/incomplete → ask clarifying questions FIRST until you have all the information you need\n- Output only final answer to user after all steps are done\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_security_rbac_masking_row_access_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Give an enterprise-ready security story: Start with RBAC—roles grant privileges to databases/schemas/tables/warehouses; users inherit access via role hierarchy (least privilege). Then column protection: dynamic data masking policies hide or partially reveal PII (e.g., SSN, email) depending on role. Row access policies enforce row-level filtering (e.g., region-based access or business unit scoping). For AI/ML, you combine these so data scientists can build features without seeing raw identifiers: expose curated views/feature tables with masked PII, tokenize identifiers, restrict raw zones, and log access. Add governance talking points: separation of duties, controlled warehouse usage, network policies, and auditing via query/access history.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.1450653983353151,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The user prompt does not contain any mention of \"resume\" or \"JD paths\". Therefore, the condition for the agent to call `parse_document_tool` is not met, making this property not applicable to the current interaction.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___399bb17c-9255-4d21-befd-9a02bb783ae5",
+      "session_details": {
+        "id": "___eval___session___399bb17c-9255-4d21-befd-9a02bb783ae5",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "c7c13fad-43a4-44a8-9fb2-db86c6dc1160"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "b9fd67f8-9daa-48e6-b9bc-e8f80616ad31",
+            "timestamp": 1771728713.874153
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-843dfd42-712b-4f2e-b298-4c99f8cc77a8",
+                    "args": {
+                      "request": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "3dc8f614-55f8-4948-9791-963f2ae9f429"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 51,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 51
+                }
+              ],
+              "prompt_token_count": 472,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 472
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 523,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.0007018299371588464,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "3dc8f614-55f8-4948-9791-963f2ae9f429"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "67793be8-c036-4a54-ba3e-21290c4de1f8",
+            "timestamp": 1771728713.875194
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-843dfd42-712b-4f2e-b298-4c99f8cc77a8",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"topic\": \"Snowflake Security for Enterprise AI/ML Interview\",\n  \"level\": \"beginner\",\n  \"timeBudget\": \"1 day\",\n  \"goal\": \"Prepare for an enterprise AI/ML interview by explaining Snowflake security features (RBAC, Masking, Row Access Policies) and PII protection strategies.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"description\": \"Intensive 1-day study focusing on core Snowflake security concepts relevant to enterprise AI/ML and PII protection.\",\n      \"modules\": [\n        {\n          \"name\": \"Module 1: Introduction to Snowflake Security & PII Context\",\n          \"description\": \"Understand why security is critical in enterprise AI/ML, the concept of PII, and Snowflake's role in data protection. Briefly touch upon compliance regulations (e.g., GDPR, CCPA) and Snowflake's security-first approach to AI/ML workloads.\",\n          \"durationMinutes\": 60,\n          \"resources\": [\n            {\n              \"name\": \"Securing Snowflake PII: Best Practices For Data Protection\",\n              \"url\": \"https://protecto.ai/blog/securing-snowflake-pii-best-practices-for-data-protection/\"\n            },\n            {\n              \"name\": \"How to Use AI & ML in Snowflake: Security, Apps & Automation\",\n              \"url\": \"https://www.keboola.com/blog/ai-ml-snowflake-security-apps-automation\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 2: Role-Based Access Control (RBAC) in Snowflake\",\n          \"description\": \"Dive into Snowflake's foundational security mechanism: RBAC. Learn about users, roles, privileges, and how they interact. Understand the importance of a well-designed role hierarchy for managing access to sensitive data, especially PII.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Role-based Access Control (RBAC) with Snowflake Database Roles\",\n              \"url\": \"https://medium.com/@maja.ferle/role-based-access-control-rbac-with-snowflake-database-roles-3081e79391b7\"\n            },\n            {\n              \"name\": \"Snowflake Role-Based Access Control | The Slalom Blog\",\n              \"url\": \"https://medium.com/slalom-build/snowflake-role-based-access-control-the-slalom-blog-26154625b6a7\"\n            },\n            {\n              \"name\": \"What Is Role-Based Access Control (RBAC)? - Snowflake\",\n              \"url\": \"https://www.snowflake.com/guides/what-is-role-based-access-control\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 3: Dynamic Data Masking Policies\",\n          \"description\": \"Understand how masking policies provide column-level security by obfuscating sensitive data (PII) at query time without altering the underlying data. Learn about conditional masking based on user roles and its role in balancing data accessibility with security.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Masking Policies in Snowflake: Ensuring Data Security and Compliance\",\n              \"url\": \"https://medium.com/@saurabh.s.agarwal/masking-policies-in-snowflake-ensuring-data-security-and-compliance-f8231268393e\"\n            },\n            {\n              \"name\": \"Snowflake Masking Policies Demystified - InterWorks\",\n              \"url\": \"https://interworks.com/blog/2023/11/21/snowflake-masking-policies-demystified/\"\n            },\n            {\n              \"name\": \"Understanding Dynamic Data Masking | Snowflake Documentation\",\n              \"url\": \"https://docs.snowflake.com/en/user-guide/data-masking-overview\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 4: Row Access Policies\",\n          \"description\": \"Explore how row access policies enable row-level security, restricting which rows a user can view based on specific conditions or their role. Understand their application in protecting PII by filtering data based on user attributes or responsibilities.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"Understanding row access policies - Snowflake Documentation\",\n              \"url\": \"https://docs.snowflake.com/en/user-guide/row-access-policies\"\n            },\n            {\n              \"name\": \"Snowflake Row Access Policy - Medium\",\n              \"url\": \"https://medium.com/@sanketprabhu/snowflake-row-access-policy-7a877526707a\"\n            },\n            {\n              \"name\": \"Row-Level Security using Row Access Policies in Snowflake - ThinkETL\",\n              \"url\": \"https://www.thinketl.com/row-level-security-using-row-access-policies-in-snowflake/\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 5: Protecting PII while Enabling Analytics\",\n          \"description\": \"Synthesize knowledge from previous modules to explain how RBAC, masking policies, and row access policies work together to protect PII in Snowflake. Discuss strategies like anonymization, pseudonymization, and data minimization to balance security with the need for analytics. Prepare to articulate how these features support compliance and enable secure AI/ML workloads.\",\n          \"durationMinutes\": 120,\n          \"resources\": [\n            {\n              \"name\": \"How Do You Secure PII Data in Snowflake? - phData\",\n              \"url\": \"https://phdata.com/blog/how-to-secure-pii-data-in-snowflake/\"\n            },\n            {\n              \"name\": \"Snowflake Analytics Data Protection - DSPM Guides\",\n              \"url\": \"https://www.cyera.io/dspm-guides/snowflake-analytics-data-protection\"\n            },\n            {\n              \"name\": \"PII Leakage Prevention in Snowflake: How to Protect Sensitive Data with Dynamic Masking\",\n              \"url\": \"https://www.immuta.com/blog/pii-leakage-prevention-in-snowflake/\"\n            }\n          ]\n        },\n        {\n          \"name\": \"Module 6: Quick Review and Interview Practice\",\n          \"description\": \"Consolidate learning by reviewing key definitions, use cases, and interconnections between the security features. Practice explaining concepts clearly and concisely, focusing on how they address PII protection in an enterprise AI/ML context. Review common interview questions related to Snowflake security.\",\n          \"durationMinutes\": 60,\n          \"resources\": [\n            {\n              \"name\": \"Top 35+ Snowflake Interview Questions and Answers for 2026 - igmGuru\",\n              \"url\": \"https://www.igmguru.com/snowflake/snowflake-interview-questions/\"\n            },\n            {\n              \"name\": \"Top Snowflake Interview Questions and Answers (2025) - InterviewBit\",\n              \"url\": \"https://www.interviewbit.com/snowflake-interview-questions/\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "0269558a-b35e-43b2-986e-fc994cf02fb2",
+            "timestamp": 1771728743.711704
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-fb8b24cf-8a72-4372-b38e-d9179481e804",
+                    "args": {
+                      "request": "Snowflake Security, RBAC, masking policies, row access policies, PII protection, data anonymization, data pseudonymization, data minimization, enterprise AI/ML, compliance regulations, GDPR, CCPA. Preferences: clear explanations, real-world examples, and up-to-date information."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "4d430ecc-94d0-4593-aa4f-00758d30cb29"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 64,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 64
+                }
+              ],
+              "prompt_token_count": 2205,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2205
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2269,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.1428433358669281,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "4d430ecc-94d0-4593-aa4f-00758d30cb29"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "6c4520d7-81e2-45bd-a0ca-fe4e1d67d2ad",
+            "timestamp": 1771728743.711704
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-fb8b24cf-8a72-4372-b38e-d9179481e804",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "c492a9a1-4227-4fca-bce1-34d776ed97b4",
+            "timestamp": 1771728769.576485
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Okay, I have a study plan and curated resources for you. Here's the plan:\n\n# Snowflake Security Study Plan for AI/ML Interview Prep (Beginner, 1 Day)\n\n## Goal\n\nPrepare for an enterprise AI/ML interview by explaining Snowflake security features (RBAC, Masking, Row Access Policies) and PII protection strategies.\n\n## Study Plan\n\n**Day 1: Intensive Focus on Snowflake Security**\n\nThis plan focuses on core Snowflake security concepts relevant to enterprise AI/ML and PII protection.\n\n### Modules\n\n*   **Module 1: Introduction to Snowflake Security & PII Context (60 minutes)**\n    *   Understand why security is critical in enterprise AI/ML, the concept of PII, and Snowflake's role in data protection. Briefly touch upon compliance regulations (e.g., GDPR, CCPA) and Snowflake's security-first approach to AI/ML workloads.\n    *   Resources:\n        *   [Securing Snowflake PII: Best Practices For Data Protection](https://protecto.ai/blog/securing-snowflake-pii-best-practices-for-data-protection/)\n        *   [How to Use AI & ML in Snowflake: Security, Apps & Automation](https://www.keboola.com/blog/ai-ml-snowflake-security-apps-automation)\n\n*   **Module 2: Role-Based Access Control (RBAC) in Snowflake (120 minutes)**\n    *   Dive into Snowflake's foundational security mechanism: RBAC. Learn about users, roles, privileges, and how they interact. Understand the importance of a well-designed role hierarchy for managing access to sensitive data, especially PII.\n    *   Resources:\n        *   [Role-based Access Control (RBAC) with Snowflake Database Roles](https://medium.com/@maja.ferle/role-based-access-control-rbac-with-snowflake-database-roles-3081e79391b7)\n        *   [Snowflake Role-Based Access Control | The Slalom Blog](https://medium.com/slalom-build/snowflake-role-based-access-control-the-slalom-blog-26154625b6a7)\n        *   [What Is Role-Based Access Control (RBAC)? - Snowflake](https://www.snowflake.com/guides/what-is-role-based-access-control)\n\n*   **Module 3: Dynamic Data Masking Policies (120 minutes)**\n    *   Understand how masking policies provide column-level security by obfuscating sensitive data (PII) at query time without altering the underlying data. Learn about conditional masking based on user roles and its role in balancing data accessibility with security.\n    *   Resources:\n        *   [Masking Policies in Snowflake: Ensuring Data Security and Compliance](https://medium.com/@saurabh.s.agarwal/masking-policies-in-snowflake-ensuring-data-security-and-compliance-f8231268393e)\n        *   [Snowflake Masking Policies Demystified - InterWorks](https://interworks.com/blog/2023/11/21/snowflake-snowflake-masking-policies-demystified/)\n        *   [Understanding Dynamic Data Masking | Snowflake Documentation](https://docs.snowflake.com/en/user-guide/data-masking-overview)\n\n*   **Module 4: Row Access Policies (120 minutes)**\n    *   Explore how row access policies enable row-level security, restricting which rows a user can view based on specific conditions or their role. Understand their application in protecting PII by filtering data based on user attributes or responsibilities.\n    *   Resources:\n        *   [Understanding row access policies - Snowflake Documentation](https://docs.snowflake.com/en/user-guide/row-access-policies)\n        *   [Snowflake Row Access Policy - Medium](https://medium.com/@sanketprabhu/snowflake-row-access-policy-7a877526707a)\n        *   [Row-Level Security using Row Access Policies in Snowflake - ThinkETL](https://www.thinketl.com/row-level-security-using-row-access-policies-in-snowflake/)\n\n*   **Module 5: Protecting PII while Enabling Analytics (120 minutes)**\n    *   Synthesize knowledge from previous modules to explain how RBAC, masking policies, and row access policies work together to protect PII in Snowflake. Discuss strategies like anonymization, pseudonymization, and data minimization to balance security with the need for analytics. Prepare to articulate how these features support compliance and enable secure AI/ML workloads.\n    *   Resources:\n        *   [How Do You Secure PII Data in Snowflake? - phData](https://phdata.com/blog/how-to-secure-pii-data-in-snowflake/)\n        *   [Snowflake Analytics Data Protection - DSPM Guides](https://www.cyera.io/dspm-guides/snowflake-analytics-data-protection)\n        *   [PII Leakage Prevention in Snowflake: How to Protect Sensitive Data with Dynamic Masking](https://www.immuta.com/blog/pii-leakage-prevention-in-snowflake/)\n\n*   **Module 6: Quick Review and Interview Practice (60 minutes)**\n    *   Consolidate learning by reviewing key definitions, use cases, and interconnections between the security features. Practice explaining concepts clearly and concisely, focusing on how they address PII protection in an enterprise AI/ML context. Review common interview questions related to Snowflake security.\n    *   Resources:\n        *   [Top 35+ Snowflake Interview Questions and Answers for 2026 - igmGuru](https://www.igmguru.com/snowflake/snowflake-interview-questions/)\n        *   [Top Snowflake Interview Questions and Answers (2025) - InterviewBit](https://www.interviewbit.com/snowflake-interview-questions/)\n\n## Additional Curated Resources\n\nI'm still processing the curated resources. I will add them here when they are ready.\n\n***\n\nGood luck with your interview preparation! Remember to focus on understanding the core concepts and how they relate to real-world scenarios. You've got this!\n",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "c7c13fad-43a4-44a8-9fb2-db86c6dc1160"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 1392,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 1392
+                }
+              ],
+              "prompt_token_count": 2281,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2281
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 3673,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.017301397762079347,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3fc48f13-3bfd-42d8-8a7b-d45af83290b3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "c7c13fad-43a4-44a8-9fb2-db86c6dc1160"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "f5078d23-bd33-4b04-bb84-4a490c11f0d1",
+            "timestamp": 1771728769.578074
+          }
+        ],
+        "last_update_time": 1771728769.578074
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771728886.117482
+}

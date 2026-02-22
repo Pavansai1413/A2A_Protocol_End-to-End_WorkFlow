@@ -1,0 +1,1065 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771773189.1208656",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771773189.1208656",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_data_loading_copy_into",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.15771428571428572,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "## Snowflake Data Loading from S3/ADLS & COPY INTO Command: 1-Day Interview Prep Plan\n\nThis focused 1-day study plan is designed for beginners to master the essential concepts of data loading into Snowflake from external stages (S3/ADLS) using the `COPY INTO` command, with a strong emphasis on preparing you to confidently explain these topics in a job interview.\n\n---\n\n### Overview\n\n**Topic:** Snowflake Data Loading from S3/ADLS & COPY INTO Command\n**Level:** Beginner\n**Time Budget:** 1 Day\n**Goal:** Prepare for a job interview by understanding and explaining Snowflake data loading concepts, specifically focusing on external stages (S3/ADLS), the COPY INTO command, file formats, and error handling.\n\n---\n\n### Day 1: Intensive Study & Talking Points Mastery\n\n#### Module 1: Snowflake Data Loading Fundamentals & Stages (2 Hours)\n\n*   **Description:** Understand the foundational concepts of data loading in Snowflake, including its architecture and the critical role of stages, with a focus on external stages like S3 and ADLS.\n*   **Sub-topics:**\n    *   Overview of Snowflake's architecture (separation of storage and compute, micro-partitions).\n    *   Why stages are essential for efficient bulk data loading into Snowflake.\n    *   Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage).\n    *   Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage.\n*   **Hands-on Practice (Conceptual):** Review Snowflake documentation examples for `CREATE STAGE` with S3/ADLS, focusing on the parameters for URL and `STORAGE_INTEGRATION`.\n*   **Key Talking Points for Interviews:**\n    *   \"Snowflake uses a unique architecture with separate storage and compute, and stages act as crucial landing zones for data before it enters tables.\"\n    *   \"External stages link Snowflake to your cloud storage (S3/ADLS), enabling direct data access. Security is managed through storage integrations and IAM roles, ensuring Snowflake can securely read from your buckets.\"\n\n#### Module 2: Mastering the COPY INTO Command (3 Hours)\n\n*   **Description:** Dive deep into the `COPY INTO` command, Snowflake's primary tool for bulk data ingestion, covering its basic syntax, file selection, and data transformation capabilities.\n*   **Sub-topics:**\n    *   Purpose and benefits of the `COPY INTO` command for high-performance bulk data loading.\n    *   Basic syntax of `COPY INTO <table> FROM @stage/path`.\n    *   Options for specifying files to load: `FILES` (explicit list) and `PATTERN` (regex matching).\n    *   Performing column selection and basic data transformations (e.g., reordering, casting) directly within the `COPY INTO` statement using a `SELECT` clause.\n    *   Brief mention of the `PURGE` option for automatic file deletion after successful load.\n*   **Hands-on Practice (Conceptual):** Mentally construct `COPY INTO` statements for different scenarios (e.g., loading all CSVs from a folder, loading specific JSON files, selecting specific columns).\n*   **Key Talking Points for Interviews:**\n    *   \"The `COPY INTO` command is Snowflake's workhorse for bulk data loading. It's highly optimized for performance and allows direct ingestion from staged files.\"\n    *   \"Beyond simple loading, `COPY INTO` offers flexibility to select specific files using patterns and even perform light transformations on columns during the load process, which is very powerful.\"\n\n#### Module 3: File Formats and Options (2.5 Hours)\n\n*   **Description:** Explore the various file formats supported by Snowflake's `COPY INTO` command and the crucial options available to correctly parse diverse data structures.\n*   **Sub-topics:**\n    *   Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML.\n    *   Key file format options for CSV: `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, `DATE_FORMAT`, `TIME_FORMAT`, `TIMESTAMP_FORMAT`.\n    *   Key file format options for JSON: `TYPE`, `STRIP_OUTER_ARRAY`.\n    *   The `MATCH_BY_COLUMN_NAME` option for handling schema evolution or column reordering.\n    *   Benefits of using named file formats for reusability and consistency.\n*   **Hands-on Practice (Conceptual):** Imagine different data file structures (e.g., CSV with pipe delimiter and header, JSON array of objects) and determine the appropriate `FILE_FORMAT` options.\n*   **Key Talking Points for Interviews:**\n    *   \"Snowflake's `COPY INTO` command is versatile, supporting a wide range of file formats like CSV, JSON, and Parquet.\"\n    *   \"Crucially, you can define specific file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`) to accurately parse your data. For semi-structured data like JSON, Snowflake automatically handles parsing into a `VARIANT` column.\"\n    *   \"Named file formats are a best practice for reusability and maintaining consistent loading configurations.\"\n\n#### Module 4: Robust Error Handling & Monitoring (1.5 Hours)\n\n*   **Description:** Learn how to effectively manage and troubleshoot errors during data loading using `COPY INTO`, including pre-validation and post-load monitoring tools.\n*   **Sub-topics:**\n    *   Importance of error handling in data loading pipelines.\n    *   Understanding `ON_ERROR` options: `ABORT_STATEMENT` (default), `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_num` (e.g., `SKIP_FILE_10`), `SKIP_FILE_num%`).\n    *   Using `VALIDATION_MODE` to perform a dry run and identify data errors without actually loading data.\n    *   Retrieving detailed error information from previous `COPY INTO` commands using the `VALIDATE` table function.\n    *",
+                  "thought": null,
+                  "thought_signature": "Co90AY89a19NWvMlpM-DknBKHEF8ZuCeYykqigm67bUHhWypWP-prMmqZLI-7DzatcL0DQFmv3-7ZJDtn1OgrfygOWOsLw4v9QN6eQUVkk9fjfvsdmgC8bJgAJinrtRAtVA5pi4aIpjkHpuAEKW6_fukqAwcSomU88H1nHVnI3M7XASi869zn96Rt2IaRX7d_GrHnSKOFgnOzSvL7OJ9oSJuMxp3qdJkF3MSrofcVo8iQAfRyyq1LAStbYL-9gFGHrnR9tm2eauoWMFkrvTnVH5s5suS9CsLQjswfFOflzH6xCI-A9LDNMGiP6ksiK8XUghGDvw5OnJ7dH2cGkTpW37irvnI7bZl_c4-LADfMJZyhBoDcF-JQoK2I3P6qSpmEroap23zBhqEAWr0VvtK9SpODXDSeh8ZKXnh9-iAS3Z0XyIr8x5hlH1bKq4byvZoSRlqsvLEUflUVmkF7u4hylOm0XIDL2Vjv-7aYhup0rP97JpU0RDOkSxm8-X09BSA4EccWXnyvpJKfTf2-lLoiiIC__2lbKIyGs1IdEhzOnh3TF1btvCvuEdMqifOw2mEed9VU1mHA5M1-GWLIW5v_Hc2hDFO7gSYIQwpQGGRPkX-788Y1OiYHhSzaGwoKIdGx7TtcldXl2AfHu6ltXa-PaXL12uVTQp8Mo0jrGB5Hg-ls3_UWYKoxyH3APOzbeNxIuSuAXqgfvsRhbga4K6jRFxcW2rhpksWTrOEWgqtCeP-I8xbV0IOHDen9w32-zp0_5nR8EdxjF2nfgijTCcjWaean1q_IN6tVwJddXB6rm43h9huiCwMG7iX9aW6PqSElnVo1A8W4Bz5iQGbX9U9TANg7s4pxZBs-kUm6rW5QpmKmih6OOzLUTyG5p92gszhquSeLQsEbSEthbUaLICjhaGAbozqKuIbPoWVHxSH7TZtkV_FaMcJVh8LFYef3GbpZbqKOCynKcSh9S6A2l46bWggcnW_RDcVvhQWPNp1XSk8nMnoKc3_bMFBsnT6uIX5TaEAXnvs6IgAmxSTq5tL_MULosqwI8SarsCdaYTDXPiIyirvSV2hgTlCBoA58NzPf7QOqaBprN2XuSmv5eLwLaGSJjrB-lLB7y7Ke9qpR-RgpYQs6tN5dgAi6DSC2Qd9YYsyxCicWVLeZleE5za006ATpzM3GybkZ4288Kh0Xi9WaeB965SkK9F5RGfn7QAYvNr1qhM8UKj2Q0G2Fijz_j58lWDDmcw836D3WZszjZNAdAftRM3kinLqehRUzo13Kilu_EHYoj4o0PT-IJ4ezxGt0wwYueJRGijQb2NqjI-2BX4WrzrrnPrFeIbokB87JhjhyTRkZg-ueLR8Cqoik0AL2T2o7CP72jBt9PeCvJfugFV9XJ7sn5iUyGzoJxTBG9PhFfw09ez_tLMeFU3Y3DY-c-31xAOwaCzHktUr8K1OEJW7mQhbA-MpDVZjQkq4C3ebq3JLWRiAQirWEShx2DOnNjmmLqsDVZAqL1yTCnoNJ857arXbb8KTRqesrJE991SCIeXkP1DuL7eNSixsXSrXv5Eo2oyQj7IsazR72_of8MDu7HQKCsWbLwFPzV8ZmEF9Ju8fjw2wnwjQ8J3xDPlc_meaUBFXllJr3ux-AwBgjE9QZAHNyM_JQmM2FH3-lmrKMaQIkFHvoATBWBIi6MmrfJM0WnyhtTeqRGK20lWL8VHVwAVj8YGWeAbJuArJTnyqeO35hq27v5mOp0ElEN-st095aG57HSCpPukouR9pr21B9IPCeXaWqnbYcBOvPPjSJo-XpMcu_Q1TuVDhHLrEW72DEYQADs_D-t9oYowMzBwxoXvb_1qJqpkpXIhnOBZ8DiTjwGlTa_hbRfsrrTWHx84yUG8BS8RZeUEBxEQ9V_M4w41_Zlcw5_bmI5no0PbIsN_UV3iK1rqSqSEuKnGocejBoQLbPJkwUacvVHzDhrCQJG5RICs_Ut9lO-d-a1o1ZxZxW9hzF9VU94FMVrD7pc8mR2IcCKnHvQjAs16M0rjTrwzsZR8BNzGXZfwuioOj7khDqYv5uyRBZGeuiGpNy8mG_LzK6ANIzk8OXHpIZUQAZ_Q0eWih89AApK27uurWl9Q4VrWc8rf7rakuIbL_O5i_gyLuKzQz26XTPgT1f1kkne3OSre9bgww5_jxgkG6yD-8FP564oKlRqL_nAbK2ko3Tg9AQZIKtSGScSLKo9BsU0RARlyaWolSP7kTY_SjazW5xjQLgFCCL7xmCcOgMERG10PrO7OJCeknkAJ2_kefAWltspZJJy5XoYAIBS1kI-_SOdw2r_tZZ0fU_XldJKOw45rWJjlepagEv5y_FZvkhGC7AvfT0GKKzXttqQAiOIqjEY2QTyF8QTwySP84QPunhVWOs6wH5-qGEgh8Uu2zYCmtd4_G8NqVuB8VJUEyByCidEjCrWeHcOLDy1iQi8lPjBd0RFaxGPqj9esrz3V-MhDV2RKcCbWXJ4XcCiGJT3OJvZvlN-nVR4kbxp-q2uVj3A2-c67ASDgoyrV2Ntf2Ep8Kxn07W_0lPiyDLnEPffOgh5XvDLz9R_ws1yaMKEY0hmNjKbnjedRnRiSHrVtbT9I2BhT8JFUPK1usP1UH06GQsHUItCQem_VyFN6wigt9WuRrheTBH2t1PdjYFF9HhfUDTfqcN0JbNjws-oOy4nDQGGBWNCt2B-3Put2bX0wf9-V8PjwQ3UUt3e3vBUMhx_iruCq6YGUfErb-OxI2jz61RvVNTVYe-QFd1XPNgyv1mAQUJo4_J64COqtsUhuxNslDtLfAbSzKkalRIwmLAJuxnOCmWW2N00PGnal9nu9TSIckqHkJ2oe48ft2Pt47eyuTsyFCdRQJZ0AzmP71ePL0ce4-5taiaq9TK_paH0QZzWxFIDfw_dza7puz-oxGBX1hO5PnotAwivs_e4afefyZ6DRdllGQcwzNmtV3PInWS906W3gvRKrjaVA0r2euyf0fZUtTnFSnhfnyh5lz6O66fYKEmLGUbE4NUkOv73UmuTEbhsWRV1n5EVFdiqOhyEs2YvTonFb0dHAqfwOMcu97P_CU97JQBnQ9UeFAYE5gfjPsNA1_Z7GYL2WKxAuFwd2fe_P22ucaJvD93rRt0lhdYuck-WiZ6WryhAnWK4zwaZI2J7j6-PeWrseUlBQ9wrTqYtcYJkKy0hW7bq4ttEmshNSU5hThHtCv40A9zAZvmuhhvyhplYtbRmDSfs47QzZ0b7G-Ji9HJaHEY4cTVIpQSllOG-x7LJzINBRPfRpEmo2-CtNUMB8-q62I96CZYCxZoXWh_Q3wUnWZDjQVKei2o2Lc3Mn22XzloNbQFrlUDsWJ1pOpytBOecyfJnKALE83Du68DwWLxOFXl21g-cSlO-sFsefINEOht6af9klm0DauRd_LxzrlkzkkNjGaOkhXInPVxfKc2nu7WCuZK_iHM9nFxyXnNj_9C-h1KWjQb7BLP8oOFdtg7r0MZq0dtAOAc-CCSycNRByT9iSWRr-MjolivxkwBSSO_aH93ONoBsBXTaVxtklh8X2P2oSQ-9JkcyBONFiD3o8SYwpNCligvZ8F0vae4hPDcL6S49hBCwEGp6BhlMBCylEmeu_Q7x3n3J0qD2RHx7XIMW5D0rwgtYhpwMN3HJufNeaIPStbxvzmEv8BdBaukseyq3yM_X6hiOiMT-VPt8uS5PszdziCbSETEDOZBBbTLiJp51Ex2PN-vG92unOfyKeis_UHPKms9l1SNMpeEIyynjAdWfJWVp21WIGW6XAubFw25ZQoUw8Ab6XWHciY295JBBOqz1-GcpW3KbLYPyeWm37BOO86CF0mifUM0RJWrRQvtQB95tCArkM6Gy5kvAwnlVHsSKr8Irg9YSqS6K0GBJFm4NLAkKMo4OjiTFLYOZJFcMRFzuC-bItEHjRxh4xtelfTWDTLoieinL6Gw9DYvucQVaxFNExSuCsKwIzay8BbBZ4UadjLiK7GOILM-eV3gt1636mjrPOFkLFncQhWLrZK6SphygGx4qI67-xnuNsJJZCuAXa5s5r92J7LWHy7CBfMfWnuHuFHrMAc05oHLW1Kxlr6PdKZeFMei75-wJu1_hY0Wfo5uWYX-boPx39U1nzBkRXNyTMjsNE20zVHVVZtATcLwceFl8SPpeo85vkjJGdt1e0CaDiCY-ybh5INOJvTd6HsWcZGjP2lLkNlhGFNq1U1Dt7Ia50irCMBcraPnh32vmCnhnQ48E-jIsusHZ-zyvcdX-J1FRB0M5c4FEO0jve4Q3yLi3Rhh2c77dCExH8C9ei8wSMQYvBf6gL38q93ORroLuZDI58Of1d6Qd4aOgbrJdwKu7JYn7P46vBrkaT-lT4gRPBZbKKRoAPiWYl2XJ-ulWc5gCipm2RfO0xxvXZp7AR_nbB25O_pCvQXAa6nvsJ1GcGQ6hoNdUpexukiZ21jk2rFefXQ6tYuHNLLi86pur5HRrKJ-CHiJw7rkxfy5N2brqsDAGkWqc983QUfIv4iSDncVP8F43zKaBwTComRHf3DW2hyyxdVHQwTb4kDqtTDks9A3DLQPrlgd5SIWXCnSj7LkSgt2klZXQtL_B_qlMH0BiUihcVWd_HMuhoZOhOKlHn5WHJpu7refozM8J-EFER2xEIfXwl8Ezwq6_feBCJfWHqyJbeeHJTSltraeFARk9xC2pkUF-Uni2oSF1Liwuzk-lG5kHXA6dY-qEqigze2kTlBq1yFa1tjFT8BijNgkHzpRSYBtyEDOqleuBYzTPQmbPVZigQ7SUxfbr9dbukRd92fBraow_OMjl1iLTyGkUIdNeOvJNy6YCqUsuTkdZWVzz4reARKAqwOnOPsUjZMWSsJL5lIsvuwo_q3xIeAwmNXU4PrXmqnzvfD5ZR3xs2HhdmzSyC75r1Uyg3-_wFTwmcS-7iQ6qeVQSLAiPjzXU1YQh8x-gcbO4uZeazuKQfsoGNbqyRTxrEGWlmXHWXGH1t_sfBqopGZYREUiKbkt9HgziWJhbHxcO3CvuXqND9LNhCzH4kRTY6MvE5bGWeFo5m4O_d8mqItqcxtNarbSYdUmkK7-W9mlIgOavpcXD61QqsdAp6hDyJoXT2xO4oRCNguLPvRoKh7IGuXvAxEKZPPf2YPNIjw5zcLcrEDYRRFBCB169oOFXyc0V1TS-mppnhet0r0RxXjPUjOanYtK15wleigO2RD7Lorzsj9m3CoYEsI1VQ_OUgrfM7t8kUXkTVT3BiSVvgYmbDNflSNewMhSjgqa6X3C-_znWQ0LY65uq1BhSli6pU7q6Q7yvaxmwjxuCZWqBU8y3fnFRt3Af51IWkDHXt3hFCP3l6Gd2D7BLr6ez5BzpC-VfIVTO-FDVHfwhLvRlvjLbZeRqPyXxu_2PQCB5ybJoFqtGmRuqMcska4TJoB0DYfu1tIKd04f0RJ4bXvIUZh7-j_kiyPSL2DZ4keOrD8nWg-yK9zzgNmb4TRpq-2_w-WADMsciU4N3aJ-nHp95oUdsb0u15qvVc9Y2mrk682XVox__emtgTGF-c5ODmrUlYUUJkcENz8kOukFBuMMsEwDV9AcKqKikrD_hLzJgYCUJ2LLxzqpQX46pQrucf64c4mNMVNlvKQTfcgd_kNYoANc9zCQrDvuG4OI0B0EVXQmcHcwEW38vPjPEPJCqOmJh89Bmefmjf1JL_SS_wg7dlZb2nDi8z9dgyfdw1bmEbFkWptPbx0nEHflsa3aQT5uFdqflnmIGryaggQH4RlVLP1RWXStFdzMINNfU8q2TXjEp1-khL_1xCAwYBjexLQREGcZeZJPCiSEk8uK8FUGdrMOq0pDiXNVuDLfQW7vlygsSuM1IMVdrSYBM5T1Q-j1JDO1BW7D8fqi0QnyYXa3cLeZloCt0TM9pCFK3BQ8i7qJ70HwTyKbER_AUq00Uan_TiPj4jsl47gJ_LQQaW41e3LNsvwgIeUt8oRlUc6JBzmnduWMszCnJWGlYwZ0IQKFwzQ03YXcMYdZdC-dmov7l1qeH0vA8sl53zIOB6AjQXyShLmGIF8WfifrpvrCVScPMml0nUh_SEij8sBvOIJ8ZEbuAF6a1rkT_-SFSL2hX_eITJDBpneWdMCNWzEF7Ynx7LFD_foF7oQpmBvmBDVnzVgCz_zLvGdDgz7glbfa6_2FVkX9_Kg_HM6SFsferLuXXMi_mAXOnv0HoytOUmbJ9enSW8S6Ywi4quqgJeGEdp43DxYjdizm9p-o0H35FLwhxxjZDRt9vBUOHKIOAm0piMZd_Efl5nxa958O2WvXUISSsraf1QgXvgCIxjYqPvVcJOMhwboqhsJnmI7LqxcX7drH7BAZr_UF9NfqmV3wSwM90-f14thizGIuapFI9T5KCuYVRSnPd1NnaWEYEucnER-7xe5CsmFfWqvGWOl_yFcvPxoA9YZDI0UGMivbuxSxzkq5oEMvVA04f-puGy04XJc0GwwulFb8PoKM6b8dZ9PS0qDHdHLuFAp1CFBw_-5rzWGOboNX5M6P154qen3kvTISb76EcKmAxIruNL123zRS79Nf7rjcT9ncdTYUt2zBDba6rez3e58XCHbKWCWA2odvgxi1gbluvyy39iJncaPkWlCXPK41wVqq9VWRPfazQK632diuy1ALCnMZhDeHpbS_5mnVy_h1OwKTNXoMOF4oi1G3YihfSSFDJyOz0RPks6pb-6FTOx1W968uo3KrD2yhF8w06qkckEus8Lj8-vXNZjoaqpWOBQGt3eYsld8ZTznW1CvmONrGupt5oyJWKXed_pi3meuy3I6dzUy2l4Nhon1bZGlRHLS0lEUPOJtsCQ6T9CzEcByZKCPbyhB_YC8rpvwBdVgu2Vaktl_lSPjTQrgUCHYBdt8K6vmvkeIb8AHZQdx5KQX38VHU4fsJAeUttOQSfEJ6474_3TlhegpJux5MpS4i-_ooClpxMvImeTvmia4qyBOQmwJlYQntMHhnVgVoIcwF666N8eNuBVGormrALmedqpr3Si1iP17ztPOPF3qM_OUWDdaQo_uR6Ji2qPSlb7eF0j-zfmL3ZvuiC1Z7RXjFyhRVGsiTt_1T8VvzuF3dmO-htlrKJlxA_uqUylqu6YiaLHRBKNGOFE8ZbeoBof56skky5LBxQeBriLYXT0ipl5yzsxNRJJ1cqr1zN_ECwrsSuqrGL7Ri7UAhvkZ2sUwiiPN3AXzCdRW15uuSjX0tPWXaTagdVyznY3l7uOyPJ0J5HMImjJ61g4nwqbJBDX41WVVlKRNViZuc4s_FwmCN5q3eEfy6AaeBAN94ltE1BNKAygLVANT3zXA8fcuBOD6wg1BDR1jJQmO3iqMViBGHhGS8RQgYhvm-rFMhdandM9B6vaBr8tSFhYzxMrj8GE5ZIiW9r3zgEs5XUZwUm0PvynVGqKWJxxRrq9WoydH9dt3bEytaTiuXT0ZbvBaCEMBDVMmXl25Yi2dRaOE3AIS91A10FkKXNeUfL5AS4bA9NBSrpsrpmQBbO2rd7HbyLU6GwkhYA6iqKVCU9uT4UxttPf9ROaBiJxzAH_d7wJHrM3po0Z1DkTJDdg0l7eXtHcyXOjejffMaM_rZ_AfgD8UA9ZjUPRCNzKn9dZH3e30cfOwNXIZzNqcqidGLZ8yzkNPfRRKDjxd08xO4vl3hTmU16-CYU4zlzN_myhQA97Ia2QAuTS6HEHMitv8wbS9GgkA4yesyyC0t5iqOoFNuCJvKp-3A9U3FKPtP8Rl1v7Tl-2Gl0jxDpY15FtDoFPUI2Z1IJ-OLTig0wZSDBpcW7L-Nawe4IhmoIkFFws-oCQZ8XmIz9Pt4qr5Eklr4-ZLwLDete5rkrTK5eb8tkjAH1-PkcmuLwA1l7GqCOvLnEDD00xZUEmY7Dc4uR7zjv8vhwXocpQS_VU6o7LOMbjyXT9bEejts5A0UO6PvnVniLLauW48CjzFxDWZ5A-EjQqJRwOnqiGDwdJLLiewmS8Ov9cIInbzbU6k-cs0Ivk0JK3n0bVlpuoFpYNrGu3v7Puny0O7DW-s4yCwQoJnLt6BBci2nYclTZn1YJJK2h5WSBMN9mV4ZscMHfjLzZ-u-V3qTVFw4f9-38LOzPF1QkyaLF4GB2BTm4tGlifnXbD_lqY8MLZALYE66OKTbB3t5yAzOWKNE-JSoLcNiAVVYZErsJtiLG5U314yXwBEjiVYgDegbiYPAkt_Z2_phl9G8jZnqn27MaqoSwCVoa5rVGLtjAm3gstDCs7I5tmmF6X_OMQLy5GdfhUwIEFO2C6puj670Ah7An3JA09AvNIKD2SZqty4WQK_xpYUg3MO65Wmz_C99Om6DgBMnusIO2lcv4DXO6lM1OG38sxcyN7eB5-npCQWFmTrNF66FC7xa4l7OPVx5HTFrKCRiHHOwie30MluDCFTR79lsWXGn78UzpfsMkpTZhfM6bXzkP4SAkAwQMk9GeB6WaLnAXKHUnIArr5RoTl-kwWP1vsmxf6nBedKszATlL-euU6Ey-Wyy2YeRkwLbz87PcHPDmj0ArA3UuO7JI3lpys2MbW6QjGxOUum0KiRbLlUb0eYRSgk_8XEl__s9Vua4zhV2eGVEveHEoav4sbJOzn6lWufaC-PSL7YM4fErfmMU1qcFJeINeMm8QHyQhTCEq4JEPg5snPzIXeEQI-t7NuwQnpw2Gcy_o3QkuNMIynDEn74InP_dSp5eSQlES4r36KIAdeeWr4oBLO1NShqonieso5VQrIcmXgxE1YZ2TiYoqXLMy0TJsEbZzKrJ07y1voyrIc7U9TZ5tc_51Tv3EVvcSpGEv_ArasaWFX6Hkvl3z_ZHnoyW1bOlidtQyNn4zQAh8HJy0Kfl8H7mv1s0vlTIsJx79MqHGsh05BoXDfGmt39H_uyw0H8Fnun86cPf2H99XPpWMqNdB-gD2CMrKwXxoKKz19K9QSh-qCMMN0c2D08aFeXp2VoSOvuh123c85-VpOHqqdXY_ElC6ePVvOrCBxT06bl8PamalnAZ4_KzmMaH5cjmvnfLNrClU7Fl9jYSZG7x69pnl4JvCqfjdLraEp81DbX-zIbiIFrLTZlj0hOUn7gR0NReafxFm9HL8c4EHGnjFcX_9cOhwhZBFgbo8mwr32ZVhkx5ZPzmCpYwlHTXtBJPMx7f792SlJTIZ8focVro5m_2bCBGJZGIiJZ9hS2S1Z3TVtNna8eur81nzMWLfEAi6Dbjmfrjg2Dq1WdtpQw-8Q2tkjoSQLiREFGqpi1AI9SHsLfdMk6NEXxEcDPr-8siKqWNBAoZXuRmm9bilPR_oQ9IegE6gUqhLOuYtVCKAkKjVj0oKopQa8wAfV6tSzByirbJfFsZU5bJWOatnXcr2leAGhVJX1FvZssG1unukhZbfj5cmXIGwOYi3NCpevseiP88-SIzF2UxdYtWl7STOdnYVzI4HC0FdxnjqQ1sXqA83LuOPV68_yZEXVL9TJBZTe78NJcDvOunj046OEizoXq3o_L1YVH101YvJdvPWmUy3ymE9N0ksdPY1dbC5MFXlPWbvHL8fVELuS8-soM-Eoqd3DM3YofMphivUZ7aQ6udZUhHTdcCWcKUAevSjOYqC8H0IKkYMbBeSxzBRg2jE8VHxjNBjALtZg1gHD9fFXNPLbYcmkWzq4DGbOdDMsqAjzh1E1V1n07B8Qgs9lsK-gJcAa0-yCe_-0HuW4ERMU9kO3wUQYOiVBOoDNj7SLQMkpjGh64dpUIQyzWmgIKgQRI6mEuylq3DtazXK4mhCw9zavta-VE6OIFC_c1pgUgsQZOuWxVd8rUFvXQGHpefqi-DF5PtiPofOVI53Fy0e5Blqr0XR5bW4LFFt-QBaR79zdZd1sYLl2hkxHZlVRg1C9Xo3tWJ10PiIQ6E_mOHD46RYFr-RKkzbh0NgkKVt2cCIW5QEToZZQEUSkpTiArrbIyCUGj9AThxe25TiHB9w7ZwsYtTtVolZ0nRezqXszMBZNBVGtf0phjcNH8MjLheiTWDN-px0yOET9lLI9D81eq5sOGuCr7oPatQlKHXqLN0zD51fI3PHT5tPWHDDpDnMX0auXzdP5WbgpkhM7TJQCgDuHgj_5G1afFlcG8QZ3TD2g4SazFYq5eq7inH4G_AjAgFJ7sg3dUoTlefH42yLN4QKuj3vn7p_mzK9mYDg0IXVJ_2Xh7HARBYYl93mkHPCB-c35mfLS2XEsFzwCTLCcOK-s7L8eRLNDwF6Ajo0_GhcsO8vDqyASoOYP_cCMUqDYXtmZzYbnRKny_NVSllXs881QLQ1_QqFb67G1rB2t6Gq95RzY6Dym_-HVgSbP6GXq414zgcG_pAULOPwHvV2AYbaEUEEcj3Zh5WyyIb2tObCreR_hNhqAcmVlO8YwLGLSM5VxXv_lGvpRLtaQLKZ5osyQBcnGxGKakCgixP7Axwqr-yPhBD-0nSBqfGpXsu0kWuhGQyHWdf0znDXgj4qaWuQ-p6D1TWzjxCjyF-RbMUeRG1JbVGjM1GrTFL9peR0UWGS6tg9blwL5dMat-IVRbyMcAkTcPYTEyxfT0woMOEddE3DYtIokqANQ3EF6Iqg19qPEi1UNcPDhprEArgbWht9F4w-zIxZ8p4O_e2UnD1TP8zo3X6vx7NA6yVPsLuKmcn1PzKetU-IZjfu8tPVv6tvDC9g1CV9ctnMak4dZz4snSUwWZPkc8WVpznG_RDDFC0h7idyfU9k7x4wu_-dOl087IpI4SFVg8Aa4axx4i5mP6dAkQ3ISatkFSJwyvq_PN3ZrhKKBcMxWgQAx5vRLkdr1FlE2-9RL6bRqLmjl2LmGPQSLjJMD3QLXqH8fWhIg9adxVtWfxGcM_56Op5K-YU-xrW27_bMW9w0630hXoAzBuXjLBHV-30mR_JYovf2K0TRFHd62hf2NIqn0n35Gw8tRDsWLJ9l1ytJxExc_5i5sCu4jqDswOo4qiuAx0M5RC6bJH-Sfb4IBp0m9RWaS6rkR4DrWuMHoVJkcltLZHEhrKlSkhLcF7whGhR2hoPb77-O77NpK3cibtUN-ZMqfJxhp-c0hRDZ9_Yx2j4cY1Dm0v2eXNHggKeyMQtY1f3RVW5iljcJ7GbfnbleFjffVBffl1JAKcuMBf2CCnC6IX2XYZy4Re3LcCHmx1BhzkJXpY651vrB0dkow_Leu8cr9CQLaD7D1KpylY_EPMHCq9kclmeSIPCZGBDqSWZfCTn_dvmxNjdo4VHWd6taVHUST3PXmtpT2uyP-eEvyP7ytPZ5xOgSgP-xsoHVPfBuHm0-XywQHZLlhsv-yGEKqGbeegdBn4mS0kfswv0jYaXdHFXHkSozdVwLwBN97AMZgPwS-G58vhMnQBW3t43S7gfDx2cLfreQel4uccOb-qlzH2jBAfzvPx-sqQX_qXcAAMBrt3gDazRh609J5XPLehRiURmv2K2W5ix_M4AnyTdzF9XRcUruDrHJsUE3g-i4cXcyyG1sbRp3ETLMKZSCMmkQX8TAMcRGRN0uPZO9XO9N2goYBsFeysIjm-Yqbad2Y-GNTS6bb7STjs6_cPw8chH9EhFn8mjH-hIZCvxcCE4QaMRGNANTNuMEa6G6E5I5yc58I1fWhq7x8cYZWznRsBmx6HAx9RNDfAMB2qL4ld_MP7Yq2WqLhWcJT-8cDsaUoPz2fWwzkVcMdrcFTx1GMKMFGt_fe49HW7f0ULjy0LKtJqLgDWvZMItBQe2Mk-rNBLCasPIuNue4EHXi-7PklGjDGmWmXUdnFyVIlXB7PXLdTJUq7V9Lg-IHMmDyqnSbxHkhBhA99LcHzv7ZDs4aj2XMdDinknioHCaz5QRbFfLWxzUL3CDQKuNS2Y57DITL9Mo4A-g9RQEYhbOjdrZLsYrJfm96zHutIx2S27_jmNRmIdoqsSan286AOu8pCE0qnYQGp6YhWo9l7PSfTBdyNDm6Z8SjTpjenngSIDRyrCxoYT1y45ug8XJWYO0KNSuO3jbvEtTabruortcnaFOYTngR12vG82Eg2Eg7shXbqnJK98q3l8TJ1vCQ-3PT6ZHSJejkGMnO-ElnlSUTYUVssjuozYzXjeYvtVNBCs-4yQFxe1GyOxISqKkl1PtjwqJf-2tT-bd0dDPJgdHswUhCIrqSIeThr3yrHtPZZS_ea3yAXMW9eDpj5W_MGg5KEYOQrpK9QFWO0tCANimmaNKpXA21lwvAqaJZhNiISF4h40Sy0giCjS0AkruC513pyx5xvOv1msxKzpd9iOuqRDKGjcvjGm-SMSBaT0I9sHpSTEnNEvnObkhWPmweeeDrbEvUkV36SYE0wTOgzoO6TuSSa5f1BxJhHuJp2Wyp5AcCDnstrWwuylTjmRt2juFzjnxg7TwuDyxKbYmESCvzzQxw3zYW4-6W192XYxgVGyjItJI0ufYzgUO73bXNWpFZWCJW0uT-WL13--tzhCc8LZQb3ACBddWledTU9v--kTTUmPstVMvirevpbatIfBDIuEdg9rPMTKYciqnlb0qsJzHATmflKQXaY_MX_F59vpC5NapXvHeRVOVBzMNJyIUV_jTXLZjwMaJO2qQ7rH8rU_zO2jhmv8zR6kSkYQFiW_9Ri9YR5jEkZ2NWCcMz2o-7EgL_e6yvKfvItHwJMNWXjPN70hJHc2uRghEmw4RFSq4K-RdRdSCgVi_LESS7zLo5E7bt69f7LmxyjwdP_czPQhOcUhwj3ZJNjBnFmn17rbiTLyK_M11vhOkhElvqX5g1wc4flZx_j7CfCcSnV_6-LcaVd0rPIcogIZXpCloQmSsgvusK7iu6Qiz11xJEHUpWV1kmwZvJuxyYqQsIr5gHKOiriFrgkkbiXDGK2qzB2uE-WpcW83cs2_cz3omvZtDy8bFPqH_aU63-F97QbSiKj0rVem8oDbuwpP1mOAo3mnKtVrVY8Ue_f9vZNxmTfMjC2XptSFq0B5lt72uVtRnzlBteh5giv4Nhk5bTJqz-FdSQz6Bq0n_nq-c73f4o80Rk3Dl6MK7Srk7MSCpCbolYD9I6jBFfpRAYVyF5ZAUNDk6eU86LIbuTmzoYeYmzvB4ksXUBMfCamzcSfWJ_w-JrEhy0SsU00n11N95GdlkHny6MVLdHg4Dmr-Bu5UW4qLeFcEHafsA4IXNbUW2PNW-uCmq5wZpgPan1mrFNw2aAKa6ptWFVygxwoW-LEAUvSPG3l6egOCq4gdZ0FF5o2aQ6BobI40Ao-1tmnOdqyUwc3iXUhVVroKyftqnvwT9UPFLWfpchtmHwcUBTtH0ADS-D-BvXLLYYZdwabb5Pgv7v9Q1sKjP6SivlVaDojnCZCCxW1kI9pFWGwVn5WnhlP4OG7srVWVGNJaQE9KAjoOyTiqMwHm5Oa4v_CHUSUTPDaGOB3B7SJ0-RpaZOn-8D1NYGOVKJNcEsK1m3z83Uie6IDZ2Nqjmv4PpmN62icv2vv_cV4QdD9HVjqqLqhxfK4DNnmvlMrh2FSrkLUkyGXRNDsWJwrYbZDg1ev-bXmJQm4q3NKS_ODyPmg-LYjEJ204aEVc4PSYPfbhGq_4AdrXHIjZVD10qqgHMDDH654HPHRXdmi3ms7wdCWR26G7nFU5wARfuCsmbU9bJBBK2SFHhmEyuUDGz2dpkeCi1hpBy0bf_7xV3NfEWx_MdM2QlIMI8_ZRUVcr3m5jtKc2rWCA3RRHmqtx3VPbJgT1X7imakSCVM8hEii2GsZw2wkrt66LDtOcRtR2_WwcdPHjqwilaedEUaWo2TEVAWsOvOh7puInq7ighH-zbAVjcJWXpU284IZO9do-PH3Kmg35L9kVLBBySPZ4AIZrhYUAHWSWbhKsgTbHuoUL_SHmOb1y6btCDtgH365rfSNjlN9D9svFIJrGyw8p2bLy-ggYud0rDvjvJbXoDmsH27-QEMmobbc_IsCmZ_9uuLsm6GlI5qXO6GGHxDC7hzqTPxBTuReCD_36tauL_atbBGG3genYhLehjGYi2QyRZFGi6bpwM2YqWUKU3qw8f4fJqTC9NrjzR-OVlRGJkeKW_gYe90PsVDMh8r767CXrG-ST3rjbhoiAZzyyJK684kVCOhIdFRIDKEtVLWNRzOb-HINYrBfM8kvwRRPc1Bb4RMgU8221wOKHArN-XViwtYV2ZvmZ70C0jBfuTYbABm02iYwE3TWIhyMYo62FgvNctlQugi16Q41k3XCceERjzpxOlAuA9ftGTx7aibFprAF2o_9ORt9Qelh2x5Jhvq0vkRiDwQeU6cXKWTe_KT1HOxqCys9CP8wiAaGk2C3YlMCpzKMVo9tju31Qkf9AEivFIFk_XvTKoQwjcB9oraM4Yh6DnuKYXzxcfonbHCNi_cdjnm47RzfcLSmMdCjlNfmjzPvPZOHpKEfUTkQjd4-_A7jGNoN1tSEqIiG6CG8XQW2reEd3oA4xco_9QLyCIg_3NXKlquG-VkbAnK7DvECysMpNvDZO93-ZxJaJnKcwgI_pMFpWoQan0i4Gi-MEFt6V7cTSzAnpOuenSPnsAxwfaqUkKzj1nqsMxU1f2h0SB5fIfhHEq5jybjUGfS5WyJfAoONH6Opd2IHfyn1S09pJR979yBCV0DtgOaAzz3RlqAYxVXAg3IPfgJI467jIwp2va7gcZrS9-4lyos8Kq5P8LvPEIpKltlzAcKlt607iFnVGOMOoNEhZjnYtZW3jS49M8fKIbxqfdJqVxXIIeJczgX0Fs1V9RDxcDsaOBpR9xGkn5nuVPuxkjBqxKjt-R3sBtHGlno6WMTrW1pRAAguscTlqN7I5zJZdb753uT0G1BwoSY5y3Po_k2_crvn0pZa0mYjupuzQSZOViPf2W1ZUVdDpIDXJWeKhB0O_MJUd5z1LqF7eMTtAXalTPMlp1T-r5b49aL_gGNM6H7IZWT2htpH7FCMO2JFDA4jJBpzxUnbY2ErF4gourMVNpwlYaRkC4CTF8y74Hd_4Dzj2Pc0D6bHJAt7Y53NEXJtOOPM29j2r0McPs-jDuM0vgnqmsh-oJB_CXECH934hAC5C0lNlXt9vx20vSw6Le4UwhyKVXZJBRd7IsadTbEqmJFXAMrVsefowT0cRR8kKNvNjP-1s0KbHO2RSttBCPzhoyyR6y6whD9F5V5-mXiy8uKQttbzVLwM7BmDZSnhzYzAkryeaeee2m46-3MP9j3OZ79amP7XJUrD2BGE2ygCd0f9Kt46o0MIVj6TPLxYHEJVqwGeN8VAYOvDJUftWSDpXqAaHJiT5DVIzo-ypOzpZV6Q9F7-sC_e4XZdJWH4RmK3a0ioMmLLXUM8r3lpaxQVp4VteZvOxiVFTOKaO0sBQxhyaKKLaTkprynxgzdRzaxcgn4P-xrAV3NnLLuwc4dKI66eQfbS5RtWpVrXUl7lYCqzAOtU92vLKdX7gTNHmSxRxfNmYGogHaCvItAJCYjAfiNDSDFxVbxIEmK0Tsdxqn42fkAO14aE_c-MmY_3ov-aKW38w_IXGjlqsQdIOdiPGvYRhaMbs1xAVnOhVd3OWbuT1RR10i4YbUdAyrRtyzztW_aCiFzKYfeI4BetUh04MuZ6GG4BNsR3MIVrS5NF0nPvsfP4cMbcpxWaVSLuMa1s-28TKuqPkOm1Rk4GZv7yfUpQtGlcWXnOBc-_J9NxoYySKstu8DAyCDRZzUc-Xerl9CSXyTEYsEwdmgJbOCkZzqjRebJdTdVuywj2OVrGUdBPsdmlG0GUy6hMQw8n9Tcsg1QSL6WQMIwh1FvnKyBcgArD4ne2Riy-YAvJkA-fTYUvTRW5YtjzfIOuOfLvFlGjxR8LyD_Te4hotzjZoUhopFtdytIYcFVQr5y2SbvRpbauCcvj7URYl1bxTF67xHE4jx5PYwianSY4d3ny-zxERWY4EltHivDpL1qGGSkdC7utRT3-zR9iGLGUBUyHec6k0_riqZ3xm6dgVbKQwTMRDT3V1bMghzxnYw0DcnRHinV4eQz7PlsCS75FoppPif0qTBKfKBrYgot9dCeDwAgdhzfrRSVoqOuNu1720fVVjs5U7ORsBJ06r01PdaOwnNtdT2iyIkxeT6GK2anmcdEENHWVpVkoP1yjHH8931BycWkf2FbPUvGagDRh_3_xN-gJNXUhxQK0f5ZXj7GJFGBLn-9mIu18VFdLvZeaOd4Fb6sInn394HnPPdYvYq3n9C1Et6f4Ss30VnnQWqCoSaQZHn0QpPHvnaTS8h3UWVSbwCLi3COMsz0vpnuMKvx2e1_Rz6mg0TVmHh72B2kAroTHSErzzjXSWDQfcq5sAsfftryXZXNwea1j8514HLVXonegLAzZlY8wcg7am6DzAv6aqK8s5u11t3tzuZMSDaTPQy7yinkCgj7xS2SnfSh1L9xwar_jAO4lYMgMamVfVD-6sVwIt3pNd-LGi_f9fbX4LSylOYDr66UurCAWFb3bI42F9du-dWwJby8u-exqmnH7-l9jE7QlLQaraeF53BMtxtMUylMaJzTgtmwPCa8KFpfO_BW0qp4MO-SiomPn_GYQvGmwJ3MEyHRFgRN8Dqy29_GHhbIcE1Nt4IiWp5eS2TSiVYd6X4Ia-1gpcqTxt8yHAxy1Pd1VcMJhPQ66fV07AJWuGkSMx7CqZitYDsF5RQ-pl-nvMSD63OoEyXga9ZxUByMYBQtb7cIroR9xuZM4_uWNrs75HqUQDd5UInQ3UHLyPmdUqQkn76Y12p8cQUJKePUaW4cKEm9F-seCiN8LQoE433C4CMTRNa1clTSy1rutSKYPZyEyD5vBDiiQoCs7G3x7p-sV38N3PsRa6gNxZOnoc2YNFT_IgFX8dN719pzqaBsLxgwvmsREOCbFjfjFYjW8GbX7kbLT09RDrb-T5lG9r74nO8XpYtWiInEZk9HHIuwyfsqRlQ0W28TLnhFFv_pgbsDpoIviv0-EdZh3rhmW_GObWZ6ZMbzQicAQgcGUebqae4xxKRdz3_T6twXH3ZdPC3stB4V-nPEOs9yb7XhtgNtMFOaYaE_2gKXA-uhKypLx-8K7gr3UHTeQxGUL530OCjCngcovD4Hqx68J_1Elg8ohJw8IUZ4OOJr0liAP-CnZfnfBUuJjqd9FwM2ibDzvaEx8zOQyD5I1yXCHxNdPcRdD6KfQwVYW-U6QUBFAtDwnpLyOIpHh9oBz3wAVOs8CnEizRDc_Wg4D0I1h1KcouQdziH3ricPeCv6_L91vRfLVK_SWaS6HIi2eXSGc78k8unEoP7xqDi_KyIfn9ppEb9YwZiwnykHW--gXG0S41dAIBP8yy4Nw88RjP8sygShfcoAJ3PyW6t4hjU40QyIlQZf8uRtmE77HhwF6Ys-qcNMJPt-QqPenZZgdaammvW2TXCCuEfZjwRlSTINDIhUX9ao5ttRChcoVv7E3AR437XIWUGAU3w_cwb3rKbVarIhPn5gUoZ3HGzzpBHzX38omJpydvN9SKGW4krGcys3yzPEh6Tq-_DfxlrMGMAJHFnwq_NO2utNz7oE0KsSxfUa1CU4gXaJzPIloLYqKOba10PAss0eLlNANHf2VKhAohpb_p2ZLYxGQFuZqTnULqB_9Sdw-VjNWYeX4eQNGGWcHQ1a62lFhDgG1xBxBic23vMTPJ7zkVOn-H97eyRp4GfJ-LmV9ZBKTpgQmNgOvTMmUncauyz3wt80m5Kc4BrCyuY1XSIWsosb6eelqt4qdbzMHNqiJOO7_a7WHYoMVceiUX0GCMSNe0x0xcQjPOp0k-fWDVgludbxyT59vGMeF_s3biUkR6NxGdww8ISZ9GmGKbo3_dmL7CHzDrTmcPzaC5fg69OIHzRAIv6oPIYEDD99QQf7hnJtW_mS3kWnU0iYOK3ooRY2GqO40Rt8VdivXNBZ-nNXkB3B9jfWvIg7oIDwo_HLG-42akwlAV4U0Fv9-mpY6RpCK5_BfOv8u6xyAqdBvfGAjf7FYJQDxkbNMSiXbldb-gqcuEctslo5jwn665RaUEBdFHcdmqWCR1CC4-01hTmlKCf4d25greY5H9hubr2dd13ZthamjtkerabiI2EgsYfoTTsPjuZOUsmUFJbpRkT-t7uyWYzWFOvW9S4SwOVO6I95NaKHpwahppo16-s9IGmXu_UgKJAuqIceVvkXaOuNlto04jXP9vjyaf3kMScrWRdSqv5e-S9xzSb5Q_7Hot1Bkz5iW4XfqQmFKYRFkSU8k1BO2TMyjEeLf0Z1Cly3TaZm66259eKIJZyeOJ4JbyLq2293JhzP2f1foT1DmHb8V3UWVl8CbvPov0h7IFJBkl856G6Hk8Ss1LXSYfxnD0ERLJsdZVMqwwD87NMU58Hw_7ut_sjVzcBsmPI040Tt1P2xeA3qoIgR4YZ0W-ebK_Z1KtVbvl-t4zREDkhxwAcTxl24vVOhlq8bOZHIcTElTGrba_F1-MlEVE2_EFNncu16aL_n73--AVmxIhrUmZ4bXSOwP5G-bc6ihstzmM63BVHqtSy-5tT5FDpr41tuA1xl0mRjqrcxzxNFbYDHgItpaKL_H5ChZxp-Dd5acrCTnQdKKKm1luDY4yKaI05GLRN45LZap1Hws1W1lag3bGv1w53ZTrm8xhsjzWUXqTSNrerWoqRT9sLrILU0JPv4g7e0XZlBNMIcoWt9YdtFRU69MADoxIzCLJg5l3RnA4ZSCkoma09hgB-3xky3H16rcFX6w2ptkMgBATw701eCus9EffvwsbU-fedAqzccdRrJY6LDiSMqSa0cNlcgR1YQ4OILgBD2lqXn4Aa8c9DEF5H6Ih2P-jcCWTMSHD4ysw5SfJPa8dLlsu6-kBcIQUUQwQLYV6PhBmHs7vG3J1uqseMQ7rx1eClF5U_I6gja-0aO8TMVuB5hfKpZaMdRDi_37fmjSDEQA4Ss33_WLZt7GLK8gyGtUUPwH7hGhpqGWjwOfPLS1kkadKxFjEPHqh_IxQOm-7YRHcPeg9RhKFiRyiyn5T5GXhXgaW0whmKeeyylaHMAhhh5ez99mqWI0q9vWG2XAhnWCF7G06DrZHOCRSSd50bEu__c67Q4vH4GtMYTZjVioy6Xp6r-0JWApGcut6Yn1Jq9zkraib1BHB5CRcQ_RmWAG2Yk5K7szJFWgj0RmhnK0zsqBtMCu9878ADt84Ul-dA56EflFnVTcP0ILag_2oslYaybNKftkkxlsGhGep2WZ83uOvGzuWqkTp99ul4yc9PnlayjOqYFh9FHuJCPda38Z2egBvmRtwkvDU7PsGmRPYZ2qpJF_L3EmqRn5vXyJgy4qLMNCfpsFOAV263cStj4bOLfkfIWPNM_JFxWL9gBrtSYo346hOMzZyDm8fNmHpoWlt2U09aYRSZ-OWGJWraI1DCLF8Hm1yz_LN2pddp6b1Vgo0GsXmfkqU7udN1y4lhmbWQYd9FC1Cvck3vHavzEVPqpS-hM4S0iEN7Bw2NBLQPL0lKWGoqSUZK4J7hPMFtUZb7th-_wFhKb6DVNTe7KUOj_CMbG6L2C37mi6rJge5zLwsO0PM0sL3KDu_IZ_ODpur-k0qxXIK1onEpT9riNBDl5bwKvSuI31VRxbjdKUNqJkCylG_45h7zcMVnZ-6TiLHfxTRGCOHvA-Bmb2dGLnp1rsH_FRrjRmvT6ZuwCPQICDkUaF8-oDCqmFO83pVHyxmWW_yBw4Zn8gkU-3g1PMa7mi0ew1UkfuhAgYE-SpQKWgks0dlaRp9fvZgrzAlv20YDLb4bUIRGSkrS5VRSbDLK469T-pV4IYwhHQVNqsu5IWsmLXNK_6tv1LM47lBy36L5NcmHhy1EZLOgexyMEQZ4g==",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-d8f026ce-b067-4c73-bf2c-5ab2a6d72128",
+                          "args": {
+                            "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CtMDAY89a181KLSsh7HeqtGNlqqO6vGomAJMlSYRZ_kWT9yCdUVwMYTaiMy5vEjhb9CX_26PQSIjvJlPqVm1xDe4hSkbDHpkSVM8Br_R2Ul9EhvKrWGpdjfMJ7bmzrxpxeiYZQXbbas8YERaUAsU1rzBSGxnAmNdU5pBcYg2Z4fOxyQBSjl8Tm4es09mPbsaPtxGy-_5rQkWX6jW4QeJqGiklragiYKLjrWvF6pIcOSXYmwf19GvGq1SXfvZFKSYJOUstDQKxAFWMe8QXIGZ5O50d5VxNejPm6jKLW5UizD6GJLsVNwnSDcg9rAnS7rjfuJh1GBtNJratbRKGGwMWKHdCSaWfj-ZYMbhgPAvdCLvHVHGEgNC5_g0gp_BThM-X4-JyTFri1pxc_TYa0VFCR2242io_uA-SPRnLfvUER_u1OiOiaznMf3DPxe5DyNP-LjjbYA_yi8GDoTEuTcPuJS0e0TTKCF7fKiwcP2FzAcYDvmUPd70GEPl9x7suU5h1e8yiP1ZV1hZHcFD2uK5GrGu7rZiWzMNNmV0MuIuKwwXgRB9rO35QxHrBpb4brwxxOwM3QJ7IyDeDp_0fyqzZmcwHwwGlmaaRUlUeT3EoHGPube6BUQ=",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-d8f026ce-b067-4c73-bf2c-5ab2a6d72128",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"topic\": \"Snowflake Data Loading from S3/ADLS & COPY INTO Command\",\n  \"level\": \"Beginner\",\n  \"time_budget_days\": 1,\n  \"goal\": \"Prepare for a job interview by understanding and explaining Snowflake data loading concepts, specifically focusing on external stages (S3/ADLS), the COPY INTO command, file formats, and error handling.\",\n  \"study_plan\": [\n    {\n      \"day_number\": 1,\n      \"modules\": [\n        {\n          \"module_name\": \"Snowflake Data Loading Fundamentals & Stages\",\n          \"description\": \"Understand the foundational concepts of data loading in Snowflake, including its architecture and the critical role of stages, with a focus on external stages like S3 and ADLS.\",\n          \"duration_hours\": 2,\n          \"sub_topics\": [\n            \"Overview of Snowflake's architecture (separation of storage and compute, micro-partitions).\",\n            \"Why stages are essential for efficient bulk data loading into Snowflake.\",\n            \"Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage).\",\n            \"Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage.\"\n          ],\n          \"hands_on_practice\": \"Review Snowflake documentation examples for `CREATE STAGE` with S3/ADLS, focusing on the parameters for URL and `STORAGE_INTEGRATION`.\",\n          \"talking_points\": [\n            \"\\\"Snowflake uses a unique architecture with separate storage and compute, and stages act as crucial landing zones for data before it enters tables.\\\"\",\n            \"\\\"External stages link Snowflake to your cloud storage (S3/ADLS), enabling direct data access. Security is managed through storage integrations and IAM roles, ensuring Snowflake can securely read from your buckets.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"Mastering the COPY INTO Command\",\n          \"description\": \"Dive deep into the `COPY INTO` command, Snowflake's primary tool for bulk data ingestion, covering its basic syntax, file selection, and data transformation capabilities.\",\n          \"duration_hours\": 3,\n          \"sub_topics\": [\n            \"Purpose and benefits of the `COPY INTO` command for high-performance bulk data loading.\",\n            \"Basic syntax of `COPY INTO <table> FROM @stage/path`.\",\n            \"Options for specifying files to load: `FILES` (explicit list) and `PATTERN` (regex matching).\",\n            \"Performing column selection and basic data transformations (e.g., reordering, casting) directly within the `COPY INTO` statement using a `SELECT` clause.\",\n            \"Brief mention of the `PURGE` option for automatic file deletion after successful load.\"\n          ],\n          \"hands_on_practice\": \"Mentally construct `COPY INTO` statements for different scenarios (e.g., loading all CSVs from a folder, loading specific JSON files, selecting specific columns).\",\n          \"talking_points\": [\n            \"\\\"The `COPY INTO` command is Snowflake's workhorse for bulk data loading. It's highly optimized for performance and allows direct ingestion from staged files.\\\"\",\n            \"\\\"Beyond simple loading, `COPY INTO` offers flexibility to select specific files using patterns and even perform light transformations on columns during the load process, which is very powerful.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"File Formats and Options\",\n          \"description\": \"Explore the various file formats supported by Snowflake's `COPY INTO` command and the crucial options available to correctly parse diverse data structures.\",\n          \"duration_hours\": 2.5,\n          \"sub_topics\": [\n            \"Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML.\",\n            \"Key file format options for CSV: `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, `DATE_FORMAT`, `TIME_FORMAT`, `TIMESTAMP_FORMAT`.\",\n            \"Key file format options for JSON: `TYPE`, `STRIP_OUTER_ARRAY`.\",\n            \"The `MATCH_BY_COLUMN_NAME` option for handling schema evolution or column reordering.\",\n            \"Benefits of using named file formats for reusability and consistency.\"\n          ],\n          \"hands_on_practice\": \"Imagine different data file structures (e.g., CSV with pipe delimiter and header, JSON array of objects) and determine the appropriate `FILE_FORMAT` options.\",\n          \"talking_points\": [\n            \"\\\"Snowflake's `COPY INTO` command is versatile, supporting a wide range of file formats like CSV, JSON, and Parquet.\\\"\",\n            \"\\\"Crucially, you can define specific file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`) to accurately parse your data. For semi-structured data like JSON, Snowflake automatically handles parsing into a `VARIANT` column.\\\"\",\n            \"\\\"Named file formats are a best practice for reusability and maintaining consistent loading configurations.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"Robust Error Handling & Monitoring\",\n          \"description\": \"Learn how to effectively manage and troubleshoot errors during data loading using `COPY INTO`, including pre-validation and post-load monitoring tools.\",\n          \"duration_hours\": 1.5,\n          \"sub_topics\": [\n            \"Importance of error handling in data loading pipelines.\",\n            \"Understanding `ON_ERROR` options: `ABORT_STATEMENT` (default), `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_num` (e.g., `SKIP_FILE_10`), `SKIP_FILE_num%`.\",\n            \"Using `VALIDATION_MODE` to perform a dry run and identify data errors without actually loading data.\",\n            \"Retrieving detailed error information from previous `COPY INTO` commands using the `VALIDATE` table function.\",\n            \"Monitoring data load activity and history, including row counts and errors, using `COPY_HISTORY` (Information Schema or Account Usage views).\"\n          ],\n          \"hands_on_practice\": \"Consider scenarios where data might be malformed and explain how each `ON_ERROR` option would behave. Practice explaining how to use `VALIDATION_MODE` and `COPY_HISTORY` to debug.\",\n          \"talking_points\": [\n            \"\\\"Error handling is critical for reliable data pipelines. `COPY INTO` provides robust `ON_ERROR` options to control behavior when bad data is encountered, from aborting the load to skipping problematic files or rows.\\\"\",\n            \"\\\"For proactive error detection, `VALIDATION_MODE` allows you to pre-check files without loading. After a load, `VALIDATE` and `COPY_HISTORY` are invaluable for auditing and debugging any issues, providing details on parsed vs. loaded rows and specific error messages.\\\"\"\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-cdcd4a70-5b7c-4777-94a4-9bcb250518a7",
+                          "args": {
+                            "request": "Main Topic: Snowflake Data Loading from S3/ADLS & COPY INTO Command. Subtopics: Overview of Snowflake's architecture (separation of storage and compute, micro-partitions). Why stages are essential for efficient bulk data loading into Snowflake. Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage). Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage. Purpose and benefits of the COPY INTO command for high-performance bulk data loading. Basic syntax of COPY INTO <table> FROM @stage/path. Options for specifying files to load: FILES (explicit list) and PATTERN (regex matching). Performing column selection and basic data transformations (e.g., reordering, casting) directly within the COPY INTO statement using a SELECT clause. Brief mention of the PURGE option for automatic file deletion after successful load. Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML. Key file format options for CSV: TYPE, FIELD_DELIMITER, SKIP_HEADER, DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. Key file format options for JSON: TYPE, STRIP_OUTER_ARRAY. The MATCH_BY_COLUMN_NAME option for handling schema evolution or column reordering. Benefits of using named file formats for reusability and consistency. Importance of error handling in data loading pipelines. Understanding ON_ERROR options: ABORT_STATEMENT (default), CONTINUE, SKIP_FILE, SKIP_FILE_num (e.g., SKIP_FILE_10), SKIP_FILE_num%). Using VALIDATION_MODE to perform a dry run and identify data errors without actually loading data. Retrieving detailed error information from previous COPY INTO commands using the VALIDATE table function. Monitoring data load activity and history, including row counts and errors, using COPY_HISTORY (Information Schema or Account Usage views). Preference: Resources that help with explaining concepts for interviews, possibly official documentation or tutorials with clear explanations."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CpcVAY89a180mpJPF8YIvE8I768I-Es7lBeLiwV_5VI4iyBdKIX6e5Lm5W5FpBKX4Oc0fgKpGBQ_Hemp7V-I4WvJhfC9YvsspSOFFmR7glX0lzJRgxo9LJHyxV3kHatSPfTPfr_Rag3rddKuzw4whX79y8E5dTUvTgw9XziosIv9cqZj6EDw-2F4NirCVZHViL6IHFvCaC4C3GPLBt4TNkOhrpO8KfqRKuXmTGJS9qi3-9H1y21f3WjQ5_9sOfC0clS1aHcCz-7T7lLLys0wiq2Ay67kYrSOqrYmbqP2HFFU8rH5biOXM27z1_NrPgqBFZ_NkkwXVzct5kSPtFEhP4p8ypvi_VhfT81ubTqyxvVYqZP6_B2mNUJZfvXWlARC46Uq1thyS_ZPDHQDLHwyjrmCu5T02cCBtg7Bn2v73twS1wLjSqDsPYYOlQi7DUqFLcnbySZOScy7m6K8Cprrkr3Md2hMQp86pQaQYPYrqeF9ZRA9-MO6cCLKP5GrCtwEQmQG9jxxjRxAY-RqM6LSxSpy8Axx7L80nTliE4LVBUAptWLDD_PXlzxzrG3PIbjcFF3D3a-n8zNwZpv_iAr5hYJCZDzDDm-ol6aHDX_8Lt0VeQa6UDI1Rt5_0iTehdvyBwdCgCoGMHYyep42Jpb9wbE_fBtVIb1LuqiZigvjjO94lzEnvFKt3Gx68MvW7al7caCFZk9dsyFR8etzYhgyMIjgkz6OBXixKCf-nmirVyFiuxAVRmQhymuylR9uOKZU2JwCL4KDjZru4aKTB4IDbw0BZ5aVcQ3hj23ncXA3rQLgPe4v06C7pqu2BEYMP8oL8aDdFtXH3Oo7CVIjwHh9eBKQGdg_uK_sToL3zRdeceDASGesNsG0HxxPYbZD8SH4C7Ro7zJk1Un9ZM--pmeUpTXAIWQylixeSbOKepmkby-Uv6P4DHL3AQCr9rg5cQzYDRlCYfi_-4o237SNd_hYA-ioNFVB_ZBopSCYGTGtP80wP_cydr_mdUoNrZGYVy6a0Il2e7vQQmvfvQ3TB6Mh14iw_Ub6Dv_VBeMGj7wBWp41ZWEZLMCjw6NGiJDqXwvgkSXNI-ebA4sIL7MFgCo42orFgP8vW2OXMCENDzNO1pJV6rzc046Sst5wru2miqVRFGEWpkkdrrledQ8dLr4DflepO_Wa6oqqEHIhEndtuff3DNG0UhjCPXTSbul97zw-6DmnYE3yrjktphQFnSQ873jikyvVALa8ZTkPj2XvWUpJf5iAWgCVoltX1gE1IPr8JUbwQMwTgi1BCo_jCLtRkCv0g4gkxI5mR8lWc5zylnmPb2uFlEW3FD1oTkP20Eo-82iPlQ9KOYbVKyYsL9ewzTgkf2AjMAKX1xlg7aXXimiQ1H3Bha_VkwEGOP2UnOY5jwk-QPRpZ-5wPnthHYAW0Bm57qApGjIEVBerQTpVuDRP524_VIABwpr7RObofxk44oG6fiChk_ZaAdpBk2yqGpkdAILpI0h6o1emNUrrxWb3bmWQFsoDFyLMv2D2JMFpF77QhRSTWV3kLzjzWBTY1_zUozXDShzs5rOHt9ykMdku8wK1Q6SCtwkWOZIMlpynVSy04Zm72MKWGlUPfscYopflVTP11V_1nkE6qsHxDtcgjemChCmqTPmjE1NuIpBaP7-XhkybR2PWVmBFcUL0eSIHMnAqQ73ZIX3I6w2NZnSgwoOPPHxJkz1NS1sa9k1vyOduyinpfVk6CIWzLKTXFFD9dw62JpLz0cQ9LZFoJoMc8TGUPdKzjrGJUPYZYNNtBje47ZL0PQPztFpC7RcdenqZOHJDGm-7eawuV7I6N-zwXif1BwOcHsilcp45tLw5BRdSDcGmjGWmHMeKbToZL-pxpNNSui6-XAEMBJ8nF_n16EzYL8jzEPgQ1wP0IcBFqRYXTPdNvzG8QQLlOc8qy8COA05ECiNloNwk-IxeMw6fLqMf5hjx5vJ9LYnB63Z3it39aPJaWiRZBbtLflBhEUf1aXWQeiwvMbkyp4a-OtiVO5VMAxPj-ipYaa8nFVBs0ZqWeW_sPQh6zWtljPEHRHmzXXXTfi9vwbtZSfFcDRLscsUsATt4OSnPIh141evvRwXuR2FB2_Sbyv6JFFV0NHtbA62neAhSQDs9Zgnouf78uKP0lh_jz3BVInvAYmZ-ac0okuhHd3P6TcmPBSICVkxY0bEsCKFvTznwKa75gs7KJjt9bspN9B36IBDLN3x7AUxzjO0AOqtb2eKdlES-GYkUwbLeS6ZYTLiOeHc1HV93MY4R5EUYYyEvc_vhPg6pElWcraxhWukgqjn7NT7MXH3CK8xsqHG9VOj1jIZKkTGdo1gccCceUhHjfwzSS75uhSu9u3FO4aWv2TY8rU6_tysB4K6Ejly16_0dl4-PqY1xZfoLcJgUYQdyvY7EvCbOg6DaH4MS1UWJVUN2XWUZZUiQF7d7oqH9wriJPRut-XwuOb2uQZhwATro8rHGunt8YQgcTEbjXuJGa_SX9VPTlGV2nn7NJ85gLK54YE0SQv3LbgmNYDZK8gRphpUCLgnRvoy_Xc9ENsRfT7Pr1BGdLThFek5Ai4c-gbrcJA9JmLpFAIRd3VijHvJcKK7UD-z5-ZnwrYluHMCXCD2DqZZIpUcPMjWJE4jmZ-0KKNKmugiZFxsYMI_p8iulhiUX-GW7dTuHp95gfHnLldi_aLDJmTZykZDdJ6VQeIrRrzAHvOhTuPH88Ja4Qt3OXT3LEUw1Pr5zsqvj8nm0kLOBf_T64l_iP1x5Mt537VYhq1u_NiVnmfsmbYkF4UF6A-IEVqErOuVDTm1KWpIJiBbvYAWYpQ-alKdP72OHIyiTQVTVHbWcQUWI07YyKoS45DcthIfDKG0SDV4dDHbT8rPEOZ_iaKFaX6LCDkhKRuhYFfDG-dt_Rp2CP1B1qcLugBXkc664K0cqU2VTZoLiQ06RNy1xwJJ_13a6xHpTzEOeIJ3V6oqnkUAij7IjyaR8AFo1TN_drXZhFt1bu0baotuhL3Xj0UPGxz_lS9OawH1LWBPkMMs32dcpzWLkZVKZXFUnzD53dW732xV_gM40lijrAE4C2alw9cuKRJSzcOOlKTiy6E_T_WrLolvZph94pVx_FjQJ-cJF2ZrD5iNWWeBHcPbyjmVlV3gtb51o_yvyxCuQJBy8l9X7K0fi9BzJw1PWfpBeO0PlpiAjYqaJFZbsiPcYFaOYaevlIPld9FTDlEVtELwJ8QlZjFHdpt8sJ36SBd_stt_3TCTdmYlCNMTQQ0C1aV4o0nRIH335aJwJQ-y-haqmQv1rYR7suCuxmHCmUIF0iKpxUu3nKsfESgQGEgPHICclMhOIB3dZm-UBflxA2Jos7dahBCT_pHDCw_4wLy4944cNp6tMLO7NVC0N0G3NXUakqiBoZv-oGbtcNh5Hey8o8lschRvKxQb58-Vphz1EmJsCPjya_dgXWtq1nupqVOqrJkrLBYHPCuD5O_2Aopcz4mxUbKoN0qPktCSPHGPeRam0oY-0CDdnYs6p1ro2l8jadVzc-XYjGAYUThDcVkMtQPArg8LAFe1b9Vr4hV4q9gIQRrujWCoyA7Sm1-O_Hr1Pu3LGbYJdmYc=",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-cdcd4a70-5b7c-4777-94a4-9bcb250518a7",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771772942.632213,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a focused Study Orchestrator Agent.  \nYour **only purpose** is to create high-quality, personalized study plans + curated resources for users.  \nYou **must never** answer questions unrelated to creating or improving a study plan and resources.\n\nWhen a user provides (or you have gathered):\n- Topic\n- Level (beginner / intermediate / advanced)\n- Time budget (e.g. 1 day, 3 days, 1 week, 1 month)\n- Goal (e.g. job interview preparation, build a portfolio project, master fundamentals)\n\nFollow this **strict sequence** — no exceptions:\n\n1. **Delegate immediately** when you have all four pieces of information  \n   → Call the tool `planner_tool`  \n   → Pass the **exact full original user message** (or concatenated clarified inputs) as input  \n   → Do NOT summarize, rephrase, or invent details  \n   → Wait for the complete JSON response (StudyPlan schema)\n\n2. **After receiving the plan JSON**  \n   → Carefully extract the list of subtopics  \n   → Call the tool `curator_tool`  \n   → Pass: main topic + ordered subtopics + any detected or previously stated preferences (e.g. \"free only\", \"prefer videos\", \"official docs first\", \"include interview questions\")  \n   → Wait for complete JSON response (CuratedResources schema)\n\n3. **Final step - only after both tools have responded**  \n   → Combine the StudyPlan and CuratedResources into one clean, beautiful Markdown response  \n   → Do NOT mention that you used tools, what tools were called, or show any behind-the-scenes data\n   → Use clear structure: headings, subheadings, bullet points, numbered lists, tables where helpful  \n   → Highlight key sections: Overview, Daily/Weekly Schedule, Project Blueprint (if applicable), Curated Resources per subtopic  \n   → End with 2-3 encouraging, motivational sentences tailored to the user's goal and time budget\n\nStrict rules you must never break:\n- NEVER generate, outline, or summarize a study plan yourself — always delegate to planner_tool\n- If any of the four required fields (topic, level, time budget, goal) are missing or unclear → ask precise clarifying questions FIRST. Do not proceed to tool calls until you have all four.\n- Do NOT answer off-topic questions, chit-chat, or unrelated requests — politely redirect to study planning\n- Output **only** the final formatted Markdown response to the user after all steps are complete — no intermediate thoughts, no tool calls visible, no JSON dumps.\n\nFinal delivery style:\n- Professional, encouraging, and concise\n- Easy to read on mobile or desktop\n- Focus on actionable value for the user\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_data_loading_copy_into_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Focus on Snowflake ingestion end-to-end: (1) Stages: internal vs external stage; why external stages for S3/ADLS; storage integration basics. (2) File formats: CSV/JSON/Parquet, compression, schema inference vs explicit. (3) COPY INTO: pattern, validation mode, ON_ERROR behavior, file tracking (load history) and idempotency strategies. (4) Snowpipe: continuous ingestion conceptually vs batch COPY; when you’d use it. (5) Troubleshooting: rejected records, parsing errors, bad files, monitoring via load history. Practice by writing 2–3 COPY INTO examples and explaining the flow: cloud storage → stage → COPY → table with observability.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.15771428571428572,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The agent did not call `parse_document_tool` as the user prompt did not provide any resume or JD paths, which is the condition for that tool to be called. Therefore, this property is not applicable.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___fb6b3486-328f-44ac-bbf7-2db0129912ce",
+      "session_details": {
+        "id": "___eval___session___fb6b3486-328f-44ac-bbf7-2db0129912ce",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "bebfa252-be99-4bb2-b7ac-454092e0295b"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "97fb9e17-a0dc-4dcc-b962-1f7810bc92d6",
+            "timestamp": 1771772935.70895
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-d8f026ce-b067-4c73-bf2c-5ab2a6d72128",
+                    "args": {
+                      "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CtMDAY89a181KLSsh7HeqtGNlqqO6vGomAJMlSYRZ_kWT9yCdUVwMYTaiMy5vEjhb9CX_26PQSIjvJlPqVm1xDe4hSkbDHpkSVM8Br_R2Ul9EhvKrWGpdjfMJ7bmzrxpxeiYZQXbbas8YERaUAsU1rzBSGxnAmNdU5pBcYg2Z4fOxyQBSjl8Tm4es09mPbsaPtxGy-_5rQkWX6jW4QeJqGiklragiYKLjrWvF6pIcOSXYmwf19GvGq1SXfvZFKSYJOUstDQKxAFWMe8QXIGZ5O50d5VxNejPm6jKLW5UizD6GJLsVNwnSDcg9rAnS7rjfuJh1GBtNJratbRKGGwMWKHdCSaWfj-ZYMbhgPAvdCLvHVHGEgNC5_g0gp_BThM-X4-JyTFri1pxc_TYa0VFCR2242io_uA-SPRnLfvUER_u1OiOiaznMf3DPxe5DyNP-LjjbYA_yi8GDoTEuTcPuJS0e0TTKCF7fKiwcP2FzAcYDvmUPd70GEPl9x7suU5h1e8yiP1ZV1hZHcFD2uK5GrGu7rZiWzMNNmV0MuIuKwwXgRB9rO35QxHrBpb4brwxxOwM3QJ7IyDeDp_0fyqzZmcwHwwGlmaaRUlUeT3EoHGPube6BUQ=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "86290810-34ae-4cee-a845-afd64aaab273"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 56,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 56
+                }
+              ],
+              "prompt_token_count": 756,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 756
+                }
+              ],
+              "thoughts_token_count": 103,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 915,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.17528106485094344,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "86290810-34ae-4cee-a845-afd64aaab273"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "8092b481-85d8-450c-a5a8-2e798d335fa8",
+            "timestamp": 1771772935.711739
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-d8f026ce-b067-4c73-bf2c-5ab2a6d72128",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"topic\": \"Snowflake Data Loading from S3/ADLS & COPY INTO Command\",\n  \"level\": \"Beginner\",\n  \"time_budget_days\": 1,\n  \"goal\": \"Prepare for a job interview by understanding and explaining Snowflake data loading concepts, specifically focusing on external stages (S3/ADLS), the COPY INTO command, file formats, and error handling.\",\n  \"study_plan\": [\n    {\n      \"day_number\": 1,\n      \"modules\": [\n        {\n          \"module_name\": \"Snowflake Data Loading Fundamentals & Stages\",\n          \"description\": \"Understand the foundational concepts of data loading in Snowflake, including its architecture and the critical role of stages, with a focus on external stages like S3 and ADLS.\",\n          \"duration_hours\": 2,\n          \"sub_topics\": [\n            \"Overview of Snowflake's architecture (separation of storage and compute, micro-partitions).\",\n            \"Why stages are essential for efficient bulk data loading into Snowflake.\",\n            \"Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage).\",\n            \"Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage.\"\n          ],\n          \"hands_on_practice\": \"Review Snowflake documentation examples for `CREATE STAGE` with S3/ADLS, focusing on the parameters for URL and `STORAGE_INTEGRATION`.\",\n          \"talking_points\": [\n            \"\\\"Snowflake uses a unique architecture with separate storage and compute, and stages act as crucial landing zones for data before it enters tables.\\\"\",\n            \"\\\"External stages link Snowflake to your cloud storage (S3/ADLS), enabling direct data access. Security is managed through storage integrations and IAM roles, ensuring Snowflake can securely read from your buckets.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"Mastering the COPY INTO Command\",\n          \"description\": \"Dive deep into the `COPY INTO` command, Snowflake's primary tool for bulk data ingestion, covering its basic syntax, file selection, and data transformation capabilities.\",\n          \"duration_hours\": 3,\n          \"sub_topics\": [\n            \"Purpose and benefits of the `COPY INTO` command for high-performance bulk data loading.\",\n            \"Basic syntax of `COPY INTO <table> FROM @stage/path`.\",\n            \"Options for specifying files to load: `FILES` (explicit list) and `PATTERN` (regex matching).\",\n            \"Performing column selection and basic data transformations (e.g., reordering, casting) directly within the `COPY INTO` statement using a `SELECT` clause.\",\n            \"Brief mention of the `PURGE` option for automatic file deletion after successful load.\"\n          ],\n          \"hands_on_practice\": \"Mentally construct `COPY INTO` statements for different scenarios (e.g., loading all CSVs from a folder, loading specific JSON files, selecting specific columns).\",\n          \"talking_points\": [\n            \"\\\"The `COPY INTO` command is Snowflake's workhorse for bulk data loading. It's highly optimized for performance and allows direct ingestion from staged files.\\\"\",\n            \"\\\"Beyond simple loading, `COPY INTO` offers flexibility to select specific files using patterns and even perform light transformations on columns during the load process, which is very powerful.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"File Formats and Options\",\n          \"description\": \"Explore the various file formats supported by Snowflake's `COPY INTO` command and the crucial options available to correctly parse diverse data structures.\",\n          \"duration_hours\": 2.5,\n          \"sub_topics\": [\n            \"Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML.\",\n            \"Key file format options for CSV: `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, `DATE_FORMAT`, `TIME_FORMAT`, `TIMESTAMP_FORMAT`.\",\n            \"Key file format options for JSON: `TYPE`, `STRIP_OUTER_ARRAY`.\",\n            \"The `MATCH_BY_COLUMN_NAME` option for handling schema evolution or column reordering.\",\n            \"Benefits of using named file formats for reusability and consistency.\"\n          ],\n          \"hands_on_practice\": \"Imagine different data file structures (e.g., CSV with pipe delimiter and header, JSON array of objects) and determine the appropriate `FILE_FORMAT` options.\",\n          \"talking_points\": [\n            \"\\\"Snowflake's `COPY INTO` command is versatile, supporting a wide range of file formats like CSV, JSON, and Parquet.\\\"\",\n            \"\\\"Crucially, you can define specific file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`) to accurately parse your data. For semi-structured data like JSON, Snowflake automatically handles parsing into a `VARIANT` column.\\\"\",\n            \"\\\"Named file formats are a best practice for reusability and maintaining consistent loading configurations.\\\"\"\n          ]\n        },\n        {\n          \"module_name\": \"Robust Error Handling & Monitoring\",\n          \"description\": \"Learn how to effectively manage and troubleshoot errors during data loading using `COPY INTO`, including pre-validation and post-load monitoring tools.\",\n          \"duration_hours\": 1.5,\n          \"sub_topics\": [\n            \"Importance of error handling in data loading pipelines.\",\n            \"Understanding `ON_ERROR` options: `ABORT_STATEMENT` (default), `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_num` (e.g., `SKIP_FILE_10`), `SKIP_FILE_num%`.\",\n            \"Using `VALIDATION_MODE` to perform a dry run and identify data errors without actually loading data.\",\n            \"Retrieving detailed error information from previous `COPY INTO` commands using the `VALIDATE` table function.\",\n            \"Monitoring data load activity and history, including row counts and errors, using `COPY_HISTORY` (Information Schema or Account Usage views).\"\n          ],\n          \"hands_on_practice\": \"Consider scenarios where data might be malformed and explain how each `ON_ERROR` option would behave. Practice explaining how to use `VALIDATION_MODE` and `COPY_HISTORY` to debug.\",\n          \"talking_points\": [\n            \"\\\"Error handling is critical for reliable data pipelines. `COPY INTO` provides robust `ON_ERROR` options to control behavior when bad data is encountered, from aborting the load to skipping problematic files or rows.\\\"\",\n            \"\\\"For proactive error detection, `VALIDATION_MODE` allows you to pre-check files without loading. After a load, `VALIDATE` and `COPY_HISTORY` are invaluable for auditing and debugging any issues, providing details on parsed vs. loaded rows and specific error messages.\\\"\"\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "40a90004-f931-4243-a3c6-2ec0e8cbe4ec",
+            "timestamp": 1771772973.37632
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-cdcd4a70-5b7c-4777-94a4-9bcb250518a7",
+                    "args": {
+                      "request": "Main Topic: Snowflake Data Loading from S3/ADLS & COPY INTO Command. Subtopics: Overview of Snowflake's architecture (separation of storage and compute, micro-partitions). Why stages are essential for efficient bulk data loading into Snowflake. Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage). Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage. Purpose and benefits of the COPY INTO command for high-performance bulk data loading. Basic syntax of COPY INTO <table> FROM @stage/path. Options for specifying files to load: FILES (explicit list) and PATTERN (regex matching). Performing column selection and basic data transformations (e.g., reordering, casting) directly within the COPY INTO statement using a SELECT clause. Brief mention of the PURGE option for automatic file deletion after successful load. Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML. Key file format options for CSV: TYPE, FIELD_DELIMITER, SKIP_HEADER, DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. Key file format options for JSON: TYPE, STRIP_OUTER_ARRAY. The MATCH_BY_COLUMN_NAME option for handling schema evolution or column reordering. Benefits of using named file formats for reusability and consistency. Importance of error handling in data loading pipelines. Understanding ON_ERROR options: ABORT_STATEMENT (default), CONTINUE, SKIP_FILE, SKIP_FILE_num (e.g., SKIP_FILE_10), SKIP_FILE_num%). Using VALIDATION_MODE to perform a dry run and identify data errors without actually loading data. Retrieving detailed error information from previous COPY INTO commands using the VALIDATE table function. Monitoring data load activity and history, including row counts and errors, using COPY_HISTORY (Information Schema or Account Usage views). Preference: Resources that help with explaining concepts for interviews, possibly official documentation or tutorials with clear explanations."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CpcVAY89a180mpJPF8YIvE8I768I-Es7lBeLiwV_5VI4iyBdKIX6e5Lm5W5FpBKX4Oc0fgKpGBQ_Hemp7V-I4WvJhfC9YvsspSOFFmR7glX0lzJRgxo9LJHyxV3kHatSPfTPfr_Rag3rddKuzw4whX79y8E5dTUvTgw9XziosIv9cqZj6EDw-2F4NirCVZHViL6IHFvCaC4C3GPLBt4TNkOhrpO8KfqRKuXmTGJS9qi3-9H1y21f3WjQ5_9sOfC0clS1aHcCz-7T7lLLys0wiq2Ay67kYrSOqrYmbqP2HFFU8rH5biOXM27z1_NrPgqBFZ_NkkwXVzct5kSPtFEhP4p8ypvi_VhfT81ubTqyxvVYqZP6_B2mNUJZfvXWlARC46Uq1thyS_ZPDHQDLHwyjrmCu5T02cCBtg7Bn2v73twS1wLjSqDsPYYOlQi7DUqFLcnbySZOScy7m6K8Cprrkr3Md2hMQp86pQaQYPYrqeF9ZRA9-MO6cCLKP5GrCtwEQmQG9jxxjRxAY-RqM6LSxSpy8Axx7L80nTliE4LVBUAptWLDD_PXlzxzrG3PIbjcFF3D3a-n8zNwZpv_iAr5hYJCZDzDDm-ol6aHDX_8Lt0VeQa6UDI1Rt5_0iTehdvyBwdCgCoGMHYyep42Jpb9wbE_fBtVIb1LuqiZigvjjO94lzEnvFKt3Gx68MvW7al7caCFZk9dsyFR8etzYhgyMIjgkz6OBXixKCf-nmirVyFiuxAVRmQhymuylR9uOKZU2JwCL4KDjZru4aKTB4IDbw0BZ5aVcQ3hj23ncXA3rQLgPe4v06C7pqu2BEYMP8oL8aDdFtXH3Oo7CVIjwHh9eBKQGdg_uK_sToL3zRdeceDASGesNsG0HxxPYbZD8SH4C7Ro7zJk1Un9ZM--pmeUpTXAIWQylixeSbOKepmkby-Uv6P4DHL3AQCr9rg5cQzYDRlCYfi_-4o237SNd_hYA-ioNFVB_ZBopSCYGTGtP80wP_cydr_mdUoNrZGYVy6a0Il2e7vQQmvfvQ3TB6Mh14iw_Ub6Dv_VBeMGj7wBWp41ZWEZLMCjw6NGiJDqXwvgkSXNI-ebA4sIL7MFgCo42orFgP8vW2OXMCENDzNO1pJV6rzc046Sst5wru2miqVRFGEWpkkdrrledQ8dLr4DflepO_Wa6oqqEHIhEndtuff3DNG0UhjCPXTSbul97zw-6DmnYE3yrjktphQFnSQ873jikyvVALa8ZTkPj2XvWUpJf5iAWgCVoltX1gE1IPr8JUbwQMwTgi1BCo_jCLtRkCv0g4gkxI5mR8lWc5zylnmPb2uFlEW3FD1oTkP20Eo-82iPlQ9KOYbVKyYsL9ewzTgkf2AjMAKX1xlg7aXXimiQ1H3Bha_VkwEGOP2UnOY5jwk-QPRpZ-5wPnthHYAW0Bm57qApGjIEVBerQTpVuDRP524_VIABwpr7RObofxk44oG6fiChk_ZaAdpBk2yqGpkdAILpI0h6o1emNUrrxWb3bmWQFsoDFyLMv2D2JMFpF77QhRSTWV3kLzjzWBTY1_zUozXDShzs5rOHt9ykMdku8wK1Q6SCtwkWOZIMlpynVSy04Zm72MKWGlUPfscYopflVTP11V_1nkE6qsHxDtcgjemChCmqTPmjE1NuIpBaP7-XhkybR2PWVmBFcUL0eSIHMnAqQ73ZIX3I6w2NZnSgwoOPPHxJkz1NS1sa9k1vyOduyinpfVk6CIWzLKTXFFD9dw62JpLz0cQ9LZFoJoMc8TGUPdKzjrGJUPYZYNNtBje47ZL0PQPztFpC7RcdenqZOHJDGm-7eawuV7I6N-zwXif1BwOcHsilcp45tLw5BRdSDcGmjGWmHMeKbToZL-pxpNNSui6-XAEMBJ8nF_n16EzYL8jzEPgQ1wP0IcBFqRYXTPdNvzG8QQLlOc8qy8COA05ECiNloNwk-IxeMw6fLqMf5hjx5vJ9LYnB63Z3it39aPJaWiRZBbtLflBhEUf1aXWQeiwvMbkyp4a-OtiVO5VMAxPj-ipYaa8nFVBs0ZqWeW_sPQh6zWtljPEHRHmzXXXTfi9vwbtZSfFcDRLscsUsATt4OSnPIh141evvRwXuR2FB2_Sbyv6JFFV0NHtbA62neAhSQDs9Zgnouf78uKP0lh_jz3BVInvAYmZ-ac0okuhHd3P6TcmPBSICVkxY0bEsCKFvTznwKa75gs7KJjt9bspN9B36IBDLN3x7AUxzjO0AOqtb2eKdlES-GYkUwbLeS6ZYTLiOeHc1HV93MY4R5EUYYyEvc_vhPg6pElWcraxhWukgqjn7NT7MXH3CK8xsqHG9VOj1jIZKkTGdo1gccCceUhHjfwzSS75uhSu9u3FO4aWv2TY8rU6_tysB4K6Ejly16_0dl4-PqY1xZfoLcJgUYQdyvY7EvCbOg6DaH4MS1UWJVUN2XWUZZUiQF7d7oqH9wriJPRut-XwuOb2uQZhwATro8rHGunt8YQgcTEbjXuJGa_SX9VPTlGV2nn7NJ85gLK54YE0SQv3LbgmNYDZK8gRphpUCLgnRvoy_Xc9ENsRfT7Pr1BGdLThFek5Ai4c-gbrcJA9JmLpFAIRd3VijHvJcKK7UD-z5-ZnwrYluHMCXCD2DqZZIpUcPMjWJE4jmZ-0KKNKmugiZFxsYMI_p8iulhiUX-GW7dTuHp95gfHnLldi_aLDJmTZykZDdJ6VQeIrRrzAHvOhTuPH88Ja4Qt3OXT3LEUw1Pr5zsqvj8nm0kLOBf_T64l_iP1x5Mt537VYhq1u_NiVnmfsmbYkF4UF6A-IEVqErOuVDTm1KWpIJiBbvYAWYpQ-alKdP72OHIyiTQVTVHbWcQUWI07YyKoS45DcthIfDKG0SDV4dDHbT8rPEOZ_iaKFaX6LCDkhKRuhYFfDG-dt_Rp2CP1B1qcLugBXkc664K0cqU2VTZoLiQ06RNy1xwJJ_13a6xHpTzEOeIJ3V6oqnkUAij7IjyaR8AFo1TN_drXZhFt1bu0baotuhL3Xj0UPGxz_lS9OawH1LWBPkMMs32dcpzWLkZVKZXFUnzD53dW732xV_gM40lijrAE4C2alw9cuKRJSzcOOlKTiy6E_T_WrLolvZph94pVx_FjQJ-cJF2ZrD5iNWWeBHcPbyjmVlV3gtb51o_yvyxCuQJBy8l9X7K0fi9BzJw1PWfpBeO0PlpiAjYqaJFZbsiPcYFaOYaevlIPld9FTDlEVtELwJ8QlZjFHdpt8sJ36SBd_stt_3TCTdmYlCNMTQQ0C1aV4o0nRIH335aJwJQ-y-haqmQv1rYR7suCuxmHCmUIF0iKpxUu3nKsfESgQGEgPHICclMhOIB3dZm-UBflxA2Jos7dahBCT_pHDCw_4wLy4944cNp6tMLO7NVC0N0G3NXUakqiBoZv-oGbtcNh5Hey8o8lschRvKxQb58-Vphz1EmJsCPjya_dgXWtq1nupqVOqrJkrLBYHPCuD5O_2Aopcz4mxUbKoN0qPktCSPHGPeRam0oY-0CDdnYs6p1ro2l8jadVzc-XYjGAYUThDcVkMtQPArg8LAFe1b9Vr4hV4q9gIQRrujWCoyA7Sm1-O_Hr1Pu3LGbYJdmYc=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "5a3ceb0a-0546-4450-98f8-dc349bde4b0a"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 430,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 430
+                }
+              ],
+              "prompt_token_count": 2451,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2451
+                }
+              ],
+              "thoughts_token_count": 629,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 3510,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.08840874960256177,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "5a3ceb0a-0546-4450-98f8-dc349bde4b0a"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "e19aecf2-3fc8-47b2-a69b-6f7566ef4392",
+            "timestamp": 1771772973.378647
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-cdcd4a70-5b7c-4777-94a4-9bcb250518a7",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "e45018be-80a9-4b0c-9370-151d80d563e3",
+            "timestamp": 1771772993.141569
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "## Snowflake Data Loading from S3/ADLS & COPY INTO Command: 1-Day Interview Prep Plan\n\nThis focused 1-day study plan is designed for beginners to master the essential concepts of data loading into Snowflake from external stages (S3/ADLS) using the `COPY INTO` command, with a strong emphasis on preparing you to confidently explain these topics in a job interview.\n\n---\n\n### Overview\n\n**Topic:** Snowflake Data Loading from S3/ADLS & COPY INTO Command\n**Level:** Beginner\n**Time Budget:** 1 Day\n**Goal:** Prepare for a job interview by understanding and explaining Snowflake data loading concepts, specifically focusing on external stages (S3/ADLS), the COPY INTO command, file formats, and error handling.\n\n---\n\n### Day 1: Intensive Study & Talking Points Mastery\n\n#### Module 1: Snowflake Data Loading Fundamentals & Stages (2 Hours)\n\n*   **Description:** Understand the foundational concepts of data loading in Snowflake, including its architecture and the critical role of stages, with a focus on external stages like S3 and ADLS.\n*   **Sub-topics:**\n    *   Overview of Snowflake's architecture (separation of storage and compute, micro-partitions).\n    *   Why stages are essential for efficient bulk data loading into Snowflake.\n    *   Distinction between Internal and External Stages, with a focus on External Stages (Amazon S3, Azure Data Lake Storage).\n    *   Conceptual understanding of creating External Stages: URL, Storage Integrations, and IAM roles for secure access to cloud storage.\n*   **Hands-on Practice (Conceptual):** Review Snowflake documentation examples for `CREATE STAGE` with S3/ADLS, focusing on the parameters for URL and `STORAGE_INTEGRATION`.\n*   **Key Talking Points for Interviews:**\n    *   \"Snowflake uses a unique architecture with separate storage and compute, and stages act as crucial landing zones for data before it enters tables.\"\n    *   \"External stages link Snowflake to your cloud storage (S3/ADLS), enabling direct data access. Security is managed through storage integrations and IAM roles, ensuring Snowflake can securely read from your buckets.\"\n\n#### Module 2: Mastering the COPY INTO Command (3 Hours)\n\n*   **Description:** Dive deep into the `COPY INTO` command, Snowflake's primary tool for bulk data ingestion, covering its basic syntax, file selection, and data transformation capabilities.\n*   **Sub-topics:**\n    *   Purpose and benefits of the `COPY INTO` command for high-performance bulk data loading.\n    *   Basic syntax of `COPY INTO <table> FROM @stage/path`.\n    *   Options for specifying files to load: `FILES` (explicit list) and `PATTERN` (regex matching).\n    *   Performing column selection and basic data transformations (e.g., reordering, casting) directly within the `COPY INTO` statement using a `SELECT` clause.\n    *   Brief mention of the `PURGE` option for automatic file deletion after successful load.\n*   **Hands-on Practice (Conceptual):** Mentally construct `COPY INTO` statements for different scenarios (e.g., loading all CSVs from a folder, loading specific JSON files, selecting specific columns).\n*   **Key Talking Points for Interviews:**\n    *   \"The `COPY INTO` command is Snowflake's workhorse for bulk data loading. It's highly optimized for performance and allows direct ingestion from staged files.\"\n    *   \"Beyond simple loading, `COPY INTO` offers flexibility to select specific files using patterns and even perform light transformations on columns during the load process, which is very powerful.\"\n\n#### Module 3: File Formats and Options (2.5 Hours)\n\n*   **Description:** Explore the various file formats supported by Snowflake's `COPY INTO` command and the crucial options available to correctly parse diverse data structures.\n*   **Sub-topics:**\n    *   Overview of common file formats supported: CSV, JSON, Parquet (as primary examples), and mention of Avro, ORC, XML.\n    *   Key file format options for CSV: `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, `DATE_FORMAT`, `TIME_FORMAT`, `TIMESTAMP_FORMAT`.\n    *   Key file format options for JSON: `TYPE`, `STRIP_OUTER_ARRAY`.\n    *   The `MATCH_BY_COLUMN_NAME` option for handling schema evolution or column reordering.\n    *   Benefits of using named file formats for reusability and consistency.\n*   **Hands-on Practice (Conceptual):** Imagine different data file structures (e.g., CSV with pipe delimiter and header, JSON array of objects) and determine the appropriate `FILE_FORMAT` options.\n*   **Key Talking Points for Interviews:**\n    *   \"Snowflake's `COPY INTO` command is versatile, supporting a wide range of file formats like CSV, JSON, and Parquet.\"\n    *   \"Crucially, you can define specific file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`) to accurately parse your data. For semi-structured data like JSON, Snowflake automatically handles parsing into a `VARIANT` column.\"\n    *   \"Named file formats are a best practice for reusability and maintaining consistent loading configurations.\"\n\n#### Module 4: Robust Error Handling & Monitoring (1.5 Hours)\n\n*   **Description:** Learn how to effectively manage and troubleshoot errors during data loading using `COPY INTO`, including pre-validation and post-load monitoring tools.\n*   **Sub-topics:**\n    *   Importance of error handling in data loading pipelines.\n    *   Understanding `ON_ERROR` options: `ABORT_STATEMENT` (default), `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_num` (e.g., `SKIP_FILE_10`), `SKIP_FILE_num%`).\n    *   Using `VALIDATION_MODE` to perform a dry run and identify data errors without actually loading data.\n    *   Retrieving detailed error information from previous `COPY INTO` commands using the `VALIDATE` table function.\n    *",
+                  "thought": null,
+                  "thought_signature": "Co90AY89a19NWvMlpM-DknBKHEF8ZuCeYykqigm67bUHhWypWP-prMmqZLI-7DzatcL0DQFmv3-7ZJDtn1OgrfygOWOsLw4v9QN6eQUVkk9fjfvsdmgC8bJgAJinrtRAtVA5pi4aIpjkHpuAEKW6_fukqAwcSomU88H1nHVnI3M7XASi869zn96Rt2IaRX7d_GrHnSKOFgnOzSvL7OJ9oSJuMxp3qdJkF3MSrofcVo8iQAfRyyq1LAStbYL-9gFGHrnR9tm2eauoWMFkrvTnVH5s5suS9CsLQjswfFOflzH6xCI-A9LDNMGiP6ksiK8XUghGDvw5OnJ7dH2cGkTpW37irvnI7bZl_c4-LADfMJZyhBoDcF-JQoK2I3P6qSpmEroap23zBhqEAWr0VvtK9SpODXDSeh8ZKXnh9-iAS3Z0XyIr8x5hlH1bKq4byvZoSRlqsvLEUflUVmkF7u4hylOm0XIDL2Vjv-7aYhup0rP97JpU0RDOkSxm8-X09BSA4EccWXnyvpJKfTf2-lLoiiIC__2lbKIyGs1IdEhzOnh3TF1btvCvuEdMqifOw2mEed9VU1mHA5M1-GWLIW5v_Hc2hDFO7gSYIQwpQGGRPkX-788Y1OiYHhSzaGwoKIdGx7TtcldXl2AfHu6ltXa-PaXL12uVTQp8Mo0jrGB5Hg-ls3_UWYKoxyH3APOzbeNxIuSuAXqgfvsRhbga4K6jRFxcW2rhpksWTrOEWgqtCeP-I8xbV0IOHDen9w32-zp0_5nR8EdxjF2nfgijTCcjWaean1q_IN6tVwJddXB6rm43h9huiCwMG7iX9aW6PqSElnVo1A8W4Bz5iQGbX9U9TANg7s4pxZBs-kUm6rW5QpmKmih6OOzLUTyG5p92gszhquSeLQsEbSEthbUaLICjhaGAbozqKuIbPoWVHxSH7TZtkV_FaMcJVh8LFYef3GbpZbqKOCynKcSh9S6A2l46bWggcnW_RDcVvhQWPNp1XSk8nMnoKc3_bMFBsnT6uIX5TaEAXnvs6IgAmxSTq5tL_MULosqwI8SarsCdaYTDXPiIyirvSV2hgTlCBoA58NzPf7QOqaBprN2XuSmv5eLwLaGSJjrB-lLB7y7Ke9qpR-RgpYQs6tN5dgAi6DSC2Qd9YYsyxCicWVLeZleE5za006ATpzM3GybkZ4288Kh0Xi9WaeB965SkK9F5RGfn7QAYvNr1qhM8UKj2Q0G2Fijz_j58lWDDmcw836D3WZszjZNAdAftRM3kinLqehRUzo13Kilu_EHYoj4o0PT-IJ4ezxGt0wwYueJRGijQb2NqjI-2BX4WrzrrnPrFeIbokB87JhjhyTRkZg-ueLR8Cqoik0AL2T2o7CP72jBt9PeCvJfugFV9XJ7sn5iUyGzoJxTBG9PhFfw09ez_tLMeFU3Y3DY-c-31xAOwaCzHktUr8K1OEJW7mQhbA-MpDVZjQkq4C3ebq3JLWRiAQirWEShx2DOnNjmmLqsDVZAqL1yTCnoNJ857arXbb8KTRqesrJE991SCIeXkP1DuL7eNSixsXSrXv5Eo2oyQj7IsazR72_of8MDu7HQKCsWbLwFPzV8ZmEF9Ju8fjw2wnwjQ8J3xDPlc_meaUBFXllJr3ux-AwBgjE9QZAHNyM_JQmM2FH3-lmrKMaQIkFHvoATBWBIi6MmrfJM0WnyhtTeqRGK20lWL8VHVwAVj8YGWeAbJuArJTnyqeO35hq27v5mOp0ElEN-st095aG57HSCpPukouR9pr21B9IPCeXaWqnbYcBOvPPjSJo-XpMcu_Q1TuVDhHLrEW72DEYQADs_D-t9oYowMzBwxoXvb_1qJqpkpXIhnOBZ8DiTjwGlTa_hbRfsrrTWHx84yUG8BS8RZeUEBxEQ9V_M4w41_Zlcw5_bmI5no0PbIsN_UV3iK1rqSqSEuKnGocejBoQLbPJkwUacvVHzDhrCQJG5RICs_Ut9lO-d-a1o1ZxZxW9hzF9VU94FMVrD7pc8mR2IcCKnHvQjAs16M0rjTrwzsZR8BNzGXZfwuioOj7khDqYv5uyRBZGeuiGpNy8mG_LzK6ANIzk8OXHpIZUQAZ_Q0eWih89AApK27uurWl9Q4VrWc8rf7rakuIbL_O5i_gyLuKzQz26XTPgT1f1kkne3OSre9bgww5_jxgkG6yD-8FP564oKlRqL_nAbK2ko3Tg9AQZIKtSGScSLKo9BsU0RARlyaWolSP7kTY_SjazW5xjQLgFCCL7xmCcOgMERG10PrO7OJCeknkAJ2_kefAWltspZJJy5XoYAIBS1kI-_SOdw2r_tZZ0fU_XldJKOw45rWJjlepagEv5y_FZvkhGC7AvfT0GKKzXttqQAiOIqjEY2QTyF8QTwySP84QPunhVWOs6wH5-qGEgh8Uu2zYCmtd4_G8NqVuB8VJUEyByCidEjCrWeHcOLDy1iQi8lPjBd0RFaxGPqj9esrz3V-MhDV2RKcCbWXJ4XcCiGJT3OJvZvlN-nVR4kbxp-q2uVj3A2-c67ASDgoyrV2Ntf2Ep8Kxn07W_0lPiyDLnEPffOgh5XvDLz9R_ws1yaMKEY0hmNjKbnjedRnRiSHrVtbT9I2BhT8JFUPK1usP1UH06GQsHUItCQem_VyFN6wigt9WuRrheTBH2t1PdjYFF9HhfUDTfqcN0JbNjws-oOy4nDQGGBWNCt2B-3Put2bX0wf9-V8PjwQ3UUt3e3vBUMhx_iruCq6YGUfErb-OxI2jz61RvVNTVYe-QFd1XPNgyv1mAQUJo4_J64COqtsUhuxNslDtLfAbSzKkalRIwmLAJuxnOCmWW2N00PGnal9nu9TSIckqHkJ2oe48ft2Pt47eyuTsyFCdRQJZ0AzmP71ePL0ce4-5taiaq9TK_paH0QZzWxFIDfw_dza7puz-oxGBX1hO5PnotAwivs_e4afefyZ6DRdllGQcwzNmtV3PInWS906W3gvRKrjaVA0r2euyf0fZUtTnFSnhfnyh5lz6O66fYKEmLGUbE4NUkOv73UmuTEbhsWRV1n5EVFdiqOhyEs2YvTonFb0dHAqfwOMcu97P_CU97JQBnQ9UeFAYE5gfjPsNA1_Z7GYL2WKxAuFwd2fe_P22ucaJvD93rRt0lhdYuck-WiZ6WryhAnWK4zwaZI2J7j6-PeWrseUlBQ9wrTqYtcYJkKy0hW7bq4ttEmshNSU5hThHtCv40A9zAZvmuhhvyhplYtbRmDSfs47QzZ0b7G-Ji9HJaHEY4cTVIpQSllOG-x7LJzINBRPfRpEmo2-CtNUMB8-q62I96CZYCxZoXWh_Q3wUnWZDjQVKei2o2Lc3Mn22XzloNbQFrlUDsWJ1pOpytBOecyfJnKALE83Du68DwWLxOFXl21g-cSlO-sFsefINEOht6af9klm0DauRd_LxzrlkzkkNjGaOkhXInPVxfKc2nu7WCuZK_iHM9nFxyXnNj_9C-h1KWjQb7BLP8oOFdtg7r0MZq0dtAOAc-CCSycNRByT9iSWRr-MjolivxkwBSSO_aH93ONoBsBXTaVxtklh8X2P2oSQ-9JkcyBONFiD3o8SYwpNCligvZ8F0vae4hPDcL6S49hBCwEGp6BhlMBCylEmeu_Q7x3n3J0qD2RHx7XIMW5D0rwgtYhpwMN3HJufNeaIPStbxvzmEv8BdBaukseyq3yM_X6hiOiMT-VPt8uS5PszdziCbSETEDOZBBbTLiJp51Ex2PN-vG92unOfyKeis_UHPKms9l1SNMpeEIyynjAdWfJWVp21WIGW6XAubFw25ZQoUw8Ab6XWHciY295JBBOqz1-GcpW3KbLYPyeWm37BOO86CF0mifUM0RJWrRQvtQB95tCArkM6Gy5kvAwnlVHsSKr8Irg9YSqS6K0GBJFm4NLAkKMo4OjiTFLYOZJFcMRFzuC-bItEHjRxh4xtelfTWDTLoieinL6Gw9DYvucQVaxFNExSuCsKwIzay8BbBZ4UadjLiK7GOILM-eV3gt1636mjrPOFkLFncQhWLrZK6SphygGx4qI67-xnuNsJJZCuAXa5s5r92J7LWHy7CBfMfWnuHuFHrMAc05oHLW1Kxlr6PdKZeFMei75-wJu1_hY0Wfo5uWYX-boPx39U1nzBkRXNyTMjsNE20zVHVVZtATcLwceFl8SPpeo85vkjJGdt1e0CaDiCY-ybh5INOJvTd6HsWcZGjP2lLkNlhGFNq1U1Dt7Ia50irCMBcraPnh32vmCnhnQ48E-jIsusHZ-zyvcdX-J1FRB0M5c4FEO0jve4Q3yLi3Rhh2c77dCExH8C9ei8wSMQYvBf6gL38q93ORroLuZDI58Of1d6Qd4aOgbrJdwKu7JYn7P46vBrkaT-lT4gRPBZbKKRoAPiWYl2XJ-ulWc5gCipm2RfO0xxvXZp7AR_nbB25O_pCvQXAa6nvsJ1GcGQ6hoNdUpexukiZ21jk2rFefXQ6tYuHNLLi86pur5HRrKJ-CHiJw7rkxfy5N2brqsDAGkWqc983QUfIv4iSDncVP8F43zKaBwTComRHf3DW2hyyxdVHQwTb4kDqtTDks9A3DLQPrlgd5SIWXCnSj7LkSgt2klZXQtL_B_qlMH0BiUihcVWd_HMuhoZOhOKlHn5WHJpu7refozM8J-EFER2xEIfXwl8Ezwq6_feBCJfWHqyJbeeHJTSltraeFARk9xC2pkUF-Uni2oSF1Liwuzk-lG5kHXA6dY-qEqigze2kTlBq1yFa1tjFT8BijNgkHzpRSYBtyEDOqleuBYzTPQmbPVZigQ7SUxfbr9dbukRd92fBraow_OMjl1iLTyGkUIdNeOvJNy6YCqUsuTkdZWVzz4reARKAqwOnOPsUjZMWSsJL5lIsvuwo_q3xIeAwmNXU4PrXmqnzvfD5ZR3xs2HhdmzSyC75r1Uyg3-_wFTwmcS-7iQ6qeVQSLAiPjzXU1YQh8x-gcbO4uZeazuKQfsoGNbqyRTxrEGWlmXHWXGH1t_sfBqopGZYREUiKbkt9HgziWJhbHxcO3CvuXqND9LNhCzH4kRTY6MvE5bGWeFo5m4O_d8mqItqcxtNarbSYdUmkK7-W9mlIgOavpcXD61QqsdAp6hDyJoXT2xO4oRCNguLPvRoKh7IGuXvAxEKZPPf2YPNIjw5zcLcrEDYRRFBCB169oOFXyc0V1TS-mppnhet0r0RxXjPUjOanYtK15wleigO2RD7Lorzsj9m3CoYEsI1VQ_OUgrfM7t8kUXkTVT3BiSVvgYmbDNflSNewMhSjgqa6X3C-_znWQ0LY65uq1BhSli6pU7q6Q7yvaxmwjxuCZWqBU8y3fnFRt3Af51IWkDHXt3hFCP3l6Gd2D7BLr6ez5BzpC-VfIVTO-FDVHfwhLvRlvjLbZeRqPyXxu_2PQCB5ybJoFqtGmRuqMcska4TJoB0DYfu1tIKd04f0RJ4bXvIUZh7-j_kiyPSL2DZ4keOrD8nWg-yK9zzgNmb4TRpq-2_w-WADMsciU4N3aJ-nHp95oUdsb0u15qvVc9Y2mrk682XVox__emtgTGF-c5ODmrUlYUUJkcENz8kOukFBuMMsEwDV9AcKqKikrD_hLzJgYCUJ2LLxzqpQX46pQrucf64c4mNMVNlvKQTfcgd_kNYoANc9zCQrDvuG4OI0B0EVXQmcHcwEW38vPjPEPJCqOmJh89Bmefmjf1JL_SS_wg7dlZb2nDi8z9dgyfdw1bmEbFkWptPbx0nEHflsa3aQT5uFdqflnmIGryaggQH4RlVLP1RWXStFdzMINNfU8q2TXjEp1-khL_1xCAwYBjexLQREGcZeZJPCiSEk8uK8FUGdrMOq0pDiXNVuDLfQW7vlygsSuM1IMVdrSYBM5T1Q-j1JDO1BW7D8fqi0QnyYXa3cLeZloCt0TM9pCFK3BQ8i7qJ70HwTyKbER_AUq00Uan_TiPj4jsl47gJ_LQQaW41e3LNsvwgIeUt8oRlUc6JBzmnduWMszCnJWGlYwZ0IQKFwzQ03YXcMYdZdC-dmov7l1qeH0vA8sl53zIOB6AjQXyShLmGIF8WfifrpvrCVScPMml0nUh_SEij8sBvOIJ8ZEbuAF6a1rkT_-SFSL2hX_eITJDBpneWdMCNWzEF7Ynx7LFD_foF7oQpmBvmBDVnzVgCz_zLvGdDgz7glbfa6_2FVkX9_Kg_HM6SFsferLuXXMi_mAXOnv0HoytOUmbJ9enSW8S6Ywi4quqgJeGEdp43DxYjdizm9p-o0H35FLwhxxjZDRt9vBUOHKIOAm0piMZd_Efl5nxa958O2WvXUISSsraf1QgXvgCIxjYqPvVcJOMhwboqhsJnmI7LqxcX7drH7BAZr_UF9NfqmV3wSwM90-f14thizGIuapFI9T5KCuYVRSnPd1NnaWEYEucnER-7xe5CsmFfWqvGWOl_yFcvPxoA9YZDI0UGMivbuxSxzkq5oEMvVA04f-puGy04XJc0GwwulFb8PoKM6b8dZ9PS0qDHdHLuFAp1CFBw_-5rzWGOboNX5M6P154qen3kvTISb76EcKmAxIruNL123zRS79Nf7rjcT9ncdTYUt2zBDba6rez3e58XCHbKWCWA2odvgxi1gbluvyy39iJncaPkWlCXPK41wVqq9VWRPfazQK632diuy1ALCnMZhDeHpbS_5mnVy_h1OwKTNXoMOF4oi1G3YihfSSFDJyOz0RPks6pb-6FTOx1W968uo3KrD2yhF8w06qkckEus8Lj8-vXNZjoaqpWOBQGt3eYsld8ZTznW1CvmONrGupt5oyJWKXed_pi3meuy3I6dzUy2l4Nhon1bZGlRHLS0lEUPOJtsCQ6T9CzEcByZKCPbyhB_YC8rpvwBdVgu2Vaktl_lSPjTQrgUCHYBdt8K6vmvkeIb8AHZQdx5KQX38VHU4fsJAeUttOQSfEJ6474_3TlhegpJux5MpS4i-_ooClpxMvImeTvmia4qyBOQmwJlYQntMHhnVgVoIcwF666N8eNuBVGormrALmedqpr3Si1iP17ztPOPF3qM_OUWDdaQo_uR6Ji2qPSlb7eF0j-zfmL3ZvuiC1Z7RXjFyhRVGsiTt_1T8VvzuF3dmO-htlrKJlxA_uqUylqu6YiaLHRBKNGOFE8ZbeoBof56skky5LBxQeBriLYXT0ipl5yzsxNRJJ1cqr1zN_ECwrsSuqrGL7Ri7UAhvkZ2sUwiiPN3AXzCdRW15uuSjX0tPWXaTagdVyznY3l7uOyPJ0J5HMImjJ61g4nwqbJBDX41WVVlKRNViZuc4s_FwmCN5q3eEfy6AaeBAN94ltE1BNKAygLVANT3zXA8fcuBOD6wg1BDR1jJQmO3iqMViBGHhGS8RQgYhvm-rFMhdandM9B6vaBr8tSFhYzxMrj8GE5ZIiW9r3zgEs5XUZwUm0PvynVGqKWJxxRrq9WoydH9dt3bEytaTiuXT0ZbvBaCEMBDVMmXl25Yi2dRaOE3AIS91A10FkKXNeUfL5AS4bA9NBSrpsrpmQBbO2rd7HbyLU6GwkhYA6iqKVCU9uT4UxttPf9ROaBiJxzAH_d7wJHrM3po0Z1DkTJDdg0l7eXtHcyXOjejffMaM_rZ_AfgD8UA9ZjUPRCNzKn9dZH3e30cfOwNXIZzNqcqidGLZ8yzkNPfRRKDjxd08xO4vl3hTmU16-CYU4zlzN_myhQA97Ia2QAuTS6HEHMitv8wbS9GgkA4yesyyC0t5iqOoFNuCJvKp-3A9U3FKPtP8Rl1v7Tl-2Gl0jxDpY15FtDoFPUI2Z1IJ-OLTig0wZSDBpcW7L-Nawe4IhmoIkFFws-oCQZ8XmIz9Pt4qr5Eklr4-ZLwLDete5rkrTK5eb8tkjAH1-PkcmuLwA1l7GqCOvLnEDD00xZUEmY7Dc4uR7zjv8vhwXocpQS_VU6o7LOMbjyXT9bEejts5A0UO6PvnVniLLauW48CjzFxDWZ5A-EjQqJRwOnqiGDwdJLLiewmS8Ov9cIInbzbU6k-cs0Ivk0JK3n0bVlpuoFpYNrGu3v7Puny0O7DW-s4yCwQoJnLt6BBci2nYclTZn1YJJK2h5WSBMN9mV4ZscMHfjLzZ-u-V3qTVFw4f9-38LOzPF1QkyaLF4GB2BTm4tGlifnXbD_lqY8MLZALYE66OKTbB3t5yAzOWKNE-JSoLcNiAVVYZErsJtiLG5U314yXwBEjiVYgDegbiYPAkt_Z2_phl9G8jZnqn27MaqoSwCVoa5rVGLtjAm3gstDCs7I5tmmF6X_OMQLy5GdfhUwIEFO2C6puj670Ah7An3JA09AvNIKD2SZqty4WQK_xpYUg3MO65Wmz_C99Om6DgBMnusIO2lcv4DXO6lM1OG38sxcyN7eB5-npCQWFmTrNF66FC7xa4l7OPVx5HTFrKCRiHHOwie30MluDCFTR79lsWXGn78UzpfsMkpTZhfM6bXzkP4SAkAwQMk9GeB6WaLnAXKHUnIArr5RoTl-kwWP1vsmxf6nBedKszATlL-euU6Ey-Wyy2YeRkwLbz87PcHPDmj0ArA3UuO7JI3lpys2MbW6QjGxOUum0KiRbLlUb0eYRSgk_8XEl__s9Vua4zhV2eGVEveHEoav4sbJOzn6lWufaC-PSL7YM4fErfmMU1qcFJeINeMm8QHyQhTCEq4JEPg5snPzIXeEQI-t7NuwQnpw2Gcy_o3QkuNMIynDEn74InP_dSp5eSQlES4r36KIAdeeWr4oBLO1NShqonieso5VQrIcmXgxE1YZ2TiYoqXLMy0TJsEbZzKrJ07y1voyrIc7U9TZ5tc_51Tv3EVvcSpGEv_ArasaWFX6Hkvl3z_ZHnoyW1bOlidtQyNn4zQAh8HJy0Kfl8H7mv1s0vlTIsJx79MqHGsh05BoXDfGmt39H_uyw0H8Fnun86cPf2H99XPpWMqNdB-gD2CMrKwXxoKKz19K9QSh-qCMMN0c2D08aFeXp2VoSOvuh123c85-VpOHqqdXY_ElC6ePVvOrCBxT06bl8PamalnAZ4_KzmMaH5cjmvnfLNrClU7Fl9jYSZG7x69pnl4JvCqfjdLraEp81DbX-zIbiIFrLTZlj0hOUn7gR0NReafxFm9HL8c4EHGnjFcX_9cOhwhZBFgbo8mwr32ZVhkx5ZPzmCpYwlHTXtBJPMx7f792SlJTIZ8focVro5m_2bCBGJZGIiJZ9hS2S1Z3TVtNna8eur81nzMWLfEAi6Dbjmfrjg2Dq1WdtpQw-8Q2tkjoSQLiREFGqpi1AI9SHsLfdMk6NEXxEcDPr-8siKqWNBAoZXuRmm9bilPR_oQ9IegE6gUqhLOuYtVCKAkKjVj0oKopQa8wAfV6tSzByirbJfFsZU5bJWOatnXcr2leAGhVJX1FvZssG1unukhZbfj5cmXIGwOYi3NCpevseiP88-SIzF2UxdYtWl7STOdnYVzI4HC0FdxnjqQ1sXqA83LuOPV68_yZEXVL9TJBZTe78NJcDvOunj046OEizoXq3o_L1YVH101YvJdvPWmUy3ymE9N0ksdPY1dbC5MFXlPWbvHL8fVELuS8-soM-Eoqd3DM3YofMphivUZ7aQ6udZUhHTdcCWcKUAevSjOYqC8H0IKkYMbBeSxzBRg2jE8VHxjNBjALtZg1gHD9fFXNPLbYcmkWzq4DGbOdDMsqAjzh1E1V1n07B8Qgs9lsK-gJcAa0-yCe_-0HuW4ERMU9kO3wUQYOiVBOoDNj7SLQMkpjGh64dpUIQyzWmgIKgQRI6mEuylq3DtazXK4mhCw9zavta-VE6OIFC_c1pgUgsQZOuWxVd8rUFvXQGHpefqi-DF5PtiPofOVI53Fy0e5Blqr0XR5bW4LFFt-QBaR79zdZd1sYLl2hkxHZlVRg1C9Xo3tWJ10PiIQ6E_mOHD46RYFr-RKkzbh0NgkKVt2cCIW5QEToZZQEUSkpTiArrbIyCUGj9AThxe25TiHB9w7ZwsYtTtVolZ0nRezqXszMBZNBVGtf0phjcNH8MjLheiTWDN-px0yOET9lLI9D81eq5sOGuCr7oPatQlKHXqLN0zD51fI3PHT5tPWHDDpDnMX0auXzdP5WbgpkhM7TJQCgDuHgj_5G1afFlcG8QZ3TD2g4SazFYq5eq7inH4G_AjAgFJ7sg3dUoTlefH42yLN4QKuj3vn7p_mzK9mYDg0IXVJ_2Xh7HARBYYl93mkHPCB-c35mfLS2XEsFzwCTLCcOK-s7L8eRLNDwF6Ajo0_GhcsO8vDqyASoOYP_cCMUqDYXtmZzYbnRKny_NVSllXs881QLQ1_QqFb67G1rB2t6Gq95RzY6Dym_-HVgSbP6GXq414zgcG_pAULOPwHvV2AYbaEUEEcj3Zh5WyyIb2tObCreR_hNhqAcmVlO8YwLGLSM5VxXv_lGvpRLtaQLKZ5osyQBcnGxGKakCgixP7Axwqr-yPhBD-0nSBqfGpXsu0kWuhGQyHWdf0znDXgj4qaWuQ-p6D1TWzjxCjyF-RbMUeRG1JbVGjM1GrTFL9peR0UWGS6tg9blwL5dMat-IVRbyMcAkTcPYTEyxfT0woMOEddE3DYtIokqANQ3EF6Iqg19qPEi1UNcPDhprEArgbWht9F4w-zIxZ8p4O_e2UnD1TP8zo3X6vx7NA6yVPsLuKmcn1PzKetU-IZjfu8tPVv6tvDC9g1CV9ctnMak4dZz4snSUwWZPkc8WVpznG_RDDFC0h7idyfU9k7x4wu_-dOl087IpI4SFVg8Aa4axx4i5mP6dAkQ3ISatkFSJwyvq_PN3ZrhKKBcMxWgQAx5vRLkdr1FlE2-9RL6bRqLmjl2LmGPQSLjJMD3QLXqH8fWhIg9adxVtWfxGcM_56Op5K-YU-xrW27_bMW9w0630hXoAzBuXjLBHV-30mR_JYovf2K0TRFHd62hf2NIqn0n35Gw8tRDsWLJ9l1ytJxExc_5i5sCu4jqDswOo4qiuAx0M5RC6bJH-Sfb4IBp0m9RWaS6rkR4DrWuMHoVJkcltLZHEhrKlSkhLcF7whGhR2hoPb77-O77NpK3cibtUN-ZMqfJxhp-c0hRDZ9_Yx2j4cY1Dm0v2eXNHggKeyMQtY1f3RVW5iljcJ7GbfnbleFjffVBffl1JAKcuMBf2CCnC6IX2XYZy4Re3LcCHmx1BhzkJXpY651vrB0dkow_Leu8cr9CQLaD7D1KpylY_EPMHCq9kclmeSIPCZGBDqSWZfCTn_dvmxNjdo4VHWd6taVHUST3PXmtpT2uyP-eEvyP7ytPZ5xOgSgP-xsoHVPfBuHm0-XywQHZLlhsv-yGEKqGbeegdBn4mS0kfswv0jYaXdHFXHkSozdVwLwBN97AMZgPwS-G58vhMnQBW3t43S7gfDx2cLfreQel4uccOb-qlzH2jBAfzvPx-sqQX_qXcAAMBrt3gDazRh609J5XPLehRiURmv2K2W5ix_M4AnyTdzF9XRcUruDrHJsUE3g-i4cXcyyG1sbRp3ETLMKZSCMmkQX8TAMcRGRN0uPZO9XO9N2goYBsFeysIjm-Yqbad2Y-GNTS6bb7STjs6_cPw8chH9EhFn8mjH-hIZCvxcCE4QaMRGNANTNuMEa6G6E5I5yc58I1fWhq7x8cYZWznRsBmx6HAx9RNDfAMB2qL4ld_MP7Yq2WqLhWcJT-8cDsaUoPz2fWwzkVcMdrcFTx1GMKMFGt_fe49HW7f0ULjy0LKtJqLgDWvZMItBQe2Mk-rNBLCasPIuNue4EHXi-7PklGjDGmWmXUdnFyVIlXB7PXLdTJUq7V9Lg-IHMmDyqnSbxHkhBhA99LcHzv7ZDs4aj2XMdDinknioHCaz5QRbFfLWxzUL3CDQKuNS2Y57DITL9Mo4A-g9RQEYhbOjdrZLsYrJfm96zHutIx2S27_jmNRmIdoqsSan286AOu8pCE0qnYQGp6YhWo9l7PSfTBdyNDm6Z8SjTpjenngSIDRyrCxoYT1y45ug8XJWYO0KNSuO3jbvEtTabruortcnaFOYTngR12vG82Eg2Eg7shXbqnJK98q3l8TJ1vCQ-3PT6ZHSJejkGMnO-ElnlSUTYUVssjuozYzXjeYvtVNBCs-4yQFxe1GyOxISqKkl1PtjwqJf-2tT-bd0dDPJgdHswUhCIrqSIeThr3yrHtPZZS_ea3yAXMW9eDpj5W_MGg5KEYOQrpK9QFWO0tCANimmaNKpXA21lwvAqaJZhNiISF4h40Sy0giCjS0AkruC513pyx5xvOv1msxKzpd9iOuqRDKGjcvjGm-SMSBaT0I9sHpSTEnNEvnObkhWPmweeeDrbEvUkV36SYE0wTOgzoO6TuSSa5f1BxJhHuJp2Wyp5AcCDnstrWwuylTjmRt2juFzjnxg7TwuDyxKbYmESCvzzQxw3zYW4-6W192XYxgVGyjItJI0ufYzgUO73bXNWpFZWCJW0uT-WL13--tzhCc8LZQb3ACBddWledTU9v--kTTUmPstVMvirevpbatIfBDIuEdg9rPMTKYciqnlb0qsJzHATmflKQXaY_MX_F59vpC5NapXvHeRVOVBzMNJyIUV_jTXLZjwMaJO2qQ7rH8rU_zO2jhmv8zR6kSkYQFiW_9Ri9YR5jEkZ2NWCcMz2o-7EgL_e6yvKfvItHwJMNWXjPN70hJHc2uRghEmw4RFSq4K-RdRdSCgVi_LESS7zLo5E7bt69f7LmxyjwdP_czPQhOcUhwj3ZJNjBnFmn17rbiTLyK_M11vhOkhElvqX5g1wc4flZx_j7CfCcSnV_6-LcaVd0rPIcogIZXpCloQmSsgvusK7iu6Qiz11xJEHUpWV1kmwZvJuxyYqQsIr5gHKOiriFrgkkbiXDGK2qzB2uE-WpcW83cs2_cz3omvZtDy8bFPqH_aU63-F97QbSiKj0rVem8oDbuwpP1mOAo3mnKtVrVY8Ue_f9vZNxmTfMjC2XptSFq0B5lt72uVtRnzlBteh5giv4Nhk5bTJqz-FdSQz6Bq0n_nq-c73f4o80Rk3Dl6MK7Srk7MSCpCbolYD9I6jBFfpRAYVyF5ZAUNDk6eU86LIbuTmzoYeYmzvB4ksXUBMfCamzcSfWJ_w-JrEhy0SsU00n11N95GdlkHny6MVLdHg4Dmr-Bu5UW4qLeFcEHafsA4IXNbUW2PNW-uCmq5wZpgPan1mrFNw2aAKa6ptWFVygxwoW-LEAUvSPG3l6egOCq4gdZ0FF5o2aQ6BobI40Ao-1tmnOdqyUwc3iXUhVVroKyftqnvwT9UPFLWfpchtmHwcUBTtH0ADS-D-BvXLLYYZdwabb5Pgv7v9Q1sKjP6SivlVaDojnCZCCxW1kI9pFWGwVn5WnhlP4OG7srVWVGNJaQE9KAjoOyTiqMwHm5Oa4v_CHUSUTPDaGOB3B7SJ0-RpaZOn-8D1NYGOVKJNcEsK1m3z83Uie6IDZ2Nqjmv4PpmN62icv2vv_cV4QdD9HVjqqLqhxfK4DNnmvlMrh2FSrkLUkyGXRNDsWJwrYbZDg1ev-bXmJQm4q3NKS_ODyPmg-LYjEJ204aEVc4PSYPfbhGq_4AdrXHIjZVD10qqgHMDDH654HPHRXdmi3ms7wdCWR26G7nFU5wARfuCsmbU9bJBBK2SFHhmEyuUDGz2dpkeCi1hpBy0bf_7xV3NfEWx_MdM2QlIMI8_ZRUVcr3m5jtKc2rWCA3RRHmqtx3VPbJgT1X7imakSCVM8hEii2GsZw2wkrt66LDtOcRtR2_WwcdPHjqwilaedEUaWo2TEVAWsOvOh7puInq7ighH-zbAVjcJWXpU284IZO9do-PH3Kmg35L9kVLBBySPZ4AIZrhYUAHWSWbhKsgTbHuoUL_SHmOb1y6btCDtgH365rfSNjlN9D9svFIJrGyw8p2bLy-ggYud0rDvjvJbXoDmsH27-QEMmobbc_IsCmZ_9uuLsm6GlI5qXO6GGHxDC7hzqTPxBTuReCD_36tauL_atbBGG3genYhLehjGYi2QyRZFGi6bpwM2YqWUKU3qw8f4fJqTC9NrjzR-OVlRGJkeKW_gYe90PsVDMh8r767CXrG-ST3rjbhoiAZzyyJK684kVCOhIdFRIDKEtVLWNRzOb-HINYrBfM8kvwRRPc1Bb4RMgU8221wOKHArN-XViwtYV2ZvmZ70C0jBfuTYbABm02iYwE3TWIhyMYo62FgvNctlQugi16Q41k3XCceERjzpxOlAuA9ftGTx7aibFprAF2o_9ORt9Qelh2x5Jhvq0vkRiDwQeU6cXKWTe_KT1HOxqCys9CP8wiAaGk2C3YlMCpzKMVo9tju31Qkf9AEivFIFk_XvTKoQwjcB9oraM4Yh6DnuKYXzxcfonbHCNi_cdjnm47RzfcLSmMdCjlNfmjzPvPZOHpKEfUTkQjd4-_A7jGNoN1tSEqIiG6CG8XQW2reEd3oA4xco_9QLyCIg_3NXKlquG-VkbAnK7DvECysMpNvDZO93-ZxJaJnKcwgI_pMFpWoQan0i4Gi-MEFt6V7cTSzAnpOuenSPnsAxwfaqUkKzj1nqsMxU1f2h0SB5fIfhHEq5jybjUGfS5WyJfAoONH6Opd2IHfyn1S09pJR979yBCV0DtgOaAzz3RlqAYxVXAg3IPfgJI467jIwp2va7gcZrS9-4lyos8Kq5P8LvPEIpKltlzAcKlt607iFnVGOMOoNEhZjnYtZW3jS49M8fKIbxqfdJqVxXIIeJczgX0Fs1V9RDxcDsaOBpR9xGkn5nuVPuxkjBqxKjt-R3sBtHGlno6WMTrW1pRAAguscTlqN7I5zJZdb753uT0G1BwoSY5y3Po_k2_crvn0pZa0mYjupuzQSZOViPf2W1ZUVdDpIDXJWeKhB0O_MJUd5z1LqF7eMTtAXalTPMlp1T-r5b49aL_gGNM6H7IZWT2htpH7FCMO2JFDA4jJBpzxUnbY2ErF4gourMVNpwlYaRkC4CTF8y74Hd_4Dzj2Pc0D6bHJAt7Y53NEXJtOOPM29j2r0McPs-jDuM0vgnqmsh-oJB_CXECH934hAC5C0lNlXt9vx20vSw6Le4UwhyKVXZJBRd7IsadTbEqmJFXAMrVsefowT0cRR8kKNvNjP-1s0KbHO2RSttBCPzhoyyR6y6whD9F5V5-mXiy8uKQttbzVLwM7BmDZSnhzYzAkryeaeee2m46-3MP9j3OZ79amP7XJUrD2BGE2ygCd0f9Kt46o0MIVj6TPLxYHEJVqwGeN8VAYOvDJUftWSDpXqAaHJiT5DVIzo-ypOzpZV6Q9F7-sC_e4XZdJWH4RmK3a0ioMmLLXUM8r3lpaxQVp4VteZvOxiVFTOKaO0sBQxhyaKKLaTkprynxgzdRzaxcgn4P-xrAV3NnLLuwc4dKI66eQfbS5RtWpVrXUl7lYCqzAOtU92vLKdX7gTNHmSxRxfNmYGogHaCvItAJCYjAfiNDSDFxVbxIEmK0Tsdxqn42fkAO14aE_c-MmY_3ov-aKW38w_IXGjlqsQdIOdiPGvYRhaMbs1xAVnOhVd3OWbuT1RR10i4YbUdAyrRtyzztW_aCiFzKYfeI4BetUh04MuZ6GG4BNsR3MIVrS5NF0nPvsfP4cMbcpxWaVSLuMa1s-28TKuqPkOm1Rk4GZv7yfUpQtGlcWXnOBc-_J9NxoYySKstu8DAyCDRZzUc-Xerl9CSXyTEYsEwdmgJbOCkZzqjRebJdTdVuywj2OVrGUdBPsdmlG0GUy6hMQw8n9Tcsg1QSL6WQMIwh1FvnKyBcgArD4ne2Riy-YAvJkA-fTYUvTRW5YtjzfIOuOfLvFlGjxR8LyD_Te4hotzjZoUhopFtdytIYcFVQr5y2SbvRpbauCcvj7URYl1bxTF67xHE4jx5PYwianSY4d3ny-zxERWY4EltHivDpL1qGGSkdC7utRT3-zR9iGLGUBUyHec6k0_riqZ3xm6dgVbKQwTMRDT3V1bMghzxnYw0DcnRHinV4eQz7PlsCS75FoppPif0qTBKfKBrYgot9dCeDwAgdhzfrRSVoqOuNu1720fVVjs5U7ORsBJ06r01PdaOwnNtdT2iyIkxeT6GK2anmcdEENHWVpVkoP1yjHH8931BycWkf2FbPUvGagDRh_3_xN-gJNXUhxQK0f5ZXj7GJFGBLn-9mIu18VFdLvZeaOd4Fb6sInn394HnPPdYvYq3n9C1Et6f4Ss30VnnQWqCoSaQZHn0QpPHvnaTS8h3UWVSbwCLi3COMsz0vpnuMKvx2e1_Rz6mg0TVmHh72B2kAroTHSErzzjXSWDQfcq5sAsfftryXZXNwea1j8514HLVXonegLAzZlY8wcg7am6DzAv6aqK8s5u11t3tzuZMSDaTPQy7yinkCgj7xS2SnfSh1L9xwar_jAO4lYMgMamVfVD-6sVwIt3pNd-LGi_f9fbX4LSylOYDr66UurCAWFb3bI42F9du-dWwJby8u-exqmnH7-l9jE7QlLQaraeF53BMtxtMUylMaJzTgtmwPCa8KFpfO_BW0qp4MO-SiomPn_GYQvGmwJ3MEyHRFgRN8Dqy29_GHhbIcE1Nt4IiWp5eS2TSiVYd6X4Ia-1gpcqTxt8yHAxy1Pd1VcMJhPQ66fV07AJWuGkSMx7CqZitYDsF5RQ-pl-nvMSD63OoEyXga9ZxUByMYBQtb7cIroR9xuZM4_uWNrs75HqUQDd5UInQ3UHLyPmdUqQkn76Y12p8cQUJKePUaW4cKEm9F-seCiN8LQoE433C4CMTRNa1clTSy1rutSKYPZyEyD5vBDiiQoCs7G3x7p-sV38N3PsRa6gNxZOnoc2YNFT_IgFX8dN719pzqaBsLxgwvmsREOCbFjfjFYjW8GbX7kbLT09RDrb-T5lG9r74nO8XpYtWiInEZk9HHIuwyfsqRlQ0W28TLnhFFv_pgbsDpoIviv0-EdZh3rhmW_GObWZ6ZMbzQicAQgcGUebqae4xxKRdz3_T6twXH3ZdPC3stB4V-nPEOs9yb7XhtgNtMFOaYaE_2gKXA-uhKypLx-8K7gr3UHTeQxGUL530OCjCngcovD4Hqx68J_1Elg8ohJw8IUZ4OOJr0liAP-CnZfnfBUuJjqd9FwM2ibDzvaEx8zOQyD5I1yXCHxNdPcRdD6KfQwVYW-U6QUBFAtDwnpLyOIpHh9oBz3wAVOs8CnEizRDc_Wg4D0I1h1KcouQdziH3ricPeCv6_L91vRfLVK_SWaS6HIi2eXSGc78k8unEoP7xqDi_KyIfn9ppEb9YwZiwnykHW--gXG0S41dAIBP8yy4Nw88RjP8sygShfcoAJ3PyW6t4hjU40QyIlQZf8uRtmE77HhwF6Ys-qcNMJPt-QqPenZZgdaammvW2TXCCuEfZjwRlSTINDIhUX9ao5ttRChcoVv7E3AR437XIWUGAU3w_cwb3rKbVarIhPn5gUoZ3HGzzpBHzX38omJpydvN9SKGW4krGcys3yzPEh6Tq-_DfxlrMGMAJHFnwq_NO2utNz7oE0KsSxfUa1CU4gXaJzPIloLYqKOba10PAss0eLlNANHf2VKhAohpb_p2ZLYxGQFuZqTnULqB_9Sdw-VjNWYeX4eQNGGWcHQ1a62lFhDgG1xBxBic23vMTPJ7zkVOn-H97eyRp4GfJ-LmV9ZBKTpgQmNgOvTMmUncauyz3wt80m5Kc4BrCyuY1XSIWsosb6eelqt4qdbzMHNqiJOO7_a7WHYoMVceiUX0GCMSNe0x0xcQjPOp0k-fWDVgludbxyT59vGMeF_s3biUkR6NxGdww8ISZ9GmGKbo3_dmL7CHzDrTmcPzaC5fg69OIHzRAIv6oPIYEDD99QQf7hnJtW_mS3kWnU0iYOK3ooRY2GqO40Rt8VdivXNBZ-nNXkB3B9jfWvIg7oIDwo_HLG-42akwlAV4U0Fv9-mpY6RpCK5_BfOv8u6xyAqdBvfGAjf7FYJQDxkbNMSiXbldb-gqcuEctslo5jwn665RaUEBdFHcdmqWCR1CC4-01hTmlKCf4d25greY5H9hubr2dd13ZthamjtkerabiI2EgsYfoTTsPjuZOUsmUFJbpRkT-t7uyWYzWFOvW9S4SwOVO6I95NaKHpwahppo16-s9IGmXu_UgKJAuqIceVvkXaOuNlto04jXP9vjyaf3kMScrWRdSqv5e-S9xzSb5Q_7Hot1Bkz5iW4XfqQmFKYRFkSU8k1BO2TMyjEeLf0Z1Cly3TaZm66259eKIJZyeOJ4JbyLq2293JhzP2f1foT1DmHb8V3UWVl8CbvPov0h7IFJBkl856G6Hk8Ss1LXSYfxnD0ERLJsdZVMqwwD87NMU58Hw_7ut_sjVzcBsmPI040Tt1P2xeA3qoIgR4YZ0W-ebK_Z1KtVbvl-t4zREDkhxwAcTxl24vVOhlq8bOZHIcTElTGrba_F1-MlEVE2_EFNncu16aL_n73--AVmxIhrUmZ4bXSOwP5G-bc6ihstzmM63BVHqtSy-5tT5FDpr41tuA1xl0mRjqrcxzxNFbYDHgItpaKL_H5ChZxp-Dd5acrCTnQdKKKm1luDY4yKaI05GLRN45LZap1Hws1W1lag3bGv1w53ZTrm8xhsjzWUXqTSNrerWoqRT9sLrILU0JPv4g7e0XZlBNMIcoWt9YdtFRU69MADoxIzCLJg5l3RnA4ZSCkoma09hgB-3xky3H16rcFX6w2ptkMgBATw701eCus9EffvwsbU-fedAqzccdRrJY6LDiSMqSa0cNlcgR1YQ4OILgBD2lqXn4Aa8c9DEF5H6Ih2P-jcCWTMSHD4ysw5SfJPa8dLlsu6-kBcIQUUQwQLYV6PhBmHs7vG3J1uqseMQ7rx1eClF5U_I6gja-0aO8TMVuB5hfKpZaMdRDi_37fmjSDEQA4Ss33_WLZt7GLK8gyGtUUPwH7hGhpqGWjwOfPLS1kkadKxFjEPHqh_IxQOm-7YRHcPeg9RhKFiRyiyn5T5GXhXgaW0whmKeeyylaHMAhhh5ez99mqWI0q9vWG2XAhnWCF7G06DrZHOCRSSd50bEu__c67Q4vH4GtMYTZjVioy6Xp6r-0JWApGcut6Yn1Jq9zkraib1BHB5CRcQ_RmWAG2Yk5K7szJFWgj0RmhnK0zsqBtMCu9878ADt84Ul-dA56EflFnVTcP0ILag_2oslYaybNKftkkxlsGhGep2WZ83uOvGzuWqkTp99ul4yc9PnlayjOqYFh9FHuJCPda38Z2egBvmRtwkvDU7PsGmRPYZ2qpJF_L3EmqRn5vXyJgy4qLMNCfpsFOAV263cStj4bOLfkfIWPNM_JFxWL9gBrtSYo346hOMzZyDm8fNmHpoWlt2U09aYRSZ-OWGJWraI1DCLF8Hm1yz_LN2pddp6b1Vgo0GsXmfkqU7udN1y4lhmbWQYd9FC1Cvck3vHavzEVPqpS-hM4S0iEN7Bw2NBLQPL0lKWGoqSUZK4J7hPMFtUZb7th-_wFhKb6DVNTe7KUOj_CMbG6L2C37mi6rJge5zLwsO0PM0sL3KDu_IZ_ODpur-k0qxXIK1onEpT9riNBDl5bwKvSuI31VRxbjdKUNqJkCylG_45h7zcMVnZ-6TiLHfxTRGCOHvA-Bmb2dGLnp1rsH_FRrjRmvT6ZuwCPQICDkUaF8-oDCqmFO83pVHyxmWW_yBw4Zn8gkU-3g1PMa7mi0ew1UkfuhAgYE-SpQKWgks0dlaRp9fvZgrzAlv20YDLb4bUIRGSkrS5VRSbDLK469T-pV4IYwhHQVNqsu5IWsmLXNK_6tv1LM47lBy36L5NcmHhy1EZLOgexyMEQZ4g==",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "MAX_TOKENS",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "bebfa252-be99-4bb2-b7ac-454092e0295b"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 1314,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 1314
+                }
+              ],
+              "prompt_token_count": 3522,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 3522
+                }
+              ],
+              "thoughts_token_count": 3682,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 8518,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.4373594890809313,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-3488a590-b072-48c0-af33-077bf1e6feec",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "bebfa252-be99-4bb2-b7ac-454092e0295b"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "c1d625bc-b04f-454e-b0c4-7f6de1e3c8c9",
+            "timestamp": 1771772993.142329
+          }
+        ],
+        "last_update_time": 1771772993.142329
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771773189.1208656
+}

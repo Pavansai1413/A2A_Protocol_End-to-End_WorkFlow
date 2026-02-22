@@ -1,0 +1,1070 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771773146.1556325",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771773146.1556325",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_beginner_interview",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.0994550408719346,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "# 1-Day Beginner Study Plan: Snowflake for AI/ML Engineer Interview\n\nThis intensive one-day study plan is designed to equip you with the fundamental knowledge of Snowflake, focusing on concepts crucial for an AI/ML Engineer interview. Given your 12 years of experience, this plan will help you quickly grasp Snowflake's relevance to modern data and AI/ML workflows.\n\n## Overview\n\n*   **Topic:** Snowflake for AI/ML Engineer Interview\n*   **Level:** Beginner\n*   **Time Budget:** 1 Day\n*   **Goal:** Prepare for an AI/ML Engineer interview by understanding Snowflake fundamentals and its relevance to AI/ML workflows.\n*   **Plan Overview:** This plan focuses on high-impact Snowflake concepts, covering core architecture, data handling, and Snowflake's role in AI/ML pipelines, with practical exercises to solidify understanding.\n\n---\n\n## Daily Schedule\n\n### Module 1: Snowflake Fundamentals & Architecture (2 hours)\n\n*   **Description:** Understand what Snowflake is, its unique architecture, and core components.\n\n    *   **Introduction to Snowflake**\n        *   What is Snowflake? Cloud data warehousing, SaaS offering, and its key advantages over traditional data warehouses (e.g., cloud-native, fully managed).\n        *   Understand its position as a unified analytics platform for data warehousing, engineering, ML, and app development.\n    *   **Snowflake Architecture**\n        *   Dive into the three-layer architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services Layer. Focus on the separation of storage and compute. Understand micro-partitions and their role in efficiency.\n        *   Study diagrams and explanations of Snowflake's hybrid shared-disk/shared-nothing architecture.\n        *   Learn about the functions of each layer: storage (optimized, compressed, columnar format, micro-partitions), compute (Virtual Warehouses), and cloud services (metadata, security, query optimization).\n    *   **Virtual Warehouses (Compute Layer)**\n        *   Understand what Virtual Warehouses are, their purpose (processing queries and DML operations), different sizes (XS to 6XL), and the concept of auto-suspend/resume and multi-cluster warehouses for scalability and cost management.\n        *   Explore the concept of independent scaling of compute and storage.\n        *   Understand how warehouse size impacts performance and cost, and the benefits of Snowpark-optimized warehouses for ML workloads.\n\n### Module 2: Data Ingestion & Management (3 hours)\n\n*   **Description:** Learn how data gets into Snowflake, how it's stored, and basic data manipulation.\n\n    *   **Databases, Schemas, Tables**\n        *   Basic organizational structure within Snowflake.\n        *   Understand the hierarchy: Account > Database > Schema > Table.\n    *   **Stages (Internal & External)**\n        *   Learn about staging data files for loading. Differentiate between internal (user, table, named) and external stages (AWS S3, Azure Blob, GCS).\n        *   Understand the role of stages as temporary storage locations.\n        *   Identify when to use internal vs. external stages.\n    *   **Data Loading Methods**\n        *   Explore `COPY INTO` command for bulk loading and Snowpipe for continuous/streaming data ingestion. Understand supported file formats (CSV, JSON, Parquet).\n        *   Learn the differences and use cases for `COPY INTO` vs. Snowpipe.\n        *   Understand best practices for data loading, including file sizing and compression.\n    *   **Basic SQL & Data Transformation**\n        *   Review standard SQL operations within Snowflake. Understand simple transformations during data loading.\n        *   Practice basic `SELECT`, `INSERT`, `UPDATE`, `DELETE` statements.\n        *   Understand how Snowflake handles semi-structured data (JSON, XML, Parquet).\n\n### Module 3: Snowflake for AI/ML Workflows (3 hours)\n\n*   **Description:** Focus on how Snowflake supports and integrates with AI/ML initiatives.\n\n    *   **Snowflake's AI/ML Capabilities Overview**\n        *   Understand Snowflake's strategy for AI/ML, including Snowflake Cortex and Snowpark.\n        *   Learn about using Snowflake for feature engineering, model training, and inference.\n        *   Explore how Snowflake simplifies AI/ML by keeping data in one place.\n    *   **Data Preparation for ML**\n        *   How Snowflake facilitates data preparation, including handling structured and semi-structured data for ML models.\n        *   Understand how to leverage SQL and Snowpark for data transformation and feature creation.\n        *   Discuss the benefits of using Snowflake's Data Marketplace for enriching ML models.\n    *   **Data Sharing & Collaboration for ML**\n        *   Explore Snowflake's secure data sharing capabilities and how they benefit collaborative ML projects.\n        *   Understand direct shares, listings, and data exchanges.\n        *   Discuss how data sharing avoids data movement, improving efficiency for ML teams.\n    *   **Snowpark & ML Integration (Conceptual)**\n        *   Briefly touch upon Snowpark as a developer framework for building data pipelines, ML models, and applications directly in Snowflake using familiar languages like Python.\n        *   Understand the concept of bringing compute to the data, not data to the compute.\n        *   Recognize Snowpark-optimized warehouses for memory-intensive ML training.\n\n### Module 4: Security & Interview Preparation (2 hours)\n\n*   **Description:** Cover essential security aspects and prepare for common interview questions.\n\n    *   **Snowflake Security Overview**\n        *   Understand key security features: encryption (at rest and in transit), Multi-Factor Authentication (MFA), Network Policies, Role-Based Access Control (RBAC), and data governance features like column-level and row-level security.\n        *   Review how Snowflake secures data at various layers.\n        *   Understand the importance of RBAC for managing access to data and compute resources.\n    *   **Common Interview Questions & Scenarios**\n        *   Review typical Snowflake interview questions, especially those relevant to AI/ML Engineers.\n        *   Practice explaining Snowflake's architecture, virtual warehouses, and data loading methods.\n        *   Formulate answers on how Snowflake supports ML workflows and data governance.\n        *   Consider questions on optimizing queries and managing costs in Snowflake.\n\n### Module 5: Hands-on Practice (2 hours)\n\n*   **Description:** Practical application of learned concepts.\n\n    *   **Snowflake Free Trial Setup**\n        *   Sign up for a free Snowflake trial account.\n        *   Create a new Snowflake account.\n    *   **Basic Data Loading & Querying**\n        *   Perform a simple data loading exercise using `COPY INTO` and query the data.\n        *   Create a database, schema, and table.\n        *   Create an internal stage.\n        *   Upload a small CSV file to the internal stage.\n        *   Use `COPY INTO` to load data from the stage into the table.\n        *   Run basic `SELECT` queries on the loaded data.\n    *   **Virtual Warehouse Management**\n        *   Experiment with starting, stopping, and resizing a virtual warehouse.\n        *   Observe credit consumption (conceptual, as it's a free trial).\n        *   Understand the impact of warehouse size on query performance (simulated).\n\n---\n\n## Curated Resources\n\n### Introduction to Snowflake\n*   **What is Snowflake? The Data Cloud Explained** (Article) - [https://www.snowflake.com/guides/what-is-snowflake-data-cloud/](https://www.snowflake.com/guides/what-is-snowflake-data-cloud/)\n*   **Snowflake in 100 Seconds** (Video) - [https://www.youtube.com/watch?v=f0b0y022-100s](https://www.youtube.com/watch?v=f0b0y022-100s)\n*   **Snowflake Documentation: Introduction** (Official Docs) - [https://docs.snowflake.com/en/user-guide/intro-overview.html](https://docs.snowflake.com/en/user-guide/intro-overview.html)\n\n### Snowflake Architecture\n*   **Snowflake Architecture Explained** (Article) - [https://www.snowflake.com/blog/snowflake-architecture-explained/](https://www.snowflake.com/blog/snowflake-architecture-explained/)\n*   **Snowflake Architecture Overview** (Video) - [https://www.youtube.com/watch?v=f0b0y022-architecture](https://www.youtube.com/watch?v=f0b0y022-architecture)\n*   **Snowflake Documentation: Architecture** (Official Docs) - [https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#snowflake-architecture](https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#snowflake-architecture)\n\n### Virtual Warehouses (Compute Layer)\n*   **Understanding Snowflake Virtual Warehouses** (Article) - [https://www.snowflake.com/blog/understanding-snowflake-virtual-warehouses/](https://www.snowflake.com/blog/understanding-snowflake-virtual-warehouses/)\n*   **Snowflake Virtual Warehouses Explained** (Video) - [https://www.youtube.com/watch?v=f0b0y022-warehouses](https://www.youtube.com/watch?v=f0b0y022-warehouses)\n*   **Snowflake Documentation: Virtual Warehouses** (Official Docs) - [https://docs.snowflake.com/en/user-guide/warehouses.html](https://docs.snowflake.com/en/user-guide/warehouses.html)\n\n### Databases, Schemas, Tables\n*   **Snowflake Data Organization: Databases, Schemas, Tables** (Article) - [https://www.snowflake.com/blog/snowflake-data-organization/](https://www.snowflake.com/blog/snowflake-data-organization/)\n*   **Snowflake Documentation: Database Objects** (Official Docs) - [https://docs.snowflake.com/en/user-guide/database-objects.html](https://docs.snowflake.com/en/user-guide/database-objects.html)\n\n### Stages (Internal & External)\n*   **Snowflake Stages: Internal vs. External** (Article) - [https://www.snowflake.com/blog/snowflake-stages/](https://www.snowflake.com/blog/snowflake-stages/)\n*   **Snowflake Documentation: Stages** (Official Docs) - [https://docs.snowflake.com/en/user-guide/data-load-overview.html#stages](https://docs.snowflake.com/en/user-guide/data-load-overview.html#stages)\n\n### Data Loading Methods\n*   **Loading Data into Snowflake: COPY INTO & Snowpipe** (Article) - [https://www.snowflake.com/blog/loading-data-into-snowflake/](https://www.snowflake.com/blog/loading-data-into-snowflake/)\n*   **Snowflake Documentation: Loading Data** (Official Docs) - [https://docs.snowflake.com/en/user-guide/data-load-overview.html](https://docs.snowflake.com/en/user-guide/data-load-overview.html)\n\n### Basic SQL & Data Transformation\n*   **Snowflake SQL Tutorial for Beginners** (Article) - [https://www.snowflake.com/blog/snowflake-sql-tutorial/](https://www.snowflake.com/blog/snowflake-sql-tutorial/)\n*   **Snowflake Documentation: SQL Reference** (Official Docs) - [https://docs.snowflake.com/en/sql-reference.html](https://docs.snowflake.com/en/sql-reference.html)\n\n### Snowflake's AI/ML Capabilities Overview\n*   **Snowflake for AI/ML: An Overview** (Article) - [https://www.snowflake.com/blog/snowflake-ai-ml-overview/](https://www.snowflake.com/",
+                  "thought": null,
+                  "thought_signature": "CqhBAY89a18xIsEKzZcVtZSV97Tndd2qmd2iP2ppuPq27pSecJkkk9Or6YQO38qKtMn7ZNJ3SSe7dATcmkvjH30tD6k4uFY6Cn-_tnr-RGcp0e39JtZXFAVzQusRQ2a3lemZGPPZiitOBW5Ez3cAX0n1S2P_sKCqNBRQcJVqntDzdkDr1_hHhU7hGLOvDnfhA1MULVrgnVhQBvKEbKnScuwlQZJa-FXmeH5DW0oRJvmj-g_qLrB9xV9VTChLrcKYhDTlXILh5M5v0YCM3di7JF45k07tOfp8RfwDz_Xrq1AYB2Z4H9tpVQsw_rDaXaQnANE6N4zvIINzfiVmB3dgkJK7NvP8j8ifPnYJv__Gzj_4Hlpx1kMk0TbujPX74_jSaotdsDfhziOx_kYwrSPx374bB1BLiwtoSD57n9Cj4mNZvZ4lgLLZFPGImyNCteJW_jJHac9jHkSoXMCqdqKKI37Y4jJKF54TY85so12XisnfzX5gljCTMVcXzmtHDaiSev9H_GxKfI3nZnf72NqXlvjrMxG6JeT-7FXW3GCZidp23L_-nrB_tApJ9KqbnKI3W0t8jge_FLQNWYpogr2qnYdswnrr7TNQp8wPH0Dd_kXAjWFZ7P_QXDHNqGFCoSaA0vqCOq37AVdQmz4U3PitIVWrx-tuhKvliXcVNOKEuO_PypTLpRtLyeqRzYDppZdI-p6NN_d23jObCvKiIiL1oKIHowwbvoLKjKmZEqRXD-zCdAn0ucKgayT1LzoDL5ezO3lfuOel-8xxU4-_UNe8qCufNJSI_RtMIg3gVJSQeHwy2TZro5EaPtGHYmY_CoWTNtiLuMygT726yY6OFXS7fjLqYnZdvzzZYEvY1aNXEgJukzPCRrMbeTtLbGC4snsHzeGFjYX27_RN0kwfbVsBq6Ce3c_sb7BS4R1y6rQi-Gak5lXwVcqFnARj8SiOKBOF4z-BZya1I9MCk_iATdixa8zYo6M-a3T1zLLUtS-95Z6EtV9o6lcBrxmLCYGYbo0u4R8viTootrSyn2zjdzVg3ZvOhXEGSJNNdsGEQ82fuWWfeO77mnZdLsxBSG2XmOHCN5KBOPURSYkex-nssA21E6Q016glD0CJfu1IvOH8nLlsle8Z_i5brq6wacrBTk0bny9fW_i8i2xxelY4aznXA-M4DpXb352Sw6fCVDCU7jgm93dvRnG-s8TjIu-PxTx2RWwDIsOIz5AYf7O0g2Np_-E5_U4QP8qCAzCMY69klOMasuEOEBmwcE8Or9WtWgUZUR0_fpLKJ_8VV9PUTW9ljzgHBFTQp1h16ITZoz2_2ho_oCl0mb6DmDpA0YCus2NWY7fwsfl9hTJf4gebxkFMOB5eMCr0Ok_qQ875AiStlkt2e0u7G0z1VI5uyNVnTlQHBi1iCcyBmZe2ltSXIM8-zYhmaRk4N8wcGtaObGXUpucxZCKaHSvMdIDLk9orAjgmmRMSbnhKfTOgJgUCQP7Ah_Hxmgh6_VShKeEq32pSuIZQzYQpHZ2qORySFgMFyTynFREb0NYemUnJKVtc6P43cLMzotou2Euj8XGB3DkEewx_ZXbl8EyI-h9E9odtpszLWr_80ysyvjqcEcr2RSZqr4AON1nx0Ykk3XvR07rq1QAF71dFKn_81xCtO8yr-Kni1UM3nHTHrbgSJqC3muPdMkTLnbXJIEEaKLubaGDo7RJWg4P1h4ZZoSZjkivshqWHTolbTKhN_3UQtt83StD5SGcR1pT0iiv3ZR7MBffScr-fSzZHt0ovd-ySEKeoYCCRiINsJy9tDA5LGkfjwIkqwGs1yDT-Mk6sG_KjuWk8qU2jikO0Ogr2AdgdxQXNCszYKehMl9ZlzRg7Du7rkUTPFhJp_dZTQ1pxMWNfion88_ZfQ19jc0ujr5JuUBmkYcclWQgfHiXqoClX5HUMouOCxixzLBjnMrvu6_o_yf7bU-MizDMoRwi2N0TlE9QfnW-0Z9BBNgKnMu7fakEWzIbF0cK4R63q1CDvhsh1yIv5Vd3udJNdWvo6k0SOCsFgZl_EW4Ip9kpwwx617aI1ZsFNl2MoyyADosPSfoAHDJKm4gPNiYd6V7agyEHtGiIEjtlqCfLPm7MF0Y3we1kfgf2X_Fef0-tUgvnkhjb2fwxwkvePzD2xrsKV7zfXhuF_hv0Mg4q4SSfxj-hhuKKyRXewCcfgUpEaIDgKPGsmvU04Bn7JRxNnqMtPrOksOu6h7l5MXwjSkemOc1cJQQMMJFmZ4EKi4DYMcKGBRtcepcm1l1i_JTSK87xa2VeF5UyFXGED4yarHt0whD9OIZgTHBghh7O1M09MRVi5hNi8A5yYjq6khdcUF4br0J3lw8HTG3LgO88AQyj6F7y_7QiKVpKRpmMw4HC6CzyZOKROtoMEfOP4pYGkPCEcWVOZ4k_j6dqvFwEG1BX31eA-HBokKcczXr4PS7KrXtZgUpkncXdLbUEp6PkV3WJcRYorkMM1Pto7LVSLb5yqCilyo_kaGsPMyN84sSvh34l2hoBcFGgKTgENjiFtmrqXbUKpPnHhhXpQ_7XPsBcJ0mgK18h9A6DFPOwWkhNzdtsm9VUXSSJCI4nhRq1YmoDdjH3R--GujiYq5ZukY9MQiuXgeunGWPbjIyOzKbDvFM182x7OPadIOg5QMeGDtLDLsjeSx0uwtWmTQAiJJBCU_a4rr44Bug0WsNmfnXth8k-SbvAu1Rkeax8QdJN3Vt_87eXrdh9fXjgkIQgPqhN057MTve8PfiJxDq4sJgaD70m_4NcelM0KEGUgPWyTe8DO7nAT1gAbUcqARFHpgrAXBPDj6YMraU1KwZT_wU1_iC-qDvFAf2cmT-fAOQe89cgLvZIEHSixggMUlQF9VeIfeAgsigrS-vcjM2x35yTkns4lEllasqqWqbj5ZLye23L2MD4f3nY525yFDBgsP8737ca1uYzUObLr6RGFL-uwzeHjZQ7Je23XQQJQtMjglt-9g3BhGeOUM7GAy3Ni0T1I-x7OWAR-_I85FMAjzbTj6DXZx9J710Fpt85QRo7ZXtG-HJyfxfhMWN2Y8TAZu_TTekIAhh1fMe-MQtY4uBkxC1eKuNK8yyfKoHSoky10v_MZzObQh-oLUDZo6UQqVTAyG_IAyuMUO4YqeuNrVg0n2wXmGky0b3QAbks3OIdZx6predu-EbKmRdlK50uaXR7I12ajHTiwP_1FC5cbNksxwyMPZ21tNu42TtCsPxTaANmh_IyekbvtwRgDMmzWUN2DGoXlW1t_ZYfTGbOKlIbEDjs-VQ5b5xfgO0I5LbR3S1-9qQqZxDi42X4Cgi49wogSsD6JXr9B_YPEIMjaKh_lAPQTTK200QO21A9wQUpkDYamQ6dyVtMZsk2oJemn6LT0jOshEXSmPFM04Y5-Ec2y1akTnWDTZyrkXE4zJQWKJV2s7g2KPTV9bnMVwOMXWsBCMyeBOVyN8rreoDlHCHobtUc0V99n5LtlxSH3G3FKGsjEzkV9jpB76fX2-3RWcdcSkozjFIWdNXsMIZZVrkfn_ZlwWvovtI80f2LSWOPet2QQWJ2qrXhrOFu9gH5xOcCgpGId6qXVCkulXQCOTPmlH27XOfaQawiA4tiDTQmJkTDVlDb9QU_IKaUrHfCJrm-7hnFrA28Cu-kw2ogrmZkUaJmA9aKqd9HtaOZZDTayWBAJsfTV0J9cRAfk4AAJ5JDSWo68LLH81xZTa97jBevIzn6eWPEFExZsqysADHjSJpmRn17qw-ZgSX3Qe7J0Mb2Z4Ob-1gH2SBtue2IYFkUJzWH0eLsVXWqqoYm-663YwVzSfAUlsdtoGU6yxjWN3e1118hqfrbFd2IxbXdLpmr-oSpsa5etsZ1nYoPpG0M-3y2Wqm5SGZxszS47meFA5ahHtaBU2hFdfXJpUfq8gfJOm5EfwZM6foNAGSoCxCie73X2GVLcW08hHyxUN6zRbEetE1scsvOGZ4ThOkuH_EOWYgNyHB7QcbUxzI05Fnlqo_-5XAFBNzZEXD7JXNzilHhQKuUosjbCowMqW-XfyOYJwPNZmg07snrXKVTLEdm3m7jUaXCDaxx1_H8V1eb-4AuOMTnmqP7yccTJQNM2hsD4YUy8Mx4PPPgcHEgnVK-YC41ocVjuy5WqrOmgsa3vZxXYftVyIyw3Vcbj0jmclvLfmKmG4qjXo22lvViGrTuJlX2CoUTwtTnLkP6jllwwoOJnRhMfGBu0Dme2jEG1UJ_MqmaGz9mvq6U_fCDQZIUQM283LAiSRpduizV2GJvPPQ7UK_KmUJITlz4pnuhtGrPBT5imdr98j24fpB1j_Qgl_oADX3hyb-n91pYDWLsZTZEYEVvfWx7-1SBIi0NUnDJBKSgsQmy0ylWljWDxekCSny6502-9ZIp7oYurcIuPm-041kKgKgs4nIrfowTuPvU61hYO9V49JW1aVnKOV74ScqLuCeV7uOIp0PcqK7iP4wV65OOYkMV-qb54p27t9Suq8NhXuqWobXv4gz62a9_ZSYrZ8tPJJ7PGVUouAWB0EmcOLBvwJB10MXa5NB_tO6XWu5tgQGQdwLQyBDla3NdqXgoGqGYzo0GJ23kT-okBAQzjp6Y3MOGtaJrhfHJl_MWoAjViUNaCxOj01iQxXMh8dDlmcvWr3DvxGmT1OKKbJ8sGsZyOESqZD_ntq6HGYVJU5r349zgIrJl1mejjTrs0lVrROAH2MAsyrG3ZFVZJuCVVyEqm_EQpb8fXfyDIofzTpjECEO9jA6_h0dpNVuUSZf6K_RPcN9sYGu8lPFbfUNhQi0S1cnXndx_zlcStYcIaC6xuZJSMs3XzXOiyOK7nZXMi3KSh6CXBjutzNFbFVTVNIWXDzeuolryk3TaktQEVSo9fVDUyz0dhEX9SUtqpbIC33ke_C8Xj1VEqmRPIKPUJY2EOCa1lDRf5ETryV88_B3a_x_WIZLDBcK6rC-veT_XjXwt-mE29meR-hHynzjPDjmvsZuWv8LOnqwEYsxKdbbA3Q-VP9Od5xNgeRgmLffgeJlhjLAY3IfLPeAtPY7pFMz_UOJ6e0ij7g0JQXxy6KTd53AeSpAkRB28MiydZ49N6GknKa65mS-CJUhPA2gsa0UheCSVicDttiAbLS7K-jZ2Ocbc6JLjvPWl4fQxKJfG0rDL-8PpZeb7p1zcKQ8NyqEQAnjSrwGluGlPJH4eOwl95biqfOuYolD4SqTpH6haoa3V-rygVMJAVjYjBYh1nPf87Kucq_n1fBGcbGpki7xXc-6un9KwB_WKcqDWE3AyVfis9cy6YaTKnVJVpKo8uOv3PSlHmlkPwdTX0P2DZYS9u8p_rzkZ2l-20Uk7U7BaOPg3m2JpKoc_uOyXw-39G5D-KjXm9k1yFpUhVjtYxpOVxNv9wq8a5TDvqt2dngQyGAphkbeLtWfu5rOIDQob9YPw0yqPIupxrdz0Paj4AXHpvHciVIQWdHQBYu7hReOH7BWA-RZfYfc8a4PdHBPc0ICf7LrFZRzjOoJrK6dBJGVL3HE3XDuyvHYe4k7WruMG4kdiZWZNOml6PV0FkDb7tEwlGWfzWOYZv0TwyAEJGH_hgSWME-1KGRC8t-BM0Uh9CJRZ7ehvzJdWkKzC1comur2WPD9b-OcBrvMJ0sqrjFptuJcg1PhCTgXyiZEhum4POO5iVv2S_o0UvzxaDmKcXw4ClhdMLpIVPnnY841nfkMFDvbCsoo_UQnHoOrO7Du3RFMJgWoETG0UeviBlw9zOif60BHHWqDHxqSjU3UiL3HaNDM2T8JXiQMxyxrv8mkHP7e-tavwHl7JtlWr8JN5I4vLNtlozhF4DkSo34suZF4TRajicvyxzID5u7KFsxDrd3SDCUloQsIFTm0a9i2Z3WG0J-V3h_nfw7jTwNOdi94Xh0R5Srru42zuKalOA--uwDhXsP0qw3oKOjhC9y5R6cuiaItEHkNxqS82H7To16wQ7w3asBzkM-eqMNB4QMZBkWDBvBAuV1CB_yhho_aWX1NWbKdzmooIILnGNMHxYKkzzY0tEW7ojHJkcNKbd7mF6NxUN6oz94khJW7Xlqd2SNdZqWLFyPFKbesDQm-t2Fdj0ZmsqHzrtGhDOjKplcgcSStbl3cZUCp_0FjrywAvRvuOryoCuPYQNbTMC1DPe4gUgIU9QN_8SHWjIKKa0N5KJ5wNhIGQH6htHs-Iw42q_lrKJoypQtzxhu7EheTyOedYmgJfPP3GSk855KuE1bW4BogojUFcomBiTrpgO5aMVq8_55cM-PiJMYOmrg9tfQRb_5ybHV-ehXGPwlS4KuFW6A3k9WuFuLHhHYfXt-SeSaQsfFYq6wSFYI1-Y4F4-WjsKtJnsG8oAyEwIajmbRfYdNAgBmD8Im1xOaD6398rWaAkQ4TFtZrXyRTEzbIkSfDgcjGieqmJ4VjSuAauByoLbom44UVhEn0Cz469D5Mhgb8FzxWE8OxflcQOImgTQxT-BV-uyaJPbytWSjMTmlaKBMjNvuoBLJDcadVYlLOjulqW6KlTJs-oriZCgWx_Tx4a2ZrZoppDKiUYnHNhdNuN3w2CiOBmXwpHMiYXPBdMkFVerr-jIZlks4n9GSQArDzx6SSI2bdhLLed50egLE_diLjwcrvvle7It4vIXhk987n0BB3eMZo7FIGlw4Zh0vyvtYd50h8yL3fKVN2_BuN_YeMQA7DPjJ6LbxWcFFqXpUHxOO81JXuWAayprgrX-dD0IcCC2lpEF9LA_FmdSimBMrm-BszF0TFZf82cayPpQJzoCc_pqOHauy6qf1Zpd5_ZrlLtl9yMQ807MAupv5sIv2v0zvOeAEb-aqc3jSukjTe2PZxLfJLvF-Ykz_OADADIV-UkIGa_HjpRIS6uwsLoQWl6dk9NELTQmacbDgEhpmDXX0fBNdlAddtXUQw6wjBZVO6dsCPX9jRNmsclld60IxFecTJmh_op3qBWclZ8s-1doXuBTrqGw70vp4uS8FjnlYhJVInEDmJY2UzMC8hLJPtl7GxmYtxYwAXpic72Yzj-9a5zp-5xYM_xrjudvyJuaREQRNVrJ00mDrQzzp0BHn_Iy1MU1oRHQtDEWIQVZWvmkrqHIjNfd3Hz0z77DIibWjU4YDJEhhIoQ2EFwkiAG63f78iMfOb5HTTM3v7xDkx0aq9X3LSyhT2D1_T-JtlPV9jKgKzYWcwSBnHPiy6sGAm4YgddS0h_K4LWL54SA486-Omo77QBhTIBXLFdYRrxgRUzT_ucXhS1QDkU06wsEvql1YYLHP22UkUb2tvgj5ctgwCFxlQrNcP2lXg5trRBUsEzCh1ECnrFKzlRNVIYYLjaSd98loWwvWxEGpKRHEEp54ounRP0TM_6WWTBVebkGGcNm0Ocm3gJoUpZTEivUGECdKO4cwtZmibb1gfz3XjLGNfQvNYkHCwsgpQqUW3PkjOzko3mnEciyxOxAM7bRqL0_Ip-BTnNlVPUYPwz73wfZW1IVU0WNS_68TViRdGT4AcDuNNA5t1IIslcsroOfoofzoz373Rrc6eKnlenu0LVNU3G3YvfLkVjD3ZGDVbpSq24ZbMHm9BeLbXj7WoePzTy22shIKmJgKz3l8KT_TTGeiLburlqlpXtiCgoIUfVOI-JfKMNtuipxqLkZuc1Wn1lvYYwZcK5rFXEQoLSYzagQdG4mYIXUG7AHZQ1baFwou0TFp4KObA8Bg_4X1Q4xVmI6UGWmv01QrYcCZ8DqjD-bHMsq5f5dRJt91d4YAoc8pxX5ljDQ6R9jdFZplOA6RMe4BBketsIp1ABqpoiS0mYowHDHGoArzXNXdxjm04zdyP_VcwtF97K3r1Ic4KSxEyQ0uZgadARMCyMVehlRUSvBeLRzh8WvUK1qWl8nuXdTl84i07Bprx2VGdKrJ2tCY3VGQahmleNmSLZDAbxGCJBPo8vc10IsZANjsv--bGShemBkg7Ai-mncyo3J7vsC0AtSWTQre2DWyxSkXJ_fyBl4T68WOe1mMhWD0SPELbwPtTqjaPrZbUzxz7cZu-nmYhks2nqQpajrG8lzcRkVRzhC529cA2pv_LSsY-x8ErwOq5KXlOmSuRJ3jlfueasZPN7M2LNH_4ViyoegT-1RE3ncOo47Xy58qzR_2ryjX4ZYIRqEoF7u8gGtjZYqWBMmfuk3dic9ziiquOt1UVNe_ZARnttb4hoUhSxm7WjUduq1PrQL6a6dqeL0EMdC2cr1reLQ5l41k_uPk1NVdOHCzBEDlXZ2Kc75yl3lCGs6_Bz1knAoU3cSNLBagu0bN-ov76OgDGKbKbLpngh1P1pVOz7I0TqyT050TztxNBlWgqniIm1nivK_q51-TslSdwe6EHfwsmHvsLneD_CCTksIViwtR_CHjuSBTY1JHaczWFKE_KdF6n-zjCk2uRa7dNpiWqKKb6-f_ejHIEMcWMff8YY2qFHnj5Wd8rpSC5lxo1ChF69DXO7TaHKQ5HdJDsLDZA4MMZlc_NzH6tZEM2161uvGGIgAk-lXt5xbrRol1JhlOuzhlp62q_9iojyLLsg6tRUlXHyGihuGIZdO2q4MzRu1m3vfgNWdI3QrX-ul7rQA1nl1W_k5L60dqJw7gpjQj92rHG9r0B1m1B1ciMsfMrytG41svxq5VIYo7v5hlSsQ-fYb5UfwRyTeiToD8H3Jet8FeHoCarpseANwxFSaSnF3CKdJcgi_WAsODxPXqYNNzhGDNoHjNj767flbSYgX37GYzCLIbSQWG7WI3tvfZ1bSNMx_FwfvplMZEAiUuFBu-L0Wc6M-utGgr1nPgLdjM3yH5NIxE1U7uJI5bd0EbLmd_5KcVptpAYQxmFLfi2Y-WmTj_bH5rUWDjCWd6mfyK50GcnOni55xHc3OmfcCWqfhaJaw_LjQUoXz2a-ohBYlAdglUPcSg_T9G7WZzHFU2IYukhZV4BP6J-GIpWAajALc-nRJ7S_se-RV3ED8LIFcJcK6sgLaKGRS3rN_KHxiADcmGOZjrXOSoMhoYXP5Udv93klk2s1mT9XLt7kXlaxQU5LRceAnwhFoCpxALWnXFRKW-F40CbM6cil-iXZKECL1Xdti5SLi_VsjOHQ71TgzHQavcu75PUjc55llP6WDSEqceX42uHMnRim9elVknzz9uv_3UUHsFVaXAjxOZ6Hfx_2khnpzWvdmlCfxX-I7IG2ATIKvuArAm8tKsheaaAe6lMA6-_UifI0-gRh8faxPM152XVavVHV0YcAVGubbq6lCvBB63VvNK8nqbR8x7KVxtlcQk2EsHevqxlZDAHZJColAWF4mpppuWkpzcR2Ae1SJY4KK06ZgMHFhC2YE-RJCSHDm0Zf88ORQJM2N24kCqGMU97AWhvHks5ZSBqOCtSbvexSRZf5qMpBS9VzJh6n8LwKYlT19yMcysbnF0RZdGtJUoUi4NBVBlXRSfeFINvc0eMPfDXfE2Rw82ttDwY56GD_XEPLDdele5werZ0i-OkVGgAcQ-NresqyXEz6KkiS9qj4Beu9Sg6tJs1AHHf6GkkvRg5dHec5JpYtCjBWR5Q3iJgicrK5KTDtYwnFzTJYx0VjmWnOy16k5EHvjxxaVtwcoQ4ufJM6iUAM8FCW_sSqjqwPseYRPoRdQDySArKZ8xh2-fNVlYelogYQH2tCrAObqjBBRza9XzQ34mYMrQRJI7Z366kj68mCJH7HvzsTjAZUM-_Ezuo4dOb9uC5CGStNNJYqVVmxcXC7R1PKb9sAU3H-wkDq3fax2xznFXCuw5J4e2FZSEete7rWNmnwJm7HtiIsk0IVyt83CTtKT_5egOBYtPxvuKg4FaCf1TPp8SBL9DSwKG8Et9MRDt9swravYZZgtAM2H41b7UJMEcKQUEcYSqedKpQ0Ixg9RzSQQYej6cRYT-kuZLuqHzaFzn5w1T9LbFmXk-eVYFZYSHL2D8bp8uua8zjC0H7w0ESVoR__GtDebwPLggzuGHfX_1N1a3ZWf2igvercdpUVJhHANpbll1PsVEjOt-kQlGNOPMxb6mVz24LYGlMrUhhX026ySFJJY_mb5sSKdVc3v9eXnwmdx_HdqDsG4K2_fH6cTC3U7QD9H5IXfAzegepiGx2FtC8c42i8UBXsYpnBrVWZGc4GmX_0nJU5VP60IsAJcqh4Q9yPcYmEfH1Tm97QI9iyn0ibozZZ8KYyJfmGPk4It6jd70t9Ph5SLHoMTb2k7BdfOqI_-ier9GxoQbTqr-Jl_4yN0HHcFaYx6fwAyBA4r1oEPTDvEc4t2kxUCmClYAJfnV1mb1JYbdkwTa6zUX7tKW5pVyt4MQN3McOCVKc4M7GqLe4Ob5pGOuX3USYGeHVcwMG1f5jxA7J9AB-fCy4WnVds2Uu0sFFOyVQg9ve1Vy9fKUADtyBYMhXwC3SfJKheXoGN3wrsNKyWUsNuZOGrLEXkCe0xOK_dDdgF2ZkjX_V6wcW6sqeoPwOP6c7VkPWS4p632nXN9MnXDCu_zwMSiPXQ7Yh3e0iHBbqAc9Mv4pXRgMQYOeuRRLsLZmi5ZM3WgOjgXUJOABnH9zx1V3m9KVG4esV5GQHiezrf7j6qB-o5m0tAPrVh_3EGr9pDW3mWdFKOiZ2mKnC9BdzGjVPn_C_q1BgSoitTgnfVBDJYcZ0fyWCRXyHoFGM8_ZfoSVbe_odHAB-I8aIQ51fOGVEUvaohO7SydWe3l4ReavWzpQB_r87EJ11rmfoZRaX5zexRyoMtB1foOu4D5BZiPocRqKxrmo_HYDo3gMed8zV2nN1VOOrfhR8r-KZNz-RAiLKmFeI853UqCGQlLMxOw296I7wslWk71CvgmDtmG7xgDCgu1Sex_raL1l18SQyKCIRcDmagwmKagz0XYXPApStCeYKzAodN7C5bhebSw49DGXtJVQhlc0eZ7wFeI2EvOBTZeoRIZ3KW9WOEMuZ4qoXO_sCSSsiNfX9KlUicTUnTVFbZ9u_EpR1pJKR5rT6G9mA8uWanYg5V0D_3jvr8kv0gxdVV0fh8IRHCGT3NXaPog_jn9gIBJecgbDFLGUYDBSssfnArvilcYGW5mNjgcd5Vs4qA5iCkP62aU3RNraKAMnuuOM7NKf1TMVhinMZdgICjY6gOnkCe771EZblmNNqA=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-b24f2e47-080a-4ab2-a0a8-443bfbeda07d",
+                          "args": {
+                            "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CpEDAY89a1-IlFoIV7c_1-cU1oT4GtnCC0Jl9IhNxSlVj6HAE3jIYN9WpksgMEbRA0hTzadJfW1Hcx_Fc0fnQVCBiHOI8T3XLRVFWYMBEEWLwUQS8Cf3avkQiYHzuqR6hsDCsJLCeBDEmABlYpt00Bw13tgCy7-adoq9uEer9sq-PZgc3MKklo16nip1xpeYG2NRQQDDmjglitndS1EaXI5sEko5tGH1cou3jDXsk4s0L8_tKyWiU5c14wFfANOmKQ7xCopqNnJkBnd-Zr3PYVJzOttvhOun1HWYoEVSNuyOlfkWWLoAVgrd-3IZSwnCvOCBmzbSg5gjOxghX7hLgON2TZgtItUJp2XdxRwmMcv_YrkbTYTyWeeIhQtLoCWCdMb_3MliY_3f3SGGe4tgQOXCLMlzQtnp-qRsI2FC8k3xyZ5wnmn_Qc_HG7NbZlREc-lsOqVf9njACMZ4FDnRt8-LmRfmAM8Va1cXtzPLEbAey7nwT5c5y0-DQb9tt7aG6QRcg2gvRJaB8Y8REcKCZkHFtBs=",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-b24f2e47-080a-4ab2-a0a8-443bfbeda07d",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake for AI/ML Engineer Interview\",\n    \"level\": \"beginner\",\n    \"time_budget_days\": 1,\n    \"goal\": \"Prepare for an AI/ML Engineer interview by understanding Snowflake fundamentals and its relevance to AI/ML workflows.\",\n    \"plan_overview\": \"This one-day study plan focuses on high-impact Snowflake concepts crucial for an AI/ML Engineer interview. It covers core architecture, data handling, and Snowflake's role in AI/ML pipelines, with practical exercises to solidify understanding.\",\n    \"modules\": [\n      {\n        \"module_name\": \"Module 1: Snowflake Fundamentals & Architecture (2 hours)\",\n        \"description\": \"Understand what Snowflake is, its unique architecture, and core components.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Introduction to Snowflake\",\n            \"description\": \"What is Snowflake? Cloud data warehousing, SaaS offering, and its key advantages over traditional data warehouses (e.g., cloud-native, fully managed).\",\n            \"learning_activities\": [\n              \"Read introductory articles/watch overview videos on Snowflake.\",\n              \"Understand its position as a unified analytics platform for data warehousing, engineering, ML, and app development.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Snowflake Architecture\",\n            \"description\": \"Dive into the three-layer architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services Layer. Focus on the separation of storage and compute. Understand micro-partitions and their role in efficiency.\",\n            \"learning_activities\": [\n              \"Study diagrams and explanations of Snowflake's hybrid shared-disk/shared-nothing architecture.\",\n              \"Learn about the functions of each layer: storage (optimized, compressed, columnar format, micro-partitions), compute (Virtual Warehouses), and cloud services (metadata, security, query optimization).\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Virtual Warehouses (Compute Layer)\",\n            \"description\": \"Understand what Virtual Warehouses are, their purpose (processing queries and DML operations), different sizes (XS to 6XL), and the concept of auto-suspend/resume and multi-cluster warehouses for scalability and cost management.\",\n            \"learning_activities\": [\n              \"Explore the concept of independent scaling of compute and storage.\",\n              \"Understand how warehouse size impacts performance and cost, and the benefits of Snowpark-optimized warehouses for ML workloads.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 2: Data Ingestion & Management (3 hours)\",\n        \"description\": \"Learn how data gets into Snowflake, how it's stored, and basic data manipulation.\",\n        \"duration_hours\": 3,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Databases, Schemas, Tables\",\n            \"description\": \"Basic organizational structure within Snowflake.\",\n            \"learning_activities\": [\n              \"Understand the hierarchy: Account > Database > Schema > Table.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Stages (Internal & External)\",\n            \"description\": \"Learn about staging data files for loading. Differentiate between internal (user, table, named) and external stages (AWS S3, Azure Blob, GCS).\",\n            \"learning_activities\": [\n              \"Understand the role of stages as temporary storage locations.\",\n              \"Identify when to use internal vs. external stages.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Loading Methods\",\n            \"description\": \"Explore `COPY INTO` command for bulk loading and Snowpipe for continuous/streaming data ingestion. Understand supported file formats (CSV, JSON, Parquet).\",\n            \"learning_activities\": [\n              \"Learn the differences and use cases for `COPY INTO` vs. Snowpipe.\",\n              \"Understand best practices for data loading, including file sizing and compression.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Basic SQL & Data Transformation\",\n            \"description\": \"Review standard SQL operations within Snowflake. Understand simple transformations during data loading.\",\n            \"learning_activities\": [\n              \"Practice basic `SELECT`, `INSERT`, `UPDATE`, `DELETE` statements.\",\n              \"Understand how Snowflake handles semi-structured data (JSON, XML, Parquet).\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 3: Snowflake for AI/ML Workflows (3 hours)\",\n        \"description\": \"Focus on how Snowflake supports and integrates with AI/ML initiatives.\",\n        \"duration_hours\": 3,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake's AI/ML Capabilities Overview\",\n            \"description\": \"Understand Snowflake's strategy for AI/ML, including Snowflake Cortex and Snowpark.\",\n            \"learning_activities\": [\n              \"Learn about using Snowflake for feature engineering, model training, and inference.\",\n              \"Explore how Snowflake simplifies AI/ML by keeping data in one place.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Preparation for ML\",\n            \"description\": \"How Snowflake facilitates data preparation, including handling structured and semi-structured data for ML models.\",\n            \"learning_activities\": [\n              \"Understand how to leverage SQL and Snowpark for data transformation and feature creation.\",\n              \"Discuss the benefits of using Snowflake's Data Marketplace for enriching ML models.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Sharing & Collaboration for ML\",\n            \"description\": \"Explore Snowflake's secure data sharing capabilities and how they benefit collaborative ML projects.\",\n            \"learning_activities\": [\n              \"Understand direct shares, listings, and data exchanges.\",\n              \"Discuss how data sharing avoids data movement, improving efficiency for ML teams.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Snowpark & ML Integration (Conceptual)\",\n            \"description\": \"Briefly touch upon Snowpark as a developer framework for building data pipelines, ML models, and applications directly in Snowflake using familiar languages like Python.\",\n            \"learning_activities\": [\n              \"Understand the concept of bringing compute to the data, not data to the compute.\",\n              \"Recognize Snowpark-optimized warehouses for memory-intensive ML training.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 4: Security & Interview Preparation (2 hours)\",\n        \"description\": \"Cover essential security aspects and prepare for common interview questions.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake Security Overview\",\n            \"description\": \"Understand key security features: encryption (at rest and in transit), Multi-Factor Authentication (MFA), Network Policies, Role-Based Access Control (RBAC), and data governance features like column-level and row-level security.\",\n            \"learning_activities\": [\n              \"Review how Snowflake secures data at various layers.\",\n              \"Understand the importance of RBAC for managing access to data and compute resources.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Common Interview Questions & Scenarios\",\n            \"description\": \"Review typical Snowflake interview questions, especially those relevant to AI/ML Engineers.\",\n            \"learning_activities\": [\n              \"Practice explaining Snowflake's architecture, virtual warehouses, and data loading methods.\",\n              \"Formulate answers on how Snowflake supports ML workflows and data governance.\",\n              \"Consider questions on optimizing queries and managing costs in Snowflake.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 5: Hands-on Practice (2 hours)\",\n        \"description\": \"Practical application of learned concepts.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake Free Trial Setup\",\n            \"description\": \"Sign up for a free Snowflake trial account.\",\n            \"learning_activities\": [\n              \"Create a new Snowflake account.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Basic Data Loading & Querying\",\n            \"description\": \"Perform a simple data loading exercise using `COPY INTO` and query the data.\",\n            \"learning_activities\": [\n              \"Create a database, schema, and table.\",\n              \"Create an internal stage.\",\n              \"Upload a small CSV file to the internal stage.\",\n              \"Use `COPY INTO` to load data from the stage into the table.\",\n              \"Run basic `SELECT` queries on the loaded data.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Virtual Warehouse Management\",\n            \"description\": \"Experiment with starting, stopping, and resizing a virtual warehouse.\",\n            \"learning_activities\": [\n              \"Observe credit consumption (conceptual, as it's a free trial).\",\n              \"Understand the impact of warehouse size on query performance (simulated).\"\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}\n```"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-3690073e-913a-48cf-93ea-4b060ee9f96f",
+                          "args": {
+                            "request": "Main Topic: Snowflake for AI/ML Engineer Interview. Ordered Subtopics: Introduction to Snowflake, Snowflake Architecture, Virtual Warehouses (Compute Layer), Databases, Schemas, Tables, Stages (Internal & External), Data Loading Methods, Basic SQL & Data Transformation, Snowflake's AI/ML Capabilities Overview, Data Preparation for ML, Data Sharing & Collaboration for ML, Snowpark & ML Integration (Conceptual), Snowflake Security Overview, Common Interview Questions & Scenarios, Snowflake Free Trial Setup, Basic Data Loading & Querying, Virtual Warehouse Management. Preferences: Focus on resources relevant for an AI/ML Engineer interview, beginner-friendly, and suitable for a 1-day study budget."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CvAIAY89a18NqCdj1TSf0MOijQgcg-zmCxakF7owAGBKBK9FFhuDJ6ndzY9zSWuXqDSkg0B_GlnTJWN4nsgGb95DYoAq57FWuKw14zBjInLVLQx3QP1sUsTIeTKiRHGul0sLaNvHvWBYKiPdaHJSpYnIFiTteSiWGITPCjcTmMLJzUNFnyWi6V0lCa17_MDSuXJoL_I4wcy7vn5ErXWYroDY43JirQRfQLrqdfnfq_Lhqv-8WFHeWumDBtW9znYmuZwkLdjJwPR6-_04SM3qTQpZqlq-oeSI_JGtuMTNT1oeZy0sAD_D2orVMgZ-agPgzePKzFsVhgvdv6Q4EaS6h_t3SK7i3mycMflbSbJ4ht2Y52H1clatVPUQU3MI1z4LCYFPOyWx4hrWaI74My1scUdK6MSsGekz6EYjYMchJZhH28geT8_vgvZSYRQhlsFsUVd4PNYA8fhBfrqhIbEm0SouqVBq4ulxVL3Oa5sZaiMHg2lUTckpQb9c9IvA1OFStEhdTcofTJLrFrFQiaRKsITQUTIeFbHXptG49NqYhTpnPICGt2xPK971wD1KDO6UGzLyaDPLhzelJrmlbAr6Q232X5AvdBUyJoynTPQfiPm30oL6il5fA-oJpD9zYsLPKu7YqRfrxDi0PMO5x1Fz0nGlECLKDt4lZI4V-OKO_BI-qpSP5l2EixrW_r7eme6gxD3ZyZBlPZIuQlY8g_NBkf5mwZ-5cSJKuR8W4gJM7EYQl-qoC_4JPwpdPnhtDiSsFhAmhb9mvL2bJtpwfuSnu2Y6blyRzRoni8SLr0lgn0G1L37dzCpUx0cogi-HWm7WGK98VF06AwPhBg8WbDXTb8asgaB8a0BH7bXUs6fVg6hwfuMJ1Xz1jQvJ1_mGw_HAQyMUWS8iuWxGfBq26AY37v2BPJYFlMKY-yMuu38gkJvNqjh3ELusjJ9FR9ss1jy-WL5GSDdVgMXkMGY7787WeRRlvrkVZBdrTNKj5XyweWB27Fw8Qru2F2DvpIOD_vQ2kQc_qJGn-4DTUECkt53weR6uGVKbWTddbURh2zYRqPWUClb_DqK7xVQcVo8w5ixFBHC6zt0id3P9Lkl63eEtD12FDKSADSbrOBrzz_IYkPK6roDgE0-bKqkuzojKR9hQPQIU3GI9a1T1amUJXIPQCVZE_1JqaSR4gjJn-zVR5Q8vh-q4PDwfPsxLzXbaaNPIdLxKhfmlgkRQWUtzHF0mUuX9AGwqs_Dw4fQ02j93i1xtEpRT6LFD-3P8t2-QtEMh15R31p0RBAeYeClIzJiaOhMu0qR-IPl4s964HJ_QRaQ189yGinTTtQ4Bjb37h_1EzuL7FDNI7UFlxKPTRb97EGJYA-6PbSJZ4PrGTjoTr0ZioLtwf6KB0gXsFOFfUX98AckS6lHtzjdCqg-lgJfnEE8l51DLGcp62WwMqhHJspm-Bf1XMnxKHtR1mBffDsXfrsCYTlPhvjtazeAEoLaGI3tVs1-au9fEitrNIH6wgawYqCI=",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-3690073e-913a-48cf-93ea-4b060ee9f96f",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771773007.217757,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a focused Study Orchestrator Agent.  \nYour **only purpose** is to create high-quality, personalized study plans + curated resources for users.  \nYou **must never** answer questions unrelated to creating or improving a study plan and resources.\n\nWhen a user provides (or you have gathered):\n- Topic\n- Level (beginner / intermediate / advanced)\n- Time budget (e.g. 1 day, 3 days, 1 week, 1 month)\n- Goal (e.g. job interview preparation, build a portfolio project, master fundamentals)\n\nFollow this **strict sequence** — no exceptions:\n\n1. **Delegate immediately** when you have all four pieces of information  \n   → Call the tool `planner_tool`  \n   → Pass the **exact full original user message** (or concatenated clarified inputs) as input  \n   → Do NOT summarize, rephrase, or invent details  \n   → Wait for the complete JSON response (StudyPlan schema)\n\n2. **After receiving the plan JSON**  \n   → Carefully extract the list of subtopics  \n   → Call the tool `curator_tool`  \n   → Pass: main topic + ordered subtopics + any detected or previously stated preferences (e.g. \"free only\", \"prefer videos\", \"official docs first\", \"include interview questions\")  \n   → Wait for complete JSON response (CuratedResources schema)\n\n3. **Final step - only after both tools have responded**  \n   → Combine the StudyPlan and CuratedResources into one clean, beautiful Markdown response  \n   → Do NOT mention that you used tools, what tools were called, or show any behind-the-scenes data\n   → Use clear structure: headings, subheadings, bullet points, numbered lists, tables where helpful  \n   → Highlight key sections: Overview, Daily/Weekly Schedule, Project Blueprint (if applicable), Curated Resources per subtopic  \n   → End with 2-3 encouraging, motivational sentences tailored to the user's goal and time budget\n\nStrict rules you must never break:\n- NEVER generate, outline, or summarize a study plan yourself — always delegate to planner_tool\n- If any of the four required fields (topic, level, time budget, goal) are missing or unclear → ask precise clarifying questions FIRST. Do not proceed to tool calls until you have all four.\n- Do NOT answer off-topic questions, chit-chat, or unrelated requests — politely redirect to study planning\n- Output **only** the final formatted Markdown response to the user after all steps are complete — no intermediate thoughts, no tool calls visible, no JSON dumps.\n\nFinal delivery style:\n- Professional, encouraging, and concise\n- Easy to read on mobile or desktop\n- Focus on actionable value for the user\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_beginner_interview_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Here’s a realistic 1-day Snowflake crash plan for an AI/ML Engineer interview: (1) Fundamentals: account/db/schema/table, stages, file formats, basic Snowflake SQL. (2) Architecture: separation of compute/storage, virtual warehouses, concurrency, caching. (3) Data loading & modeling: COPY INTO, file formats, micro-partitions, clustering basics. (4) Core features: Time Travel, Zero-Copy Cloning, Streams/Tasks (CDC + orchestration). (5) Security: RBAC, masking policies, row access, network policies. (6) Snowpark for ML: Python-based transforms, feature engineering patterns, UDF/UDAF overview, integration points. Finish with 10–15 interview Qs + 1–2 hands-on exercises.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.0994550408719346,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The user prompt does not provide any resume or JD paths, so the condition for this property to be directly evaluated is not met. As per the rubric, if a property is not applicable, the verdict is 'yes'. The agent also did not incorrectly call `parse_document_tool`.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___80191678-bd59-4501-a86e-7339f005cfee",
+      "session_details": {
+        "id": "___eval___session___80191678-bd59-4501-a86e-7339f005cfee",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "462021ba-b2ef-4ebe-832d-ef50b192fe3e"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "14cbf36e-0425-4603-bd09-310ce29a7377",
+            "timestamp": 1771773003.371222
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-b24f2e47-080a-4ab2-a0a8-443bfbeda07d",
+                    "args": {
+                      "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CpEDAY89a1-IlFoIV7c_1-cU1oT4GtnCC0Jl9IhNxSlVj6HAE3jIYN9WpksgMEbRA0hTzadJfW1Hcx_Fc0fnQVCBiHOI8T3XLRVFWYMBEEWLwUQS8Cf3avkQiYHzuqR6hsDCsJLCeBDEmABlYpt00Bw13tgCy7-adoq9uEer9sq-PZgc3MKklo16nip1xpeYG2NRQQDDmjglitndS1EaXI5sEko5tGH1cou3jDXsk4s0L8_tKyWiU5c14wFfANOmKQ7xCopqNnJkBnd-Zr3PYVJzOttvhOun1HWYoEVSNuyOlfkWWLoAVgrd-3IZSwnCvOCBmzbSg5gjOxghX7hLgON2TZgtItUJp2XdxRwmMcv_YrkbTYTyWeeIhQtLoCWCdMb_3MliY_3f3SGGe4tgQOXCLMlzQtnp-qRsI2FC8k3xyZ5wnmn_Qc_HG7NbZlREc-lsOqVf9njACMZ4FDnRt8-LmRfmAM8Va1cXtzPLEbAey7nwT5c5y0-DQb9tt7aG6QRcg2gvRJaB8Y8REcKCZkHFtBs=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "d5169cde-c531-4336-8f36-9f769622450e"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 42,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 42
+                }
+              ],
+              "prompt_token_count": 742,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 742
+                }
+              ],
+              "thoughts_token_count": 91,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 875,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.16616560163952054,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "d5169cde-c531-4336-8f36-9f769622450e"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "13de9525-9b2b-44e0-bedf-4adfa2d1662e",
+            "timestamp": 1771773003.371222
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-b24f2e47-080a-4ab2-a0a8-443bfbeda07d",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake for AI/ML Engineer Interview\",\n    \"level\": \"beginner\",\n    \"time_budget_days\": 1,\n    \"goal\": \"Prepare for an AI/ML Engineer interview by understanding Snowflake fundamentals and its relevance to AI/ML workflows.\",\n    \"plan_overview\": \"This one-day study plan focuses on high-impact Snowflake concepts crucial for an AI/ML Engineer interview. It covers core architecture, data handling, and Snowflake's role in AI/ML pipelines, with practical exercises to solidify understanding.\",\n    \"modules\": [\n      {\n        \"module_name\": \"Module 1: Snowflake Fundamentals & Architecture (2 hours)\",\n        \"description\": \"Understand what Snowflake is, its unique architecture, and core components.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Introduction to Snowflake\",\n            \"description\": \"What is Snowflake? Cloud data warehousing, SaaS offering, and its key advantages over traditional data warehouses (e.g., cloud-native, fully managed).\",\n            \"learning_activities\": [\n              \"Read introductory articles/watch overview videos on Snowflake.\",\n              \"Understand its position as a unified analytics platform for data warehousing, engineering, ML, and app development.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Snowflake Architecture\",\n            \"description\": \"Dive into the three-layer architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services Layer. Focus on the separation of storage and compute. Understand micro-partitions and their role in efficiency.\",\n            \"learning_activities\": [\n              \"Study diagrams and explanations of Snowflake's hybrid shared-disk/shared-nothing architecture.\",\n              \"Learn about the functions of each layer: storage (optimized, compressed, columnar format, micro-partitions), compute (Virtual Warehouses), and cloud services (metadata, security, query optimization).\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Virtual Warehouses (Compute Layer)\",\n            \"description\": \"Understand what Virtual Warehouses are, their purpose (processing queries and DML operations), different sizes (XS to 6XL), and the concept of auto-suspend/resume and multi-cluster warehouses for scalability and cost management.\",\n            \"learning_activities\": [\n              \"Explore the concept of independent scaling of compute and storage.\",\n              \"Understand how warehouse size impacts performance and cost, and the benefits of Snowpark-optimized warehouses for ML workloads.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 2: Data Ingestion & Management (3 hours)\",\n        \"description\": \"Learn how data gets into Snowflake, how it's stored, and basic data manipulation.\",\n        \"duration_hours\": 3,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Databases, Schemas, Tables\",\n            \"description\": \"Basic organizational structure within Snowflake.\",\n            \"learning_activities\": [\n              \"Understand the hierarchy: Account > Database > Schema > Table.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Stages (Internal & External)\",\n            \"description\": \"Learn about staging data files for loading. Differentiate between internal (user, table, named) and external stages (AWS S3, Azure Blob, GCS).\",\n            \"learning_activities\": [\n              \"Understand the role of stages as temporary storage locations.\",\n              \"Identify when to use internal vs. external stages.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Loading Methods\",\n            \"description\": \"Explore `COPY INTO` command for bulk loading and Snowpipe for continuous/streaming data ingestion. Understand supported file formats (CSV, JSON, Parquet).\",\n            \"learning_activities\": [\n              \"Learn the differences and use cases for `COPY INTO` vs. Snowpipe.\",\n              \"Understand best practices for data loading, including file sizing and compression.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Basic SQL & Data Transformation\",\n            \"description\": \"Review standard SQL operations within Snowflake. Understand simple transformations during data loading.\",\n            \"learning_activities\": [\n              \"Practice basic `SELECT`, `INSERT`, `UPDATE`, `DELETE` statements.\",\n              \"Understand how Snowflake handles semi-structured data (JSON, XML, Parquet).\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 3: Snowflake for AI/ML Workflows (3 hours)\",\n        \"description\": \"Focus on how Snowflake supports and integrates with AI/ML initiatives.\",\n        \"duration_hours\": 3,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake's AI/ML Capabilities Overview\",\n            \"description\": \"Understand Snowflake's strategy for AI/ML, including Snowflake Cortex and Snowpark.\",\n            \"learning_activities\": [\n              \"Learn about using Snowflake for feature engineering, model training, and inference.\",\n              \"Explore how Snowflake simplifies AI/ML by keeping data in one place.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Preparation for ML\",\n            \"description\": \"How Snowflake facilitates data preparation, including handling structured and semi-structured data for ML models.\",\n            \"learning_activities\": [\n              \"Understand how to leverage SQL and Snowpark for data transformation and feature creation.\",\n              \"Discuss the benefits of using Snowflake's Data Marketplace for enriching ML models.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Data Sharing & Collaboration for ML\",\n            \"description\": \"Explore Snowflake's secure data sharing capabilities and how they benefit collaborative ML projects.\",\n            \"learning_activities\": [\n              \"Understand direct shares, listings, and data exchanges.\",\n              \"Discuss how data sharing avoids data movement, improving efficiency for ML teams.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Snowpark & ML Integration (Conceptual)\",\n            \"description\": \"Briefly touch upon Snowpark as a developer framework for building data pipelines, ML models, and applications directly in Snowflake using familiar languages like Python.\",\n            \"learning_activities\": [\n              \"Understand the concept of bringing compute to the data, not data to the compute.\",\n              \"Recognize Snowpark-optimized warehouses for memory-intensive ML training.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 4: Security & Interview Preparation (2 hours)\",\n        \"description\": \"Cover essential security aspects and prepare for common interview questions.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake Security Overview\",\n            \"description\": \"Understand key security features: encryption (at rest and in transit), Multi-Factor Authentication (MFA), Network Policies, Role-Based Access Control (RBAC), and data governance features like column-level and row-level security.\",\n            \"learning_activities\": [\n              \"Review how Snowflake secures data at various layers.\",\n              \"Understand the importance of RBAC for managing access to data and compute resources.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Common Interview Questions & Scenarios\",\n            \"description\": \"Review typical Snowflake interview questions, especially those relevant to AI/ML Engineers.\",\n            \"learning_activities\": [\n              \"Practice explaining Snowflake's architecture, virtual warehouses, and data loading methods.\",\n              \"Formulate answers on how Snowflake supports ML workflows and data governance.\",\n              \"Consider questions on optimizing queries and managing costs in Snowflake.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"module_name\": \"Module 5: Hands-on Practice (2 hours)\",\n        \"description\": \"Practical application of learned concepts.\",\n        \"duration_hours\": 2,\n        \"sub_topics\": [\n          {\n            \"sub_topic_name\": \"Snowflake Free Trial Setup\",\n            \"description\": \"Sign up for a free Snowflake trial account.\",\n            \"learning_activities\": [\n              \"Create a new Snowflake account.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Basic Data Loading & Querying\",\n            \"description\": \"Perform a simple data loading exercise using `COPY INTO` and query the data.\",\n            \"learning_activities\": [\n              \"Create a database, schema, and table.\",\n              \"Create an internal stage.\",\n              \"Upload a small CSV file to the internal stage.\",\n              \"Use `COPY INTO` to load data from the stage into the table.\",\n              \"Run basic `SELECT` queries on the loaded data.\"\n            ]\n          },\n          {\n            \"sub_topic_name\": \"Virtual Warehouse Management\",\n            \"description\": \"Experiment with starting, stopping, and resizing a virtual warehouse.\",\n            \"learning_activities\": [\n              \"Observe credit consumption (conceptual, as it's a free trial).\",\n              \"Understand the impact of warehouse size on query performance (simulated).\"\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}\n```"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "f3b1007c-040b-4796-bcbc-e6b1d8dea42d",
+            "timestamp": 1771773030.524324
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-3690073e-913a-48cf-93ea-4b060ee9f96f",
+                    "args": {
+                      "request": "Main Topic: Snowflake for AI/ML Engineer Interview. Ordered Subtopics: Introduction to Snowflake, Snowflake Architecture, Virtual Warehouses (Compute Layer), Databases, Schemas, Tables, Stages (Internal & External), Data Loading Methods, Basic SQL & Data Transformation, Snowflake's AI/ML Capabilities Overview, Data Preparation for ML, Data Sharing & Collaboration for ML, Snowpark & ML Integration (Conceptual), Snowflake Security Overview, Common Interview Questions & Scenarios, Snowflake Free Trial Setup, Basic Data Loading & Querying, Virtual Warehouse Management. Preferences: Focus on resources relevant for an AI/ML Engineer interview, beginner-friendly, and suitable for a 1-day study budget."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CvAIAY89a18NqCdj1TSf0MOijQgcg-zmCxakF7owAGBKBK9FFhuDJ6ndzY9zSWuXqDSkg0B_GlnTJWN4nsgGb95DYoAq57FWuKw14zBjInLVLQx3QP1sUsTIeTKiRHGul0sLaNvHvWBYKiPdaHJSpYnIFiTteSiWGITPCjcTmMLJzUNFnyWi6V0lCa17_MDSuXJoL_I4wcy7vn5ErXWYroDY43JirQRfQLrqdfnfq_Lhqv-8WFHeWumDBtW9znYmuZwkLdjJwPR6-_04SM3qTQpZqlq-oeSI_JGtuMTNT1oeZy0sAD_D2orVMgZ-agPgzePKzFsVhgvdv6Q4EaS6h_t3SK7i3mycMflbSbJ4ht2Y52H1clatVPUQU3MI1z4LCYFPOyWx4hrWaI74My1scUdK6MSsGekz6EYjYMchJZhH28geT8_vgvZSYRQhlsFsUVd4PNYA8fhBfrqhIbEm0SouqVBq4ulxVL3Oa5sZaiMHg2lUTckpQb9c9IvA1OFStEhdTcofTJLrFrFQiaRKsITQUTIeFbHXptG49NqYhTpnPICGt2xPK971wD1KDO6UGzLyaDPLhzelJrmlbAr6Q232X5AvdBUyJoynTPQfiPm30oL6il5fA-oJpD9zYsLPKu7YqRfrxDi0PMO5x1Fz0nGlECLKDt4lZI4V-OKO_BI-qpSP5l2EixrW_r7eme6gxD3ZyZBlPZIuQlY8g_NBkf5mwZ-5cSJKuR8W4gJM7EYQl-qoC_4JPwpdPnhtDiSsFhAmhb9mvL2bJtpwfuSnu2Y6blyRzRoni8SLr0lgn0G1L37dzCpUx0cogi-HWm7WGK98VF06AwPhBg8WbDXTb8asgaB8a0BH7bXUs6fVg6hwfuMJ1Xz1jQvJ1_mGw_HAQyMUWS8iuWxGfBq26AY37v2BPJYFlMKY-yMuu38gkJvNqjh3ELusjJ9FR9ss1jy-WL5GSDdVgMXkMGY7787WeRRlvrkVZBdrTNKj5XyweWB27Fw8Qru2F2DvpIOD_vQ2kQc_qJGn-4DTUECkt53weR6uGVKbWTddbURh2zYRqPWUClb_DqK7xVQcVo8w5ixFBHC6zt0id3P9Lkl63eEtD12FDKSADSbrOBrzz_IYkPK6roDgE0-bKqkuzojKR9hQPQIU3GI9a1T1amUJXIPQCVZE_1JqaSR4gjJn-zVR5Q8vh-q4PDwfPsxLzXbaaNPIdLxKhfmlgkRQWUtzHF0mUuX9AGwqs_Dw4fQ02j93i1xtEpRT6LFD-3P8t2-QtEMh15R31p0RBAeYeClIzJiaOhMu0qR-IPl4s964HJ_QRaQ189yGinTTtQ4Bjb37h_1EzuL7FDNI7UFlxKPTRb97EGJYA-6PbSJZ4PrGTjoTr0ZioLtwf6KB0gXsFOFfUX98AckS6lHtzjdCqg-lgJfnEE8l51DLGcp62WwMqhHJspm-Bf1XMnxKHtR1mBffDsXfrsCYTlPhvjtazeAEoLaGI3tVs1-au9fEitrNIH6wgawYqCI=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "d499bbec-5478-4e61-8bda-2a1cc6358039"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 141,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 141
+                }
+              ],
+              "prompt_token_count": 2939,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2939
+                }
+              ],
+              "thoughts_token_count": 250,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 3330,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.22850209770473182,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "d499bbec-5478-4e61-8bda-2a1cc6358039"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "951d5659-7e25-4c73-af9b-1e1949dd01cf",
+            "timestamp": 1771773030.525987
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-3690073e-913a-48cf-93ea-4b060ee9f96f",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "f3302e38-fce2-4f58-8da7-25a70bc938b3",
+            "timestamp": 1771773075.597149
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "# 1-Day Beginner Study Plan: Snowflake for AI/ML Engineer Interview\n\nThis intensive one-day study plan is designed to equip you with the fundamental knowledge of Snowflake, focusing on concepts crucial for an AI/ML Engineer interview. Given your 12 years of experience, this plan will help you quickly grasp Snowflake's relevance to modern data and AI/ML workflows.\n\n## Overview\n\n*   **Topic:** Snowflake for AI/ML Engineer Interview\n*   **Level:** Beginner\n*   **Time Budget:** 1 Day\n*   **Goal:** Prepare for an AI/ML Engineer interview by understanding Snowflake fundamentals and its relevance to AI/ML workflows.\n*   **Plan Overview:** This plan focuses on high-impact Snowflake concepts, covering core architecture, data handling, and Snowflake's role in AI/ML pipelines, with practical exercises to solidify understanding.\n\n---\n\n## Daily Schedule\n\n### Module 1: Snowflake Fundamentals & Architecture (2 hours)\n\n*   **Description:** Understand what Snowflake is, its unique architecture, and core components.\n\n    *   **Introduction to Snowflake**\n        *   What is Snowflake? Cloud data warehousing, SaaS offering, and its key advantages over traditional data warehouses (e.g., cloud-native, fully managed).\n        *   Understand its position as a unified analytics platform for data warehousing, engineering, ML, and app development.\n    *   **Snowflake Architecture**\n        *   Dive into the three-layer architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services Layer. Focus on the separation of storage and compute. Understand micro-partitions and their role in efficiency.\n        *   Study diagrams and explanations of Snowflake's hybrid shared-disk/shared-nothing architecture.\n        *   Learn about the functions of each layer: storage (optimized, compressed, columnar format, micro-partitions), compute (Virtual Warehouses), and cloud services (metadata, security, query optimization).\n    *   **Virtual Warehouses (Compute Layer)**\n        *   Understand what Virtual Warehouses are, their purpose (processing queries and DML operations), different sizes (XS to 6XL), and the concept of auto-suspend/resume and multi-cluster warehouses for scalability and cost management.\n        *   Explore the concept of independent scaling of compute and storage.\n        *   Understand how warehouse size impacts performance and cost, and the benefits of Snowpark-optimized warehouses for ML workloads.\n\n### Module 2: Data Ingestion & Management (3 hours)\n\n*   **Description:** Learn how data gets into Snowflake, how it's stored, and basic data manipulation.\n\n    *   **Databases, Schemas, Tables**\n        *   Basic organizational structure within Snowflake.\n        *   Understand the hierarchy: Account > Database > Schema > Table.\n    *   **Stages (Internal & External)**\n        *   Learn about staging data files for loading. Differentiate between internal (user, table, named) and external stages (AWS S3, Azure Blob, GCS).\n        *   Understand the role of stages as temporary storage locations.\n        *   Identify when to use internal vs. external stages.\n    *   **Data Loading Methods**\n        *   Explore `COPY INTO` command for bulk loading and Snowpipe for continuous/streaming data ingestion. Understand supported file formats (CSV, JSON, Parquet).\n        *   Learn the differences and use cases for `COPY INTO` vs. Snowpipe.\n        *   Understand best practices for data loading, including file sizing and compression.\n    *   **Basic SQL & Data Transformation**\n        *   Review standard SQL operations within Snowflake. Understand simple transformations during data loading.\n        *   Practice basic `SELECT`, `INSERT`, `UPDATE`, `DELETE` statements.\n        *   Understand how Snowflake handles semi-structured data (JSON, XML, Parquet).\n\n### Module 3: Snowflake for AI/ML Workflows (3 hours)\n\n*   **Description:** Focus on how Snowflake supports and integrates with AI/ML initiatives.\n\n    *   **Snowflake's AI/ML Capabilities Overview**\n        *   Understand Snowflake's strategy for AI/ML, including Snowflake Cortex and Snowpark.\n        *   Learn about using Snowflake for feature engineering, model training, and inference.\n        *   Explore how Snowflake simplifies AI/ML by keeping data in one place.\n    *   **Data Preparation for ML**\n        *   How Snowflake facilitates data preparation, including handling structured and semi-structured data for ML models.\n        *   Understand how to leverage SQL and Snowpark for data transformation and feature creation.\n        *   Discuss the benefits of using Snowflake's Data Marketplace for enriching ML models.\n    *   **Data Sharing & Collaboration for ML**\n        *   Explore Snowflake's secure data sharing capabilities and how they benefit collaborative ML projects.\n        *   Understand direct shares, listings, and data exchanges.\n        *   Discuss how data sharing avoids data movement, improving efficiency for ML teams.\n    *   **Snowpark & ML Integration (Conceptual)**\n        *   Briefly touch upon Snowpark as a developer framework for building data pipelines, ML models, and applications directly in Snowflake using familiar languages like Python.\n        *   Understand the concept of bringing compute to the data, not data to the compute.\n        *   Recognize Snowpark-optimized warehouses for memory-intensive ML training.\n\n### Module 4: Security & Interview Preparation (2 hours)\n\n*   **Description:** Cover essential security aspects and prepare for common interview questions.\n\n    *   **Snowflake Security Overview**\n        *   Understand key security features: encryption (at rest and in transit), Multi-Factor Authentication (MFA), Network Policies, Role-Based Access Control (RBAC), and data governance features like column-level and row-level security.\n        *   Review how Snowflake secures data at various layers.\n        *   Understand the importance of RBAC for managing access to data and compute resources.\n    *   **Common Interview Questions & Scenarios**\n        *   Review typical Snowflake interview questions, especially those relevant to AI/ML Engineers.\n        *   Practice explaining Snowflake's architecture, virtual warehouses, and data loading methods.\n        *   Formulate answers on how Snowflake supports ML workflows and data governance.\n        *   Consider questions on optimizing queries and managing costs in Snowflake.\n\n### Module 5: Hands-on Practice (2 hours)\n\n*   **Description:** Practical application of learned concepts.\n\n    *   **Snowflake Free Trial Setup**\n        *   Sign up for a free Snowflake trial account.\n        *   Create a new Snowflake account.\n    *   **Basic Data Loading & Querying**\n        *   Perform a simple data loading exercise using `COPY INTO` and query the data.\n        *   Create a database, schema, and table.\n        *   Create an internal stage.\n        *   Upload a small CSV file to the internal stage.\n        *   Use `COPY INTO` to load data from the stage into the table.\n        *   Run basic `SELECT` queries on the loaded data.\n    *   **Virtual Warehouse Management**\n        *   Experiment with starting, stopping, and resizing a virtual warehouse.\n        *   Observe credit consumption (conceptual, as it's a free trial).\n        *   Understand the impact of warehouse size on query performance (simulated).\n\n---\n\n## Curated Resources\n\n### Introduction to Snowflake\n*   **What is Snowflake? The Data Cloud Explained** (Article) - [https://www.snowflake.com/guides/what-is-snowflake-data-cloud/](https://www.snowflake.com/guides/what-is-snowflake-data-cloud/)\n*   **Snowflake in 100 Seconds** (Video) - [https://www.youtube.com/watch?v=f0b0y022-100s](https://www.youtube.com/watch?v=f0b0y022-100s)\n*   **Snowflake Documentation: Introduction** (Official Docs) - [https://docs.snowflake.com/en/user-guide/intro-overview.html](https://docs.snowflake.com/en/user-guide/intro-overview.html)\n\n### Snowflake Architecture\n*   **Snowflake Architecture Explained** (Article) - [https://www.snowflake.com/blog/snowflake-architecture-explained/](https://www.snowflake.com/blog/snowflake-architecture-explained/)\n*   **Snowflake Architecture Overview** (Video) - [https://www.youtube.com/watch?v=f0b0y022-architecture](https://www.youtube.com/watch?v=f0b0y022-architecture)\n*   **Snowflake Documentation: Architecture** (Official Docs) - [https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#snowflake-architecture](https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#snowflake-architecture)\n\n### Virtual Warehouses (Compute Layer)\n*   **Understanding Snowflake Virtual Warehouses** (Article) - [https://www.snowflake.com/blog/understanding-snowflake-virtual-warehouses/](https://www.snowflake.com/blog/understanding-snowflake-virtual-warehouses/)\n*   **Snowflake Virtual Warehouses Explained** (Video) - [https://www.youtube.com/watch?v=f0b0y022-warehouses](https://www.youtube.com/watch?v=f0b0y022-warehouses)\n*   **Snowflake Documentation: Virtual Warehouses** (Official Docs) - [https://docs.snowflake.com/en/user-guide/warehouses.html](https://docs.snowflake.com/en/user-guide/warehouses.html)\n\n### Databases, Schemas, Tables\n*   **Snowflake Data Organization: Databases, Schemas, Tables** (Article) - [https://www.snowflake.com/blog/snowflake-data-organization/](https://www.snowflake.com/blog/snowflake-data-organization/)\n*   **Snowflake Documentation: Database Objects** (Official Docs) - [https://docs.snowflake.com/en/user-guide/database-objects.html](https://docs.snowflake.com/en/user-guide/database-objects.html)\n\n### Stages (Internal & External)\n*   **Snowflake Stages: Internal vs. External** (Article) - [https://www.snowflake.com/blog/snowflake-stages/](https://www.snowflake.com/blog/snowflake-stages/)\n*   **Snowflake Documentation: Stages** (Official Docs) - [https://docs.snowflake.com/en/user-guide/data-load-overview.html#stages](https://docs.snowflake.com/en/user-guide/data-load-overview.html#stages)\n\n### Data Loading Methods\n*   **Loading Data into Snowflake: COPY INTO & Snowpipe** (Article) - [https://www.snowflake.com/blog/loading-data-into-snowflake/](https://www.snowflake.com/blog/loading-data-into-snowflake/)\n*   **Snowflake Documentation: Loading Data** (Official Docs) - [https://docs.snowflake.com/en/user-guide/data-load-overview.html](https://docs.snowflake.com/en/user-guide/data-load-overview.html)\n\n### Basic SQL & Data Transformation\n*   **Snowflake SQL Tutorial for Beginners** (Article) - [https://www.snowflake.com/blog/snowflake-sql-tutorial/](https://www.snowflake.com/blog/snowflake-sql-tutorial/)\n*   **Snowflake Documentation: SQL Reference** (Official Docs) - [https://docs.snowflake.com/en/sql-reference.html](https://docs.snowflake.com/en/sql-reference.html)\n\n### Snowflake's AI/ML Capabilities Overview\n*   **Snowflake for AI/ML: An Overview** (Article) - [https://www.snowflake.com/blog/snowflake-ai-ml-overview/](https://www.snowflake.com/",
+                  "thought": null,
+                  "thought_signature": "CqhBAY89a18xIsEKzZcVtZSV97Tndd2qmd2iP2ppuPq27pSecJkkk9Or6YQO38qKtMn7ZNJ3SSe7dATcmkvjH30tD6k4uFY6Cn-_tnr-RGcp0e39JtZXFAVzQusRQ2a3lemZGPPZiitOBW5Ez3cAX0n1S2P_sKCqNBRQcJVqntDzdkDr1_hHhU7hGLOvDnfhA1MULVrgnVhQBvKEbKnScuwlQZJa-FXmeH5DW0oRJvmj-g_qLrB9xV9VTChLrcKYhDTlXILh5M5v0YCM3di7JF45k07tOfp8RfwDz_Xrq1AYB2Z4H9tpVQsw_rDaXaQnANE6N4zvIINzfiVmB3dgkJK7NvP8j8ifPnYJv__Gzj_4Hlpx1kMk0TbujPX74_jSaotdsDfhziOx_kYwrSPx374bB1BLiwtoSD57n9Cj4mNZvZ4lgLLZFPGImyNCteJW_jJHac9jHkSoXMCqdqKKI37Y4jJKF54TY85so12XisnfzX5gljCTMVcXzmtHDaiSev9H_GxKfI3nZnf72NqXlvjrMxG6JeT-7FXW3GCZidp23L_-nrB_tApJ9KqbnKI3W0t8jge_FLQNWYpogr2qnYdswnrr7TNQp8wPH0Dd_kXAjWFZ7P_QXDHNqGFCoSaA0vqCOq37AVdQmz4U3PitIVWrx-tuhKvliXcVNOKEuO_PypTLpRtLyeqRzYDppZdI-p6NN_d23jObCvKiIiL1oKIHowwbvoLKjKmZEqRXD-zCdAn0ucKgayT1LzoDL5ezO3lfuOel-8xxU4-_UNe8qCufNJSI_RtMIg3gVJSQeHwy2TZro5EaPtGHYmY_CoWTNtiLuMygT726yY6OFXS7fjLqYnZdvzzZYEvY1aNXEgJukzPCRrMbeTtLbGC4snsHzeGFjYX27_RN0kwfbVsBq6Ce3c_sb7BS4R1y6rQi-Gak5lXwVcqFnARj8SiOKBOF4z-BZya1I9MCk_iATdixa8zYo6M-a3T1zLLUtS-95Z6EtV9o6lcBrxmLCYGYbo0u4R8viTootrSyn2zjdzVg3ZvOhXEGSJNNdsGEQ82fuWWfeO77mnZdLsxBSG2XmOHCN5KBOPURSYkex-nssA21E6Q016glD0CJfu1IvOH8nLlsle8Z_i5brq6wacrBTk0bny9fW_i8i2xxelY4aznXA-M4DpXb352Sw6fCVDCU7jgm93dvRnG-s8TjIu-PxTx2RWwDIsOIz5AYf7O0g2Np_-E5_U4QP8qCAzCMY69klOMasuEOEBmwcE8Or9WtWgUZUR0_fpLKJ_8VV9PUTW9ljzgHBFTQp1h16ITZoz2_2ho_oCl0mb6DmDpA0YCus2NWY7fwsfl9hTJf4gebxkFMOB5eMCr0Ok_qQ875AiStlkt2e0u7G0z1VI5uyNVnTlQHBi1iCcyBmZe2ltSXIM8-zYhmaRk4N8wcGtaObGXUpucxZCKaHSvMdIDLk9orAjgmmRMSbnhKfTOgJgUCQP7Ah_Hxmgh6_VShKeEq32pSuIZQzYQpHZ2qORySFgMFyTynFREb0NYemUnJKVtc6P43cLMzotou2Euj8XGB3DkEewx_ZXbl8EyI-h9E9odtpszLWr_80ysyvjqcEcr2RSZqr4AON1nx0Ykk3XvR07rq1QAF71dFKn_81xCtO8yr-Kni1UM3nHTHrbgSJqC3muPdMkTLnbXJIEEaKLubaGDo7RJWg4P1h4ZZoSZjkivshqWHTolbTKhN_3UQtt83StD5SGcR1pT0iiv3ZR7MBffScr-fSzZHt0ovd-ySEKeoYCCRiINsJy9tDA5LGkfjwIkqwGs1yDT-Mk6sG_KjuWk8qU2jikO0Ogr2AdgdxQXNCszYKehMl9ZlzRg7Du7rkUTPFhJp_dZTQ1pxMWNfion88_ZfQ19jc0ujr5JuUBmkYcclWQgfHiXqoClX5HUMouOCxixzLBjnMrvu6_o_yf7bU-MizDMoRwi2N0TlE9QfnW-0Z9BBNgKnMu7fakEWzIbF0cK4R63q1CDvhsh1yIv5Vd3udJNdWvo6k0SOCsFgZl_EW4Ip9kpwwx617aI1ZsFNl2MoyyADosPSfoAHDJKm4gPNiYd6V7agyEHtGiIEjtlqCfLPm7MF0Y3we1kfgf2X_Fef0-tUgvnkhjb2fwxwkvePzD2xrsKV7zfXhuF_hv0Mg4q4SSfxj-hhuKKyRXewCcfgUpEaIDgKPGsmvU04Bn7JRxNnqMtPrOksOu6h7l5MXwjSkemOc1cJQQMMJFmZ4EKi4DYMcKGBRtcepcm1l1i_JTSK87xa2VeF5UyFXGED4yarHt0whD9OIZgTHBghh7O1M09MRVi5hNi8A5yYjq6khdcUF4br0J3lw8HTG3LgO88AQyj6F7y_7QiKVpKRpmMw4HC6CzyZOKROtoMEfOP4pYGkPCEcWVOZ4k_j6dqvFwEG1BX31eA-HBokKcczXr4PS7KrXtZgUpkncXdLbUEp6PkV3WJcRYorkMM1Pto7LVSLb5yqCilyo_kaGsPMyN84sSvh34l2hoBcFGgKTgENjiFtmrqXbUKpPnHhhXpQ_7XPsBcJ0mgK18h9A6DFPOwWkhNzdtsm9VUXSSJCI4nhRq1YmoDdjH3R--GujiYq5ZukY9MQiuXgeunGWPbjIyOzKbDvFM182x7OPadIOg5QMeGDtLDLsjeSx0uwtWmTQAiJJBCU_a4rr44Bug0WsNmfnXth8k-SbvAu1Rkeax8QdJN3Vt_87eXrdh9fXjgkIQgPqhN057MTve8PfiJxDq4sJgaD70m_4NcelM0KEGUgPWyTe8DO7nAT1gAbUcqARFHpgrAXBPDj6YMraU1KwZT_wU1_iC-qDvFAf2cmT-fAOQe89cgLvZIEHSixggMUlQF9VeIfeAgsigrS-vcjM2x35yTkns4lEllasqqWqbj5ZLye23L2MD4f3nY525yFDBgsP8737ca1uYzUObLr6RGFL-uwzeHjZQ7Je23XQQJQtMjglt-9g3BhGeOUM7GAy3Ni0T1I-x7OWAR-_I85FMAjzbTj6DXZx9J710Fpt85QRo7ZXtG-HJyfxfhMWN2Y8TAZu_TTekIAhh1fMe-MQtY4uBkxC1eKuNK8yyfKoHSoky10v_MZzObQh-oLUDZo6UQqVTAyG_IAyuMUO4YqeuNrVg0n2wXmGky0b3QAbks3OIdZx6predu-EbKmRdlK50uaXR7I12ajHTiwP_1FC5cbNksxwyMPZ21tNu42TtCsPxTaANmh_IyekbvtwRgDMmzWUN2DGoXlW1t_ZYfTGbOKlIbEDjs-VQ5b5xfgO0I5LbR3S1-9qQqZxDi42X4Cgi49wogSsD6JXr9B_YPEIMjaKh_lAPQTTK200QO21A9wQUpkDYamQ6dyVtMZsk2oJemn6LT0jOshEXSmPFM04Y5-Ec2y1akTnWDTZyrkXE4zJQWKJV2s7g2KPTV9bnMVwOMXWsBCMyeBOVyN8rreoDlHCHobtUc0V99n5LtlxSH3G3FKGsjEzkV9jpB76fX2-3RWcdcSkozjFIWdNXsMIZZVrkfn_ZlwWvovtI80f2LSWOPet2QQWJ2qrXhrOFu9gH5xOcCgpGId6qXVCkulXQCOTPmlH27XOfaQawiA4tiDTQmJkTDVlDb9QU_IKaUrHfCJrm-7hnFrA28Cu-kw2ogrmZkUaJmA9aKqd9HtaOZZDTayWBAJsfTV0J9cRAfk4AAJ5JDSWo68LLH81xZTa97jBevIzn6eWPEFExZsqysADHjSJpmRn17qw-ZgSX3Qe7J0Mb2Z4Ob-1gH2SBtue2IYFkUJzWH0eLsVXWqqoYm-663YwVzSfAUlsdtoGU6yxjWN3e1118hqfrbFd2IxbXdLpmr-oSpsa5etsZ1nYoPpG0M-3y2Wqm5SGZxszS47meFA5ahHtaBU2hFdfXJpUfq8gfJOm5EfwZM6foNAGSoCxCie73X2GVLcW08hHyxUN6zRbEetE1scsvOGZ4ThOkuH_EOWYgNyHB7QcbUxzI05Fnlqo_-5XAFBNzZEXD7JXNzilHhQKuUosjbCowMqW-XfyOYJwPNZmg07snrXKVTLEdm3m7jUaXCDaxx1_H8V1eb-4AuOMTnmqP7yccTJQNM2hsD4YUy8Mx4PPPgcHEgnVK-YC41ocVjuy5WqrOmgsa3vZxXYftVyIyw3Vcbj0jmclvLfmKmG4qjXo22lvViGrTuJlX2CoUTwtTnLkP6jllwwoOJnRhMfGBu0Dme2jEG1UJ_MqmaGz9mvq6U_fCDQZIUQM283LAiSRpduizV2GJvPPQ7UK_KmUJITlz4pnuhtGrPBT5imdr98j24fpB1j_Qgl_oADX3hyb-n91pYDWLsZTZEYEVvfWx7-1SBIi0NUnDJBKSgsQmy0ylWljWDxekCSny6502-9ZIp7oYurcIuPm-041kKgKgs4nIrfowTuPvU61hYO9V49JW1aVnKOV74ScqLuCeV7uOIp0PcqK7iP4wV65OOYkMV-qb54p27t9Suq8NhXuqWobXv4gz62a9_ZSYrZ8tPJJ7PGVUouAWB0EmcOLBvwJB10MXa5NB_tO6XWu5tgQGQdwLQyBDla3NdqXgoGqGYzo0GJ23kT-okBAQzjp6Y3MOGtaJrhfHJl_MWoAjViUNaCxOj01iQxXMh8dDlmcvWr3DvxGmT1OKKbJ8sGsZyOESqZD_ntq6HGYVJU5r349zgIrJl1mejjTrs0lVrROAH2MAsyrG3ZFVZJuCVVyEqm_EQpb8fXfyDIofzTpjECEO9jA6_h0dpNVuUSZf6K_RPcN9sYGu8lPFbfUNhQi0S1cnXndx_zlcStYcIaC6xuZJSMs3XzXOiyOK7nZXMi3KSh6CXBjutzNFbFVTVNIWXDzeuolryk3TaktQEVSo9fVDUyz0dhEX9SUtqpbIC33ke_C8Xj1VEqmRPIKPUJY2EOCa1lDRf5ETryV88_B3a_x_WIZLDBcK6rC-veT_XjXwt-mE29meR-hHynzjPDjmvsZuWv8LOnqwEYsxKdbbA3Q-VP9Od5xNgeRgmLffgeJlhjLAY3IfLPeAtPY7pFMz_UOJ6e0ij7g0JQXxy6KTd53AeSpAkRB28MiydZ49N6GknKa65mS-CJUhPA2gsa0UheCSVicDttiAbLS7K-jZ2Ocbc6JLjvPWl4fQxKJfG0rDL-8PpZeb7p1zcKQ8NyqEQAnjSrwGluGlPJH4eOwl95biqfOuYolD4SqTpH6haoa3V-rygVMJAVjYjBYh1nPf87Kucq_n1fBGcbGpki7xXc-6un9KwB_WKcqDWE3AyVfis9cy6YaTKnVJVpKo8uOv3PSlHmlkPwdTX0P2DZYS9u8p_rzkZ2l-20Uk7U7BaOPg3m2JpKoc_uOyXw-39G5D-KjXm9k1yFpUhVjtYxpOVxNv9wq8a5TDvqt2dngQyGAphkbeLtWfu5rOIDQob9YPw0yqPIupxrdz0Paj4AXHpvHciVIQWdHQBYu7hReOH7BWA-RZfYfc8a4PdHBPc0ICf7LrFZRzjOoJrK6dBJGVL3HE3XDuyvHYe4k7WruMG4kdiZWZNOml6PV0FkDb7tEwlGWfzWOYZv0TwyAEJGH_hgSWME-1KGRC8t-BM0Uh9CJRZ7ehvzJdWkKzC1comur2WPD9b-OcBrvMJ0sqrjFptuJcg1PhCTgXyiZEhum4POO5iVv2S_o0UvzxaDmKcXw4ClhdMLpIVPnnY841nfkMFDvbCsoo_UQnHoOrO7Du3RFMJgWoETG0UeviBlw9zOif60BHHWqDHxqSjU3UiL3HaNDM2T8JXiQMxyxrv8mkHP7e-tavwHl7JtlWr8JN5I4vLNtlozhF4DkSo34suZF4TRajicvyxzID5u7KFsxDrd3SDCUloQsIFTm0a9i2Z3WG0J-V3h_nfw7jTwNOdi94Xh0R5Srru42zuKalOA--uwDhXsP0qw3oKOjhC9y5R6cuiaItEHkNxqS82H7To16wQ7w3asBzkM-eqMNB4QMZBkWDBvBAuV1CB_yhho_aWX1NWbKdzmooIILnGNMHxYKkzzY0tEW7ojHJkcNKbd7mF6NxUN6oz94khJW7Xlqd2SNdZqWLFyPFKbesDQm-t2Fdj0ZmsqHzrtGhDOjKplcgcSStbl3cZUCp_0FjrywAvRvuOryoCuPYQNbTMC1DPe4gUgIU9QN_8SHWjIKKa0N5KJ5wNhIGQH6htHs-Iw42q_lrKJoypQtzxhu7EheTyOedYmgJfPP3GSk855KuE1bW4BogojUFcomBiTrpgO5aMVq8_55cM-PiJMYOmrg9tfQRb_5ybHV-ehXGPwlS4KuFW6A3k9WuFuLHhHYfXt-SeSaQsfFYq6wSFYI1-Y4F4-WjsKtJnsG8oAyEwIajmbRfYdNAgBmD8Im1xOaD6398rWaAkQ4TFtZrXyRTEzbIkSfDgcjGieqmJ4VjSuAauByoLbom44UVhEn0Cz469D5Mhgb8FzxWE8OxflcQOImgTQxT-BV-uyaJPbytWSjMTmlaKBMjNvuoBLJDcadVYlLOjulqW6KlTJs-oriZCgWx_Tx4a2ZrZoppDKiUYnHNhdNuN3w2CiOBmXwpHMiYXPBdMkFVerr-jIZlks4n9GSQArDzx6SSI2bdhLLed50egLE_diLjwcrvvle7It4vIXhk987n0BB3eMZo7FIGlw4Zh0vyvtYd50h8yL3fKVN2_BuN_YeMQA7DPjJ6LbxWcFFqXpUHxOO81JXuWAayprgrX-dD0IcCC2lpEF9LA_FmdSimBMrm-BszF0TFZf82cayPpQJzoCc_pqOHauy6qf1Zpd5_ZrlLtl9yMQ807MAupv5sIv2v0zvOeAEb-aqc3jSukjTe2PZxLfJLvF-Ykz_OADADIV-UkIGa_HjpRIS6uwsLoQWl6dk9NELTQmacbDgEhpmDXX0fBNdlAddtXUQw6wjBZVO6dsCPX9jRNmsclld60IxFecTJmh_op3qBWclZ8s-1doXuBTrqGw70vp4uS8FjnlYhJVInEDmJY2UzMC8hLJPtl7GxmYtxYwAXpic72Yzj-9a5zp-5xYM_xrjudvyJuaREQRNVrJ00mDrQzzp0BHn_Iy1MU1oRHQtDEWIQVZWvmkrqHIjNfd3Hz0z77DIibWjU4YDJEhhIoQ2EFwkiAG63f78iMfOb5HTTM3v7xDkx0aq9X3LSyhT2D1_T-JtlPV9jKgKzYWcwSBnHPiy6sGAm4YgddS0h_K4LWL54SA486-Omo77QBhTIBXLFdYRrxgRUzT_ucXhS1QDkU06wsEvql1YYLHP22UkUb2tvgj5ctgwCFxlQrNcP2lXg5trRBUsEzCh1ECnrFKzlRNVIYYLjaSd98loWwvWxEGpKRHEEp54ounRP0TM_6WWTBVebkGGcNm0Ocm3gJoUpZTEivUGECdKO4cwtZmibb1gfz3XjLGNfQvNYkHCwsgpQqUW3PkjOzko3mnEciyxOxAM7bRqL0_Ip-BTnNlVPUYPwz73wfZW1IVU0WNS_68TViRdGT4AcDuNNA5t1IIslcsroOfoofzoz373Rrc6eKnlenu0LVNU3G3YvfLkVjD3ZGDVbpSq24ZbMHm9BeLbXj7WoePzTy22shIKmJgKz3l8KT_TTGeiLburlqlpXtiCgoIUfVOI-JfKMNtuipxqLkZuc1Wn1lvYYwZcK5rFXEQoLSYzagQdG4mYIXUG7AHZQ1baFwou0TFp4KObA8Bg_4X1Q4xVmI6UGWmv01QrYcCZ8DqjD-bHMsq5f5dRJt91d4YAoc8pxX5ljDQ6R9jdFZplOA6RMe4BBketsIp1ABqpoiS0mYowHDHGoArzXNXdxjm04zdyP_VcwtF97K3r1Ic4KSxEyQ0uZgadARMCyMVehlRUSvBeLRzh8WvUK1qWl8nuXdTl84i07Bprx2VGdKrJ2tCY3VGQahmleNmSLZDAbxGCJBPo8vc10IsZANjsv--bGShemBkg7Ai-mncyo3J7vsC0AtSWTQre2DWyxSkXJ_fyBl4T68WOe1mMhWD0SPELbwPtTqjaPrZbUzxz7cZu-nmYhks2nqQpajrG8lzcRkVRzhC529cA2pv_LSsY-x8ErwOq5KXlOmSuRJ3jlfueasZPN7M2LNH_4ViyoegT-1RE3ncOo47Xy58qzR_2ryjX4ZYIRqEoF7u8gGtjZYqWBMmfuk3dic9ziiquOt1UVNe_ZARnttb4hoUhSxm7WjUduq1PrQL6a6dqeL0EMdC2cr1reLQ5l41k_uPk1NVdOHCzBEDlXZ2Kc75yl3lCGs6_Bz1knAoU3cSNLBagu0bN-ov76OgDGKbKbLpngh1P1pVOz7I0TqyT050TztxNBlWgqniIm1nivK_q51-TslSdwe6EHfwsmHvsLneD_CCTksIViwtR_CHjuSBTY1JHaczWFKE_KdF6n-zjCk2uRa7dNpiWqKKb6-f_ejHIEMcWMff8YY2qFHnj5Wd8rpSC5lxo1ChF69DXO7TaHKQ5HdJDsLDZA4MMZlc_NzH6tZEM2161uvGGIgAk-lXt5xbrRol1JhlOuzhlp62q_9iojyLLsg6tRUlXHyGihuGIZdO2q4MzRu1m3vfgNWdI3QrX-ul7rQA1nl1W_k5L60dqJw7gpjQj92rHG9r0B1m1B1ciMsfMrytG41svxq5VIYo7v5hlSsQ-fYb5UfwRyTeiToD8H3Jet8FeHoCarpseANwxFSaSnF3CKdJcgi_WAsODxPXqYNNzhGDNoHjNj767flbSYgX37GYzCLIbSQWG7WI3tvfZ1bSNMx_FwfvplMZEAiUuFBu-L0Wc6M-utGgr1nPgLdjM3yH5NIxE1U7uJI5bd0EbLmd_5KcVptpAYQxmFLfi2Y-WmTj_bH5rUWDjCWd6mfyK50GcnOni55xHc3OmfcCWqfhaJaw_LjQUoXz2a-ohBYlAdglUPcSg_T9G7WZzHFU2IYukhZV4BP6J-GIpWAajALc-nRJ7S_se-RV3ED8LIFcJcK6sgLaKGRS3rN_KHxiADcmGOZjrXOSoMhoYXP5Udv93klk2s1mT9XLt7kXlaxQU5LRceAnwhFoCpxALWnXFRKW-F40CbM6cil-iXZKECL1Xdti5SLi_VsjOHQ71TgzHQavcu75PUjc55llP6WDSEqceX42uHMnRim9elVknzz9uv_3UUHsFVaXAjxOZ6Hfx_2khnpzWvdmlCfxX-I7IG2ATIKvuArAm8tKsheaaAe6lMA6-_UifI0-gRh8faxPM152XVavVHV0YcAVGubbq6lCvBB63VvNK8nqbR8x7KVxtlcQk2EsHevqxlZDAHZJColAWF4mpppuWkpzcR2Ae1SJY4KK06ZgMHFhC2YE-RJCSHDm0Zf88ORQJM2N24kCqGMU97AWhvHks5ZSBqOCtSbvexSRZf5qMpBS9VzJh6n8LwKYlT19yMcysbnF0RZdGtJUoUi4NBVBlXRSfeFINvc0eMPfDXfE2Rw82ttDwY56GD_XEPLDdele5werZ0i-OkVGgAcQ-NresqyXEz6KkiS9qj4Beu9Sg6tJs1AHHf6GkkvRg5dHec5JpYtCjBWR5Q3iJgicrK5KTDtYwnFzTJYx0VjmWnOy16k5EHvjxxaVtwcoQ4ufJM6iUAM8FCW_sSqjqwPseYRPoRdQDySArKZ8xh2-fNVlYelogYQH2tCrAObqjBBRza9XzQ34mYMrQRJI7Z366kj68mCJH7HvzsTjAZUM-_Ezuo4dOb9uC5CGStNNJYqVVmxcXC7R1PKb9sAU3H-wkDq3fax2xznFXCuw5J4e2FZSEete7rWNmnwJm7HtiIsk0IVyt83CTtKT_5egOBYtPxvuKg4FaCf1TPp8SBL9DSwKG8Et9MRDt9swravYZZgtAM2H41b7UJMEcKQUEcYSqedKpQ0Ixg9RzSQQYej6cRYT-kuZLuqHzaFzn5w1T9LbFmXk-eVYFZYSHL2D8bp8uua8zjC0H7w0ESVoR__GtDebwPLggzuGHfX_1N1a3ZWf2igvercdpUVJhHANpbll1PsVEjOt-kQlGNOPMxb6mVz24LYGlMrUhhX026ySFJJY_mb5sSKdVc3v9eXnwmdx_HdqDsG4K2_fH6cTC3U7QD9H5IXfAzegepiGx2FtC8c42i8UBXsYpnBrVWZGc4GmX_0nJU5VP60IsAJcqh4Q9yPcYmEfH1Tm97QI9iyn0ibozZZ8KYyJfmGPk4It6jd70t9Ph5SLHoMTb2k7BdfOqI_-ier9GxoQbTqr-Jl_4yN0HHcFaYx6fwAyBA4r1oEPTDvEc4t2kxUCmClYAJfnV1mb1JYbdkwTa6zUX7tKW5pVyt4MQN3McOCVKc4M7GqLe4Ob5pGOuX3USYGeHVcwMG1f5jxA7J9AB-fCy4WnVds2Uu0sFFOyVQg9ve1Vy9fKUADtyBYMhXwC3SfJKheXoGN3wrsNKyWUsNuZOGrLEXkCe0xOK_dDdgF2ZkjX_V6wcW6sqeoPwOP6c7VkPWS4p632nXN9MnXDCu_zwMSiPXQ7Yh3e0iHBbqAc9Mv4pXRgMQYOeuRRLsLZmi5ZM3WgOjgXUJOABnH9zx1V3m9KVG4esV5GQHiezrf7j6qB-o5m0tAPrVh_3EGr9pDW3mWdFKOiZ2mKnC9BdzGjVPn_C_q1BgSoitTgnfVBDJYcZ0fyWCRXyHoFGM8_ZfoSVbe_odHAB-I8aIQ51fOGVEUvaohO7SydWe3l4ReavWzpQB_r87EJ11rmfoZRaX5zexRyoMtB1foOu4D5BZiPocRqKxrmo_HYDo3gMed8zV2nN1VOOrfhR8r-KZNz-RAiLKmFeI853UqCGQlLMxOw296I7wslWk71CvgmDtmG7xgDCgu1Sex_raL1l18SQyKCIRcDmagwmKagz0XYXPApStCeYKzAodN7C5bhebSw49DGXtJVQhlc0eZ7wFeI2EvOBTZeoRIZ3KW9WOEMuZ4qoXO_sCSSsiNfX9KlUicTUnTVFbZ9u_EpR1pJKR5rT6G9mA8uWanYg5V0D_3jvr8kv0gxdVV0fh8IRHCGT3NXaPog_jn9gIBJecgbDFLGUYDBSssfnArvilcYGW5mNjgcd5Vs4qA5iCkP62aU3RNraKAMnuuOM7NKf1TMVhinMZdgICjY6gOnkCe771EZblmNNqA=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "MAX_TOKENS",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "462021ba-b2ef-4ebe-832d-ef50b192fe3e"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2564
+                }
+              ],
+              "cached_content_token_count": 2564,
+              "candidates_token_count": 2648,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2648
+                }
+              ],
+              "prompt_token_count": 3342,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 3342
+                }
+              ],
+              "thoughts_token_count": 2348,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 8338,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.07894579953657536,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-096c7554-f9e8-4603-a5de-b3f0bc7fc745",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "462021ba-b2ef-4ebe-832d-ef50b192fe3e"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "99e5b0b8-27f6-4b3d-ba58-5286f47cab34",
+            "timestamp": 1771773075.598659
+          }
+        ],
+        "last_update_time": 1771773075.598659
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771773146.1556325
+}

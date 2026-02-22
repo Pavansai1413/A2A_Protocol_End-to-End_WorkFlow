@@ -1,0 +1,1026 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771728371.8761315",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771728371.8761315",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_data_loading_copy_into",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-8d2dc421-8bad-4421-9c2d-461f35d0cc8b",
+                          "args": {
+                            "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-8d2dc421-8bad-4421-9c2d-461f35d0cc8b",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"title\": \"Snowflake Data Loading from S3/ADLS: Interview Prep (1-Day Beginner Plan)\",\n  \"description\": \"A focused 1-day study plan for beginners to understand and explain how data is loaded into Snowflake from S3/ADLS, including stages, file formats, and error handling, for job interviews.\",\n  \"level\": \"Beginner\",\n  \"time_budget_days\": 1,\n  \"goal\": \"Prepare for a job interview by understanding and being able to explain Snowflake data loading from S3/ADLS, including stages, file formats, and error handling.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"sections\": [\n        {\n          \"title\": \"Morning: Fundamentals of Snowflake Data Loading & Stages (3-4 hours)\",\n          \"description\": \"Understand the core concepts of data loading in Snowflake, focusing on the role of stages and how Snowflake interacts with external cloud storage.\",\n          \"subtopics\": [\n            {\n              \"name\": \"Introduction to Snowflake Data Loading\",\n              \"description\": \"Overview of why data loading is crucial in Snowflake and the high-level process. Discuss the benefits of using cloud storage (S3/ADLS) as a source.\",\n              \"learning_activities\": [\n                \"Read Snowflake documentation on data loading overview.\",\n                \"Watch a short introductory video on Snowflake data ingestion.\"\n              ],\n              \"talking_points\": [\n                \"Snowflake separates storage and compute, allowing flexible data loading.\",\n                \"External cloud storage (S3/ADLS) is commonly used for cost-effectiveness and scalability.\",\n                \"The `COPY INTO` command is the primary method for bulk data loading.\"\n              ]\n            },\n            {\n              \"name\": \"Snowflake Stages: External vs. Internal\",\n              \"description\": \"Differentiate between internal and external stages, with a focus on external stages for S3/ADLS. Explain their purpose as temporary storage locations for data files before loading into tables.\",\n              \"learning_activities\": [\n                \"Study the concept of Snowflake stages, particularly external stages.\",\n                \"Understand the process of creating an external stage for S3/ADLS, including the need for Storage Integrations for secure access.\",\n                \"Review example `CREATE STAGE` SQL commands for S3/ADLS.\"\n              ],\n              \"talking_points\": [\n                \"**External Stages** point to data files in external cloud storage like S3 or ADLS.\",\n                \"**Internal Stages** are managed within Snowflake.\",\n                \"**Storage Integrations** are the recommended secure way to grant Snowflake access to external cloud storage (e.g., IAM roles for AWS S3, SAS tokens for Azure).\",\n                \"Stages act as a bridge between external data sources and Snowflake.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Afternoon: Deep Dive into COPY INTO Command & File Formats (4-5 hours)\",\n          \"description\": \"Focus on the `COPY INTO` command's syntax, parameters, and the critical role of file formats in successful data ingestion.\",\n          \"subtopics\": [\n            {\n              \"name\": \"COPY INTO Command Basics\",\n              \"description\": \"Learn the fundamental syntax of the `COPY INTO` command for loading data from a stage into a table. Understand key clauses like `FROM @stage` and `FILE_FORMAT`.\",\n              \"learning_activities\": [\n                \"Examine basic `COPY INTO` syntax with examples.\",\n                \"Understand how to specify the source stage and target table.\",\n                \"Practice mentally constructing simple `COPY INTO` statements.\"\n              ],\n              \"talking_points\": [\n                \"`COPY INTO <table_name> FROM @<stage_name>/<path>` is the core structure.\",\n                \"It's used for bulk loading data from staged files into tables.\",\n                \"The command supports various file formats and options for data transformation and error handling.\"\n              ]\n            },\n            {\n              \"name\": \"File Formats\",\n              \"description\": \"Explore the different file formats supported by Snowflake (CSV, JSON, Parquet, Avro, XML) and how to define them using `CREATE FILE FORMAT` or inline. Understand common file format options.\",\n              \"learning_activities\": [\n                \"Review supported file formats (CSV, JSON, Parquet, Avro, ORC, XML).\",\n                \"Understand the purpose of `CREATE FILE FORMAT` objects for reusability.\",\n                \"Learn about common file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`, `NULL_IF`, `ERROR_ON_COLUMN_COUNT`).\"\n              ],\n              \"talking_points\": [\n                \"Snowflake supports structured (CSV) and semi-structured (JSON, Parquet, Avro, ORC, XML) data formats.\",\n                \"`FILE_FORMAT` objects encapsulate format details, promoting code reusability.\",\n                \"Key options include `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, and `NULL_IF` to correctly parse data.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Evening: Error Handling, Validation & Talking Points (2-3 hours)\",\n          \"description\": \"Master how to handle errors during data loading, validate files, and consolidate knowledge into effective interview talking points.\",\n          \"subtopics\": [\n            {\n              \"name\": \"Error Handling in COPY INTO\",\n              \"description\": \"Understand the `ON_ERROR` parameter and its various options (`ABORT_STATEMENT`, `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_N`). Discuss how to troubleshoot loading errors.\",\n              \"learning_activities\": [\n                \"Study the `ON_ERROR` options and their implications.\",\n                \"Learn about `VALIDATION_MODE` to test files for errors without loading them.\",\n                \"Explore `COPY_HISTORY` table function for monitoring load activity and errors.\"\n              ],\n              \"talking_points\": [\n                \"`ON_ERROR` controls behavior when errors occur (e.g., `ABORT_STATEMENT`, `CONTINUE`, `SKIP_FILE`).\",\n                \"`VALIDATION_MODE` allows pre-checking files for errors (e.g., `RETURN_ERRORS`, `RETURN_ALL_ERRORS`) without actual data loading.\",\n                \"`COPY_HISTORY` (table function or Account Usage view) provides a record of data loading activities and errors for up to 14 or 365 days, respectively.\"\n              ]\n            },\n            {\n              \"name\": \"Interview Talking Points & Best Practices\",\n              \"description\": \"Consolidate all learned concepts into concise, clear explanations suitable for an interview. Include best practices for efficient and robust data loading.\",\n              \"learning_activities\": [\n                \"Review all subtopics and formulate answers to potential interview questions.\",\n                \"Practice explaining the end-to-end data loading process from S3/ADLS to Snowflake.\",\n                \"Consider common pitfalls and how to address them.\"\n              ],\n              \"talking_points\": [\n                \"**End-to-End Process:** Data files are placed in S3/ADLS, an external stage is created in Snowflake pointing to this location (secured by Storage Integration), a file format is defined, and then `COPY INTO` is used to load data into a target table.\",\n                \"**Security:** Emphasize Storage Integrations for secure, credential-less access to cloud storage.\",\n                \"**Performance:** Mention optimizing file sizes (not too small, not too large), using a sufficiently sized virtual warehouse, and ensuring Snowflake and cloud storage are in the same region.\",\n                \"**Idempotency:** `COPY INTO` is inherently idempotent; it tracks loaded files to prevent duplicate loads.\",\n                \"**Error Handling Strategy:** Explain how `ON_ERROR` and `VALIDATION_MODE` help manage data quality and prevent bad data from entering the system. Use `COPY_HISTORY` for post-load analysis.\",\n                \"**Transformation:** Briefly mention that `COPY INTO` can perform basic transformations during load using a `SELECT` statement within the command.\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-b6b809e8-a311-4ca0-8371-cbb2b131e75a",
+                          "args": {
+                            "request": "Snowflake Data Loading, Snowflake Stages, COPY INTO command, File Formats, Error Handling in Snowflake, S3, ADLS. Preferences: Snowflake documentation, examples, interview questions."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-b6b809e8-a311-4ca0-8371-cbb2b131e75a",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771728248.454225,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a helpful study orchestrator agent. Your only job is to create high-quality, personalized study + resource plans.\nYour only job is to give the study plan to the user. Other that do not answer to any other user query which are not related to study plan.\nWhen a user gives you:\n- Topic\n- Level(beginner/intermediate/advanced)\n- Time budget (e.g. 1 day, 2 days, 1 week)\n- Goal(e.g. prepare for job interview, build a project, etc.)\n\nYou must follow this process(strict order):\n1. When user provides topic + level + time budget + goal:\n   → Immediately call tool planner_tool with the **exact full user message** as input\n   → Do NOT change/summarize the query\n   → Wait for complete JSON response\n\n2. After receiving plan:\n   → Extract subtopics\n   → (When Resource Curator exists): call tool curator_tool with subtopics + preferences\n   → Wait for complete JSON response\n\n3. Final step:\n   → Combine plan + resources into clean Markdown\n   → Use headings, bullets, tables where helpful\n   → End with 2-3 encouraging sentences\n\n\nRules:\n- NEVER try to create a study plan yourself — always delegate via tool\n- If input is missing/incomplete → ask clarifying questions FIRST until you have all the information you need\n- Output only final answer to user after all steps are done\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_data_loading_copy_into_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Focus on Snowflake ingestion end-to-end: (1) Stages: internal vs external stage; why external stages for S3/ADLS; storage integration basics. (2) File formats: CSV/JSON/Parquet, compression, schema inference vs explicit. (3) COPY INTO: pattern, validation mode, ON_ERROR behavior, file tracking (load history) and idempotency strategies. (4) Snowpipe: continuous ingestion conceptually vs batch COPY; when you’d use it. (5) Troubleshooting: rejected records, parsing errors, bad files, monitoring via load history. Practice by writing 2–3 COPY INTO examples and explaining the flow: cloud storage → stage → COPY → table with observability.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The user prompt does not provide \"resume or JD paths\". Therefore, the condition for the agent to call `parse_document_tool` is not met. Since the agent did not call this tool, and it was not required to, the property is fulfilled because it is not applicable in a negative sense.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___6672483f-5824-4842-83ee-5a2d519da414",
+      "session_details": {
+        "id": "___eval___session___6672483f-5824-4842-83ee-5a2d519da414",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "91a53726-8fb2-40c5-bfd4-4b83ff0616ef"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "160f6ce1-30c3-457b-b2e0-f6a101ee206c",
+            "timestamp": 1771728242.807334
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-8d2dc421-8bad-4421-9c2d-461f35d0cc8b",
+                    "args": {
+                      "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "8a612adc-ac92-4945-a2fa-bb019462f816"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 56,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 56
+                }
+              ],
+              "prompt_token_count": 477,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 477
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 533,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.000754274960075106,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "8a612adc-ac92-4945-a2fa-bb019462f816"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "883dffdc-0a2e-4a14-ad39-7e3d4103af1c",
+            "timestamp": 1771728242.808401
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-8d2dc421-8bad-4421-9c2d-461f35d0cc8b",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"title\": \"Snowflake Data Loading from S3/ADLS: Interview Prep (1-Day Beginner Plan)\",\n  \"description\": \"A focused 1-day study plan for beginners to understand and explain how data is loaded into Snowflake from S3/ADLS, including stages, file formats, and error handling, for job interviews.\",\n  \"level\": \"Beginner\",\n  \"time_budget_days\": 1,\n  \"goal\": \"Prepare for a job interview by understanding and being able to explain Snowflake data loading from S3/ADLS, including stages, file formats, and error handling.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"sections\": [\n        {\n          \"title\": \"Morning: Fundamentals of Snowflake Data Loading & Stages (3-4 hours)\",\n          \"description\": \"Understand the core concepts of data loading in Snowflake, focusing on the role of stages and how Snowflake interacts with external cloud storage.\",\n          \"subtopics\": [\n            {\n              \"name\": \"Introduction to Snowflake Data Loading\",\n              \"description\": \"Overview of why data loading is crucial in Snowflake and the high-level process. Discuss the benefits of using cloud storage (S3/ADLS) as a source.\",\n              \"learning_activities\": [\n                \"Read Snowflake documentation on data loading overview.\",\n                \"Watch a short introductory video on Snowflake data ingestion.\"\n              ],\n              \"talking_points\": [\n                \"Snowflake separates storage and compute, allowing flexible data loading.\",\n                \"External cloud storage (S3/ADLS) is commonly used for cost-effectiveness and scalability.\",\n                \"The `COPY INTO` command is the primary method for bulk data loading.\"\n              ]\n            },\n            {\n              \"name\": \"Snowflake Stages: External vs. Internal\",\n              \"description\": \"Differentiate between internal and external stages, with a focus on external stages for S3/ADLS. Explain their purpose as temporary storage locations for data files before loading into tables.\",\n              \"learning_activities\": [\n                \"Study the concept of Snowflake stages, particularly external stages.\",\n                \"Understand the process of creating an external stage for S3/ADLS, including the need for Storage Integrations for secure access.\",\n                \"Review example `CREATE STAGE` SQL commands for S3/ADLS.\"\n              ],\n              \"talking_points\": [\n                \"**External Stages** point to data files in external cloud storage like S3 or ADLS.\",\n                \"**Internal Stages** are managed within Snowflake.\",\n                \"**Storage Integrations** are the recommended secure way to grant Snowflake access to external cloud storage (e.g., IAM roles for AWS S3, SAS tokens for Azure).\",\n                \"Stages act as a bridge between external data sources and Snowflake.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Afternoon: Deep Dive into COPY INTO Command & File Formats (4-5 hours)\",\n          \"description\": \"Focus on the `COPY INTO` command's syntax, parameters, and the critical role of file formats in successful data ingestion.\",\n          \"subtopics\": [\n            {\n              \"name\": \"COPY INTO Command Basics\",\n              \"description\": \"Learn the fundamental syntax of the `COPY INTO` command for loading data from a stage into a table. Understand key clauses like `FROM @stage` and `FILE_FORMAT`.\",\n              \"learning_activities\": [\n                \"Examine basic `COPY INTO` syntax with examples.\",\n                \"Understand how to specify the source stage and target table.\",\n                \"Practice mentally constructing simple `COPY INTO` statements.\"\n              ],\n              \"talking_points\": [\n                \"`COPY INTO <table_name> FROM @<stage_name>/<path>` is the core structure.\",\n                \"It's used for bulk loading data from staged files into tables.\",\n                \"The command supports various file formats and options for data transformation and error handling.\"\n              ]\n            },\n            {\n              \"name\": \"File Formats\",\n              \"description\": \"Explore the different file formats supported by Snowflake (CSV, JSON, Parquet, Avro, XML) and how to define them using `CREATE FILE FORMAT` or inline. Understand common file format options.\",\n              \"learning_activities\": [\n                \"Review supported file formats (CSV, JSON, Parquet, Avro, ORC, XML).\",\n                \"Understand the purpose of `CREATE FILE FORMAT` objects for reusability.\",\n                \"Learn about common file format options (e.g., `FIELD_DELIMITER`, `SKIP_HEADER`, `NULL_IF`, `ERROR_ON_COLUMN_COUNT`).\"\n              ],\n              \"talking_points\": [\n                \"Snowflake supports structured (CSV) and semi-structured (JSON, Parquet, Avro, ORC, XML) data formats.\",\n                \"`FILE_FORMAT` objects encapsulate format details, promoting code reusability.\",\n                \"Key options include `TYPE`, `FIELD_DELIMITER`, `SKIP_HEADER`, and `NULL_IF` to correctly parse data.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Evening: Error Handling, Validation & Talking Points (2-3 hours)\",\n          \"description\": \"Master how to handle errors during data loading, validate files, and consolidate knowledge into effective interview talking points.\",\n          \"subtopics\": [\n            {\n              \"name\": \"Error Handling in COPY INTO\",\n              \"description\": \"Understand the `ON_ERROR` parameter and its various options (`ABORT_STATEMENT`, `CONTINUE`, `SKIP_FILE`, `SKIP_FILE_N`). Discuss how to troubleshoot loading errors.\",\n              \"learning_activities\": [\n                \"Study the `ON_ERROR` options and their implications.\",\n                \"Learn about `VALIDATION_MODE` to test files for errors without loading them.\",\n                \"Explore `COPY_HISTORY` table function for monitoring load activity and errors.\"\n              ],\n              \"talking_points\": [\n                \"`ON_ERROR` controls behavior when errors occur (e.g., `ABORT_STATEMENT`, `CONTINUE`, `SKIP_FILE`).\",\n                \"`VALIDATION_MODE` allows pre-checking files for errors (e.g., `RETURN_ERRORS`, `RETURN_ALL_ERRORS`) without actual data loading.\",\n                \"`COPY_HISTORY` (table function or Account Usage view) provides a record of data loading activities and errors for up to 14 or 365 days, respectively.\"\n              ]\n            },\n            {\n              \"name\": \"Interview Talking Points & Best Practices\",\n              \"description\": \"Consolidate all learned concepts into concise, clear explanations suitable for an interview. Include best practices for efficient and robust data loading.\",\n              \"learning_activities\": [\n                \"Review all subtopics and formulate answers to potential interview questions.\",\n                \"Practice explaining the end-to-end data loading process from S3/ADLS to Snowflake.\",\n                \"Consider common pitfalls and how to address them.\"\n              ],\n              \"talking_points\": [\n                \"**End-to-End Process:** Data files are placed in S3/ADLS, an external stage is created in Snowflake pointing to this location (secured by Storage Integration), a file format is defined, and then `COPY INTO` is used to load data into a target table.\",\n                \"**Security:** Emphasize Storage Integrations for secure, credential-less access to cloud storage.\",\n                \"**Performance:** Mention optimizing file sizes (not too small, not too large), using a sufficiently sized virtual warehouse, and ensuring Snowflake and cloud storage are in the same region.\",\n                \"**Idempotency:** `COPY INTO` is inherently idempotent; it tracks loaded files to prevent duplicate loads.\",\n                \"**Error Handling Strategy:** Explain how `ON_ERROR` and `VALIDATION_MODE` help manage data quality and prevent bad data from entering the system. Use `COPY_HISTORY` for post-load analysis.\",\n                \"**Transformation:** Briefly mention that `COPY INTO` can perform basic transformations during load using a `SELECT` statement within the command.\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "36def2ee-28ec-4b27-b27d-b193e55cc39d",
+            "timestamp": 1771728271.045353
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-b6b809e8-a311-4ca0-8371-cbb2b131e75a",
+                    "args": {
+                      "request": "Snowflake Data Loading, Snowflake Stages, COPY INTO command, File Formats, Error Handling in Snowflake, S3, ADLS. Preferences: Snowflake documentation, examples, interview questions."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "b41dc5d9-d943-450b-bf7c-471c937a59de"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 41,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 41
+                }
+              ],
+              "prompt_token_count": 2337,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2337
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2378,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.15608596801757812,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "b41dc5d9-d943-450b-bf7c-471c937a59de"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "0af5fc5a-9bd8-4c50-b98b-3d616f21f567",
+            "timestamp": 1771728271.045353
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-b6b809e8-a311-4ca0-8371-cbb2b131e75a",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "c2f0d36c-d13c-434c-bbfd-23cbc3f9dac2",
+            "timestamp": 1771728295.72823
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": null,
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": "UNKNOWN_ERROR",
+            "error_message": "Unknown error.",
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "91a53726-8fb2-40c5-bfd4-4b83ff0616ef"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": null,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 2390,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2390
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2390,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-22636cba-0809-4409-8cd2-e3f78725e0c3",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "91a53726-8fb2-40c5-bfd4-4b83ff0616ef"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "110f7b72-5905-4f04-80b3-0a70d4c26612",
+            "timestamp": 1771728295.730258
+          }
+        ],
+        "last_update_time": 1771728295.730258
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771728371.8761315
+}

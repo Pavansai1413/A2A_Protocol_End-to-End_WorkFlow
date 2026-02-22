@@ -1,0 +1,1029 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771727361.112707",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771727361.112707",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_beginner_interview",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-eda206cd-b231-4822-aeac-11eeb6bcb42a",
+                          "args": {
+                            "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-eda206cd-b231-4822-aeac-11eeb6bcb42a",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake for AI/ML Engineers\",\n    \"level\": \"Beginner\",\n    \"time_budget\": \"1 Day\",\n    \"goal\": \"Prepare for an AI/ML Engineer interview with a focus on Snowflake's relevance and capabilities.\",\n    \"plan\": [\n      {\n        \"day\": 1,\n        \"title\": \"Snowflake Fundamentals & AI/ML Integration\",\n        \"sections\": [\n          {\n            \"title\": \"Morning: Understanding Snowflake Core Concepts (3 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Introduction to Snowflake\",\n                \"description\": \"Grasp what Snowflake is: a cloud-native data platform, data warehouse as a service, and its unique architecture that separates storage and compute. Understand why it's different from traditional databases and data warehouses.\",\n                \"learning_objectives\": [\n                  \"Define Snowflake's core purpose and value proposition.\",\n                  \"Explain the concept of separating storage and compute.\",\n                  \"Identify the three main layers of Snowflake's architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Architecture and It's Fundamental Concepts.\",\n                  \"Read: Snowflake: 10 Core Concepts Every Data Engineer Should Know (focus on Virtual Warehouses, Databases/Schemas/Tables, Semi-Structured Data Support, Zero-Copy Cloning, Time Travel).\"\n                ]\n              },\n              {\n                \"name\": \"Key Snowflake Components & Features\",\n                \"description\": \"Dive into essential components like Virtual Warehouses, Databases, Schemas, Tables, Stages, and understand features like Zero-Copy Cloning and Time Travel.\",\n                \"learning_objectives\": [\n                  \"Describe the function of Virtual Warehouses and their scalability.\",\n                  \"Understand the logical hierarchy of Databases, Schemas, and Tables.\",\n                  \"Explain the purpose of Stages for data loading (internal vs. external).\",\n                  \"Understand the benefits of Zero-Copy Cloning and Time Travel.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Architecture and It's Fundamental Concepts (focus on Micro Partitions, Data Clustering, Columnar Format).\",\n                  \"Read: Snowflake: 10 Core Concepts Every Data Engineer Should Know.\",\n                  \"Read: What are Stages in Snowflake?\"\n                ]\n              },\n              {\n                \"name\": \"Data Ingestion Methods\",\n                \"description\": \"Learn the primary ways to load data into Snowflake, focusing on methods relevant for large-scale data and streaming.\",\n                \"learning_objectives\": [\n                  \"Differentiate between `COPY INTO` command and Snowpipe.\",\n                  \"Understand the concept of serverless data loading with Snowpipe for continuous ingestion.\",\n                  \"Briefly understand Snowpipe Streaming for low-latency data and Kafka Connector.\"\n                ],\n                \"resources\": [\n                  \"Read: Most Popular Native Methods For Data Ingestion in Snowflake.\",\n                  \"Read: How to Load Data into Snowflake: 3 Best Real-Time Methods (focus on Snowpipe and Snowpipe Streaming).\"\n                ]\n              }\n            ]\n          },\n          {\n            \"title\": \"Afternoon: Snowflake for AI/ML Engineers (4 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Snowflake's Role in AI/ML Workflows\",\n                \"description\": \"Explore how Snowflake supports the entire machine learning lifecycle, from data preparation to model deployment and inference.\",\n                \"learning_objectives\": [\n                  \"Identify how Snowflake facilitates feature engineering, model training, and inference.\",\n                  \"Understand the benefits of performing ML directly on Snowflake data (avoiding data movement).\",\n                  \"Recognize Snowflake ML as an integrated set of capabilities for end-to-end machine learning.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake ML: End-to-End Machine Learning.\",\n                  \"Read: Snowflake's AI and ML capabilities.\"\n                ]\n              },\n              {\n                \"name\": \"Snowpark for AI/ML\",\n                \"description\": \"Understand Snowpark as a key technology for AI/ML engineers, enabling data processing and ML model development using familiar languages like Python directly within Snowflake.\",\n                \"learning_objectives\": [\n                  \"Explain what Snowpark is and its primary benefit (code-to-data, in-database processing).\",\n                  \"Understand how Snowpark allows Python, Java, and Scala code to run within Snowflake's virtual warehouses.\",\n                  \"Recognize Snowpark's DataFrame API for data manipulation and its use in ML workloads.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Snowpark: A Complete Guide.\",\n                  \"Read: What is Snowpark in Snowflake and How Does it Work?\",\n                  \"Watch: Snowflake 101: What is Snowpark?\"\n                ]\n              },\n              {\n                \"name\": \"Streamlit in Snowflake & Snowflake Cortex\",\n                \"description\": \"Briefly cover Streamlit's role in building interactive data applications and dashboards for ML models, and introduce Snowflake Cortex for AI capabilities.\",\n                \"learning_objectives\": [\n                  \"Understand how Streamlit in Snowflake enables building and deploying ML data apps without moving data.\",\n                  \"Identify Snowflake Cortex as Snowflake's platform for LLM and AI features.\"\n                ],\n                \"resources\": [\n                  \"Read: About Streamlit in Snowflake.\",\n                  \"Read: Build and deploy Snowpark ML models using Streamlit and Notebooks in Snowflake.\",\n                  \"Read: Building AI Data Apps With Snowflake + Streamlit.\",\n                  \"Read: Snowflake Cortex.\"\n                ]\n              },\n              {\n                \"name\": \"Python Integration & Data Transformation\",\n                \"description\": \"Understand how Python connects to Snowflake and the methods for data transformation, including SQL, UDFs, and Snowpark for more complex transformations.\",\n                \"learning_objectives\": [\n                  \"Differentiate between Snowflake Connector for Python and Snowpark for Python connectivity.\",\n                  \"Understand how SQL is used for data transformation in Snowflake (ELT approach).\",\n                  \"Recognize the use of UDFs and Stored Procedures, and how Snowpark enhances complex data transformations for ML.\"\n                ],\n                \"resources\": [\n                  \"Read: Connecting Python & Snowflake for Data Analysis.\",\n                  \"Read: Snowflake Data Transformation: Complete Guide + Best Practices.\"\n                ]\n              }\n            ]\n          },\n          {\n            \"title\": \"Evening: Interview Preparation & Key Takeaways (2 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Security & Governance in Snowflake\",\n                \"description\": \"Review the fundamental security and governance features crucial for enterprise data platforms, especially in an AI/ML context.\",\n                \"learning_objectives\": [\n                  \"Understand the Shared Responsibility Model in Snowflake security.\",\n                  \"Identify key security features: RBAC, encryption, network policies, data masking, row access policies.\",\n                  \"Understand the importance of data governance for compliance and responsible AI deployment.\"\n                ],\n                \"resources\": [\n                  \"Read: Security & Governance Pillar - Snowflake.\",\n                  \"Read: What Does Snowflake Data Governance Mean?\"\n                ]\n              },\n              {\n                \"name\": \"Interview Focus & Practice\",\n                \"description\": \"Consolidate knowledge by reviewing common interview questions and practicing articulating Snowflake's benefits for AI/ML.\",\n                \"learning_objectives\": [\n                  \"Be able to explain Snowflake's architecture and its advantages for data processing.\",\n                  \"Articulate how Snowflake's features (e.g., Snowpark, data sharing"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-a452ba6d-2cf0-4d96-b531-598d2f656043",
+                          "args": {
+                            "request": "Subtopics: Introduction to Snowflake, Key Snowflake Components & Features, Data Ingestion Methods, Snowflake's Role in AI/ML Workflows, Snowpark for AI/ML, Streamlit in Snowflake & Snowflake Cortex, Python Integration & Data Transformation, Security & Governance in Snowflake. Preferences: Focus on resources relevant to AI/ML engineers, prioritize concise and practical guides, and include examples where possible."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-a452ba6d-2cf0-4d96-b531-598d2f656043",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771727288.189151,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a helpful study orchestrator agent. Your only job is to create high-quality, personalized study + resource plans.\nYour only job is to give the study plan to the user. Other that do not answer to any other user query which are not related to study plan.\nWhen a user gives you:\n- Topic\n- Level(beginner/intermediate/advanced)\n- Time budget (e.g. 1 day, 2 days, 1 week)\n- Goal(e.g. prepare for job interview, build a project, etc.)\n\nYou must follow this process(strict order):\n1. When user provides topic + level + time budget + goal:\n   → Immediately call tool planner_tool with the **exact full user message** as input\n   → Do NOT change/summarize the query\n   → Wait for complete JSON response\n\n2. After receiving plan:\n   → Extract subtopics\n   → (When Resource Curator exists): call tool curator_tool with subtopics + preferences\n   → Wait for complete JSON response\n\n3. Final step:\n   → Combine plan + resources into clean Markdown\n   → Use headings, bullets, tables where helpful\n   → End with 2-3 encouraging sentences\n\n\nRules:\n- NEVER try to create a study plan yourself — always delegate via tool\n- If input is missing/incomplete → ask clarifying questions FIRST until you have all the information you need\n- Output only final answer to user after all steps are done\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_beginner_interview_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Here’s a realistic 1-day Snowflake crash plan for an AI/ML Engineer interview: (1) Fundamentals + core concepts (warehouse vs database/schema, stages, file formats). (2) Architecture: separation of compute and storage, virtual warehouses, concurrency/scaling, caching. (3) Key SQL: COPY INTO, clustering, time travel, zero-copy cloning. (4) Security/governance: RBAC, masking, network policies. (5) Snowpark + ML relevance: how Snowpark supports Python/Scala workloads, feature engineering, and integrations. (6) Practice: 10–15 interview questions + hands-on exercises. Use official Snowflake docs and quickstarts; keep total study time ~8–10 hours.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": null
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "topic": "Snowflake",
+                    "level": "Beginner",
+                    "time_budget": "1 day",
+                    "goal": "AI/ML Engineer interview prep"
+                  },
+                  "name": "generate_study_plan",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The user prompt does not provide any \"resume or JD paths\". Therefore, the condition for the agent to call `parse_document_tool` is not met, and the property is not applicable.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___852c9a03-9852-467d-83ca-2245b511814f",
+      "session_details": {
+        "id": "___eval___session___852c9a03-9852-467d-83ca-2245b511814f",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "550ae1ae-e115-4698-91ca-926963182f29"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "1c8bb1b0-8362-453b-8837-2819ffc0d61e",
+            "timestamp": 1771727284.123306
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-eda206cd-b231-4822-aeac-11eeb6bcb42a",
+                    "args": {
+                      "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "91456d22-a1c1-4d6c-be5d-1e1fab0a68a0"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 42,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 42
+                }
+              ],
+              "prompt_token_count": 463,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 463
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 505,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.0050594015490441095,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "91456d22-a1c1-4d6c-be5d-1e1fab0a68a0"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "87c5dd72-acc0-4304-8151-f4cc1544d5f0",
+            "timestamp": 1771727284.126538
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-eda206cd-b231-4822-aeac-11eeb6bcb42a",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake for AI/ML Engineers\",\n    \"level\": \"Beginner\",\n    \"time_budget\": \"1 Day\",\n    \"goal\": \"Prepare for an AI/ML Engineer interview with a focus on Snowflake's relevance and capabilities.\",\n    \"plan\": [\n      {\n        \"day\": 1,\n        \"title\": \"Snowflake Fundamentals & AI/ML Integration\",\n        \"sections\": [\n          {\n            \"title\": \"Morning: Understanding Snowflake Core Concepts (3 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Introduction to Snowflake\",\n                \"description\": \"Grasp what Snowflake is: a cloud-native data platform, data warehouse as a service, and its unique architecture that separates storage and compute. Understand why it's different from traditional databases and data warehouses.\",\n                \"learning_objectives\": [\n                  \"Define Snowflake's core purpose and value proposition.\",\n                  \"Explain the concept of separating storage and compute.\",\n                  \"Identify the three main layers of Snowflake's architecture: Database Storage, Query Processing (Virtual Warehouses), and Cloud Services.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Architecture and It's Fundamental Concepts.\",\n                  \"Read: Snowflake: 10 Core Concepts Every Data Engineer Should Know (focus on Virtual Warehouses, Databases/Schemas/Tables, Semi-Structured Data Support, Zero-Copy Cloning, Time Travel).\"\n                ]\n              },\n              {\n                \"name\": \"Key Snowflake Components & Features\",\n                \"description\": \"Dive into essential components like Virtual Warehouses, Databases, Schemas, Tables, Stages, and understand features like Zero-Copy Cloning and Time Travel.\",\n                \"learning_objectives\": [\n                  \"Describe the function of Virtual Warehouses and their scalability.\",\n                  \"Understand the logical hierarchy of Databases, Schemas, and Tables.\",\n                  \"Explain the purpose of Stages for data loading (internal vs. external).\",\n                  \"Understand the benefits of Zero-Copy Cloning and Time Travel.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Architecture and It's Fundamental Concepts (focus on Micro Partitions, Data Clustering, Columnar Format).\",\n                  \"Read: Snowflake: 10 Core Concepts Every Data Engineer Should Know.\",\n                  \"Read: What are Stages in Snowflake?\"\n                ]\n              },\n              {\n                \"name\": \"Data Ingestion Methods\",\n                \"description\": \"Learn the primary ways to load data into Snowflake, focusing on methods relevant for large-scale data and streaming.\",\n                \"learning_objectives\": [\n                  \"Differentiate between `COPY INTO` command and Snowpipe.\",\n                  \"Understand the concept of serverless data loading with Snowpipe for continuous ingestion.\",\n                  \"Briefly understand Snowpipe Streaming for low-latency data and Kafka Connector.\"\n                ],\n                \"resources\": [\n                  \"Read: Most Popular Native Methods For Data Ingestion in Snowflake.\",\n                  \"Read: How to Load Data into Snowflake: 3 Best Real-Time Methods (focus on Snowpipe and Snowpipe Streaming).\"\n                ]\n              }\n            ]\n          },\n          {\n            \"title\": \"Afternoon: Snowflake for AI/ML Engineers (4 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Snowflake's Role in AI/ML Workflows\",\n                \"description\": \"Explore how Snowflake supports the entire machine learning lifecycle, from data preparation to model deployment and inference.\",\n                \"learning_objectives\": [\n                  \"Identify how Snowflake facilitates feature engineering, model training, and inference.\",\n                  \"Understand the benefits of performing ML directly on Snowflake data (avoiding data movement).\",\n                  \"Recognize Snowflake ML as an integrated set of capabilities for end-to-end machine learning.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake ML: End-to-End Machine Learning.\",\n                  \"Read: Snowflake's AI and ML capabilities.\"\n                ]\n              },\n              {\n                \"name\": \"Snowpark for AI/ML\",\n                \"description\": \"Understand Snowpark as a key technology for AI/ML engineers, enabling data processing and ML model development using familiar languages like Python directly within Snowflake.\",\n                \"learning_objectives\": [\n                  \"Explain what Snowpark is and its primary benefit (code-to-data, in-database processing).\",\n                  \"Understand how Snowpark allows Python, Java, and Scala code to run within Snowflake's virtual warehouses.\",\n                  \"Recognize Snowpark's DataFrame API for data manipulation and its use in ML workloads.\"\n                ],\n                \"resources\": [\n                  \"Read: Snowflake Snowpark: A Complete Guide.\",\n                  \"Read: What is Snowpark in Snowflake and How Does it Work?\",\n                  \"Watch: Snowflake 101: What is Snowpark?\"\n                ]\n              },\n              {\n                \"name\": \"Streamlit in Snowflake & Snowflake Cortex\",\n                \"description\": \"Briefly cover Streamlit's role in building interactive data applications and dashboards for ML models, and introduce Snowflake Cortex for AI capabilities.\",\n                \"learning_objectives\": [\n                  \"Understand how Streamlit in Snowflake enables building and deploying ML data apps without moving data.\",\n                  \"Identify Snowflake Cortex as Snowflake's platform for LLM and AI features.\"\n                ],\n                \"resources\": [\n                  \"Read: About Streamlit in Snowflake.\",\n                  \"Read: Build and deploy Snowpark ML models using Streamlit and Notebooks in Snowflake.\",\n                  \"Read: Building AI Data Apps With Snowflake + Streamlit.\",\n                  \"Read: Snowflake Cortex.\"\n                ]\n              },\n              {\n                \"name\": \"Python Integration & Data Transformation\",\n                \"description\": \"Understand how Python connects to Snowflake and the methods for data transformation, including SQL, UDFs, and Snowpark for more complex transformations.\",\n                \"learning_objectives\": [\n                  \"Differentiate between Snowflake Connector for Python and Snowpark for Python connectivity.\",\n                  \"Understand how SQL is used for data transformation in Snowflake (ELT approach).\",\n                  \"Recognize the use of UDFs and Stored Procedures, and how Snowpark enhances complex data transformations for ML.\"\n                ],\n                \"resources\": [\n                  \"Read: Connecting Python & Snowflake for Data Analysis.\",\n                  \"Read: Snowflake Data Transformation: Complete Guide + Best Practices.\"\n                ]\n              }\n            ]\n          },\n          {\n            \"title\": \"Evening: Interview Preparation & Key Takeaways (2 hours)\",\n            \"subtopics\": [\n              {\n                \"name\": \"Security & Governance in Snowflake\",\n                \"description\": \"Review the fundamental security and governance features crucial for enterprise data platforms, especially in an AI/ML context.\",\n                \"learning_objectives\": [\n                  \"Understand the Shared Responsibility Model in Snowflake security.\",\n                  \"Identify key security features: RBAC, encryption, network policies, data masking, row access policies.\",\n                  \"Understand the importance of data governance for compliance and responsible AI deployment.\"\n                ],\n                \"resources\": [\n                  \"Read: Security & Governance Pillar - Snowflake.\",\n                  \"Read: What Does Snowflake Data Governance Mean?\"\n                ]\n              },\n              {\n                \"name\": \"Interview Focus & Practice\",\n                \"description\": \"Consolidate knowledge by reviewing common interview questions and practicing articulating Snowflake's benefits for AI/ML.\",\n                \"learning_objectives\": [\n                  \"Be able to explain Snowflake's architecture and its advantages for data processing.\",\n                  \"Articulate how Snowflake's features (e.g., Snowpark, data sharing"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "3b2aa9ec-dba7-4e5b-8634-eed57bf74c98",
+            "timestamp": 1771727314.216719
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-a452ba6d-2cf0-4d96-b531-598d2f656043",
+                    "args": {
+                      "request": "Subtopics: Introduction to Snowflake, Key Snowflake Components & Features, Data Ingestion Methods, Snowflake's Role in AI/ML Workflows, Snowpark for AI/ML, Streamlit in Snowflake & Snowflake Cortex, Python Integration & Data Transformation, Security & Governance in Snowflake. Preferences: Focus on resources relevant to AI/ML engineers, prioritize concise and practical guides, and include examples where possible."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "7b1be05f-7a7f-406c-b85f-acbe2a0b3ea5"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 84,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 84
+                }
+              ],
+              "prompt_token_count": 2173,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2173
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2257,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.08082906405131023,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "7b1be05f-7a7f-406c-b85f-acbe2a0b3ea5"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "68c14188-9067-42b8-8113-2fad8d16e663",
+            "timestamp": 1771727314.21902
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-a452ba6d-2cf0-4d96-b531-598d2f656043",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "fa1c159b-8354-495e-a385-ab6851b86a83",
+            "timestamp": 1771727335.959569
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": null,
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": "UNKNOWN_ERROR",
+            "error_message": "Unknown error.",
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "550ae1ae-e115-4698-91ca-926963182f29"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": null,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 2269,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2269
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2269,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-fe66e5e3-5151-4351-81a1-208fbc4fd88c",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "550ae1ae-e115-4698-91ca-926963182f29"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "07bcc4d7-68e4-4438-81de-a8e5a36480eb",
+            "timestamp": 1771727335.961596
+          }
+        ],
+        "last_update_time": 1771727335.961596
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771727361.112707
+}

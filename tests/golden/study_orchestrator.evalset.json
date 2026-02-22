@@ -1,0 +1,253 @@
+{
+    "eval_set_id": "snowflake-interview-1day-beginner-2026",
+    "name": "Snowflake – 1 day crash course for AI/ML Engineer interview",
+    "description": "Beginner + 1-day prep Snowflake interview scenarios for AI/ML Engineer (tool call + final answer).",
+    "eval_cases": [
+        {
+            "eval_id": "snowflake_1day_beginner_interview",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_beginner_interview_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "Here’s a realistic 1-day Snowflake crash plan for an AI/ML Engineer interview: (1) Fundamentals: account/db/schema/table, stages, file formats, basic Snowflake SQL. (2) Architecture: separation of compute/storage, virtual warehouses, concurrency, caching. (3) Data loading & modeling: COPY INTO, file formats, micro-partitions, clustering basics. (4) Core features: Time Travel, Zero-Copy Cloning, Streams/Tasks (CDC + orchestration). (5) Security: RBAC, masking policies, row access, network policies. (6) Snowpark for ML: Python-based transforms, feature engineering patterns, UDF/UDAF overview, integration points. Finish with 10–15 interview Qs + 1–2 hands-on exercises."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I want to learn about Snowflake. I only have 1 day to learn and I am a beginner. I am preparing for an AI/ML Engineer interview with 12 years of experience."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        },
+        {
+            "eval_id": "snowflake_1day_data_loading_copy_into",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_data_loading_copy_into_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "Focus on Snowflake ingestion end-to-end: (1) Stages: internal vs external stage; why external stages for S3/ADLS; storage integration basics. (2) File formats: CSV/JSON/Parquet, compression, schema inference vs explicit. (3) COPY INTO: pattern, validation mode, ON_ERROR behavior, file tracking (load history) and idempotency strategies. (4) Snowpipe: continuous ingestion conceptually vs batch COPY; when you’d use it. (5) Troubleshooting: rejected records, parsing errors, bad files, monitoring via load history. Practice by writing 2–3 COPY INTO examples and explaining the flow: cloud storage → stage → COPY → table with observability."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I’m a beginner and I have 1 day. For interviews, I need to explain how data is loaded into Snowflake from S3/ADLS and how COPY INTO works (stages, file formats, errors). Give me a focused plan + talking points."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        },
+        {
+            "eval_id": "snowflake_1day_snowpark_ml_feature_engineering",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_snowpark_ml_feature_engineering_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "For Snowpark + ML interviews, keep it practical: Snowpark lets you write Python/Scala transformations that compile down to Snowflake execution (pushdown), so you avoid pulling data out. Pitch a workflow: raw data in tables → Snowpark DataFrame transforms (joins, window functions, aggregations) → feature tables (curated schema) → optional UDFs for custom logic → write back to Snowflake tables. Performance talking points: choose right warehouse size, leverage pushdown, avoid row-by-row Python, use set-based ops, partition-aware joins, and clustering only when needed. Governance: RBAC on feature schemas, masking/row access policies for sensitive columns, and reproducible pipelines via Tasks/Streams or external orchestration."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        },
+        {
+            "eval_id": "snowflake_1day_cost_optimization_warehouses",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_cost_optimization_warehouses_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "Cost optimization story in Snowflake is mostly about compute: warehouses are billed while running, so you control spend using sizing + auto-suspend/resume + workload isolation. Explain: (1) Separate warehouses for ETL, BI, and DS/ML to prevent noisy neighbors. (2) Set auto-suspend (e.g., 60–300s) and auto-resume to stop idle burn. (3) Use multi-cluster only for high concurrency; otherwise it can multiply cost. (4) Right-size: start small, scale up temporarily for heavy loads; use query history to identify slow queries. (5) Guardrails: resource monitors, quotas, alerts, and governance on who can resize warehouses. Finish with an example: BI warehouse small + multi-cluster; ETL medium scheduled; DS bursty with strict monitors."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        },
+        {
+            "eval_id": "snowflake_1day_time_travel_zero_copy_cloning",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_time_travel_zero_copy_cloning_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I have 1 day to prepare. Explain Time Travel and Zero-Copy Cloning like I’m in an interview, and how they help in ML experiments, debugging, and data recovery."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "In interviews: Time Travel lets you query historical versions of data within a retention window, so you can recover from accidental deletes/updates and reproduce past states for audit/debugging. Zero-Copy Cloning creates an instant logical copy of a table/schema/database without duplicating storage up front—both versions share underlying micro-partitions until changes occur. ML angle: clone a feature table snapshot for an experiment (reproducible training set), run transformations safely, and if something breaks you can time-travel back or discard the clone. Debug angle: compare “before/after” states, validate pipeline changes, and support rollback with minimal downtime. Mention that retention/clone behavior is governed by account/table settings and storage costs change only when data diverges."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I have 1 day to prepare. Explain Time Travel and Zero-Copy Cloning like I’m in an interview, and how they help in ML experiments, debugging, and data recovery."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        },
+        {
+            "eval_id": "snowflake_1day_security_rbac_masking_row_access",
+            "conversation": [
+                {
+                    "invocation_id": "snowflake_1day_security_rbac_masking_row_access_turn_01",
+                    "user_content": {
+                        "role": "user",
+                        "parts": [
+                            {
+                                "text": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics."
+                            }
+                        ]
+                    },
+                    "final_response": {
+                        "role": "assistant",
+                        "parts": [
+                            {
+                                "text": "Give an enterprise-ready security story: Start with RBAC—roles grant privileges to databases/schemas/tables/warehouses; users inherit access via role hierarchy (least privilege). Then column protection: dynamic data masking policies hide or partially reveal PII (e.g., SSN, email) depending on role. Row access policies enforce row-level filtering (e.g., region-based access or business unit scoping). For AI/ML, you combine these so data scientists can build features without seeing raw identifiers: expose curated views/feature tables with masked PII, tokenize identifiers, restrict raw zones, and log access. Add governance talking points: separation of duties, controlled warehouse usage, network policies, and auditing via query/access history."
+                            }
+                        ]
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [
+                            {
+                                "id": "tool-call-01",
+                                "name": "StudyPlanner",
+                                "args": {
+                                    "request": "I’m a beginner with 1 day to prep. For an enterprise AI/ML interview, I need to explain Snowflake security: RBAC, masking policies, row access policies, and how you protect PII while still enabling analytics."
+                                }
+                            }
+                        ],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "orchestrator",
+                "user_id": "user",
+                "state": {}
+            }
+        }
+    ]
+}

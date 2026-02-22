@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "tool_trajectory_avg_score": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+        },
+        "response_match_score": {
+            "threshold": 0.6
+        },
+        "final_response_match_v2": {
+            "threshold": 0.7,
+            "judge_model_options": {
+                "judge_model": "gemini-2.5-flash",
+                "num_samples": 3
+            }
+        },
+        "rubric_based_tool_use_quality_v1": {
+            "threshold": 1.0,
+            "judge_model_options": {
+                "judge_model": "gemini-2.5-flash",
+                "num_samples": 3
+            },
+            "rubrics": [
+                {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                        "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                }
+            ]
+        }
+    }
+}

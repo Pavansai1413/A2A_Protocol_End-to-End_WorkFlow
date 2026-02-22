@@ -1,0 +1,1026 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771728868.0487695",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771728868.0487695",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_cost_optimization_warehouses",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-8884fae3-1131-4df8-860c-69edc7b9ea20",
+                          "args": {
+                            "request": "Prepare for Snowflake interview, 1 day, explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how to avoid runaway spend."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-8884fae3-1131-4df8-860c-69edc7b9ea20",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake Cost Optimization for Interview\",\n    \"level\": \"intermediate\",\n    \"time_budget\": \"1 day\",\n    \"goal\": \"Prepare for a Snowflake interview by understanding and explaining cost optimization related to warehouses, auto-suspend/resume, multi-cluster warehouses, and preventing runaway spend.\",\n    \"modules\": [\n      {\n        \"title\": \"Module 1: Snowflake Virtual Warehouses Fundamentals\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Understand the core compute component of Snowflake and its cost implications.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Introduction to Virtual Warehouses\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn what Snowflake virtual warehouses are, their role as compute clusters for queries and data loads, and how they consume credits per second. Understand the separation of compute and storage in Snowflake's architecture.\",\n            \"learning_activities\": [\n              \"Read Snowflake documentation on Virtual Warehouses.\",\n              \"Watch introductory videos on Snowflake architecture.\"\n            ]\n          },\n          {\n            \"title\": \"Warehouse Sizing and Credit Consumption\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Explore the different sizes of virtual warehouses (e.g., XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL, 6XL) and how credit consumption doubles with each successive size increase. Understand that billing is per second with a minimum charge of one minute.\",\n            \"learning_activities\": [\n              \"Review Snowflake pricing guide for warehouse sizes and credit rates.\",\n              \"Understand the concept of 'credits' as Snowflake's billing unit.\"\n            ]\n          },\n          {\n            \"title\": \"Best Practices for Warehouse Sizing\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn the importance of rightsizing warehouses to match workloads to avoid over-provisioning. Discuss the trade-off between larger warehouses running queries faster and their higher cost.\",\n            \"learning_activities\": [\n              \"Analyze scenarios where different warehouse sizes are appropriate.\",\n              \"Consider how to adjust warehouse sizes (e.g., `ALTER WAREHOUSE my_wh SET WAREHOUSE_SIZE = small;`).\"\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"Module 2: Auto-Suspend and Auto-Resume\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Deep dive into a critical cost-saving feature: automatic suspension and resumption of warehouses.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Mechanism and Benefits\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Understand how auto-suspend automatically pauses an idle virtual warehouse after a specified period of inactivity, preventing unnecessary credit consumption. Learn that auto-resume automatically reactivates the warehouse upon a new query.\",\n            \"learning_activities\": [\n              \"Review Snowflake documentation on auto-suspend/resume.\",\n              \"Understand that no charges are incurred when a warehouse is suspended.\"\n            ]\n          },\n          {\n            \"title\": \"Configuration and Cost Impact\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Discuss how to configure auto-suspend settings and its direct impact on reducing compute costs. Note that the default auto-suspend is 5 minutes, which can be too long for cost efficiency.\",\n            \"learning_activities\": [\n              \"Practice setting auto-suspend (e.g., `ALTER WAREHOUSE analytics_wh SET AUTO_SUSPEND = 60;`).\",\n              \"Understand the minimum billing of 60 seconds even with aggressive auto-suspend.\"\n            ]\n          },\n          {\n            \"title\": \"Interview Scenarios & Best Practices\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Prepare to explain why setting short auto-suspend intervals (e.g., 60 seconds or lower) is a highly effective cost optimization strategy, especially for development, test, and ad-hoc query warehouses. Address the potential concern about cache clearing and emphasize the fast auto-resume time.\",\n            \"learning_activities\": [\n              \"Formulate answers to common interview questions about auto-suspend/resume.\",\n              \"Discuss how to balance cost savings with performance considerations.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"Module 3: Multi-Cluster Warehouses\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Explore how multi-cluster warehouses handle concurrency and their role in cost optimization.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Purpose and Architecture\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Understand that multi-cluster warehouses are designed to manage varying user and query concurrency needs by dynamically or statically allocating additional clusters. Note that this feature is available in Enterprise Edition or higher.\",\n            \"learning_activities\": [\n              \"Review the benefits of multi-cluster warehouses for high concurrency workloads.\",\n              \"Understand how Snowflake adds clusters up to a defined maximum as needed.\"\n            ]\n          },\n          {\n            \"title\": \"Scaling Policies (Standard vs. Economy)\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn about the two scaling policies for multi-cluster warehouses: Standard (prioritizes responsiveness) and Economy (minimizes costs). Understand how these policies influence when clusters are started or shut down.\",\n            \"learning_activities\": [\n              \"Compare and contrast the Standard and Economy scaling policies.\",\n              "
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-7af11ad9-cec6-4f3a-94ae-ab3319148d11",
+                          "args": {
+                            "request": "Snowflake Cost Optimization: warehouses, auto-suspend/resume, multi-cluster, and how to avoid runaway spend."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-7af11ad9-cec6-4f3a-94ae-ab3319148d11",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771728718.51129,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a helpful study orchestrator agent. Your only job is to create high-quality, personalized study + resource plans.\nYour only job is to give the study plan to the user. Other that do not answer to any other user query which are not related to study plan.\nWhen a user gives you:\n- Topic\n- Level(beginner/intermediate/advanced)\n- Time budget (e.g. 1 day, 2 days, 1 week)\n- Goal(e.g. prepare for job interview, build a project, etc.)\n\nYou must follow this process(strict order):\n1. When user provides topic + level + time budget + goal:\n   → Immediately call tool planner_tool with the **exact full user message** as input\n   → Do NOT change/summarize the query\n   → Wait for complete JSON response\n\n2. After receiving plan:\n   → Extract subtopics\n   → (When Resource Curator exists): call tool curator_tool with subtopics + preferences\n   → Wait for complete JSON response\n\n3. Final step:\n   → Combine plan + resources into clean Markdown\n   → Use headings, bullets, tables where helpful\n   → End with 2-3 encouraging sentences\n\n\nRules:\n- NEVER try to create a study plan yourself — always delegate via tool\n- If input is missing/incomplete → ask clarifying questions FIRST until you have all the information you need\n- Output only final answer to user after all steps are done\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_cost_optimization_warehouses_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Cost optimization story in Snowflake is mostly about compute: warehouses are billed while running, so you control spend using sizing + auto-suspend/resume + workload isolation. Explain: (1) Separate warehouses for ETL, BI, and DS/ML to prevent noisy neighbors. (2) Set auto-suspend (e.g., 60–300s) and auto-resume to stop idle burn. (3) Use multi-cluster only for high concurrency; otherwise it can multiply cost. (4) Right-size: start small, scale up temporarily for heavy loads; use query history to identify slow queries. (5) Guardrails: resource monitors, quotas, alerts, and governance on who can resize warehouses. Finish with an example: BI warehouse small + multi-cluster; ETL medium scheduled; DS bursty with strict monitors.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The agent's response does not include a call to `parse_document_tool`. Additionally, the user prompt does not provide any \"resume\" or \"JD paths\". Therefore, the conditions for evaluating this property are not met, making it not applicable to this interaction.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___e02474ee-65a3-4c23-95a6-76008a693743",
+      "session_details": {
+        "id": "___eval___session___e02474ee-65a3-4c23-95a6-76008a693743",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "60b6dafb-8875-4020-94d3-8d081dbf3d9d"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I’m preparing for a Snowflake interview and I only have 1 day. Teach me how to explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how you avoid runaway spend.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "915c8450-b83d-4d03-9c59-54fa6d32c480",
+            "timestamp": 1771728712.618378
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-8884fae3-1131-4df8-860c-69edc7b9ea20",
+                    "args": {
+                      "request": "Prepare for Snowflake interview, 1 day, explain cost optimization: warehouses, auto-suspend/resume, multi-cluster, and how to avoid runaway spend."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "7823af24-cd97-4601-8736-0bc671dc6706"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 36,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 36
+                }
+              ],
+              "prompt_token_count": 468,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 468
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 504,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.1287894911236233,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "7823af24-cd97-4601-8736-0bc671dc6706"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "5ea44afd-3024-410a-87cd-2820015799dd",
+            "timestamp": 1771728712.622809
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-8884fae3-1131-4df8-860c-69edc7b9ea20",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"study_plan\": {\n    \"topic\": \"Snowflake Cost Optimization for Interview\",\n    \"level\": \"intermediate\",\n    \"time_budget\": \"1 day\",\n    \"goal\": \"Prepare for a Snowflake interview by understanding and explaining cost optimization related to warehouses, auto-suspend/resume, multi-cluster warehouses, and preventing runaway spend.\",\n    \"modules\": [\n      {\n        \"title\": \"Module 1: Snowflake Virtual Warehouses Fundamentals\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Understand the core compute component of Snowflake and its cost implications.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Introduction to Virtual Warehouses\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn what Snowflake virtual warehouses are, their role as compute clusters for queries and data loads, and how they consume credits per second. Understand the separation of compute and storage in Snowflake's architecture.\",\n            \"learning_activities\": [\n              \"Read Snowflake documentation on Virtual Warehouses.\",\n              \"Watch introductory videos on Snowflake architecture.\"\n            ]\n          },\n          {\n            \"title\": \"Warehouse Sizing and Credit Consumption\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Explore the different sizes of virtual warehouses (e.g., XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL, 6XL) and how credit consumption doubles with each successive size increase. Understand that billing is per second with a minimum charge of one minute.\",\n            \"learning_activities\": [\n              \"Review Snowflake pricing guide for warehouse sizes and credit rates.\",\n              \"Understand the concept of 'credits' as Snowflake's billing unit.\"\n            ]\n          },\n          {\n            \"title\": \"Best Practices for Warehouse Sizing\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn the importance of rightsizing warehouses to match workloads to avoid over-provisioning. Discuss the trade-off between larger warehouses running queries faster and their higher cost.\",\n            \"learning_activities\": [\n              \"Analyze scenarios where different warehouse sizes are appropriate.\",\n              \"Consider how to adjust warehouse sizes (e.g., `ALTER WAREHOUSE my_wh SET WAREHOUSE_SIZE = small;`).\"\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"Module 2: Auto-Suspend and Auto-Resume\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Deep dive into a critical cost-saving feature: automatic suspension and resumption of warehouses.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Mechanism and Benefits\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Understand how auto-suspend automatically pauses an idle virtual warehouse after a specified period of inactivity, preventing unnecessary credit consumption. Learn that auto-resume automatically reactivates the warehouse upon a new query.\",\n            \"learning_activities\": [\n              \"Review Snowflake documentation on auto-suspend/resume.\",\n              \"Understand that no charges are incurred when a warehouse is suspended.\"\n            ]\n          },\n          {\n            \"title\": \"Configuration and Cost Impact\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Discuss how to configure auto-suspend settings and its direct impact on reducing compute costs. Note that the default auto-suspend is 5 minutes, which can be too long for cost efficiency.\",\n            \"learning_activities\": [\n              \"Practice setting auto-suspend (e.g., `ALTER WAREHOUSE analytics_wh SET AUTO_SUSPEND = 60;`).\",\n              \"Understand the minimum billing of 60 seconds even with aggressive auto-suspend.\"\n            ]\n          },\n          {\n            \"title\": \"Interview Scenarios & Best Practices\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Prepare to explain why setting short auto-suspend intervals (e.g., 60 seconds or lower) is a highly effective cost optimization strategy, especially for development, test, and ad-hoc query warehouses. Address the potential concern about cache clearing and emphasize the fast auto-resume time.\",\n            \"learning_activities\": [\n              \"Formulate answers to common interview questions about auto-suspend/resume.\",\n              \"Discuss how to balance cost savings with performance considerations.\"\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"Module 3: Multi-Cluster Warehouses\",\n        \"duration\": \"1.5 hours\",\n        \"description\": \"Explore how multi-cluster warehouses handle concurrency and their role in cost optimization.\",\n        \"subtopics\": [\n          {\n            \"title\": \"Purpose and Architecture\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Understand that multi-cluster warehouses are designed to manage varying user and query concurrency needs by dynamically or statically allocating additional clusters. Note that this feature is available in Enterprise Edition or higher.\",\n            \"learning_activities\": [\n              \"Review the benefits of multi-cluster warehouses for high concurrency workloads.\",\n              \"Understand how Snowflake adds clusters up to a defined maximum as needed.\"\n            ]\n          },\n          {\n            \"title\": \"Scaling Policies (Standard vs. Economy)\",\n            \"duration\": \"0.5 hours\",\n            \"description\": \"Learn about the two scaling policies for multi-cluster warehouses: Standard (prioritizes responsiveness) and Economy (minimizes costs). Understand how these policies influence when clusters are started or shut down.\",\n            \"learning_activities\": [\n              \"Compare and contrast the Standard and Economy scaling policies.\",\n              "
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "3fcbd3ba-42d0-4ff4-88b0-13171fb24221",
+            "timestamp": 1771728745.056517
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-7af11ad9-cec6-4f3a-94ae-ab3319148d11",
+                    "args": {
+                      "request": "Snowflake Cost Optimization: warehouses, auto-suspend/resume, multi-cluster, and how to avoid runaway spend."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "5f3aa006-6ad6-4744-b455-c8bdb94aafb9"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 29,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 29
+                }
+              ],
+              "prompt_token_count": 1756,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 1756
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 1785,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.16492208941229458,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "5f3aa006-6ad6-4744-b455-c8bdb94aafb9"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "e7dbd32d-c45f-4014-97e7-5754abb58af7",
+            "timestamp": 1771728745.058853
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-7af11ad9-cec6-4f3a-94ae-ab3319148d11",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "18adf1ee-963d-4a97-b23f-f57db16d2e9f",
+            "timestamp": 1771728766.736588
+          },
+          {
+            "model_version": "gemini-2.0-flash",
+            "content": null,
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": "UNKNOWN_ERROR",
+            "error_message": "Unknown error.",
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "60b6dafb-8875-4020-94d3-8d081dbf3d9d"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": null,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 1797,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 1797
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 1797,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-aa4c4270-e42e-47f2-9f36-e9a17ce09481",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "60b6dafb-8875-4020-94d3-8d081dbf3d9d"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "fd85fdfb-121a-46b7-8bcc-1a605453575a",
+            "timestamp": 1771728766.737761
+          }
+        ],
+        "last_update_time": 1771728766.737761
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771728868.0487695
+}

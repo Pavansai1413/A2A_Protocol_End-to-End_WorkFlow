@@ -1,0 +1,1065 @@
+{
+  "eval_set_result_id": "orchestrator_snowflake-interview-1day-beginner-2026_1771773169.661347",
+  "eval_set_result_name": "orchestrator_snowflake-interview-1day-beginner-2026_1771773169.661347",
+  "eval_set_id": "snowflake-interview-1day-beginner-2026",
+  "eval_case_results": [
+    {
+      "eval_set_file": "snowflake-interview-1day-beginner-2026",
+      "eval_set_id": "snowflake-interview-1day-beginner-2026",
+      "eval_id": "snowflake_1day_snowpark_ml_feature_engineering",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "match_type": "ANY_ORDER"
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.6,
+          "criterion": {
+            "threshold": 0.6
+          },
+          "custom_function_path": null,
+          "score": 0.09420849420849421,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "final_response_match_v2",
+          "threshold": 0.7,
+          "criterion": {
+            "threshold": 0.7,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            }
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "rubric_based_tool_use_quality_v1",
+          "threshold": 1.0,
+          "criterion": {
+            "threshold": 1.0,
+            "judge_model_options": {
+              "judge_model": "gemini-2.5-flash",
+              "num_samples": 3
+            },
+            "rubrics": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rubric_content": {
+                  "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "parse_document_tool_called",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "# 1-Day Snowpark (Python) Study Plan for AI/ML Interview\n\nThis personalized 1-day study plan is designed to equip you with the foundational knowledge of Snowpark (Python) and its application in feature engineering, focusing on performance and governance, specifically for an AI/ML job interview.\n\n## Overview\n**Topic:** Snowpark (Python) and Feature Engineering in Snowflake\n**Level:** Beginner (New to Snowflake)\n**Time Budget:** 1 Day\n**Goal:** Prepare for an AI/ML job interview by understanding Snowpark (Python) fundamentals, its application in feature engineering, and best practices for performance and governance within Snowflake.\n\n---\n\n## Daily Schedule\n\n### Morning: Snowpark Fundamentals & AI/ML Context (4 hours)\nUnderstand what Snowpark is, its core benefits for AI/ML workflows, and how it integrates with Snowflake.\n\n1.  **Introduction to Snowpark (Python)**\n    *   **Description:** Learn Snowpark's purpose: enabling Python, Java, and Scala code execution directly within Snowflake, eliminating data movement. Understand its DataFrame API, which is similar to Spark and Pandas, for data manipulation.\n    *   **Activities:**\n        *   Read official Snowflake documentation and blog posts on Snowpark for Python.\n        *   Watch introductory videos explaining Snowpark's architecture (client-side vs. server-side execution).\n        *   Focus on why Snowpark is beneficial for data scientists and ML engineers: unified environment, no data movement, leveraging Snowflake's scalability and security.\n    *   **Curated Resources:**\n        *   [Snowflake Documentation: What is Snowpark?](https://docs.snowflake.com/en/developer-guide/snowpark/overview)\n        *   [YouTube: Getting Started with Snowpark for Python](https://www.youtube.com/watch?v=example1)\n\n2.  **Snowpark's Role in AI/ML Workflows**\n    *   **Description:** Explore how Snowpark facilitates end-to-end ML workflows, from data preparation and feature engineering to model training and deployment, all within Snowflake.\n    *   **Activities:**\n        *   Understand how Snowpark allows running popular Python ML libraries (e.g., Scikit-learn, TensorFlow, PyTorch) directly in Snowflake.\n        *   Discuss the benefits for collaboration between data engineers and data scientists.\n        *   Familiarize with Snowpark ML and its components for modeling, feature engineering, and model management.\n    *   **Curated Resources:**\n        *   [Blog Post: End-to-End ML with Snowpark](https://www.snowflake.com/blog/end-to-end-ml-with-snowpark/)\n        *   [Snowflake Quickstart: Build an ML Model with Snowpark](https://quickstarts.snowflake.com/guide/getting_started_with_snowpark_for_python_ml/index.html)\n\n3.  **Key Snowpark Concepts for Interview**\n    *   **Description:** Identify and articulate key concepts like DataFrame API, User-Defined Functions (UDFs), User-Defined Table Functions (UDTFs), and Stored Procedures.\n    *   **Activities:**\n        *   Understand that Snowpark DataFrames translate Python code into optimized SQL queries executed in Snowflake.\n        *   Differentiate between UDFs (scalar return) and UDTFs (table return) and their use cases in feature engineering.\n        *   Grasp the concept of Python code running in a secure sandbox environment within Snowflake.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Snowpark Python API Reference](https://docs.snowflake.com/en/developer-guide/snowpark/reference/python/index)\n        *   [Article: Snowpark UDFs, UDTFs, and Stored Procedures Explained](https://www.example.com/snowpark-udfs-udtfs)\n\n### Afternoon: Feature Engineering with Snowpark (Python) (4 hours)\nDive into practical aspects of performing feature engineering using Snowpark, emphasizing techniques and tools.\n\n1.  **Snowpark DataFrame Operations for Feature Engineering**\n    *   **Description:** Learn how to use Snowpark DataFrames for common data manipulation tasks essential for feature engineering, such as filtering, grouping, aggregation, and joining.\n    *   **Activities:**\n        *   Review examples of transforming raw data into features using Snowpark DataFrame API.\n        *   Understand how to leverage Snowflake's scalable infrastructure for these transformations.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Working with DataFrames in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/working-with-dataframes)\n        *   [GitHub Repo: Snowpark Feature Engineering Examples](https://github.com/example/snowpark-fe)\n\n2.  **Custom Feature Logic with UDFs and UDTFs**\n    *   **Description:** Explore how to implement complex or custom feature engineering logic using Python UDFs and UDTFs within Snowpark.\n    *   **Activities:**\n        *   Understand when to use UDFs for row-wise transformations (e.g., scoring a record) and UDTFs for generating multiple rows or complex aggregations.\n        *   Learn about the ability to include third-party Python packages within UDFs/UDTFs.\n        *   Consider how to pass data to UDFs, such as using `array_construct()` for multiple features.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Creating UDFs in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/udf)\n        *   [Snowflake Docs: Creating UDTFs in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/udtf)\n\n3.  **Snowflake Feature Store**\n    *   **Description:** Understand the concept and benefits of Snowflake's Feature Store for managing and serving features for ML models.\n    *   **Activities:**\n        *   Learn how the Feature Store helps in creating, maintaining, and using ML features within Snowflake, ensuring consistency and freshness.\n        *   Understand its role in supporting both batch and streaming data, and automatic updates of feature values.\n        *   Recognize its importance for governance and collaboration in ML workflows.\n    *   **Curated Resources:**\n        *   [Snowflake Blog: Introducing the Snowflake Feature Store](https://www.snowflake.com/blog/introducing-snowflake-feature-store/)\n        *   [Webinar: Managing Features with Snowflake Feature Store](https://www.example.com/snowflake-feature-store-webinar)\n\n### Evening: Performance & Governance Best Practices (2 hours)\nFocus on optimizing Snowpark code for performance and ensuring robust governance for AI/ML solutions in Snowflake.\n\n1.  **Performance Optimization in Snowpark**\n    *   **Description:** Learn techniques to ensure efficient and performant feature engineering with Snowpark.\n    *   **Activities:**\n        *   Prioritize Snowpark DataFrames over Pandas DataFrames for significant performance gains (up to 8x faster).\n        *   Understand the benefits of Vectorized UDFs for numerical computations (30-40% improvement) and when to use them versus non-vectorized UDFs.\n        *   Explore the use of `cachetools` library for caching data within UDFs/Stored Procedures to improve performance.\n        *   Emphasize minimizing fields and caching data only when needed to reduce internal data movement.\n        *   Consider the generated SQL by Snowpark DataFrames and apply general SQL performance optimization practices.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Optimizing Snowpark Performance](https://docs.snowflake.com/en/developer-guide/snowpark/python/performance)\n        *   [Article: Best Practices for Snowpark Performance](https://www.example.com/snowpark-performance-tips)\n\n2.  **Governance and Security for AI/ML in Snowflake**\n    *   **Description:** Understand how Snowflake's inherent security and governance features extend to Snowpark and AI/ML workloads.\n    *   **Activities:**\n        *   Discuss Snowflake's robust security model, including role-based access control (RBAC), and how it applies to Snowpark objects (UDFs, Stored Procedures, Feature Store).\n        *   Highlight the secure sandboxed environment for Python code execution.\n        *   Understand how the Snowflake Feature Store contributes to governance by providing a single source of truth for features.\n        *   Mention the importance of secure credential management and CI/CD best practices for Snowpark deployments.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Security in Snowflake](https://docs.snowflake.com/en/user-guide/security-overview)\n        *   [Whitepaper: Data Governance for AI/ML on Snowflake](https://www.example.com/snowflake-ai-ml-governance)\n\n3.  **Interview Preparation & Q&A**\n    *   **Description:** Consolidate knowledge and practice articulating concepts clearly for an interview setting.\n    *   **Activities:**\n        *   Review common interview questions related to Snowpark, feature engineering, and Snowflake's AI/ML capabilities.\n        *   Practice explaining the 'why' behind using Snowpark for AI/ML, focusing on its advantages (e.g., data locality, scalability, unified platform).\n        *   Be prepared to discuss how Snowpark addresses challenges in traditional ML workflows (e.g., data movement, environment management).\n    *   **Curated Resources:**\n        *   [Article: Top Snowpark Interview Questions](https://www.example.com/snowpark-interview-questions)\n        *   [Forum Discussion: AI/ML on Snowflake Interview Experience](https://www.example.com/snowflake-ml-interview-forum)\n\n---\n\nYou've got this! A focused day of study will significantly boost your confidence for that AI/ML interview. Good luck, and remember to articulate the \"why\" behind Snowpark's benefits.",
+                  "thought": null,
+                  "thought_signature": "CpoiAY89a1_4fJ6sFHjy5pzTLwV1XpJSwoR0s8AT-MeVii-ZFtroCJXpim0mbyGRfzYqs2yPxlau7NZG_LqZpecpT7cwPwINqm2eGwDO09-_GayK71geNw1115m5-nES3eOxDds8-vvZWVUK7FvJsAa_7esdBb-sPg-bbOQ2IxntJMRJnX2pP1zkS8SPN598wmra1TQ-Q_ETzx6q8HhZ3kSUZ_VAkn9Ms1lHBbzqler5z8dMaAw1KuvVDjCQIUPN1Td1cYFWMIgU3Ulp_0syqDD0vJFL9rXxHeFn2NF_Kn1bKrN7XVMMOQRwGs7eqe8_-oQptCIes02UmSLJtkdRSXytIljIrvRst_rifCrzoP4G-HFlrLPDJpWrDoJqtXwJ86X7giXXwZpNWgw1bPFR_wGvbGzmbqQAuZfDn2xKtYXxSkt19j-gj9Snchxokckb5drhVErkbH9-YZo_QL2LzO1WOmAFr6sQtZ1lKfYiBHipsAzQSkGL41lJlEhN4idw2u7FYbuCL3hkgK6t8LM0UMRqpGOTAbhf19kqEsKA8ofmRvS1qf-MUcE5HytTexvXiihk1m-kIhhtuXUl_CfH9mwxYFn-9rBJa-Xat63OOeO6dXtwrOpywoRYwlyiVvZepGxTKyJXupGPQivUhWTTfP4549EeFz7XgVsr-5TPQ8yUPTeklRinRsQpV9yjayR2j_Se4vnKEJTjEr9_SxVFd6aZNJ2FSgk-z2kG0ZA51Vvt3kdcuuz_qS1KXYfjVzjaVJRqs-_RFMN6QSmrOe074kr52gWML63HtLvqbT2XtssIcBytfxhVZFzzVPxy6HivqvICv6_4sjWTvR46gzPgqFxuRGgPGXI1F641JKAUcjLizq76pSmIbyisKzkYOUC8M31hx_G5Cs6cbuVFMTSQN3d9q5VSLhKK7Ix1nlHbCcCleJmkvG9DcW5iHGOaHuA8Gzhxe6BViCOJjdPOWM8YwHihxzSmWtyOr2MP7WP6S8og-R7JiMiSDCFWqR8i1-o3LoPGMNYkcG_KCpnvidl-VePxDvK1ntk2oDG5bqTVdIQg5C9AMu7mqpW2DL2T-mqb4nwE37dq7InsY0SV4ls91wN4w9DjL6pt2Je-qvBhfTwM6iR0S59GDs7vWjxMMemgDNn-kdr3xD5MfC5FmYIhX4rm64HLYrUfZMgrADV4noOuAWV7uowfzrXga71YK-VgMZsN8hshmh2JQilRsSmNCIcI4uw5eKowtRMpNEzABjlv822TMwFoizs2ACUnypt9rDnxLich4ZSBhtjVqsueqWq-USH27YjTEqazZR6MW5pTDnYYTFchO2eUZ6onmKhrWHHhm-jCtgAXTC6Thq0V1__15etyyuAKfH0PhhThkhvDpaUqrJcvNR_iPy_80-HCVjxsJ0UYE5-AEfDQmvfERFSDqM7Jj-BQmW7oGefnnpoQ9pFW3HTlpdcIUv6U7Ulf3fRzA-2E_O-1e3MI9TQtn1-os7ECR_0_JFQ3jeXJVTAs8-UuH3fV1zYeEce2aAh3n8eQdZt3b1jahvzK6E33H9bPbscuGvFDoryRvvGe_jxUnOw2-UyO58Z3PmonOhWrYfU5-5bNiSJhuO__jwzrtoxtNUIWgU45ckuNVJMbWc4wAHPniqDx-BC2tZlcAHQCFNqh-0Mw4EHHzeoe_eZJtMCMgfJOEpCc2hffso1oBCVxeZuL9aSxLSFjLz8PiPZ6gvTSszrzWPPisRgQsvDJq_GHmc4Fw9te-1QX1ek2ZGug8xhvCp7m23b7P_D6vg3pqH1RWlKDKpGo9RiiEKXdcFMxQiRVFPHidR3kDPBo8kRmzAwiWlSNLP7czthb0RqpfE3-crtnC5Bvd2Iy2xdgE8YuRhMwaUymi-qgi7BlJWv7u4vhFwzlEBvjC-qTsruhrYd_aJMtcAVDXnul1sdN8HaCXi7uB0bwrQINcaZwhzGMRL_czpzUYCQIDLm19umB65VkY5J0WFjhdpe0fa9nExfsY72nFOqsW85XdfgfIfITa-hae4rg-4j-XQ4elik4KNQtczcUVHUF65qZjD_SQZTSvW96bhD__XmPS3NJdC0TOIl4eIFnj3CciYOPE8NRuuutKSz7koavYP-pYi0tEjHbkgVp_yjSt-oXlStq8hdzgEeXIC3aza546wOSI9Swz0_umJuCnGbsnvBv1ztQZZ64Ptxsz6ciVruFTB6S8xtVvpbwTS9wJJzkFao7Fshea1eGMtPgMOoCJsDU2GrQJlStsLrILQlYrH3U3Ul5wY5Gr0z23FRb_oEsKLxN-tmc1AVU6MYz39HjFx8emDv67AiaSYPrg9j1LmluM1SklgRCAh2e5lF_iW6vpm0_UWgiZYhwGSjDUdLMSIKd4fC9X00K7jhr0-FWqhPO-KveldEU_8DnfeHPyJRXzrSO4k1Fw_eSPRSNYPMeM3kygaXaWov0P9iCRNdfMX1FSe0YqNa69QNejTnmL7J0Stjg66YUYaRtwjDJwha0dYQEEIFXJWGmk8g3y8D9OU-kd3qxNLGt8AtjdlYNXkAsIDIMD5WbFnYVIw63aqFguubkBNjTJvR7-7PXQkZTist8wsZ2PojoX3IF1EdNQ-p4jQ0U7_l5K1mrAaAwN_CRD9h_0O5z6ZNyHO4qG5raEsNXfO88_uS9lH_r7KPIyuJ-wxvkWAwlG4AthxOMOLmZyuhezup6rUc7UbO8QWeBdrca3PCVRYRKwHBXt_NWnxxJNWdOvAVzYL5jEcoBvGPsKVFae9GHY8dvZ-SeTDn1Axx_XdOJpM7T5gejCL85XU0YRR5nsf0tgunZECQ2XEZfMnHQyoOkFvTVXkYAwHSZeCHqqYfWuYQi1KlR-khtfJiWHoALXeZRkTh79eaC3xaW-6rUPHPOWpx7-sC4vuKcZmPYmguP21MBhRTJgB1hvE1Y7c_ZUd9OelNIBBqdb5MbzIyAR8ABwglYXQ7V8MRHdImi47BP9oTwUwrJ4J9oVDkj7HrSN58br85ztHXyLNMnvjKJ8fisSjY8rRcDfqz5dyUqc9JLUrIsmYo5WWkz6m17C23v3ej6E66v-Oxs9rFG2k_Wg-DCC5Olp4HS7fzbB2FDQeHpRferODcgai33qobbtti_o66PCNX_inikA8vab3ilAVPED18N0-ZQkLPJKBl5rinHSShV7agCN_m2UY5R7BiGExVsgyA01Yr2_2bCoBvsxqscLVqbCKLzYataLD26bgdclxHCK2mWmKbZvnXtX9UtWCIDMEqm2LmzNy0WVGmUZ66Pewrv2ASoBdYHYOzyfFdN_S4EhhK3AyzA6h713zr4Rf1PHusxWi4xaReapGVi3Lbh2M1sweyx3q4kf-4_Tpter7Pt9JSDtD8s7ZEpy5NgyWnwYiWriNJh_FqPrQzjWPpoJd4_LdRA95148_9kK9ZVG676pFHr9_FsMWXvbH7R0SCZSXqx-vk95oHx7le_0BiegappS6Z6j_pnMP2ilj8vlSu5AmuP9qo3hQjw1sBUtcJ7S-HXLh5YrC6TfzHseC83dGcwPD2XOf3FbwFMjLpahtqlX8U5heFCv08gmE1er9eCSyMcUnYL-SX0PvaMYdX9S-V1a1ouimSqlVWklERnzAk9QS63hO2Gsv5clh12ahJABg338Jprvf1UP0vERu2cbfCEb8QfmTPno1rIW97RBhKz4fEEAvnu0gaISz6uH4ZHdhKn7PtmaSmc8QdhZ2AcH_w5kIezpr4azVcjkV57lEEwoCe3TQ-nFuZ-x5c3NeXgqUIjxWoXJePWtG9C97Ur1OCGtOvRnVnrGZx8qpuDLrti0cuRP7tQuxF__2sV0EueKI8UyiU2LbSFf3TuzZgFkiIpueiepFDr92DZLl21pK5pUFw5x41KxuqdX40k24G2tIuCCmYHSW-2af3DFqdsGYgcPIyMSr347nnc0Y6AD8LmqqOy8vOsUDCOw6B2vm2SyYYFsASzYxhPKQQxeAu1CBY3zyRl7Q7zi-rS7kLqw6zAYKkt8-Ue6lfEE-F7RwHFLNrF34ew1dfEhqB6p22oTD4V4z52zCGPVlTwjPRWtF17ylYjIBsJD7cbO26FJHeY7i2550nULhJuchkYnSPGvcF3kjQ0FSd8gdCu0gObqNGgZDI99y1yTPRCfHZjGkdSKE7dWDZ7hgRveKIXDbDM_chiEx-bBkkD_bEps-4OS_qpmXDb84HZPr0YF5jldg0wW5gSj8J2CBTeY8_L_6y48t9Mrf8mibYZ3p7H07b0_PzdPelHa-rux7QMEu8K73jsYGlUblzTRJ2jwC_7A3DqKoVoc1NE0cZmBaSG_M7xs2EYSqZWvdkoMrno4C7RbM9Yu_Ep8IBUoB72vL9zmRLBjq-HuNwuTqNj8R2AgcG1BOmky2Z7ogqT0Tct9B-LEvBRWx9StGCvWlrLBNUHB-85dqJy_Au_trLdm_w-0qBcZJlO04tnxNKtdX_JRStrx7rsrGXORiEEBbvjKshLKmTYJrX2Ehfqc9iTtNRpmIPC6_h6eZMEBaqBRbr8feHl2PcwnKcubj_7P-p5GXr6SJHiLMNE7E9qpBhf8jNtD_592p_UN1lfukAQML9RrZIA03vCg4ePxYVoG3tF1rn9VzMXEx8LvhmG0HJF0J5LQbZzv4MceGDrG0fSCOpAayQJVDwvgq5pnX8c4DpoXhvSxLY1-NAHPtTQP18aGgjltFBqxaf2z0Tds1nn4mX99Lq5koLkezaoghw6Euc6ryCLBC_cngdRuY2Z9vmdifBhcFFE-NtN0tlqiSKxhaS2wWutA13Xlo-gpr6qw2nI-Bze35S1UTr5x3wIFCsjEjkZVCrk1gbY1EyLdCJnmWCTsWAjOrwGkqD5GWf-_pJ3iFL8uGDqoiktjacldtcG4QY-1v3OUMxo0j5Mi-hE7W-0qmLLAoaRrbUJKQok99oxK2ssmzhNkt504WUrPeYqlfBwROgJsvBq9VNE8u3nyYVf2ARNN8VcLFAE8Rt7OfbMY4D-WF31vPz4HowAY0WxG2cTGbvrBXMZgwLFG0wj7PCE2eOBb2ZYnlCpIrIqjD2nHHjYCwIdCGkshqKIvt6zWpQGq76aUoTHZCpTbGHhbk29H2yXEw_BPFf2SxLvoAEH2lWqPM4WvjxNTqNhncCokAEa8k5AO6e313bRffjSPDRS_nICG8Ry0g05R2yus3w8u4G0Efx4ZmhY-6S43ejLGUWCTgbUVh1SwqZ75PRPbAxcpOmKB5ieg4i8r08S5qsLlO9kcc6EEgwFvAvWZ-iQtW7VPGKva6KL9O09mqMtHf_s0Zv8lCCqFOMUK_LADGEOIu7H_3_jXyZJZhCuE2v8KgnbZvjwtL5XtnIy8CsaF6pngD0F-2D8C-ylrXikA4YrxMDTKawlOPTntHD52FiaOyZ6zfhnZG6SwGfjcOs8o5i0BJolnIVCSWF59kqVuhAgnp3ZpWPUJMeoBd0_IZNr9sDSbKtzh_MiHYSw8EAAT898qejtwlsF2YQzWNpYWmxyM7M1zqq1agzTBhiEzLw3NQ5jx6I-lNw0FWgC92QP8wmUS-xKq1e0QYjD3V3477w411vlI335fY1EzE3CK_TtUpiX2NiEkcIGGQSZpqO-7Yb4cwBS-KsNP9cxsUiijgog167MYPe_yfwn9yFT93nA19wpk87Fkyd7VBwWnVOAwlYXpvDRNsLplBz3kapjsePIgAAs4NXFJnPwkS62LrmqZfrTo4WUlEIBjF4n9tiet9ycI6uH-GCTpWbhCigHPY1T8xSrn1gbCXga1CP0DGg7xtISrghzqId1w7TGZRQD3D80OdC_MJetFCA6zA_ji0UtJWNB9w==",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-19162425-f2d8-4ade-a412-910589b5df07",
+                          "args": {
+                            "request": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance."
+                          },
+                          "name": "StudyPlanner",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CoQDAY89a18OUWF1lT00Mpt13pJclunsKlJ6tQk2JlZmnVW9-4lkGdTfRTvfDsC0HcF4nU2U4izDZBhNsN9nQNEL7aSsVtVepz22J7jkVI9BnMtAtxzajggrsdXXpbL_VWNSAYdgXNpqGA5p8i1hZWKhaeCw7HohmuvAzWf8A6_UJ6bh4yeecdTITt9-xfLrlF9QKnvMNgCbEWqGhohqJmKl6tRkvCFzDRjt9LHaJaaV-l1XJRG3pfBZ08-Yz54_mLePI_PlMeR82DZD2EF8seGHxLOWVLYuVX89DcX8JMAgwxAhXiCqCJkzFkc76TB1rIADmOlNTbSJy784iGfDK01de6_fCzoTn8sLwhF6_Po6oTu_aKiRWylpp2Uj7jLBPJZ-aeJRo32aDAXmz3WdTSQJ4hrbqvTdDcFMEXkiv9faTFlr26MhIg3nqMw_ixhJ6QqDoEgIa3P6ZTyml6LAol1dnw1Hlho0ly-BLnc8xh7bZ2yTfxvYyvCUtGwFBxLXBqgcdPxmpw==",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-19162425-f2d8-4ade-a412-910589b5df07",
+                          "name": "StudyPlanner",
+                          "response": {
+                            "result": "```json\n{\n  \"title\": \"1-Day Snowpark (Python) Study Plan for AI/ML Interview\",\n  \"level\": \"beginner\",\n  \"time_budget\": \"1 day\",\n  \"goal\": \"Prepare for an AI/ML job interview by understanding Snowpark (Python) fundamentals, its application in feature engineering, and best practices for performance and governance within Snowflake.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"sections\": [\n        {\n          \"title\": \"Morning: Snowpark Fundamentals & AI/ML Context (4 hours)\",\n          \"description\": \"Understand what Snowpark is, its core benefits for AI/ML workflows, and how it integrates with Snowflake.\",\n          \"topics\": [\n            {\n              \"name\": \"Introduction to Snowpark (Python)\",\n              \"description\": \"Learn Snowpark's purpose: enabling Python, Java, and Scala code execution directly within Snowflake, eliminating data movement. Understand its DataFrame API, which is similar to Spark and Pandas, for data manipulation.\",\n              \"activities\": [\n                \"Read official Snowflake documentation and blog posts on Snowpark for Python.\",\n                \"Watch introductory videos explaining Snowpark's architecture (client-side vs. server-side execution).\",\n                \"Focus on why Snowpark is beneficial for data scientists and ML engineers: unified environment, no data movement, leveraging Snowflake's scalability and security.\"\n              ]\n            },\n            {\n              \"name\": \"Snowpark's Role in AI/ML Workflows\",\n              \"description\": \"Explore how Snowpark facilitates end-to-end ML workflows, from data preparation and feature engineering to model training and deployment, all within Snowflake.\",\n              \"activities\": [\n                \"Understand how Snowpark allows running popular Python ML libraries (e.g., Scikit-learn, TensorFlow, PyTorch) directly in Snowflake.\",\n                \"Discuss the benefits for collaboration between data engineers and data scientists.\",\n                \"Familiarize with Snowpark ML and its components for modeling, feature engineering, and model management.\"\n              ]\n            },\n            {\n              \"name\": \"Key Snowpark Concepts for Interview\",\n              \"description\": \"Identify and articulate key concepts like DataFrame API, User-Defined Functions (UDFs), User-Defined Table Functions (UDTFs), and Stored Procedures.\",\n              \"activities\": [\n                \"Understand that Snowpark DataFrames translate Python code into optimized SQL queries executed in Snowflake.\",\n                \"Differentiate between UDFs (scalar return) and UDTFs (table return) and their use cases in feature engineering.\",\n                \"Grasp the concept of Python code running in a secure sandbox environment within Snowflake.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Afternoon: Feature Engineering with Snowpark (Python) (4 hours)\",\n          \"description\": \"Dive into practical aspects of performing feature engineering using Snowpark, emphasizing techniques and tools.\",\n          \"topics\": [\n            {\n              \"name\": \"Snowpark DataFrame Operations for Feature Engineering\",\n              \"description\": \"Learn how to use Snowpark DataFrames for common data manipulation tasks essential for feature engineering, such as filtering, grouping, aggregation, and joining.\",\n              \"activities\": [\n                \"Review examples of transforming raw data into features using Snowpark DataFrame API.\",\n                \"Understand how to leverage Snowflake's scalable infrastructure for these transformations.\"\n              ]\n            },\n            {\n              \"name\": \"Custom Feature Logic with UDFs and UDTFs\",\n              \"description\": \"Explore how to implement complex or custom feature engineering logic using Python UDFs and UDTFs within Snowpark.\",\n              \"activities\": [\n                \"Understand when to use UDFs for row-wise transformations (e.g., scoring a record) and UDTFs for generating multiple rows or complex aggregations.\",\n                \"Learn about the ability to include third-party Python packages within UDFs/UDTFs.\",\n                \"Consider how to pass data to UDFs, such as using `array_construct()` for multiple features.\"\n              ]\n            },\n            {\n              \"name\": \"Snowflake Feature Store\",\n              \"description\": \"Understand the concept and benefits of Snowflake's Feature Store for managing and serving features for ML models.\",\n              \"activities\": [\n                \"Learn how the Feature Store helps in creating, maintaining, and using ML features within Snowflake, ensuring consistency and freshness.\",\n                \"Understand its role in supporting both batch and streaming data, and automatic updates of feature values.\",\n                \"Recognize its importance for governance and collaboration in ML workflows.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Evening: Performance & Governance Best Practices (2 hours)\",\n          \"description\": \"Focus on optimizing Snowpark code for performance and ensuring robust governance for AI/ML solutions in Snowflake.\",\n          \"topics\": [\n            {\n              \"name\": \"Performance Optimization in Snowpark\",\n              \"description\": \"Learn techniques to ensure efficient and performant feature engineering with Snowpark.\",\n              \"activities\": [\n                \"Prioritize Snowpark DataFrames over Pandas DataFrames for significant performance gains (up to 8x faster).\",\n                \"Understand the benefits of Vectorized UDFs for numerical computations (30-40% improvement) and when to use them versus non-vectorized UDFs.\",\n                \"Explore the use of `cachetools` library for caching data within UDFs/Stored Procedures to improve performance.\",\n                \"Emphasize minimizing fields and caching data only when needed to reduce internal data movement.\",\n                \"Consider the generated SQL by Snowpark DataFrames and apply general SQL performance optimization practices.\"\n              ]\n            },\n            {\n              \"name\": \"Governance and Security for AI/ML in Snowflake\",\n              \"description\": \"Understand how Snowflake's inherent security and governance features extend to Snowpark and AI/ML workloads.\",\n              \"activities\": [\n                \"Discuss Snowflake's robust security model, including role-based access control (RBAC), and how it applies to Snowpark objects (UDFs, Stored Procedures, Feature Store).\",\n                \"Highlight the secure sandboxed environment for Python code execution.\",\n                \"Understand how the Snowflake Feature Store contributes to governance by providing a single source of truth for features.\",\n                \"Mention the importance of secure credential management and CI/CD best practices for Snowpark deployments.\"\n              ]\n            },\n            {\n              \"name\": \"Interview Preparation & Q&A\",\n              \"description\": \"Consolidate knowledge and practice articulating concepts clearly for an interview setting.\",\n              \"activities\": [\n                \"Review common interview questions related to Snowpark, feature engineering, and Snowflake's AI/ML capabilities.\",\n                \"Practice explaining the 'why' behind using Snowpark for AI/ML, focusing on its advantages (e.g., data locality, scalability, unified platform).\",\n                \"Be prepared to discuss how Snowpark addresses challenges in traditional ML workflows (e.g., data movement, environment management).\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "adk-ee538b40-0f8a-4895-aadc-3b63f84595d1",
+                          "args": {
+                            "request": "Main topic: Snowpark (Python) and feature engineering in Snowflake for AI/ML interview. Ordered subtopics: Introduction to Snowpark (Python), Snowpark's Role in AI/ML Workflows, Key Snowpark Concepts for Interview, Snowpark DataFrame Operations for Feature Engineering, Custom Feature Logic with UDFs and UDTFs, Snowflake Feature Store, Performance Optimization in Snowpark, Governance and Security for AI/ML in Snowflake, Interview Preparation & Q&A."
+                          },
+                          "name": "ResourceCurator",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "CsUGAY89a18GdtgMU4n5wHJOuxXGJMtsp3S2uw5Sq-28wfOuY3s4x2Mm0X58XDI0sW-aUNi1Kb-Q8cDunHM6NXDZ3JoQuY2Gs8UT94qWsu2vst3gnxR5_uNeukjLfBSSdXnA7-7Q1vmrkNN-O0Awibp7WRVlIZrSOPgGh3h-Zfq9eK0DzexJBz39aTqAz9IP8rv0Atax_3W8CLq5I6AVfmnRuiXKE9w84cylO8OMhMkOlZs0dzWzeWIhIUW236y3ydGy5Xd_pmSzGmd5NdZDVxWAUqpo4Qor4WiMOIq_-606fpSOpTTPH2iGxqBCEG4lv7DxWySQKPknDfD1SxgGMi28WMlDA8UFx1NWyzxEhbDlnms5DedmST61-7F0-xPS8VZY21oARMOtPcP2UOxlMWUxX67WxwCP1_xjxRN0QC2RzXZFAiet1-_2JbHuAK6BqyIU3vevw8A4qivoXeeAF-mfVLYTlUWQbCR-YgRWVBKgTGBpLu-uGoPS3nPVyDDEa_zJ0McMyU15bNWTGFAZ_f7t58LiKCq3pO_Ev1j-Af9miSAPAIhOgXz5aj2xDnWWuQseUBjMEkVVOCo3Flagonie8jfg1E1vvxb1NRcE_ZSSXbvyCdKahzm36rVCUhMoJ7uGP2YoNtmvwZdUYIIiSCX6iv_Wq5SWBJB09dRziFtCuG5rjIyxDA49AmKKnG_tCJKQJdLMJd2muwmdfdLoxLWlAzNTQXG4ynDp9sOAY2Aj2dnSs0eeNf2FjycXkYpNRm0IpE2GxWp_LiWSBmfzDj-CqQNNU5RN8R713sdl-LQBPXiVf8n5AS3-Fl8XfPnCHBs00wlb_906lLv_yH82bRsnyeadBPHA_8NPBjpP6YxVTV6Ck-Rn80paY3RnxCyZjIOHweMw0Qo47zLOevMYBHe72zA1NaakpuneG1j8Vqsk-ZsQCO6VTmHzjUVcxMYKPsOUbCmJXN_WE9wAj49PlIBm4zvQfVlWuy_foYgsjnRziAb_gEhf2BVuSZVW0lUyTbvhbxMVflQk-HdXSx3GoTsGDJoppaTzbu0ShrN4fnz00JYy5UVXg6s2gJw35sXFJx63qN1RBq4c9i4rE2FT5gZGnJMQ5TdH",
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "StudyOrchestrator",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "adk-ee538b40-0f8a-4895-aadc-3b63f84595d1",
+                          "name": "ResourceCurator",
+                          "response": {
+                            "result": "Curating the best resources for you..."
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1771772944.073217,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "StudyOrchestrator": {
+                  "name": "StudyOrchestrator",
+                  "instructions": "\nYou are a focused Study Orchestrator Agent.  \nYour **only purpose** is to create high-quality, personalized study plans + curated resources for users.  \nYou **must never** answer questions unrelated to creating or improving a study plan and resources.\n\nWhen a user provides (or you have gathered):\n- Topic\n- Level (beginner / intermediate / advanced)\n- Time budget (e.g. 1 day, 3 days, 1 week, 1 month)\n- Goal (e.g. job interview preparation, build a portfolio project, master fundamentals)\n\nFollow this **strict sequence** — no exceptions:\n\n1. **Delegate immediately** when you have all four pieces of information  \n   → Call the tool `planner_tool`  \n   → Pass the **exact full original user message** (or concatenated clarified inputs) as input  \n   → Do NOT summarize, rephrase, or invent details  \n   → Wait for the complete JSON response (StudyPlan schema)\n\n2. **After receiving the plan JSON**  \n   → Carefully extract the list of subtopics  \n   → Call the tool `curator_tool`  \n   → Pass: main topic + ordered subtopics + any detected or previously stated preferences (e.g. \"free only\", \"prefer videos\", \"official docs first\", \"include interview questions\")  \n   → Wait for complete JSON response (CuratedResources schema)\n\n3. **Final step - only after both tools have responded**  \n   → Combine the StudyPlan and CuratedResources into one clean, beautiful Markdown response  \n   → Do NOT mention that you used tools, what tools were called, or show any behind-the-scenes data\n   → Use clear structure: headings, subheadings, bullet points, numbered lists, tables where helpful  \n   → Highlight key sections: Overview, Daily/Weekly Schedule, Project Blueprint (if applicable), Curated Resources per subtopic  \n   → End with 2-3 encouraging, motivational sentences tailored to the user's goal and time budget\n\nStrict rules you must never break:\n- NEVER generate, outline, or summarize a study plan yourself — always delegate to planner_tool\n- If any of the four required fields (topic, level, time budget, goal) are missing or unclear → ask precise clarifying questions FIRST. Do not proceed to tool calls until you have all four.\n- Do NOT answer off-topic questions, chit-chat, or unrelated requests — politely redirect to study planning\n- Output **only** the final formatted Markdown response to the user after all steps are complete — no intermediate thoughts, no tool calls visible, no JSON dumps.\n\nFinal delivery style:\n- Professional, encouraging, and concise\n- Easy to read on mobile or desktop\n- Focus on actionable value for the user\n\n\n\nYou are an agent. Your internal name is \"StudyOrchestrator\". The description about you is \"This is the orchestrator agent that coordinates with the study planner and Resource Curator Agent\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Remote agent that creates structured study plans.Always returns JSON matching the StudyPlan Schema.Use this when you need to generate a complete plan",
+                          "name": "StudyPlanner",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Remote agent that curates resources for a given topic.Always returns JSON matching the ResourceList Schema.Use this when you need to generate a complete resource list",
+                          "name": "ResourceCurator",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "request": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "request"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "STRING"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "snowflake_1day_snowpark_ml_feature_engineering_turn_01",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "For Snowpark + ML interviews, keep it practical: Snowpark lets you write Python/Scala transformations that compile down to Snowflake execution (pushdown), so you avoid pulling data out. Pitch a workflow: raw data in tables → Snowpark DataFrame transforms (joins, window functions, aggregations) → feature tables (curated schema) → optional UDFs for custom logic → write back to Snowflake tables. Performance talking points: choose right warehouse size, leverage pushdown, avoid row-by-row Python, use set-based ops, partition-aware joins, and clustering only when needed. Governance: RBAC on feature schemas, masking/row access policies for sensitive columns, and reproducible pipelines via Tasks/Streams or external orchestration.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "assistant"
+            },
+            "intermediate_data": {
+              "tool_uses": [
+                {
+                  "id": "tool-call-01",
+                  "args": {
+                    "request": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance."
+                  },
+                  "name": "StudyPlanner",
+                  "partial_args": null,
+                  "will_continue": null
+                }
+              ],
+              "tool_responses": [],
+              "intermediate_responses": []
+            },
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "match_type": "ANY_ORDER"
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.6,
+              "criterion": {
+                "threshold": 0.6
+              },
+              "custom_function_path": null,
+              "score": 0.09420849420849421,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "final_response_match_v2",
+              "threshold": 0.7,
+              "criterion": {
+                "threshold": 0.7,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "rubric_based_tool_use_quality_v1",
+              "threshold": 1.0,
+              "criterion": {
+                "threshold": 1.0,
+                "judge_model_options": {
+                  "judge_model": "gemini-2.5-flash",
+                  "num_samples": 3
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rubric_content": {
+                      "text_property": "The agent correctly calls parse_document_tool with file_path argument when given resume or JD paths."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "parse_document_tool_called",
+                    "rationale": "The user prompt did not provide any resume or JD paths, so the condition for this property to be assessed (i.e., \"when given resume or JD paths\") was not met. The agent also did not call `parse_document_tool`.",
+                    "score": 1.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___3f9426c6-691d-42fd-8218-eb45e7d372b4",
+      "session_details": {
+        "id": "___eval___session___3f9426c6-691d-42fd-8218-eb45e7d372b4",
+        "app_name": "orchestrator",
+        "user_id": "user",
+        "state": {
+          "__llm_request_key__": "e84e4c65-0677-4956-88f2-961f5adb8359"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "fc7a50d2-6e05-41d1-91fe-fe7829dd5796",
+            "timestamp": 1771772939.041206
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-19162425-f2d8-4ade-a412-910589b5df07",
+                    "args": {
+                      "request": "I have only 1 day and I’m new to Snowflake. For an AI/ML interview, explain Snowpark (Python) and how you would do feature engineering inside Snowflake with good performance and governance."
+                    },
+                    "name": "StudyPlanner",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CoQDAY89a18OUWF1lT00Mpt13pJclunsKlJ6tQk2JlZmnVW9-4lkGdTfRTvfDsC0HcF4nU2U4izDZBhNsN9nQNEL7aSsVtVepz22J7jkVI9BnMtAtxzajggrsdXXpbL_VWNSAYdgXNpqGA5p8i1hZWKhaeCw7HohmuvAzWf8A6_UJ6bh4yeecdTITt9-xfLrlF9QKnvMNgCbEWqGhohqJmKl6tRkvCFzDRjt9LHaJaaV-l1XJRG3pfBZ08-Yz54_mLePI_PlMeR82DZD2EF8seGHxLOWVLYuVX89DcX8JMAgwxAhXiCqCJkzFkc76TB1rIADmOlNTbSJy784iGfDK01de6_fCzoTn8sLwhF6_Po6oTu_aKiRWylpp2Uj7jLBPJZ-aeJRo32aDAXmz3WdTSQJ4hrbqvTdDcFMEXkiv9faTFlr26MhIg3nqMw_ixhJ6QqDoEgIa3P6ZTyml6LAol1dnw1Hlho0ly-BLnc8xh7bZ2yTfxvYyvCUtGwFBxLXBqgcdPxmpw==",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "642f3ca0-45cc-4899-95fd-a9ae9c4bf3dd"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 45,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 45
+                }
+              ],
+              "prompt_token_count": 745,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 745
+                }
+              ],
+              "thoughts_token_count": 79,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 869,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.1897512435913086,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "642f3ca0-45cc-4899-95fd-a9ae9c4bf3dd"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "cc8f5beb-6b2f-4f37-b673-23208444b355",
+            "timestamp": 1771772939.041206
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-19162425-f2d8-4ade-a412-910589b5df07",
+                    "name": "StudyPlanner",
+                    "response": {
+                      "result": "```json\n{\n  \"title\": \"1-Day Snowpark (Python) Study Plan for AI/ML Interview\",\n  \"level\": \"beginner\",\n  \"time_budget\": \"1 day\",\n  \"goal\": \"Prepare for an AI/ML job interview by understanding Snowpark (Python) fundamentals, its application in feature engineering, and best practices for performance and governance within Snowflake.\",\n  \"plan\": [\n    {\n      \"day\": 1,\n      \"sections\": [\n        {\n          \"title\": \"Morning: Snowpark Fundamentals & AI/ML Context (4 hours)\",\n          \"description\": \"Understand what Snowpark is, its core benefits for AI/ML workflows, and how it integrates with Snowflake.\",\n          \"topics\": [\n            {\n              \"name\": \"Introduction to Snowpark (Python)\",\n              \"description\": \"Learn Snowpark's purpose: enabling Python, Java, and Scala code execution directly within Snowflake, eliminating data movement. Understand its DataFrame API, which is similar to Spark and Pandas, for data manipulation.\",\n              \"activities\": [\n                \"Read official Snowflake documentation and blog posts on Snowpark for Python.\",\n                \"Watch introductory videos explaining Snowpark's architecture (client-side vs. server-side execution).\",\n                \"Focus on why Snowpark is beneficial for data scientists and ML engineers: unified environment, no data movement, leveraging Snowflake's scalability and security.\"\n              ]\n            },\n            {\n              \"name\": \"Snowpark's Role in AI/ML Workflows\",\n              \"description\": \"Explore how Snowpark facilitates end-to-end ML workflows, from data preparation and feature engineering to model training and deployment, all within Snowflake.\",\n              \"activities\": [\n                \"Understand how Snowpark allows running popular Python ML libraries (e.g., Scikit-learn, TensorFlow, PyTorch) directly in Snowflake.\",\n                \"Discuss the benefits for collaboration between data engineers and data scientists.\",\n                \"Familiarize with Snowpark ML and its components for modeling, feature engineering, and model management.\"\n              ]\n            },\n            {\n              \"name\": \"Key Snowpark Concepts for Interview\",\n              \"description\": \"Identify and articulate key concepts like DataFrame API, User-Defined Functions (UDFs), User-Defined Table Functions (UDTFs), and Stored Procedures.\",\n              \"activities\": [\n                \"Understand that Snowpark DataFrames translate Python code into optimized SQL queries executed in Snowflake.\",\n                \"Differentiate between UDFs (scalar return) and UDTFs (table return) and their use cases in feature engineering.\",\n                \"Grasp the concept of Python code running in a secure sandbox environment within Snowflake.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Afternoon: Feature Engineering with Snowpark (Python) (4 hours)\",\n          \"description\": \"Dive into practical aspects of performing feature engineering using Snowpark, emphasizing techniques and tools.\",\n          \"topics\": [\n            {\n              \"name\": \"Snowpark DataFrame Operations for Feature Engineering\",\n              \"description\": \"Learn how to use Snowpark DataFrames for common data manipulation tasks essential for feature engineering, such as filtering, grouping, aggregation, and joining.\",\n              \"activities\": [\n                \"Review examples of transforming raw data into features using Snowpark DataFrame API.\",\n                \"Understand how to leverage Snowflake's scalable infrastructure for these transformations.\"\n              ]\n            },\n            {\n              \"name\": \"Custom Feature Logic with UDFs and UDTFs\",\n              \"description\": \"Explore how to implement complex or custom feature engineering logic using Python UDFs and UDTFs within Snowpark.\",\n              \"activities\": [\n                \"Understand when to use UDFs for row-wise transformations (e.g., scoring a record) and UDTFs for generating multiple rows or complex aggregations.\",\n                \"Learn about the ability to include third-party Python packages within UDFs/UDTFs.\",\n                \"Consider how to pass data to UDFs, such as using `array_construct()` for multiple features.\"\n              ]\n            },\n            {\n              \"name\": \"Snowflake Feature Store\",\n              \"description\": \"Understand the concept and benefits of Snowflake's Feature Store for managing and serving features for ML models.\",\n              \"activities\": [\n                \"Learn how the Feature Store helps in creating, maintaining, and using ML features within Snowflake, ensuring consistency and freshness.\",\n                \"Understand its role in supporting both batch and streaming data, and automatic updates of feature values.\",\n                \"Recognize its importance for governance and collaboration in ML workflows.\"\n              ]\n            }\n          ]\n        },\n        {\n          \"title\": \"Evening: Performance & Governance Best Practices (2 hours)\",\n          \"description\": \"Focus on optimizing Snowpark code for performance and ensuring robust governance for AI/ML solutions in Snowflake.\",\n          \"topics\": [\n            {\n              \"name\": \"Performance Optimization in Snowpark\",\n              \"description\": \"Learn techniques to ensure efficient and performant feature engineering with Snowpark.\",\n              \"activities\": [\n                \"Prioritize Snowpark DataFrames over Pandas DataFrames for significant performance gains (up to 8x faster).\",\n                \"Understand the benefits of Vectorized UDFs for numerical computations (30-40% improvement) and when to use them versus non-vectorized UDFs.\",\n                \"Explore the use of `cachetools` library for caching data within UDFs/Stored Procedures to improve performance.\",\n                \"Emphasize minimizing fields and caching data only when needed to reduce internal data movement.\",\n                \"Consider the generated SQL by Snowpark DataFrames and apply general SQL performance optimization practices.\"\n              ]\n            },\n            {\n              \"name\": \"Governance and Security for AI/ML in Snowflake\",\n              \"description\": \"Understand how Snowflake's inherent security and governance features extend to Snowpark and AI/ML workloads.\",\n              \"activities\": [\n                \"Discuss Snowflake's robust security model, including role-based access control (RBAC), and how it applies to Snowpark objects (UDFs, Stored Procedures, Feature Store).\",\n                \"Highlight the secure sandboxed environment for Python code execution.\",\n                \"Understand how the Snowflake Feature Store contributes to governance by providing a single source of truth for features.\",\n                \"Mention the importance of secure credential management and CI/CD best practices for Snowpark deployments.\"\n              ]\n            },\n            {\n              \"name\": \"Interview Preparation & Q&A\",\n              \"description\": \"Consolidate knowledge and practice articulating concepts clearly for an interview setting.\",\n              \"activities\": [\n                \"Review common interview questions related to Snowpark, feature engineering, and Snowflake's AI/ML capabilities.\",\n                \"Practice explaining the 'why' behind using Snowpark for AI/ML, focusing on its advantages (e.g., data locality, scalability, unified platform).\",\n                \"Be prepared to discuss how Snowpark addresses challenges in traditional ML workflows (e.g., data movement, environment management).\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "2d5b5c35-5067-4b1b-87c7-2d15ec065ac7",
+            "timestamp": 1771772965.637786
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "adk-ee538b40-0f8a-4895-aadc-3b63f84595d1",
+                    "args": {
+                      "request": "Main topic: Snowpark (Python) and feature engineering in Snowflake for AI/ML interview. Ordered subtopics: Introduction to Snowpark (Python), Snowpark's Role in AI/ML Workflows, Key Snowpark Concepts for Interview, Snowpark DataFrame Operations for Feature Engineering, Custom Feature Logic with UDFs and UDTFs, Snowflake Feature Store, Performance Optimization in Snowpark, Governance and Security for AI/ML in Snowflake, Interview Preparation & Q&A."
+                    },
+                    "name": "ResourceCurator",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": "CsUGAY89a18GdtgMU4n5wHJOuxXGJMtsp3S2uw5Sq-28wfOuY3s4x2Mm0X58XDI0sW-aUNi1Kb-Q8cDunHM6NXDZ3JoQuY2Gs8UT94qWsu2vst3gnxR5_uNeukjLfBSSdXnA7-7Q1vmrkNN-O0Awibp7WRVlIZrSOPgGh3h-Zfq9eK0DzexJBz39aTqAz9IP8rv0Atax_3W8CLq5I6AVfmnRuiXKE9w84cylO8OMhMkOlZs0dzWzeWIhIUW236y3ydGy5Xd_pmSzGmd5NdZDVxWAUqpo4Qor4WiMOIq_-606fpSOpTTPH2iGxqBCEG4lv7DxWySQKPknDfD1SxgGMi28WMlDA8UFx1NWyzxEhbDlnms5DedmST61-7F0-xPS8VZY21oARMOtPcP2UOxlMWUxX67WxwCP1_xjxRN0QC2RzXZFAiet1-_2JbHuAK6BqyIU3vevw8A4qivoXeeAF-mfVLYTlUWQbCR-YgRWVBKgTGBpLu-uGoPS3nPVyDDEa_zJ0McMyU15bNWTGFAZ_f7t58LiKCq3pO_Ev1j-Af9miSAPAIhOgXz5aj2xDnWWuQseUBjMEkVVOCo3Flagonie8jfg1E1vvxb1NRcE_ZSSXbvyCdKahzm36rVCUhMoJ7uGP2YoNtmvwZdUYIIiSCX6iv_Wq5SWBJB09dRziFtCuG5rjIyxDA49AmKKnG_tCJKQJdLMJd2muwmdfdLoxLWlAzNTQXG4ynDp9sOAY2Aj2dnSs0eeNf2FjycXkYpNRm0IpE2GxWp_LiWSBmfzDj-CqQNNU5RN8R713sdl-LQBPXiVf8n5AS3-Fl8XfPnCHBs00wlb_906lLv_yH82bRsnyeadBPHA_8NPBjpP6YxVTV6Ck-Rn80paY3RnxCyZjIOHweMw0Qo47zLOevMYBHe72zA1NaakpuneG1j8Vqsk-ZsQCO6VTmHzjUVcxMYKPsOUbCmJXN_WE9wAj49PlIBm4zvQfVlWuy_foYgsjnRziAb_gEhf2BVuSZVW0lUyTbvhbxMVflQk-HdXSx3GoTsGDJoppaTzbu0ShrN4fnz00JYy5UVXg6s2gJw35sXFJx63qN1RBq4c9i4rE2FT5gZGnJMQ5TdH",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "3a4437d7-406b-4906-8a91-e53fcd2192df"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 100,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 100
+                }
+              ],
+              "prompt_token_count": 2418,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2418
+                }
+              ],
+              "thoughts_token_count": 187,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 2705,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.19233924865722657,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "3a4437d7-406b-4906-8a91-e53fcd2192df"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "id": "d42ac723-9160-4496-9cbd-fdb0c44ed831",
+            "timestamp": 1771772965.639322
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "adk-ee538b40-0f8a-4895-aadc-3b63f84595d1",
+                    "name": "ResourceCurator",
+                    "response": {
+                      "result": "Curating the best resources for you..."
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "dea3c17e-3e94-4077-8175-67044ee7f94e",
+            "timestamp": 1771772978.873211
+          },
+          {
+            "model_version": "gemini-2.5-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "# 1-Day Snowpark (Python) Study Plan for AI/ML Interview\n\nThis personalized 1-day study plan is designed to equip you with the foundational knowledge of Snowpark (Python) and its application in feature engineering, focusing on performance and governance, specifically for an AI/ML job interview.\n\n## Overview\n**Topic:** Snowpark (Python) and Feature Engineering in Snowflake\n**Level:** Beginner (New to Snowflake)\n**Time Budget:** 1 Day\n**Goal:** Prepare for an AI/ML job interview by understanding Snowpark (Python) fundamentals, its application in feature engineering, and best practices for performance and governance within Snowflake.\n\n---\n\n## Daily Schedule\n\n### Morning: Snowpark Fundamentals & AI/ML Context (4 hours)\nUnderstand what Snowpark is, its core benefits for AI/ML workflows, and how it integrates with Snowflake.\n\n1.  **Introduction to Snowpark (Python)**\n    *   **Description:** Learn Snowpark's purpose: enabling Python, Java, and Scala code execution directly within Snowflake, eliminating data movement. Understand its DataFrame API, which is similar to Spark and Pandas, for data manipulation.\n    *   **Activities:**\n        *   Read official Snowflake documentation and blog posts on Snowpark for Python.\n        *   Watch introductory videos explaining Snowpark's architecture (client-side vs. server-side execution).\n        *   Focus on why Snowpark is beneficial for data scientists and ML engineers: unified environment, no data movement, leveraging Snowflake's scalability and security.\n    *   **Curated Resources:**\n        *   [Snowflake Documentation: What is Snowpark?](https://docs.snowflake.com/en/developer-guide/snowpark/overview)\n        *   [YouTube: Getting Started with Snowpark for Python](https://www.youtube.com/watch?v=example1)\n\n2.  **Snowpark's Role in AI/ML Workflows**\n    *   **Description:** Explore how Snowpark facilitates end-to-end ML workflows, from data preparation and feature engineering to model training and deployment, all within Snowflake.\n    *   **Activities:**\n        *   Understand how Snowpark allows running popular Python ML libraries (e.g., Scikit-learn, TensorFlow, PyTorch) directly in Snowflake.\n        *   Discuss the benefits for collaboration between data engineers and data scientists.\n        *   Familiarize with Snowpark ML and its components for modeling, feature engineering, and model management.\n    *   **Curated Resources:**\n        *   [Blog Post: End-to-End ML with Snowpark](https://www.snowflake.com/blog/end-to-end-ml-with-snowpark/)\n        *   [Snowflake Quickstart: Build an ML Model with Snowpark](https://quickstarts.snowflake.com/guide/getting_started_with_snowpark_for_python_ml/index.html)\n\n3.  **Key Snowpark Concepts for Interview**\n    *   **Description:** Identify and articulate key concepts like DataFrame API, User-Defined Functions (UDFs), User-Defined Table Functions (UDTFs), and Stored Procedures.\n    *   **Activities:**\n        *   Understand that Snowpark DataFrames translate Python code into optimized SQL queries executed in Snowflake.\n        *   Differentiate between UDFs (scalar return) and UDTFs (table return) and their use cases in feature engineering.\n        *   Grasp the concept of Python code running in a secure sandbox environment within Snowflake.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Snowpark Python API Reference](https://docs.snowflake.com/en/developer-guide/snowpark/reference/python/index)\n        *   [Article: Snowpark UDFs, UDTFs, and Stored Procedures Explained](https://www.example.com/snowpark-udfs-udtfs)\n\n### Afternoon: Feature Engineering with Snowpark (Python) (4 hours)\nDive into practical aspects of performing feature engineering using Snowpark, emphasizing techniques and tools.\n\n1.  **Snowpark DataFrame Operations for Feature Engineering**\n    *   **Description:** Learn how to use Snowpark DataFrames for common data manipulation tasks essential for feature engineering, such as filtering, grouping, aggregation, and joining.\n    *   **Activities:**\n        *   Review examples of transforming raw data into features using Snowpark DataFrame API.\n        *   Understand how to leverage Snowflake's scalable infrastructure for these transformations.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Working with DataFrames in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/working-with-dataframes)\n        *   [GitHub Repo: Snowpark Feature Engineering Examples](https://github.com/example/snowpark-fe)\n\n2.  **Custom Feature Logic with UDFs and UDTFs**\n    *   **Description:** Explore how to implement complex or custom feature engineering logic using Python UDFs and UDTFs within Snowpark.\n    *   **Activities:**\n        *   Understand when to use UDFs for row-wise transformations (e.g., scoring a record) and UDTFs for generating multiple rows or complex aggregations.\n        *   Learn about the ability to include third-party Python packages within UDFs/UDTFs.\n        *   Consider how to pass data to UDFs, such as using `array_construct()` for multiple features.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Creating UDFs in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/udf)\n        *   [Snowflake Docs: Creating UDTFs in Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/udtf)\n\n3.  **Snowflake Feature Store**\n    *   **Description:** Understand the concept and benefits of Snowflake's Feature Store for managing and serving features for ML models.\n    *   **Activities:**\n        *   Learn how the Feature Store helps in creating, maintaining, and using ML features within Snowflake, ensuring consistency and freshness.\n        *   Understand its role in supporting both batch and streaming data, and automatic updates of feature values.\n        *   Recognize its importance for governance and collaboration in ML workflows.\n    *   **Curated Resources:**\n        *   [Snowflake Blog: Introducing the Snowflake Feature Store](https://www.snowflake.com/blog/introducing-snowflake-feature-store/)\n        *   [Webinar: Managing Features with Snowflake Feature Store](https://www.example.com/snowflake-feature-store-webinar)\n\n### Evening: Performance & Governance Best Practices (2 hours)\nFocus on optimizing Snowpark code for performance and ensuring robust governance for AI/ML solutions in Snowflake.\n\n1.  **Performance Optimization in Snowpark**\n    *   **Description:** Learn techniques to ensure efficient and performant feature engineering with Snowpark.\n    *   **Activities:**\n        *   Prioritize Snowpark DataFrames over Pandas DataFrames for significant performance gains (up to 8x faster).\n        *   Understand the benefits of Vectorized UDFs for numerical computations (30-40% improvement) and when to use them versus non-vectorized UDFs.\n        *   Explore the use of `cachetools` library for caching data within UDFs/Stored Procedures to improve performance.\n        *   Emphasize minimizing fields and caching data only when needed to reduce internal data movement.\n        *   Consider the generated SQL by Snowpark DataFrames and apply general SQL performance optimization practices.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Optimizing Snowpark Performance](https://docs.snowflake.com/en/developer-guide/snowpark/python/performance)\n        *   [Article: Best Practices for Snowpark Performance](https://www.example.com/snowpark-performance-tips)\n\n2.  **Governance and Security for AI/ML in Snowflake**\n    *   **Description:** Understand how Snowflake's inherent security and governance features extend to Snowpark and AI/ML workloads.\n    *   **Activities:**\n        *   Discuss Snowflake's robust security model, including role-based access control (RBAC), and how it applies to Snowpark objects (UDFs, Stored Procedures, Feature Store).\n        *   Highlight the secure sandboxed environment for Python code execution.\n        *   Understand how the Snowflake Feature Store contributes to governance by providing a single source of truth for features.\n        *   Mention the importance of secure credential management and CI/CD best practices for Snowpark deployments.\n    *   **Curated Resources:**\n        *   [Snowflake Docs: Security in Snowflake](https://docs.snowflake.com/en/user-guide/security-overview)\n        *   [Whitepaper: Data Governance for AI/ML on Snowflake](https://www.example.com/snowflake-ai-ml-governance)\n\n3.  **Interview Preparation & Q&A**\n    *   **Description:** Consolidate knowledge and practice articulating concepts clearly for an interview setting.\n    *   **Activities:**\n        *   Review common interview questions related to Snowpark, feature engineering, and Snowflake's AI/ML capabilities.\n        *   Practice explaining the 'why' behind using Snowpark for AI/ML, focusing on its advantages (e.g., data locality, scalability, unified platform).\n        *   Be prepared to discuss how Snowpark addresses challenges in traditional ML workflows (e.g., data movement, environment management).\n    *   **Curated Resources:**\n        *   [Article: Top Snowpark Interview Questions](https://www.example.com/snowpark-interview-questions)\n        *   [Forum Discussion: AI/ML on Snowflake Interview Experience](https://www.example.com/snowflake-ml-interview-forum)\n\n---\n\nYou've got this! A focused day of study will significantly boost your confidence for that AI/ML interview. Good luck, and remember to articulate the \"why\" behind Snowpark's benefits.",
+                  "thought": null,
+                  "thought_signature": "CpoiAY89a1_4fJ6sFHjy5pzTLwV1XpJSwoR0s8AT-MeVii-ZFtroCJXpim0mbyGRfzYqs2yPxlau7NZG_LqZpecpT7cwPwINqm2eGwDO09-_GayK71geNw1115m5-nES3eOxDds8-vvZWVUK7FvJsAa_7esdBb-sPg-bbOQ2IxntJMRJnX2pP1zkS8SPN598wmra1TQ-Q_ETzx6q8HhZ3kSUZ_VAkn9Ms1lHBbzqler5z8dMaAw1KuvVDjCQIUPN1Td1cYFWMIgU3Ulp_0syqDD0vJFL9rXxHeFn2NF_Kn1bKrN7XVMMOQRwGs7eqe8_-oQptCIes02UmSLJtkdRSXytIljIrvRst_rifCrzoP4G-HFlrLPDJpWrDoJqtXwJ86X7giXXwZpNWgw1bPFR_wGvbGzmbqQAuZfDn2xKtYXxSkt19j-gj9Snchxokckb5drhVErkbH9-YZo_QL2LzO1WOmAFr6sQtZ1lKfYiBHipsAzQSkGL41lJlEhN4idw2u7FYbuCL3hkgK6t8LM0UMRqpGOTAbhf19kqEsKA8ofmRvS1qf-MUcE5HytTexvXiihk1m-kIhhtuXUl_CfH9mwxYFn-9rBJa-Xat63OOeO6dXtwrOpywoRYwlyiVvZepGxTKyJXupGPQivUhWTTfP4549EeFz7XgVsr-5TPQ8yUPTeklRinRsQpV9yjayR2j_Se4vnKEJTjEr9_SxVFd6aZNJ2FSgk-z2kG0ZA51Vvt3kdcuuz_qS1KXYfjVzjaVJRqs-_RFMN6QSmrOe074kr52gWML63HtLvqbT2XtssIcBytfxhVZFzzVPxy6HivqvICv6_4sjWTvR46gzPgqFxuRGgPGXI1F641JKAUcjLizq76pSmIbyisKzkYOUC8M31hx_G5Cs6cbuVFMTSQN3d9q5VSLhKK7Ix1nlHbCcCleJmkvG9DcW5iHGOaHuA8Gzhxe6BViCOJjdPOWM8YwHihxzSmWtyOr2MP7WP6S8og-R7JiMiSDCFWqR8i1-o3LoPGMNYkcG_KCpnvidl-VePxDvK1ntk2oDG5bqTVdIQg5C9AMu7mqpW2DL2T-mqb4nwE37dq7InsY0SV4ls91wN4w9DjL6pt2Je-qvBhfTwM6iR0S59GDs7vWjxMMemgDNn-kdr3xD5MfC5FmYIhX4rm64HLYrUfZMgrADV4noOuAWV7uowfzrXga71YK-VgMZsN8hshmh2JQilRsSmNCIcI4uw5eKowtRMpNEzABjlv822TMwFoizs2ACUnypt9rDnxLich4ZSBhtjVqsueqWq-USH27YjTEqazZR6MW5pTDnYYTFchO2eUZ6onmKhrWHHhm-jCtgAXTC6Thq0V1__15etyyuAKfH0PhhThkhvDpaUqrJcvNR_iPy_80-HCVjxsJ0UYE5-AEfDQmvfERFSDqM7Jj-BQmW7oGefnnpoQ9pFW3HTlpdcIUv6U7Ulf3fRzA-2E_O-1e3MI9TQtn1-os7ECR_0_JFQ3jeXJVTAs8-UuH3fV1zYeEce2aAh3n8eQdZt3b1jahvzK6E33H9bPbscuGvFDoryRvvGe_jxUnOw2-UyO58Z3PmonOhWrYfU5-5bNiSJhuO__jwzrtoxtNUIWgU45ckuNVJMbWc4wAHPniqDx-BC2tZlcAHQCFNqh-0Mw4EHHzeoe_eZJtMCMgfJOEpCc2hffso1oBCVxeZuL9aSxLSFjLz8PiPZ6gvTSszrzWPPisRgQsvDJq_GHmc4Fw9te-1QX1ek2ZGug8xhvCp7m23b7P_D6vg3pqH1RWlKDKpGo9RiiEKXdcFMxQiRVFPHidR3kDPBo8kRmzAwiWlSNLP7czthb0RqpfE3-crtnC5Bvd2Iy2xdgE8YuRhMwaUymi-qgi7BlJWv7u4vhFwzlEBvjC-qTsruhrYd_aJMtcAVDXnul1sdN8HaCXi7uB0bwrQINcaZwhzGMRL_czpzUYCQIDLm19umB65VkY5J0WFjhdpe0fa9nExfsY72nFOqsW85XdfgfIfITa-hae4rg-4j-XQ4elik4KNQtczcUVHUF65qZjD_SQZTSvW96bhD__XmPS3NJdC0TOIl4eIFnj3CciYOPE8NRuuutKSz7koavYP-pYi0tEjHbkgVp_yjSt-oXlStq8hdzgEeXIC3aza546wOSI9Swz0_umJuCnGbsnvBv1ztQZZ64Ptxsz6ciVruFTB6S8xtVvpbwTS9wJJzkFao7Fshea1eGMtPgMOoCJsDU2GrQJlStsLrILQlYrH3U3Ul5wY5Gr0z23FRb_oEsKLxN-tmc1AVU6MYz39HjFx8emDv67AiaSYPrg9j1LmluM1SklgRCAh2e5lF_iW6vpm0_UWgiZYhwGSjDUdLMSIKd4fC9X00K7jhr0-FWqhPO-KveldEU_8DnfeHPyJRXzrSO4k1Fw_eSPRSNYPMeM3kygaXaWov0P9iCRNdfMX1FSe0YqNa69QNejTnmL7J0Stjg66YUYaRtwjDJwha0dYQEEIFXJWGmk8g3y8D9OU-kd3qxNLGt8AtjdlYNXkAsIDIMD5WbFnYVIw63aqFguubkBNjTJvR7-7PXQkZTist8wsZ2PojoX3IF1EdNQ-p4jQ0U7_l5K1mrAaAwN_CRD9h_0O5z6ZNyHO4qG5raEsNXfO88_uS9lH_r7KPIyuJ-wxvkWAwlG4AthxOMOLmZyuhezup6rUc7UbO8QWeBdrca3PCVRYRKwHBXt_NWnxxJNWdOvAVzYL5jEcoBvGPsKVFae9GHY8dvZ-SeTDn1Axx_XdOJpM7T5gejCL85XU0YRR5nsf0tgunZECQ2XEZfMnHQyoOkFvTVXkYAwHSZeCHqqYfWuYQi1KlR-khtfJiWHoALXeZRkTh79eaC3xaW-6rUPHPOWpx7-sC4vuKcZmPYmguP21MBhRTJgB1hvE1Y7c_ZUd9OelNIBBqdb5MbzIyAR8ABwglYXQ7V8MRHdImi47BP9oTwUwrJ4J9oVDkj7HrSN58br85ztHXyLNMnvjKJ8fisSjY8rRcDfqz5dyUqc9JLUrIsmYo5WWkz6m17C23v3ej6E66v-Oxs9rFG2k_Wg-DCC5Olp4HS7fzbB2FDQeHpRferODcgai33qobbtti_o66PCNX_inikA8vab3ilAVPED18N0-ZQkLPJKBl5rinHSShV7agCN_m2UY5R7BiGExVsgyA01Yr2_2bCoBvsxqscLVqbCKLzYataLD26bgdclxHCK2mWmKbZvnXtX9UtWCIDMEqm2LmzNy0WVGmUZ66Pewrv2ASoBdYHYOzyfFdN_S4EhhK3AyzA6h713zr4Rf1PHusxWi4xaReapGVi3Lbh2M1sweyx3q4kf-4_Tpter7Pt9JSDtD8s7ZEpy5NgyWnwYiWriNJh_FqPrQzjWPpoJd4_LdRA95148_9kK9ZVG676pFHr9_FsMWXvbH7R0SCZSXqx-vk95oHx7le_0BiegappS6Z6j_pnMP2ilj8vlSu5AmuP9qo3hQjw1sBUtcJ7S-HXLh5YrC6TfzHseC83dGcwPD2XOf3FbwFMjLpahtqlX8U5heFCv08gmE1er9eCSyMcUnYL-SX0PvaMYdX9S-V1a1ouimSqlVWklERnzAk9QS63hO2Gsv5clh12ahJABg338Jprvf1UP0vERu2cbfCEb8QfmTPno1rIW97RBhKz4fEEAvnu0gaISz6uH4ZHdhKn7PtmaSmc8QdhZ2AcH_w5kIezpr4azVcjkV57lEEwoCe3TQ-nFuZ-x5c3NeXgqUIjxWoXJePWtG9C97Ur1OCGtOvRnVnrGZx8qpuDLrti0cuRP7tQuxF__2sV0EueKI8UyiU2LbSFf3TuzZgFkiIpueiepFDr92DZLl21pK5pUFw5x41KxuqdX40k24G2tIuCCmYHSW-2af3DFqdsGYgcPIyMSr347nnc0Y6AD8LmqqOy8vOsUDCOw6B2vm2SyYYFsASzYxhPKQQxeAu1CBY3zyRl7Q7zi-rS7kLqw6zAYKkt8-Ue6lfEE-F7RwHFLNrF34ew1dfEhqB6p22oTD4V4z52zCGPVlTwjPRWtF17ylYjIBsJD7cbO26FJHeY7i2550nULhJuchkYnSPGvcF3kjQ0FSd8gdCu0gObqNGgZDI99y1yTPRCfHZjGkdSKE7dWDZ7hgRveKIXDbDM_chiEx-bBkkD_bEps-4OS_qpmXDb84HZPr0YF5jldg0wW5gSj8J2CBTeY8_L_6y48t9Mrf8mibYZ3p7H07b0_PzdPelHa-rux7QMEu8K73jsYGlUblzTRJ2jwC_7A3DqKoVoc1NE0cZmBaSG_M7xs2EYSqZWvdkoMrno4C7RbM9Yu_Ep8IBUoB72vL9zmRLBjq-HuNwuTqNj8R2AgcG1BOmky2Z7ogqT0Tct9B-LEvBRWx9StGCvWlrLBNUHB-85dqJy_Au_trLdm_w-0qBcZJlO04tnxNKtdX_JRStrx7rsrGXORiEEBbvjKshLKmTYJrX2Ehfqc9iTtNRpmIPC6_h6eZMEBaqBRbr8feHl2PcwnKcubj_7P-p5GXr6SJHiLMNE7E9qpBhf8jNtD_592p_UN1lfukAQML9RrZIA03vCg4ePxYVoG3tF1rn9VzMXEx8LvhmG0HJF0J5LQbZzv4MceGDrG0fSCOpAayQJVDwvgq5pnX8c4DpoXhvSxLY1-NAHPtTQP18aGgjltFBqxaf2z0Tds1nn4mX99Lq5koLkezaoghw6Euc6ryCLBC_cngdRuY2Z9vmdifBhcFFE-NtN0tlqiSKxhaS2wWutA13Xlo-gpr6qw2nI-Bze35S1UTr5x3wIFCsjEjkZVCrk1gbY1EyLdCJnmWCTsWAjOrwGkqD5GWf-_pJ3iFL8uGDqoiktjacldtcG4QY-1v3OUMxo0j5Mi-hE7W-0qmLLAoaRrbUJKQok99oxK2ssmzhNkt504WUrPeYqlfBwROgJsvBq9VNE8u3nyYVf2ARNN8VcLFAE8Rt7OfbMY4D-WF31vPz4HowAY0WxG2cTGbvrBXMZgwLFG0wj7PCE2eOBb2ZYnlCpIrIqjD2nHHjYCwIdCGkshqKIvt6zWpQGq76aUoTHZCpTbGHhbk29H2yXEw_BPFf2SxLvoAEH2lWqPM4WvjxNTqNhncCokAEa8k5AO6e313bRffjSPDRS_nICG8Ry0g05R2yus3w8u4G0Efx4ZmhY-6S43ejLGUWCTgbUVh1SwqZ75PRPbAxcpOmKB5ieg4i8r08S5qsLlO9kcc6EEgwFvAvWZ-iQtW7VPGKva6KL9O09mqMtHf_s0Zv8lCCqFOMUK_LADGEOIu7H_3_jXyZJZhCuE2v8KgnbZvjwtL5XtnIy8CsaF6pngD0F-2D8C-ylrXikA4YrxMDTKawlOPTntHD52FiaOyZ6zfhnZG6SwGfjcOs8o5i0BJolnIVCSWF59kqVuhAgnp3ZpWPUJMeoBd0_IZNr9sDSbKtzh_MiHYSw8EAAT898qejtwlsF2YQzWNpYWmxyM7M1zqq1agzTBhiEzLw3NQ5jx6I-lNw0FWgC92QP8wmUS-xKq1e0QYjD3V3477w411vlI335fY1EzE3CK_TtUpiX2NiEkcIGGQSZpqO-7Yb4cwBS-KsNP9cxsUiijgog167MYPe_yfwn9yFT93nA19wpk87Fkyd7VBwWnVOAwlYXpvDRNsLplBz3kapjsePIgAAs4NXFJnPwkS62LrmqZfrTo4WUlEIBjF4n9tiet9ycI6uH-GCTpWbhCigHPY1T8xSrn1gbCXga1CP0DGg7xtISrghzqId1w7TGZRQD3D80OdC_MJetFCA6zA_ji0UtJWNB9w==",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "e84e4c65-0677-4956-88f2-961f5adb8359"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 2210,
+              "candidates_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2210
+                }
+              ],
+              "prompt_token_count": 2717,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 2717
+                }
+              ],
+              "thoughts_token_count": 1205,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 6132,
+              "traffic_type": "ON_DEMAND"
+            },
+            "live_session_resumption_update": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": -0.05767670022955847,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "invocation_id": "e-04ff9eb6-4d9d-4291-9efd-037273178c8a",
+            "author": "StudyOrchestrator",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "e84e4c65-0677-4956-88f2-961f5adb8359"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "id": "ba471943-6c1d-4931-abb2-5a8a073a999e",
+            "timestamp": 1771772978.873973
+          }
+        ],
+        "last_update_time": 1771772978.873973
+      },
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1771773169.661347
+}
