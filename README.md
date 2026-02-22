@@ -318,21 +318,35 @@ adk eval `
 
 # Lets Observe How tool calling is working:
 
+1. User enters query
+
 ![alt text](images/image_11.png)
 
 
+2. Orchestrator Agent collects the all the information from the user and calls the StudyPlanner agent to generate the study plan. Then it calls the ResourceCurator agent to curate the resources and finally it combines the study plan and resources to generate the final response.
+
 ![alt text](images/image_12.png)
 
+3. First ochestrator agent collects all the required information form the user and calls the StudyPlanner agent to generate the study plan. The StudyPlanner agent calls the google_search tool to search for the relevant information.
 
 ![alt text](images/image_13.png)
 
+4. Once study planner is done with the study plan it returns the JSON response to the orchestrator agent.
+
 ![alt text](images/image_14.png)
+
+5. Now, orchestrator agent calls the ResourceCurator agent to curate the resources. The ResourceCurator agent calls the google_search tool to search for the relevant information.
 
 ![alt text](images/image_15.png)
 
+6. Once resource curator is done with the resources it returns the JSON response to the orchestrator agent.
+
 ![alt text](images/image_16.png)
 
+7. Finally, orchestrator agent combines the study plan and resources to generate the final response.
+
 ![alt text](images/image_17.png)
+
 
 
 # Architecture:
